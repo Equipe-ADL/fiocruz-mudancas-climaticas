@@ -18,6 +18,33 @@
 
 	--fio-sys-color-primary-background-light: var(--fio-ref-color-primary-99);
 
+
+	 /* Secondary 1 - Modulo 1*/
+  --fio-sys-color-secondary1-light: #f7eef5;
+  --fio-sys-color-secondary1-light-hover: #e3eaf1;
+ 
+
+  /* Secondary 2 - Modulo 2*/
+  --fio-sys-color-secondary2-light: #edf4f7;
+  --fio-sys-color-secondary2-light-hover: #dce5e3;
+  
+
+  /* Secondary 3 - Modulo 3*/
+  --fio-sys-color-secondary3-light: #dff5f1;
+  --fio-sys-color-secondary3-light-hover: #f7f6eb;
+  
+
+  /* Secondary 4 - Modulo 4*/
+  --fio-sys-color-secondary4-light: #fdf8e8;
+  --fio-sys-color-secondary4-light-hover: #f6e1d1;
+  
+
+  /* Secondary 5 - Modulo 5*/
+  --fio-sys-color-secondary5-light: #fcf0ef;
+  --fio-sys-color-secondary5-light-hover: #ebe0d6;
+
+  
+
 	/* Accent - 30% layout */
 	--fio-sys-color-accent-light: var(--fio-ref-color-secondary-70);
 	--fio-sys-color-accent-light-contrast: var(--fio-ref-color-secondary-20);
@@ -189,6 +216,7 @@
 	/* Letter Spacing */
 	--fio-sys-typography-spacing-dense: -4px;
 	--fio-sys-typography-spacing-normal: 0;
+	--fio-sys-typography-spacing-small: 2px;
 	--fio-sys-typography-spacing-wide: 4px;
 	--fio-sys-typography-spacing-wider: 8px;
 

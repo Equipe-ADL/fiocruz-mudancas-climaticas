@@ -250,22 +250,28 @@ section {
   text-transform: uppercase;
   letter-spacing: var(--fio-sys-typography-spacing-wide);
   font-size: 30px;
-  color: var(--fio-sys-color-primary-normal);
-  border-bottom: 2px solid var(--fio-sys-color-primary-normal);
+  color: var(--fio-sys-color-primary-medium);
+  border-bottom: 2px solid var(--fio-sys-color-primary-medium);
   padding-bottom: 10px;
   margin-bottom: 20px;
 }
 
 #course-program .modulo-grupo {
+	color: var(--fio-sys-color-primary-medium);
   --_bg-modulo--hover: var(--fio-sys-color-primary-light);
   --_btn-modulo--hover: var(--fio-sys-color-primary-normal);
   list-style: none;
   padding-left: 0;
 }
 
+#course-program .modulo-grupo li {
+ 	border-bottom: 1px solid var(--fio-sys-color-primary-medium) !important;
+}
+
 #course-program .modulo-grupo .modulo1 {
   --_bg-modulo--hover: var(--fio-sys-color-secondary1-light-hover);
   --_btn-modulo--hover: var(--fio-sys-color-secondary1-normal);
+
 }
 #course-program .modulo-grupo .modulo2 {
   --_bg-modulo--hover: var(--fio-sys-color-secondary2-light-hover);
@@ -291,7 +297,7 @@ section {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  border-bottom: 1px solid var(--fio-sys-color-primary-normal);
+  border-bottom: 1px solid var(--fio-sys-color-secondary-normal);
   padding: 80px 0px 20px;
 }
 #course-program .modulo-grupo .modulo-item:hover {
