@@ -3,9 +3,9 @@
 :root {
 	/* --- KEY COLORS - HSL format --- */
 
-	--fio-ref-color-primary: 137, 8%; /* hue, saturation% */
-	--fio-ref-color-secondary: 137, 8%;
-	--fio-ref-color-tertiary: 57, 42%;
+	--fio-ref-color-primary: 130, 9%; /* hue, saturation% */
+	--fio-ref-color-secondary: 130, 9%;
+	--fio-ref-color-tertiary: 48, 17%;
 	--fio-ref-color-neutral: 0, 6%;
 	--fio-ref-color-text: var(--fio-ref-color-neutral);
 	--fio-ref-color-success: 135, 60%;

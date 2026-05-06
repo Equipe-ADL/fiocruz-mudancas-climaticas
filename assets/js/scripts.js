@@ -1,149 +1,103 @@
 // Stick Header
 
-window.addEventListener("scroll", function () {
-  const header = document.querySelector(".header");
-  const titleHeight = document.querySelector(".header").scrollHeight;
+window.addEventListener('scroll', function () {
+	const header = document.querySelector('.header');
+	const titleHeight = document.querySelector('.header').scrollHeight;
 
-  if (window.scrollY > 80) {
-    header.classList.add("header--sticky");
-  } else {
-    header.classList.remove("header--sticky");
-  }
+	if (window.scrollY > 150) {
+		header.classList.add('header--sticky');
+	} else {
+		header.classList.remove('header--sticky');
+	}
 });
+
+// (function () {
+// 	// Popover
+// 	$(function () {
+// 		$('[data-toggle="popover"]').popover(options);
+// 	});
+
+// 	// Tooltip
+// 	$(function () {
+// 		$('[data-toggle="tooltip"]').tooltip(options);
+// 	});
+// })();
 
 // Popover
 var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
 var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-  return new bootstrap.Popover(popoverTriggerEl);
+	return new bootstrap.Popover(popoverTriggerEl);
 });
-
-// //Swiper (inicialização)
-
-// //Type 1: Swiper Navigation
-// var swiper = new Swiper('.swiper--navigation', {
-// 	direction: 'horizontal',
-// 	loop: false,
-// 	slidesPerView: 1,
-// 	spaceBetween: 30,
-
-// 	//Mousewheel control
-// 	mousewheel: true,
-
-// 	//Keyboard control
-// 	keyboard: {
-// 		enabled: true,
-// 	},
-
-// 	// Navigation arrows
-// 	navigation: {
-// 		nextEl: '.swiper-button-next',
-// 		prevEl: '.swiper-button-prev',
-// 	},
-
-// 	//Pagination (if needed)
-// 	pagination: {
-// 		el: '.swiper-pagination',
-// 		clickable: true,
-// 		type: 'bullets',
-// 	},
-
-// 	// Scrollbar (if needed)
-// 	scrollbar: {
-// 		el: '.swiper-scrollbar',
-// 	},
-// });
-
-//Type 2: Swiper Vertical
-// var swiperVertical = new Swiper('.swiper--vertical', {
-// 	direction: 'vertical',
-// 	slidesPerView: 1,
-// 	spaceBetween: 0,
-// 	mousewheel: true,
-// 	pagination: {
-// 		el: '.swiper-pagination2',
-// 		clickable: true,
-// 	},
-// });
-
-// //Type 3: Effect Card
-// var swiperVertical = new Swiper('.swiper--effect-card', {
-// 	effect: 'cards',
-// 	grabCursor: true,
-// 	pagination: {
-// 		el: '.swiper-pagination3',
-// 		clickable: true,
-// 	},
-// });
 
 // Botão de copiar podcast
 
-const copyButton = document.querySelectorAll(".copy-to-clip");
+const copyButton = document.querySelectorAll('.copy-to-clip');
 
-copyButton.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    copyToClipboard(btn);
-    // tooltipShow(btn);
+copyButton.forEach(btn => {
+	btn.addEventListener('click', () => {
+		copyToClipboard(btn);
+		// tooltipShow(btn);
 
-    tooltipFeedback(btn);
-  });
+		tooltipFeedback(btn);
+	});
 });
 
 function copyToClipboard(e) {
-  const textToCopy = e.getAttribute("data-link");
-  const textarea = document.createElement("textarea");
-  textarea.setAttribute("readonly", "");
-  textarea.style.position = "absolute";
-  textarea.value = textToCopy;
-  document.body.appendChild(textarea);
-  textarea.select();
-  document.execCommand("copy");
-  document.body.removeChild(textarea);
+	const textToCopy = e.getAttribute('data-link');
+	const textarea = document.createElement('textarea');
+	textarea.setAttribute('readonly', '');
+	textarea.style.position = 'absolute';
+	textarea.value = textToCopy;
+	document.body.appendChild(textarea);
+	textarea.select();
+	document.execCommand('copy');
+	document.body.removeChild(textarea);
 }
 function tooltipFeedback(b) {
-  let feedback = $('[data-toggle="tooltip"]');
+	let feedback = $('[data-toggle="tooltip"]');
 
-  // feedback.tooltip('show');
+	// feedback.tooltip('show');
 
-  b.addEventListener("mouseout", () => {
-    feedback.tooltip("hide");
-  });
+	b.addEventListener('mouseout', () => {
+		feedback.tooltip('hide');
+	});
 }
 
 // Lightbox (insert the class "lightbox" into <figure>)
 
-const imageToLightbox = document.querySelectorAll(".lightbox");
+const imageToLightbox = document.querySelectorAll('.lightbox');
 
-imageToLightbox.forEach((image) => {
-  image.addEventListener("click", () => {
-    if (!image.classList.contains("lightbox--show")) {
-      const getImage = image.querySelector("img");
-      const getImageSrc = getImage.getAttribute("src");
-      const imageLightbox = document.createElement("div");
+imageToLightbox.forEach(image => {
+	image.addEventListener('click', () => {
+		if (!image.classList.contains('lightbox--show')) {
+			const getImage = image.querySelector('img');
+			const getImageSrc = getImage.getAttribute('src');
+			const imageLightbox = document.createElement('div');
 
-      imageLightbox.classList.add("lightbox__image");
+			imageLightbox.classList.add('lightbox__image');
 
-      document.body.appendChild(imageLightbox);
-      imageLightbox.innerHTML = `<img src="${getImageSrc}"/>`;
-      console.log(getImageSrc);
+			document.body.appendChild(imageLightbox);
+			imageLightbox.innerHTML = `<img src="${getImageSrc}"/>`;
+			console.log(getImageSrc);
 
-      image.classList.add("lightbox--show");
+			image.classList.add('lightbox--show');
 
-      document.body.style.overflow = "hidden";
-      document.body.style.userSelect = "none";
+			document.body.style.overflow = 'hidden';
+			document.body.style.userSelect = 'none';
 
-      closeLightbox(imageLightbox);
-    }
+			closeLightbox(imageLightbox);
+		}
 
-    function closeLightbox(e) {
-      const lightboxOpen = document.querySelector(".lightbox__image");
-      e.addEventListener("click", () => {
-        document.body.removeChild(e);
-        image.classList.remove("lightbox--show");
-        document.body.style.overflow = "auto";
-        document.body.style.userSelect = "auto";
-      });
-    }
-  });
+		function closeLightbox(e) {
+			const lightboxOpen = document.querySelector('.lightbox__image');
+			e.addEventListener('click', () => {
+				document.body.removeChild(e);
+				image.classList.remove('lightbox--show');
+				document.body.style.overflow = 'auto';
+				document.body.style.userSelect = 'auto';
+			});
+		}
+	});
 });
 
 // Lightbox Scroll (insert the class "lightbox-scroll" into <figure>)
@@ -151,58 +105,59 @@ imageToLightbox.forEach((image) => {
 const imageToLightboxWithScroll = document.querySelectorAll(".lightbox-scroll");
 
 imageToLightboxWithScroll.forEach((imageScroll) => {
-  imageScroll.addEventListener("click", () => {
-    if (!imageScroll.classList.contains("lightbox-scroll--show")) {
-      const getImageScroll = imageScroll.querySelector("img");
-      const getImageScrollSrc = getImageScroll.getAttribute("src");
-      const imageLightboxScroll = document.createElement("div");
+	imageScroll.addEventListener("click", () => {
+		if (!imageScroll.classList.contains("lightbox-scroll--show")) {
+			const getImageScroll = imageScroll.querySelector("img");
+			const getImageScrollSrc = getImageScroll.getAttribute("src");
+			const imageLightboxScroll = document.createElement("div");
 
-      imageLightboxScroll.classList.add("lightbox-scroll__image");
+			imageLightboxScroll.classList.add("lightbox-scroll__image");
 
-      document.body.appendChild(imageLightboxScroll);
-      imageLightboxScroll.innerHTML = `<img src="${getImageScrollSrc}"/>`;
-      console.log(getImageScrollSrc);
+			document.body.appendChild(imageLightboxScroll);
+			imageLightboxScroll.innerHTML = `<img src="${getImageScrollSrc}"/>`;
+			console.log(getImageScrollSrc);
 
-      imageScroll.classList.add("lightbox-scroll--show");
+			imageScroll.classList.add("lightbox-scroll--show");
 
-      document.body.style.overflow = "hidden";
-      document.body.style.userSelect = "none";
+			document.body.style.overflow = "hidden";
+			document.body.style.userSelect = "none";
 
-      closeLightboxScroll(imageLightboxScroll);
-    }
+			closeLightboxScroll(imageLightboxScroll);
+		}
 
-    function closeLightboxScroll(s) {
-      const lightboxScrollOpen = document.querySelector(".lightbox-scroll__image");
-      s.addEventListener("click", () => {
-        document.body.removeChild(s);
-        imageScroll.classList.remove("lightbox-scroll--show");
-        document.body.style.overflow = "auto";
-        document.body.style.userSelect = "auto";
-      });
-    }
-  });
+		function closeLightboxScroll(s) {
+			const lightboxScrollOpen = document.querySelector(".lightbox-scroll__image");
+			s.addEventListener("click", () => {
+				document.body.removeChild(s);
+				imageScroll.classList.remove("lightbox-scroll--show");
+				document.body.style.overflow = "auto";
+				document.body.style.userSelect = "auto";
+			});
+		}
+	});
 });
 
 // Boxes - inserir o título de acordo com o atributo
 
-const boxes = document.querySelectorAll(".box");
+const boxes = document.querySelectorAll('.box');
 
-boxes.forEach((box) => {
-  const boxAttribute = box.getAttribute("data-box");
+boxes.forEach(box => {
+	const boxAttribute = box.getAttribute('data-box');
 
-  const boxLabel = box.querySelector(".label");
+	const boxLabel = box.querySelector('.label');
 
-  boxLabel.innerHTML = boxAttribute;
+	boxLabel.innerHTML = boxAttribute;
 });
 
-// Modal - Criação dos modais principais
 
+
+// Modal - Criação dos modais principais
 const modalInfos = {
-  creditos: {
-    ariaLabel: "creditos",
-    modalSize: "modal-lg",
-    modalTitle: "Créditos",
-    modalBody: `
+	creditos: {
+		ariaLabel: 'creditos',
+		modalSize: 'modal-lg',
+		modalTitle: 'Créditos',
+		modalBody: `
 			<div class="row justify-content-center pt-5">
 				<div class="col-12 col-md-10 col-lg-10">
 					<span class="h5 mb-3 d-block">Ministério da Saúde</span>
@@ -217,6 +172,7 @@ const modalInfos = {
 					<div class="mb-5">
 						<p class="mb-1">Mario Moreira</p>
 						<p class="small text-muted"><em>Presidente</em></p>
+
 						<p class="mb-1">Marly Cruz</p>
 						<p class="small text-muted"><em>Vice-Presidência de Educação, Informação e Comunicação (VPEIC)</em></p>
 					</div>
@@ -230,7 +186,7 @@ const modalInfos = {
 
 						<p class="mb-1">Rosane Mendes</p>
 						<p class="small text-muted"><em>Coordenadora adjunta</em></p>
-						
+
 						<p class="mb-1">Renata Bernardes David</p>
 						<p class="small text-muted"><em>Coordenadora de produção</em></p>
 
@@ -240,28 +196,31 @@ const modalInfos = {
 						<p class="mb-1">Isabela Schincariol</p>
 						<p class="small text-muted"><em>Assessora de comunicação</em></p>
 					
-						<p class="mb-1">Shênia Mineiro Martins</p>
+						<p class="mb-1">Alessandra Guedes</p>
 						<p class="small text-muted"><em>Designer Educacional</em></p>
-
-						<p class="mb-1">Pilar Tavares Veras Florentino</p>
-						<p class="small text-muted"><em>Consultora técnico-pedagógico</em></p>
 					
 						<span class="h6 mb-3 d-block">Design de Interface</span>
 						
 						<p class="mb-1">Aline Polycarpo</p>
-						<p class="small text-muted"><em>UX/UI Designer</em></p>
+						<p class="small text-muted"><em>Designer de Interface e Interação</em></p>
+
 						<p class="mb-1">Danilo Blum</p>
-						<p class="small text-muted"><em>UX/UI Designer e Front-end</em></p>
+						<p class="small text-muted"><em>Designer de Interface e Front-end</em></p>
+
 						<p class="mb-1">Luciana Nunes</p>
-						<p class="small text-muted"><em>UX/UI Designer</em></p>
+						<p class="small text-muted"><em>Designer de Interface e Interação</em></p>
+					
 						
 						<span class="h6 mb-3 d-block">Recursos Audiovisuais</span>
-
+					
 						<p class="mb-1">Bruno Athaydes</p>
 						<p class="small text-muted"><em>Editor audiovisual</em></p>
-			
+
+						<p class="mb-1">Teo Venerando</p>
+						<p class="small text-muted"><em>Editor audiovisual</em></p>
+
 						<span class="h6 mb-3 d-block">Recursos Educacionais</span>
-						
+
 						<p class="mb-1">Carmélia Brito</p>
 						<p class="small text-muted"><em>Bibliotecária</em></p>
 
@@ -269,9 +228,8 @@ const modalInfos = {
 						<p class="small text-muted"><em>Audiodescrição</em></p>
 
 						<p class="mb-1">Maria Angélica Marcondes Drska</p>
-						<p class="small text-muted"><em>Revisão de português</em></p>
-
-
+						<p class="small text-muted"><em>Revisão de Português</em></p>
+						
 						<span class="h6 mb-3 d-block">Suporte Técnico de Tecnologia da Informação</span>
 					
 						<p class="mb-1">Bruno Alexandre de Oliveira</p>
@@ -281,867 +239,1894 @@ const modalInfos = {
 						<p class="small text-muted"><em>Desenvolvedor</em></p>
 
 						<p class="mb-1">Adriano Lourenço</p>
-						<p class="small text-muted"><em>Analista de suporte</em></p>
+						<p class="small text-muted"><em>Analista de tecnologias educacionais</em></p>
 
 						<p class="mb-1">Orlando Terra</p>
-						<p class="small text-muted"><em>Analista de suporte</em></p>
+						<p class="small text-muted"><em>Analista de tecnologias educacionais</em></p>
 
 						<p class="mb-1">Fábio Carneiro</p>
 						<p class="small text-muted"><em>Designer gráfico e web designer</em></p>
 					</div>
 
-					<span class="h5 mb-3 d-block">Coordenação do Projeto</span>
+					<span class="h5 mb-3 d-block">Coordenação Acadêmica</span>
 					
 					<div class="mb-5">
-						<p class="mb-1">Mônica de Avelar Figueiredo Mafra Magalhães</p>
-						<p class="small text-muted"><em>Vice-Diretora de Pesquisa, Tecnologista em Saúde Pública no Instituto de Comunicação e Informação Científica e Tecnológica em Saúde (Icict)/Fiocruz</em></p>
+						<p class="mb-1">Enrico Mendes Saggioro</p>
+						<p class="small text-muted"><em>Instituto Oswaldo Cruz (IOC) - Fiocruz</em></p>
 
-						<p class="mb-1">Marilyn Anderson Alves Bonfim </p>
-						<p class="small text-muted"><em>Vice-Diretora de Ensino e Diretora Adjunta, Analista de Gestão em Saúde no Instituto de Comunicação e Informação Científica e Tecnológica em Saúde (Icict)/Fiocruz</em></p>
-
-
-						<span class="h6 mb-3 d-block">Conteudistas</span>
-						
-						<p class="mb-1"><strong>Módulo 1: Políticas Sociais e Informação</strong></p>
-						
-						<p class="mb-1 mt-3"><strong>Aula 1</strong></p>
-						<p class="mb-1">Marcelo Fornazin</p>
-						<p class="small text-muted"><em>ENSP/Fiocruz</em></p>
-
-						<p class="mb-1">Lais Fiebig</p>
-						<p class="small text-muted"><em>ENSP/Fiocruz</em></p>
-
-						<p class="mb-1">Matheus Zuliane Falcão</p>
-						<p class="small text-muted"><em>Cepedisa - USP</em></p>
-
-						<p class="mb-1 mt-3"><strong>Aula 2</strong></p>
-						<p class="mb-1">Rosane Abdala Lins</p>
-						<p class="small text-muted"><em>Icict/Fiocruz</em></p>
-
-						<p class="mb-1">Rosinalva Alves de Souza</p>
-						<p class="small text-muted"><em>Icict/Fiocruz</em></p>
-						
-						<p class="mb-1 mt-3"><strong>Aula 3</strong></p>
-						<p class="mb-1 mt-3">Laiza Daniele Nunes de Assumpção</p>
-						<p class="small text-muted"><em>Fiocruz</em></p>
-
-						<p class="mb-1">Angela Cristina Volpini</p>
-						<p class="small text-muted"><em>Instituto René Rachou/Fiocruz Minas</em></p>
-
-						<p class="mb-1">Carlos Henrique Soares Carvalho</p>
-						<p class="small text-muted"><em>Instituto Leônidas e Maria Deane/Fiocruz</em></p>
-
-						<p class="mb-1">Erika Sayume Ramos Hashimoto</p>
-						<p class="small text-muted"><em>Privacidade e Proteção de Dados, Diretoria Executiva – FIOCRUZ/PR</em></p>
-
-						<p class="mb-1">Rafael Pereira Barboza</p>
-						<p class="small text-muted"><em>Fiocruz</em></p>
-
-						<p class="mb-1 mt-3"><strong>Aula 4</strong></p>
-						<p class="mb-1">Carolina de Campos Carvalho</p>
-						<p class="small text-muted"><em>Icict/Fiocruz</em></p>
-
-						<p class="mb-1"><strong>Módulo 2: Sistemas de Informação de Saúde e Fonte de Dados de Interesse à Saúde</strong></p>
-
-						<p class="mb-1 mt-3"><strong>Aula 1</strong></p>
-						<p class="mb-1">Aline Pinto Marques</p>
-						<p class="small text-muted"><em>Icict/Fiocruz</em></p>
-
-						<p class="mb-1 mt-3"><strong>Aula 2</strong></p>
-						<p class="mb-1">Jessica Muzy</p>
-						<p class="small text-muted"><em>NIPPIS/Icict/Fiocruz</em></p>
-
-						<p class="mb-1 mt-3"><strong>Aula 3</strong></p>
-						<p class="mb-1">Diego Ricardo Xavier</p>
-						<p class="small text-muted"><em>Icict/Fiocruz</em></p>
-						
-						<p class="mb-1 mt-3"><strong>Aula 4</strong></p>
-						<p class="mb-1">Carolina de Campos Carvalho </p>
-						<p class="small text-muted"><em>Icict/Fiocruz</em></p>
-
-						
-						<p class="mb-1"><strong>Módulo 3: Integração de Dados, Novas Fontes e Uso</strong></p>
-
-						<p class="mb-1 mt-3"><strong>Aulas 1, 3 e 4</strong></p>
-						<p class="mb-1">Marcel de Moraes Pedroso</p>
-						<p class="small text-muted"><em>Icict/Fiocruz</em></p>
-
-						<p class="mb-1 mt-3"><strong>Aulas 2</strong></p>
-						<p class="mb-1">Diego Ricardo Xavier</p>
-						<p class="small text-muted"><em>Icict/Fiocruz</em></p>
+						<p class="mb-1">Tatiana Mingote Ferreira de Ázara</p>
+						<p class="small text-muted"><em>Instituto René Rachou (IRR) – Fiocruz Minas</em></p>
 					</div>
-					
-				</div>
-			</div>
-		`,
-  },
-  bibliografiaMod1: {
-    ariaLabel: "bibliografiaMod1",
-    modalSize: "modal-xl",
-    modalTitle: "Bibliografia Módulo 1",
-    modalBody: `
-			<div class="row justify-content-center pt-5">
-				<div class="col-12 col-md-11">
+
+					<span class="h5 mb-3 d-block">Apoio institucional SES/MG</span>
+
 					<div class="mb-5">
-						<!-- Accordion -->
-						<div class="accordion accordion-flush" id="accordionExample2">
-							<div class="accordion-item">
-								<h5 class="accordion-header" id="heading1-item1">
-									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-item1" aria-expanded="true" aria-controls="collapse1-item1">Aula 1</button>
-								</h5>
-								<div id="collapse1-item1" class="accordion-collapse collapse" aria-labelledby="heading1-item1" data-bs-parent="">
-									<div class="accordion-body">
-										<div class="list">
-											<ul class="list-group">
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ANDRADE, M. V. <em>et al.</em> Indicadores e medidas em saúde: conceitos e aplicações para as informações disponíveis no Brasil. <em>In</em>: SALDANHA, R. F.; PEDROSO, M. M.; MAGALHÃES, M. A. F. M. <strong>Avaliação de impacto das políticas de saúde</strong>: um guia para o SUS. Brasil: Ministério da Saúde, Secretaria de Ciência, Tecnologia, Inovação e Complexo da Saúde, 2023. cap. 3, p. 81-123. Disponível em: <a href="https://bvsms.saude.gov.br/bvs/publicacoes/avaliacao_impacto_politicas_saude_guia_sus.pdf" target="_blank" rel="noopener noreferrer">https://bvsms.saude.gov.br/bvs/publicacoes/avaliacao_impacto_politicas_saude_guia_sus.pdf</a>. Acesso em: 09 jul. 2024.</li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BARRETO, M. L. Desigualdades em saúde: uma perspectiva global. <strong>Ciência & Saúde Coletiva</strong>, v. 22, n. 7, p. 2097-2108, 2017. Disponível em: <a href="https://www.scielo.br/j/csc/a/XLS4hCMT6k5nMQy8BJzJhHx/" target="_blank" rel="noopener noreferrer">https://www.scielo.br/j/csc/a/XLS4hCMT6k5nMQy8BJzJhHx/</a>. Acesso em: 09 jul. 2024.</li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. <strong>Constituição (1988)</strong>. Constituição da República Federativa do Brasil. Brasília, DF: Senado, 1988.</li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Lei n° 8.080, de 19 de setembro de 1990. Dispõe sobre as condições para a promoção, proteção e recuperação da saúde, a organização e o funcionamento dos serviços correspondentes e dá outras providências. <strong>Diário Oficial da União</strong>, Brasília, DF, 20 set. 1990a. Disponível em: <a href="https://www.planalto.gov.br/ccivil_03/leis/l8080.htm" target="_blank" rel="noopener noreferrer">https://www.planalto.gov.br/ccivil_03/leis/l8080.htm</a></li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">CAVALCANTE, R. B.; PINHEIRO, M. M. K. Contexto atual da construção da Política Nacional de Informação e Informática em Saúde (PNIIS). <strong>Tendências da Pesquisa Brasileira em Ciência da Informação</strong>, v. 7, n. 1, p. 45-59, 2014. Disponível em: <a href="https://revistas.ancib.org/index.php/tpbci/article/view/347/347" target="_blank" rel="noopener noreferrer">https://revistas.ancib.org/index.php/tpbci/article/view/347/347</a></li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">COELHO-NETO, G. C.; CHIORO, A. Afinal, quantos Sistemas de Informação em Saúde de base nacional existem no Brasil? <strong>Cadernos de Saúde Pública</strong>, v. 37, n. 7, 2021. Disponível em: <a href="https://www.scielo.br/j/csp/a/RzNmvjHqmLhPHZp6gfcdC6H/?format=pdf&lang=pt" target="_blank" rel="noopener noreferrer">https://www.scielo.br/j/csp/a/RzNmvjHqmLhPHZp6gfcdC6H/?format=pdf&lang=pt</a></li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">COELI, C. M. <em>et al.</em> Sistemas de Informação em Saúde. <em>In</em>: MEDRONHO, R. A. (org.). <strong>Epidemiologia</strong>. 2. ed. São Paulo: Atheneu, 2009. cap. 29, p. 525-534.</li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">FARIA, L. L. F. <strong>Saúde digital nas cidades inteligentes no Brasil</strong>: abordagens, articulações possíveis, avanços e desafios. 2023. 178 f. Dissertação (Mestrado em Saúde Pública) - Escola Nacional de Saúde Pública Sergio Arouca, Fundação Oswaldo Cruz, Rio de Janeiro, 2023. Disponível em: <a href="https://www.arca.fiocruz.br/handle/icict/62767" target="_blank" rel="noopener noreferrer">https://www.arca.fiocruz.br/handle/icict/62767</a></li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">JANNUZZI, P. M. Estatísticas e políticas públicas orientadas por evidências no Brasil: caso das políticas de desenvolvimento social nos anos 2000. <strong>Revista Brasileira de Geografia</strong>, v. 64, n. 1, p. 37-54, 2019.</li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">MORAES, I. H. S. <strong>Política, tecnologia e informação em saúde</strong>: a utopia da emancipação. Salvador: Instituto de Saúde Coletiva/UFBa e Casa da Qualidade, 2002.</li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">MORAES, I. H. S.; FORNAZIN, M. Nem tecnoforia nem tecnofobia: abordagem crítica da incorporação das tecnologias digitais na saúde. <em>In</em>: PAIM, Jairnilson Silva; ALMEIDA-FILHO, Naomar (org.). <strong>Saúde coletiva</strong>: teoria e prática. 2. ed. Rio de Janeiro: Medbook, 2022. v. 1, p. 670-691.</li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">MORAES, I.; GOMEZ, M. Informação e informática em saúde: caleidoscópio contemporâneo da saúde. <strong>Ciência & Saúde Coletiva</strong>, v. 12, n. 3, p. 553-565, 2007. Disponível em: <a href="https://www.scielo.br/j/csc/a/45Nb5fbzVr3YDqJRKLhbvWk/?format=pdf&lang=pt" target="_blank" rel="noopener noreferrer">https://www.scielo.br/j/csc/a/45Nb5fbzVr3YDqJRKLhbvWk/?format=pdf&lang=pt</a></li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">PROADESS. <strong>Projeto de Avaliação do Desempenho do Sistema de Saúde</strong>. Laboratório de Informação em Saúde. Instituto de Comunicação e Informação Científica e Tecnológica em Saúde. Fundação Oswaldo Cruz). Rio de Janeiro: Fiocruz, 2024. Disponível em: <a href="https://www.proadess.icict.fiocruz.br/index.php" target="_blank" rel="noopener noreferrer">https://www.proadess.icict.fiocruz.br/index.php</a>. Acesso em: 09 jul. 2024.</li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">RIBEIRO, M. C. S. A.; BARATA, R. B. Condições de saúde da população brasileira. <em>In</em>: GIOVANELLA, L. (org.). <strong>Políticas e sistema de saúde no Brasil</strong>. 2. ed. rev. e ampliada. Rio de Janeiro: Editora Fiocruz: Centro Brasileiro de Estudos da Saúde, 2012. cap. 5, p. 143-181.</li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">REDE INTERAGENCIAL DE INFORMAÇÕES PARA A SAÚDE - RIPSA. (org.). <strong>Indicadores básicos para a saúde no Brasil</strong>: conceitos e aplicações. 2. ed. Brasília: Organização Pan-Americana da Saúde, Escritório Regional para as Américas da Organização Mundial da Saúde, 2008. Disponível em: <a href="http://tabnet.datasus.gov.br/tabdata/livroidb/2ed/indicadores.pdf" target="_blank" rel="noopener noreferrer">http://tabnet.datasus.gov.br/tabdata/livroidb/2ed/indicadores.pdf</a>. Acesso em: 08 jul. 2024.</li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">RISI, J. B. Informação em saúde no Brasil: a contribuição da Ripasa. <strong>Ciência & Saúde Coletiva</strong>, v. 11, p. 1049-1053, 2006. Disponível em: <a href="https://www.scielo.br/j/csc/a/YntJzFbXMN69KJkfsNvfMNn/?format=pdf&lang=pt" target="_blank" rel="noopener noreferrer">https://www.scielo.br/j/csc/a/YntJzFbXMN69KJkfsNvfMNn/?format=pdf&lang=pt</a></li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ROUQUAYROL, M. Z. Contribuição da epidemiologia. <em>In</em>: CAMPOS, G. W. S. <em>et al.</em> (org.). <strong>Tratado de saúde coletiva</strong>. 2. ed. São Paulo: Hucitec, 2021. p. 343-398.</li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">VIANA, A. L. d’A.; BAPTISTA, T. W. F. Análise de políticas de saúde. <em>In</em>: GIOVANELLA, L. (org.). <strong>Políticas e sistema de saúde no Brasil</strong>. 2. ed. rev. ampliada. Rio de Janeiro: Editora Fiocruz: Centro Brasileiro de Estudos da Saúde, 2012. cap. 2, p. 59-88.</li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">VERMELHO, L. L.; COSTA, A. J. L.; KALE, P. L. Indicadores de saúde. <em>In</em>: MEDRONHO, R. A. (editor-chefe). <strong>Epidemiologia</strong>. 2. ed. São Paulo: Atheneu, 2009. cap. 3, p. 31-82.</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
+						<p class="mb-1">Romeu Zema</p>
+						<p class="small text-muted"><em>Governador do estado de Minas Gerais</em></p>
 
-							<div class="accordion-item">
-								<h5 class="accordion-header" id="heading1-item2">
-									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-item2" aria-expanded="false" aria-controls="collapse1-item2">Aula 2</button>
-								</h5>
-								<div id="collapse1-item2" class="accordion-collapse collapse" aria-labelledby="heading1-item2" data-bs-parent="">
-									<div class="accordion-body">
-										<div class="list">
-											<ul class="list-group">
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">AGUIAR, A. C. Informação e atividades de desenvolvimento científico, tecnológico e industrial: tipologia proposta com base em análise funcional. <strong>Ci. Inf</strong>., Brasília, DF, v. 20, n. 1, p. 8, jan./jun. 1991.</li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ARAÚJO, C. A. A. Correntes teóricas da ciência da informação. <strong>Ci. Inf</strong>., Brasília, DF, v. 38, n. 3, p. 192-204, set./dez., 2009. Disponível em <a href="https://doi.org/10.1590/S0100-19652009000300013" target="_blank" rel="noopener noreferrer">https://doi.org/10.1590/S0100-19652009000300013</a>.</li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BAPTISTA, P. I. C. F. <strong>Do papiro ao e-book</strong>: uma história social dos suportes da informação. 2014. 48 f. Monografia de conclusão de curso (Graduação em Biblioteconomia e Gestão de Unidade de Informação). Universidade Federal do Rio de Janeiro, Rio de Janeiro. Disponível em: <a href="https://pantheon.ufrj.br/bitstream/11422/265/1/Pedro%20Ivo%20BiblioTCCpdf.pdf" target="_blank" rel="noopener noreferrer">https://pantheon.ufrj.br/bitstream/11422/265/1/Pedro%20Ivo%20BiblioTCCpdf.pdf</a></li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">MENEZES, Sabrina. Fonte de informação: definição, tipologia e confiabilidade. <strong>Blog da BIBENG</strong>, 10 ago. 2021. Disponível em: <a href="https://www.ufrgs.br/bibeng/fontes-de-informacao-definicao-tipologia-confiabilidade/#:~:text=Fontes%20de%20informa%C3%A7%C3%A3o%20s%C3%A3o%20essenciais,localizar%20informa%C3%A7%C3%B5es%20e%20dados%20confi%C3%A1veis" target="_blank" rel="noopener noreferrer">https://www.ufrgs.br/bibeng/fontes-de-informacao-definicao-tipologia-confiabilidade/#:~:text=Fontes%20de%20informa%C3%A7%C3%A3o%20s%C3%A3o%20essenciais,localizar%20informa%C3%A7%C3%B5es%20e%20dados%20confi%C3%A1veis</a>.</li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">CAFEZEIRO, I.; COSTA, L. C.; KUBRUSLY, R. S. Ciência da Computação, Ciência da Informação, Sistemas de Informação: uma reflexão sobre o papel da informação e da interdisciplinaridade na configuração das tecnologias e das ciências. <strong>Perspec. Ci. Inf</strong>., v. 21, n. 3, p. 111–133, jul. 2016. Disponível em: <a href="https://doi.org/10.1590/1981-5344/2681" target="_blank" rel="noopener noreferrer">https://doi.org/10.1590/1981-5344/2681</a>.</li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">CAMPELLO, B. Aula Fontes de Informação I. <em>In</em>: <strong>Curso de Bacharelado em Biblioteconomia na Modalidade a Distância</strong> - Departamento de Biblioteconomia. UAB: Brasília/DF, 2018. </li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">GOMES, L. B. <em>et al.</em> As origens do pensamento sistêmico: das partes para o todo. <strong>Pensando fam.</strong>, Porto Alegre, v. 18, n. 2, p. 3-16, dez. 2014.Disponível em: <a href="http://pepsic.bvsalud.org/scielo.php?script=sci_arttext&pid=S1679-494X2014000200002&lng=pt&nrm=iso" target="_blank" rel="noopener noreferrer">http://pepsic.bvsalud.org/scielo.php?script=sci_arttext&pid=S1679-494X2014000200002&lng=pt&nrm=iso</a>. Acesso em: 09 jul. 2024.</li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">GUIMARÃES, M. C. S.; SILVA, C. H.; SANTANA, R. A. L. Uma abordagem de educação para saúd e a partir da informação científica e tecnológica. <strong>R. Eletr. de Com. Inf. Inov. Saúde</strong>. Rio de Janeiro, v. 6, n. 2, jun., 2012. Disponível em <a href="www.reciis.icict.fiocruz.br" target="_blank" rel="noopener noreferrer">www.reciis.icict.fiocruz.br</a>.</li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">LE COADIC, Y. F. <strong>A Ciência da informação</strong>. 2. ed. Brasília: Briquet de Lemos, 2004.</li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">REDE INTERAGENCIAL DE INFORMAÇÕES PARA A SAÚDE – RIPSA. <strong>Indicadores básicos de saúde no Brasil</strong>: conceitos e aplicações. Brasília: Organização Pan-Americana da Saúde, 2002.</li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">SARACEVIC, T. Ciência da informação: origem, evolução e relações <strong>Perspec. Ci. Inf.</strong>, Belo Horizonte, v. 1, n. 1, p. 41-62, jan./jun. 1996.</li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">SENRA, N. C. <strong>A Coordenação da Estatística Nacional</strong>. O Equilíbrio entre o Desejável e o Possível. 1998. Tese (Doutorado em Ciência da Informação) - Escola de Comunicação – ECO, Universidade Federal do Rio de Janeiro – UFRJ e Instituto Brasileiro de Informação em Ciência e Tecnologia – IBICT, Conselho Nacional de Desenvolvimento Científico e Tecnológico – CNPq, Rio de Janeiro, 1998. Disponível em: <a href="https://ridi.ibict.br/bitstream/123456789/665/1/nelsonsenra1998.pdf" target="_blank" rel="noopener noreferrer">https://ridi.ibict.br/bitstream/123456789/665/1/nelsonsenra1998.pdf</a></li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">SILVA, C. H. S. <strong>Fontes em Informação Científica e Tecnológica em Saúde</strong> - ICTS - Aula no curso de especialização em ICTS, FIOCRUZ, Rio de Janeiro, junho 2022. </li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BUENO, S. B.; BLATMANN, U. Fontes de Informação on-line no contexto da área de ciências da saúde. <strong>Pesquisa Brasileira em Ciência da Informação e Biblioteconomia</strong>, v 1, n 1, 2006. Disponível em: <a href="https://brapci.inf.br/#/v/238971" target="_blank" rel="noopener noreferrer">https://brapci.inf.br/#/v/238971</a>.</li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BUENO, S. B.; BLATMANN, U. Fontes de Informação online no contexto da área de ciências da saúde. <strong>RDBCI:Revista Digital de Biblioteconomia e Ciência da Informação</strong>, v 3, n 1, 2005. Disponível em: <a href="https://brapci.inf.br/#/v/40186" target="_blank" rel="noopener noreferrer">https://brapci.inf.br/#/v/40186</a>.</li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BUSH, V. As We May Think. <strong>The Atlantic Monthly</strong>, July1945. Disponível em: <a href="https://www.theatlantic.com/magazine/archive/1945/07/as-we-may-think/303881/" target="_blank" rel="noopener noreferrer">https://www.theatlantic.com/magazine/archive/1945/07/as-we-may-think/303881/</a></li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">CAMPELLO, B. S.; CENDÓN, B. V.; KREMER, J. M. (org.). <strong>Fontes de Informação para pesquisadores e profissionais</strong>. Belo Horizonte: Ed. UFMG, 2000.</li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">CAMPELLO, Bernadete. Enciclopédias. <em>In</em>: CAMPELLO, B.; CALDEIRA, P. T. (org.). <strong>Introdução às Fontes de Informação</strong>. 2. ed. Belo Horizonte: Autêntica, 2008. (Coleção Ciência da Informação; v. 2).</li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">GOMEZ, M. N. G.; CANONGIA, C. (org.). <strong>Contribuição para políticas de ICT</strong>. Brasília, DF: IBICT,2001.</li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">OLIVEIRA, A. R. F.; ALENCAR, M. S. M. O uso de aplicativos de saúde para dispositivos móveis como fontes de informação e educação em saúde. <strong>Revista Digital de Biblioteconomia e Ciência da Informação</strong>, v. 15, n.1, 2017. Disponível em: <a href="https://brapci.inf.br/#/v/40893" target="_blank" rel="noopener noreferrer">https://brapci.inf.br/#/v/40893</a>.</li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">OLIVEIRA, C. M.; <em>et al.</em> Typology of health information soucers: decision making support. <strong>Asklepion: Informação em Saúde</strong>, v. 2, n.1, 2022. Disponível em: <a href="https://asklepionrevista.info/asklepion/article/view/38" target="_blank" rel="noopener noreferrer">https://asklepionrevista.info/asklepion/article/view/38</a>.</li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ROBREDO, J. Do documento impresso à informação nas nuvens: reflexões. <strong>Liinc em Revista</strong>, v. 7, n.1, p. 19-42, 2011. Disponível em: <a href="http://www.ibict.br/liinc" target="_blank" rel="noopener noreferrer">http://www.ibict.br/liinc</a>.</li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">SANTANA, R. A. L. <strong>Sistema Nacional de Informações Tóxico-Farmacológicas</strong>: o desafio da padronização dos dados. 2005. Dissertação (Mestrado em Saúde Pública) - Escola Nacional de Saúde Pública, Fundação Oswaldo Cruz, Rio de Janeiro, 2005.</li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">SANTOS, V. P. S.; COELHO, M. T. A. D.; RODRIGUES JUNIOR, N. M. Fontes de Informação em Saúde. <strong>Revista Fontes Documentais</strong>, v. 3, n. 1, 2020. Disponível em: <a href="https://brabci.info.br/index/php/res/v/15116" target="_blank" rel="noopener noreferrer">https://brabci.info.br/index/php/res/v/15116</a>.</li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">SANTOS, V. P. S.; COELHO, M. T. A. D.; RODRIGUES JUNIOR, N. M. Fontes de Informação em Saúde: influenciam no conhecimento do HVi/AIDS? <strong>Revista Fontes Documentais</strong>, v 3, n. Ed Especial, 2020. Disponível em: <a href="https://periodicos.ufba.br/index.php/RFD/article/view/57818" target="_blank" rel="noopener noreferrer">https://periodicos.ufba.br/index.php/RFD/article/view/57818</a>.</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
+						<p class="mb-1">Matheus Simões</p>
+						<p class="small text-muted"><em>Vice-Governador do estado de Minas Gerais</em></p>
 
-							<div class="accordion-item">
-								<h5 class="accordion-header" id="heading1-item3">
-									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-item3" aria-expanded="false" aria-controls="collapse1-item3">Aula 3</button>
-								</h5>
-								<div id="collapse1-item3" class="accordion-collapse collapse" aria-labelledby="heading1-item3" data-bs-parent="">
-									<div class="accordion-body">
-										<div class="list">
-											<ul class="list-group">
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">Aith, F. (2022). Fundamentos e Desafios da Regulação da Saúde Digital em Estados Democráticos de Direito. Em F. Aith, & A. B. Dallari, LGPD na Saúde Digital (pp. 41-59). São Paulo, SP, Brasil : Revista dos Tribunais.<a href="https://www.jusbrasil.com.br/doutrina/secao/1-fundamentos-e-desafios-da-regulacao-da-saude-digital-em-estados-democraticos-de-direito-lgpd-na-saude-digital/1620615610#a-289281868" target="_blank" rel="noopener noreferrer">https://www.jusbrasil.com.br/doutrina/secao/1-fundamentos-e-desafios-da-regulacao-da-saude-digital-em-estados-democraticos-de-direito-lgpd-na-saude-digital/1620615610#a-289281868</a> </li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">Brasil. (14 de agosto de 2018). <em>Lei 13.709/2018</em>. Fonte: Presidência da República: <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank" rel="noopener noreferrer">https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm</a></li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">Datasus. (2012). <em>Saúde Digital</em> . Fonte: Datasus : <a href="https://datasus.saude.gov.br/saudedigital/" target="_blank" rel="noopener noreferrer">https://datasus.saude.gov.br/saudedigital/</a></li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">European Union. (27 de april de 2016). <em>General Data Protection Regulation (GDPR)</em>. Fonte: Intersoft Consulting: <a href="https://gdpr-info.eu/" target="_blank" rel="noopener noreferrer">https://gdpr-info.eu/</a></li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">Filho, A. D., & Ferrari, I. (2022). Uso de big data em saúde no Brasil: perspectivas e desafios de conformidade com a LGPD. Em F. Aith, & A. B. Dallari, <em>LGPD na Saúde Digital</em> (pp. 2013-229). São Paulo : Revista dos Tribunais.<a href="https://www.jusbrasil.com.br/doutrina/secao/11-uso-de-big-data-em-saude-no-brasil-perspectivas-e-desafios-de-conformidade-com-a-lgpd-lgpd-na-saude-digital/1620615620?utm_source=google&utm_medium=cpc&utm_campaign=doutrina_dsa&utm_term=&utm_content=capitul" target="_blank" rel="noopener noreferrer">https://www.jusbrasil.com.br/doutrina/secao/11-uso-de-big-data-em-saude-no-brasil-perspectivas-e-desafios-de-conformidade-com-a-lgpd-lgpd-na-saude-digital/1620615620?utm_source=google&utm_medium=cpc&utm_campaign=doutrina_dsa&utm_term=&utm_content=capitul</a></li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">OMS, O. M. (16 de julho de 2024). <em>World Health Organization</em>. Fonte: Documentod da OMS: <a href="https://www.who.int/pt/publications/m" target="_blank" rel="noopener noreferrer">https://www.who.int/pt/publications/m</a></li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">Rivelli, F. (2022). Aplicação e Conformidade dos Dados Sensíveis na Saúde Digital e os Preceitos da LGPD. Em F. Aith, & A. B. Dallari, <em>LGPD na Saúde Digital</em> (pp. 183-198). São Paulo : Revista dos Tribunais . </li>
-												<li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">USA. (20 de aug de 1996). <em>US Departemnet Of Health an Human Service</em>. Fonte: Health Insurance Portability and Accountability Act of 1996: <a href="https://aspe.hhs.gov/reports/health-insurance-portability-accountability-act-1996" target="_blank" rel="noopener noreferrer">https://aspe.hhs.gov/reports/health-insurance-portability-accountability-act-1996</a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="accordion-item">
-								<h5 class="accordion-header" id="heading1-item4">
-									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-item4" aria-expanded="false" aria-controls="collapse1-item4">Aula 4</button>
-								</h5>
-								<div id="collapse1-item4" class="accordion-collapse collapse" aria-labelledby="heading1-item4" data-bs-parent="">
-									<div class="accordion-body">
-										<div class="list">
-											<ul class="list-group">
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Lei no 8080, de 19 de setembro de 1990. Dispõe sobre as condições para a promoção, proteção e recuperação da saúde, a organização e o funcionamento dos serviços correspondentes e dá outras providências. <strong>Diário Oficial da União</strong>, 20 set. 1990. Disponível em: <a href="https://www.planalto.gov.br/ccivil_03/leis/l8080.htm" target="_blank" rel="noopener noreferrer">https://www.planalto.gov.br/ccivil_03/leis/l8080.htm</a>. Acesso em 7 de julh. 2024.</li>
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Lei nº 8.142, de 28 de dezembro de 1990. Dispõe sobre a participação da comunidade na gestão do Sistema Único de Saúde (SUS) e sobre as transferências intergovernamentais de recursos financeiros na área da saúde e dá outras providências. <strong>Diário Oficial da União</strong>, 31 dez. 1990. Disponível em: <a href="https://www.planalto.gov.br/ccivil_03/leis/l8142.htm" target="_blank" rel="noopener noreferrer">https://www.planalto.gov.br/ccivil_03/leis/l8142.htm</a>. Acesso em 7 de julh. 2024.</li>
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. <strong>Decreto nº 100, de 16 de abril de 1991</strong> [Revogado]. Institui a Fundação Nacional de Saúde e dá outras providências. Disponível em: <a href="https://www.planalto.gov.br/ccivil_03/decreto/1990-1994/d0100.htm" target="_blank" rel="noopener noreferrer">https://www.planalto.gov.br/ccivil_03/decreto/1990-1994/d0100.htm</a>. Acesso em 7 de julh. 2024.</li>
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Gabinete do Ministro. <strong>Portaria nº 589, de 20 de maio de 2015</strong>. Institui a Política Nacional de Informação e Informática em Saúde (PNIIS). Disponível em:  <a href="https://bvsms.saude.gov.br/bvs/saudelegis/gm/2015/prt0589_20_05_2015.html" target="_blank" rel="noopener noreferrer">https://bvsms.saude.gov.br/bvs/saudelegis/gm/2015/prt0589_20_05_2015.html</a>. Acesso em 10 de julh. 2024.</li>
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Gabinete do Ministro. Portaria nº 1.768, de 30 de julho de 2021. Altera o Anexo XLII da Portaria de Consolidação GM/MS nº 2, de 28 de setembro de 2017, para dispor sobre a Política Nacional de Informação e Informática em Saúde (PNIIS). <strong>Diário Oficial da União</strong>: Seção 1, Brasília, DF, n. 144, p. 45, 02 ago. 2021. Disponível em: <a href="https://www.in.gov.br/en/web/dou/-/portaria-gm/ms-n-1.768-de-30-de-julho-de-2021-335472332" target="_blank" rel="noopener noreferrer">https://www.in.gov.br/en/web/dou/-/portaria-gm/ms-n-1.768-de-30-de-julho-de-2021-335472332</a>. Acesso em: 10 de jul. 2024.</li>
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Secretaria-Executiva. Departamento de Monitoramento e Avaliação do SUS. <strong>Política Nacional de Informação e Informática em Saúde</strong>. Brasília: Ministério da Saúde, 2016. 56 p. Disponível em: <a href="https://www.gov.br/saude/pt-br/composicao/seidigi/publicacoes/pniis-2016.pdf/view" target="_blank" rel="noopener noreferrer">https://www.gov.br/saude/pt-br/composicao/seidigi/publicacoes/pniis-2016.pdf/view</a>. Acesso em: 15 jul. 2024.</li>
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Gabinete do Ministro. Portaria nº 1.434, de 28 de maio de 2020. Institui o Programa Conecte SUS e altera a Portaria de Consolidação nº 1/GM/MS, de 28 de setembro de 2017, para instituir a Rede Nacional de Dados em Saúde e dispor sobre a adoção de padrões de interoperabilidade em saúde. <strong>Diário Oficial da União</strong>: Seção 1, Brasília, DF, n. 102, p. 231, 29 maio 2020. Disponível em: <a href="https://www.in.gov.br/en/web/dou/-/portaria-n-1.434-de-28-de-maio-de-2020-259143327" target="_blank" rel="noopener noreferrer">https://www.in.gov.br/en/web/dou/-/portaria-n-1.434-de-28-de-maio-de-2020-259143327</a>. Acesso em: 7 de jul. 2024.</li>
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Gabinete do Ministro. <strong>Portaria nº 545, de 20 de maio de 1993</strong>. Estabelece normas e procedimentos reguladores do processo de descentralização da gestão das ações e serviços de saúde, através da Norma Operacional Básica - SUS 01/93. Disponível em: <a href="https://bvsms.saude.gov.br/bvs/saudelegis/gm/1993/prt0545_20_05_1993.html" target="_blank" rel="noopener noreferrer">https://bvsms.saude.gov.br/bvs/saudelegis/gm/1993/prt0545_20_05_1993.html</a>. Acesso em 7 de julh. 2024.</li>
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. <strong>A experiência brasileira em sistemas de informação em saúde</strong>. Ministério da Saúde, Organização Pan-Americana da Saúde, Fundação Oswaldo Cruz. Brasília: Editora do Ministério da Saúde, 2009. (Série B. Textos Básicos de Saúde).</li>
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Secretaria Executiva. Departamento de Informática do SUS. <strong>DATASUS Trajetória 1991-2002</strong>. Brasília: Ministério da Saúde, 2002. Disponível em: <a href="https://bvsms.saude.gov.br/bvs/publicacoes/trajetoria_datasus.pdf" target="_blank" rel="noopener noreferrer">https://bvsms.saude.gov.br/bvs/publicacoes/trajetoria_datasus.pdf</a>. Acesso em: 10 jul. 2024.</li>
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. <strong>Decreto n° 4.194, de 11 de abril de 2002</strong> [Revogado]. Disponível em: <a href="https://www.planalto.gov.br/ccivil_03/decreto/2002/d4194.htm#:~:text=DECRETO%20N%C2%BA%204.194%2C%20DE%2011%20DE%20ABRIL%20DE%202002.&text=Aprova%20a%20Estrutura%20Regimental%20e,que%20lhe%20confere%20o%20art" target="_blank" rel="noopener noreferrer">https://www.planalto.gov.br/ccivil_03/decreto/2002/d4194.htm#:~:text=DECRETO%20N%C2%BA%204.194%2C%20DE%2011%20DE%20ABRIL%20DE%202002.&text=Aprova%20a%20Estrutura%20Regimental%20e,que%20lhe%20confere%20o%20art</a>. Acesso em: 10 jul. 2024.</li>
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Secretaria Executiva. Departamento de Informação e Informática do SUS. <strong>Política Nacional de Informação e Informática em Saúde Proposta Versão 2.0</strong>. Brasília, 29 mar. 2024.  Disponível em: <a href="https://bvsms.saude.gov.br/bvs/publicacoes/PoliticaInformacaoSaude29_03_2004.pdf" target="_blank" rel="noopener noreferrer">https://bvsms.saude.gov.br/bvs/publicacoes/PoliticaInformacaoSaude29_03_2004.pdf</a>. Acesso em: 15 jul. 2024.</li>
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">CAVALCANTE, R. B.; PINHEIRO, M. M. K. Política Nacional de Informação e Informática em Saúde: avanços e limites atuais. <strong>Perspectivas em Gestão & Conhecimento</strong>, v. 1, n. 2, p. 91–104, 2011. Disponível em: <a href="https://periodicos.ufpb.br/ojs2/index.php/pgc/article/view/10487" target="_blank" rel="noopener noreferrer">https://periodicos.ufpb.br/ojs2/index.php/pgc/article/view/10487</a>. Acesso em: 15 jul. 2024.</li>
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">FONSECA, F. C. S. Sistemas de Informação da Atenção à Saúde: da fragmentação à interoperabilidade. <em>In</em>: BRASIL. Ministério da Saúde. Secretaria de Atenção à Saúde. Departamento de Regulação, Avaliação e Controle. <strong>Sistemas de Informação da Atenção à Saúde</strong>: contextos históricos, avanços e perspectivas no SUS. Organização Pan-Americana da Saúde: Brasília, 2015. p. 9-22.166 p. Disponível em: <a href="https://www.escoladesaude.pr.gov.br/arquivos/File/sistemas_informacao_atencao_saude_contextos_historicos.pdf" target="_blank" rel="noopener noreferrer">https://www.escoladesaude.pr.gov.br/arquivos/File/sistemas_informacao_atencao_saude_contextos_historicos.pdf</a></li>
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">CAVALCANTE, R. B.; PINHEIRO, M. M. K. Política Nacional de Informação e Informática em Saúde: avanços e limites atuais. <strong>Perspectivas em Gestão & Conhecimento</strong>, v. 1, n. 2, p. 91-104, 2011. Disponível em: <a href="https://periodicos.ufpb.br/ojs2/index.php/pgc/article/view/10487" target="_blank" rel="noopener noreferrer">https://periodicos.ufpb.br/ojs2/index.php/pgc/article/view/10487</a>. Acesso em: 10 jul. 2024.</li>
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">COELHO NETO, G. C.; CHIORO, A. Afinal, quantos Sistemas de Informação em Saúde de base nacional existem no Brasil?. <strong>Cadernos de Saúde Pública</strong>, v. 37, n. 7, 2021. Disponível em: <a href="https://www.scielo.br/j/csp/a/RzNmvjHqmLhPHZp6gfcdC6H/?format=pdf&lang=pt" target="_blank" rel="noopener noreferrer">https://www.scielo.br/j/csp/a/RzNmvjHqmLhPHZp6gfcdC6H/?format=pdf&lang=pt</a></li>
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">CONFERÊNCIA NACIONAL DE SAÚDE. <strong>Relatório Final da 5ª Conferência Nacional de Saúde</strong> (CNS). Brasília, 1975. Disponível em: <a href="https://www.gov.br/conselho-nacional-de-saude/pt-br/centrais-de-conteudo/publicacoes/relatorios/relatorio-final-da-5a-conferencia-nacional-de-saude/view#:~:text=A%205%C2%AA%20Confer%C3%AAncia%20Nacional%20de,Nacional%20de%20Vigil%C3%A2ncia%20Epidemiol%C3%B3gica%3B%204" target="_blank" rel="noopener noreferrer">https://www.gov.br/conselho-nacional-de-saude/pt-br/centrais-de-conteudo/publicacoes/relatorios/relatorio-final-da-5a-conferencia-nacional-de-saude/view#:~:text=A%205%C2%AA%20Confer%C3%AAncia%20Nacional%20de,Nacional%20de%20Vigil%C3%A2ncia%20Epidemiol%C3%B3gica%3B%204</a>. Acesso em 10 de julh. 2024.</li>
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">JANNNUZZI, P. M. Estatísticas e Políticas Públicas orientadas por evidências no Brasil: o caso das Políticas de Desenvolvimento Social nos anos 2000. <strong>Revista Brasileira de Geografia</strong>, v. 64, n. 1, p. 37-54, 2019. Disponível em: <a href="https://rbg.ibge.gov.br/index.php/rbg/article/view/2096" target="_blank" rel="noopener noreferrer">https://rbg.ibge.gov.br/index.php/rbg/article/view/2096</a>. Acesso em: 7 jul. 2024.</li>
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">JORGE, M. H. P.; LAURENTI, R.; GOTLIEB, S. L. D. O sistema de Informações sobre Mortalidade – SIM: Concepção, Implantação e Avaliação. <em>In</em>: BRASIL. Ministério da Saúde. <strong>A experiência brasileira em sistemas de informação em saúde</strong>. Ministério da Saúde, Organização Pan-Americana da Saúde, Fundação Oswaldo Cruz. Brasília: Editora do Ministério da Saúde, 2009.</li>
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">MARIN, H. F. Sistemas de informação em saúde: considerações gerais. <strong>J. Health Inform.</strong>, v. 2, n. 1, p. 20-4, 2010. Disponível em: <a href="https://jhi.sbis.org.br/index.php/jhi-sbis/article/view/4/52" target="_blank" rel="noopener noreferrer">https://jhi.sbis.org.br/index.php/jhi-sbis/article/view/4/52</a>. Acesso em: 7 jul. 2024.</li>
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">MENICUCCI, T. M. G. História da reforma sanitária brasileira e do Sistema Único de Saúde: mudanças, continuidades e a agenda atual. <strong>História, Ciências, Saúde-Manguinhos</strong>, Rio de Janeiro, v. 21, n. 1, p. 77–92, jan. 2014. Disponível em: <a href="https://www.scielo.br/j/hcsm/a/bVMCvZshr9RxtXpdh7YPC5x/?format=pdf&lang=pt" target="_blank" rel="noopener noreferrer">https://www.scielo.br/j/hcsm/a/bVMCvZshr9RxtXpdh7YPC5x/?format=pdf&lang=pt</a></li>
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">REZENDE, F. A. V. S.; SOARES, M. F.; REIS, A. C. Os sistemas de informação em Saúde no Sistema Único de Saúde. <em>In</em>: LEANDRO, B. D. S.; REZENDE, F. A. V. S; PINTO, J. M. C. <strong>Informações e registros em saúde e seus usos no SUS</strong>. Rio de Janeiro: Editora Fiocruz, 2020.</li>
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">RISI JUNIOR, J. B. Informação e Saúde no Brasil: a contribuição da Ripsa. <strong>Ciência & Saúde Coletiva</strong>, v. 11, n. 4, p. 1049-1053, 2006. Disponível em: <a href="http://www.scielo.br/pdf/csc/v11n4/32340.pdf" target="_blank" rel="noopener noreferrer">http://www.scielo.br/pdf/csc/v11n4/32340.pdf</a>. Acesso em: 7 jul. 2024.</li>
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">VIACAVA, F. Informações em saúde: a importância dos inquéritos populacionais. <strong>Ciência & Saúde Coletiva</strong>, v. 7, n. 4, p. 607-621, 2002. Disponível em: <a href="https://www.scielo.br/j/csc/a/j8mV4fvjSk7K9brzbdCj77J/?format=pdf&lang=pt" target="_blank" rel="noopener noreferrer">https://www.scielo.br/j/csc/a/j8mV4fvjSk7K9brzbdCj77J/?format=pdf&lang=pt</a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- Fim do Accordion -->
+						<p class="mb-1">Fábio Baccheretti Vitor</p>
+						<p class="small text-muted"><em>Secretário de Estado de Saúde</em></p>
 					</div>
-					
-				</div>
-			</div>
-		`,
-  },
-  bibliografiaMod2: {
-    ariaLabel: "bibliografiaMod2",
-    modalSize: "modal-xl",
-    modalTitle: "Bibliografia Módulo 2",
-    modalBody: `
-			<div class="row justify-content-center pt-5">
-				<div class="col-12 col-md-11">
+
+					<span class="h5 mb-3 d-block">Subsecretaria de Vigilância em Saúde (SUBVS)</span>
+
 					<div class="mb-5">
-						<!-- Accordion -->
-						<div class="accordion accordion-flush" id="accordionExample2">
-							<div class="accordion-item">
-								<h5 class="accordion-header" id="heading1-item1">
-									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-item1" aria-expanded="true" aria-controls="collapse1-item1">Aula 1</button>
-								</h5>
-								<div id="collapse1-item1" class="accordion-collapse collapse" aria-labelledby="heading1-item1" data-bs-parent="">
-									<div class="accordion-body">
-										<div class="list">
-											<ul class="list-group">
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. <strong>A experiência brasileira em sistemas de informação em saúde</strong>. Organização Pan-Americana da Saúde, Fundação Oswaldo Cruz. – Brasília : Editora do Ministério da Saúde, 2009. 1 v. (Série B. Textos Básicos de Saúde).</li>
+						<p class="mb-1">Eduardo Campos Prosdocimi</p>
+						<p class="small text-muted"><em>Sub-Secretário</em></p>
 
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. <strong>A experiência brasileira em sistemas de informação em saúde</strong>. Organização Pan-Americana da Saúde, Fundação Oswaldo Cruz. Brasília : Editora do Ministério da Saúde, 2009. 2 v. (Série B. Textos Básicos de Saúde).</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">JORGE, M. H. P. M.; LAURENTI, R.; GOTLIEB, S. L. D. Análise da qualidade das estatísticas vitais brasileiras: a experiência de implantação do SIM e do SINASC. <strong>Ciência & Saúde Coletiva</strong>, v. 12, n. 3, p. 643-54, 2007. Disponível em: <a href='https://doi.org/10.1590/S1413-81232007000300014' target='_blank'>https://doi.org/10.1590/S1413-81232007000300014</a>.</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">MORAIS, R. M.; COSTA, A. L. Uma avaliação do Sistema de Informações sobre Mortalidade. <strong>Saúde em Debate</strong>, v. 41, n. especial, p. 101-117, 2017. Disponível em: <a href='https://www.scielo.br/j/sdeb/a/FJXQhtgNM3S5qvGHNfLMk3Q/?format=pdf&lang=pt' target='_blank'>https://www.scielo.br/j/sdeb/a/FJXQhtgNM3S5qvGHNfLMk3Q/?format=pdf&lang=pt</a></li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">SZWARCWALD, C. L. <em>et al.</em> Busca ativa de óbitos e nascimentos no Nordeste e na Amazônia Legal: Estimação das coberturas do SIM e do SINASC nos municípios brasileiros. In: BRASIL. Ministério da Saúde. Secretaria de Vigilância em Saúde. Departamento de Análise de Situação em Saúde. <strong>Saúde Brasil 2010</strong>: uma análise da situação de saúde e de evidências selecionadas de impacto de ações de vigilância em saúde. Brasília: MS, 2011. p. 79-98. Disponível em: <a href='https://bvsms.saude.gov.br/bvs/publicacoes/saude_brasil_2010.pdf' target='_blank'>https://bvsms.saude.gov.br/bvs/publicacoes/saude_brasil_2010.pdf</a></li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Secretaria de Vigilância em Saúde. Departamento de Análise Epidemiológica e Vigilância de Doenças Não Transmissíveis. <strong>Declaração de Nascido Vivo</strong>: manual de instruções para preenchimento. 4. ed. Brasília: Ministério da Saúde, 2022. Disponível em: <a href='https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/vigilancia/declaracao-de-nascido-vivo-manual-de-instrucoes-para-preenchimento/view' target='_blank'>https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/vigilancia/declaracao-de-nascido-vivo-manual-de-instrucoes-para-preenchimento/view</a></li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">PEDRAZA, D. F. Sistema de informações sobre nascidos vivos: uma análise da qualidade com base na literatura. <strong>Cad saúde colet</strong>., v. 29, n. 1, p. 143-52. Disponível em: <a href='https://www.scielo.br/j/cadsc/a/JjKJcZS5FNxLLQ7BTH6NQRr/?format=pdf&lang=pt' target='_blank'>https://www.scielo.br/j/cadsc/a/JjKJcZS5FNxLLQ7BTH6NQRr/?format=pdf&lang=pt</a></li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">PELISSARI, M. CNES como instrumento de gestão e sua importância no planejamento das ações em saúde. <strong>Revista de Saúde Pública do Paraná</strong>, v. 2, n. 1, p. 159-65, 2019. Disponível em: <a href='http://revista.escoladesaude.pr.gov.br/index.php/rspp/article/view/210' target='_blank'>http://revista.escoladesaude.pr.gov.br/index.php/rspp/article/view/210</a></li>
-												
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ROCHA, T. A. H. Cadastro Nacional de Estabelecimentos de Saúde: evidências sobre a confiabilidade de dados. <strong>Ciência & Saúde Coletiva</strong>, v. 23, n. 1, p. 229-40, 2018. Disponível em: <a href='https://www.scielo.br/j/csc/a/j7fDnf87zJTpCLKH3DQYzLq/?format=pdf&lang=pt' target='_blank'>https://www.scielo.br/j/csc/a/j7fDnf87zJTpCLKH3DQYzLq/?format=pdf&lang=pt</a></li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"> </li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"> </li>
-												
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"> </li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"> </li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"> </li>
-												
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"> </li>
-												
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="accordion-item">
-								<h5 class="accordion-header" id="heading1-item2">
-									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-item2" aria-expanded="false" aria-controls="collapse1-item2">Aula 2</button>
-								</h5>
-								<div id="collapse1-item2" class="accordion-collapse collapse" aria-labelledby="heading1-item2" data-bs-parent="">
-									<div class="accordion-body">
-										<div class="list">
-											<ul class="list-group">
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. <strong>SINAN: normas e rotinas</strong>. 2. ed. Brasília: Editora do Ministério da Saúde, 2007. Disponível em: <a href='https://portalsinan.saude.gov.br/images/documentos/Aplicativos/sinan_net/Manual_Normas_e_Rotinas_2_edicao.pdf' target='_blank'>https://portalsinan.saude.gov.br/images/documentos/Aplicativos/sinan_net/Manual_Normas_e_Rotinas_2_edicao.pdf</a></li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. <strong>Manual Técnico Do Sistema De Informação Hospitalar</strong>. Brasília: Ministério da Saúde, 2007. (Série A. Normas e Manuais Técnicos). Disponível em: <a href='https://bvsms.saude.gov.br/bvs/publicacoes/07_0066_M.pdf' target='_blank'>https://bvsms.saude.gov.br/bvs/publicacoes/07_0066_M.pdf</a></li>
-												
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Secretaria de Atenção à Saúde. Departamento de Regulação, Avaliação e Controle. Coordenação Geral de Sistemas de Informação. <strong>Manual Técnico Operacional SIA/SUS - Sistema de Informações Ambulatoriais:</strong> aplicativos auxiliáres e de captação da produção ambulatorial APAC Magnético – BPA Magnético - VERSIA – DE-PARA – FPO Magnético. Brasília, DF: Ministério da Saúde, 2010. Disponível em: <a href='http://www1.saude.rs.gov.br/dados/1273242960988Manual_Operacional_SIA2010.pdf' target='_blank'>http://www1.saude.rs.gov.br/dados/1273242960988Manual_Operacional_SIA2010.pdf</a></li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. <strong>Portaria de Consolidação no 4, de 28 de Setembro de 2017</strong>. Consolidação das normas sobre os sistemas e os subsistemas do Sistema Único de Saúde. Brasília, DF: Ministério da Saúde, 2017. Disponível em: <a href='https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/z/zika-virus/publicacoes/portaria-de-consolidacao-no-4-de-28-de-setembro-de-2017.pdf/view' target='_blank'>https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/z/zika-virus/publicacoes/portaria-de-consolidacao-no-4-de-28-de-setembro-de-2017.pdf/view</a>.</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. <strong>Portaria no 4, de 28 de janeiro de 2021</strong>. Institui os prazos para o envio da produção da Atenção Primária à Saúde para o Sistema de Informação em Saúde para a Atenção Básica (SISAB) a partir de 1o de janeiro de 2021. 20. ed. [s.l: s.n.]. v. Seção 1, p. 94.</li>
-												
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Secretaria de Vigilância em Saúde e Ambiente. Departamento do Programa Nacional de Imunizações e Doenças Imunopreviníveis. <strong>Guia de manejo e tratamento de influenza 2023</strong>. Brasília: MS, 2023. Disponível em: <a href='https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/influenza/guia-de-manejo-e-tratamento-de-influenza-2023/view' target='_blank'>https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/influenza/guia-de-manejo-e-tratamento-de-influenza-2023/view</a>. </li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Portaria GM/MS no 3.148, de 6 de fevereiro 2024. Altera o Anexo 1 do Anexo V à Portaria de consolidação GM/MS no 4, de 2017. 31. ed. <strong>Diário Oficial da União</strong>: Seção 1, Brasília, DF, v. 31, p. 87. 15 fev. 2024. Disponível em: <a href='https://www.in.gov.br/en/web/dou/-/portaria-gm/ms-n-3.148-de-6-de-fevereiro-de-2024-542935418' target='_blank'>https://www.in.gov.br/en/web/dou/-/portaria-gm/ms-n-3.148-de-6-de-fevereiro-de-2024-542935418</a></li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. <strong>Portaria GM/MS no 1.412, de 10 de julho de 2013</strong>. Institui o Sistema de Informação em Saúde para a Atenção Básica (SISAB). Disponível em: <a href='https://bvsms.saude.gov.br/bvs/saudelegis/gm/2013/prt1412_10_07_2013.html' target='_blank'>https://bvsms.saude.gov.br/bvs/saudelegis/gm/2013/prt1412_10_07_2013.html</a></li>
-												
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">RIO DE JANEIRO. Secretária de Estado de Saúde. Sistema de Vigilância Epidemiológica da Gripe – SIVEP-Gripe. <strong>Casos de Síndrome Respiratória Aguda Grave (SRAG)</strong> – Dados completos. Nota Técnica. Rio de Janeiro: SES/RJ, , [s.d.]. Disponível em: <a href='https://sistemas.saude.rj.gov.br/tabnetbd/sivep_gripe/SIVEP_Gripe.pdf' target='_blank'>https://sistemas.saude.rj.gov.br/tabnetbd/sivep_gripe/SIVEP_Gripe.pdf</a>. Acesso em: 15 jul. 2024</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">CASTRO, D. M. <em>et al</em>. Impacto da qualidade da atenção primária à saúde na redução das internações por condições sensíveis. <strong>Cadernos de Saúde Pública</strong>, v. 36, n. 11, 2020. Disponível em: <a href='https://www.scielo.br/j/csp/a/5tqLFcwZ6qCthTMGwFBswzM/?format=pdf&lang=pt' target='_blank'>https://www.scielo.br/j/csp/a/5tqLFcwZ6qCthTMGwFBswzM/?format=pdf&lang=pt</a></li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">CERQUEIRA, D. <em>et al</em>. As variáveis existentes e as mudanças ocorridas. Em: CERQUEIRA, D. <em>et al</em>. (eds.). <strong>Uma Análise da Base de Dados do Sistema de Informação Hospitalar entre 2001 e 2018</strong>. Rio de Janeiro: Ipea, 2019. p. 19-36. Disponível em: <a href='https://www.ipea.gov.br/atlasviolencia/artigo/175/uma-analise-da-base-de-dados-do-sistema-de-informacao-hospitalar-entre-2001-e-2018' target='_blank'>https://www.ipea.gov.br/atlasviolencia/artigo/175/uma-analise-da-base-de-dados-do-sistema-de-informacao-hospitalar-entre-2001-e-2018</a></li>
-												
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">COELHO, G. C.; ANDREAZZA, R.; CHIORO, A. Integração entre os sistemas nacionais de informação em saúde: o caso do e-SUS Atenção Básica. <strong>Rev. Saúde Pública</strong>, v. 55, 19 nov. 2021. Disponível em: <a href='https://rsp.fsp.usp.br/artigo/integracao-entre-os-sistemas-nacionais-de-informacao-em-saude-o-caso-do-e-sus-atencao-basica/' target='_blank'>https://rsp.fsp.usp.br/artigo/integracao-entre-os-sistemas-nacionais-de-informacao-em-saude-o-caso-do-e-sus-atencao-basica/</a></li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">COELHO NETO, G. C.; CHIORO, A. Afinal, quantos Sistemas de Informação em Saúde de base nacional existem no Brasil? <strong>Cadernos de Saúde Pública</strong>, v. 37, n. 7, 2021. Disponível em: <a href='https://www.scielo.br/j/csp/a/RzNmvjHqmLhPHZp6gfcdC6H/?format=pdf&lang=pt' target='_blank'>https://www.scielo.br/j/csp/a/RzNmvjHqmLhPHZp6gfcdC6H/?format=pdf&lang=pt</a></li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">GUEDES, R. <em>et al</em>. Avaliação dos dados de mortes por COVID-19 nas bases dos cartórios do RC-Arpen, SIVEP-Gripe e SIM no Brasil em 2020. <strong>Cadernos de Saúde Pública</strong>, v. 39, n. 3, 2023. Disponível em: <a href='https://www.scielo.br/j/csp/a/zndvtctBYDyVJYYJLhgt9mB/?format=pdf&lang=p' target='_blank'>https://www.scielo.br/j/csp/a/zndvtctBYDyVJYYJLhgt9mB/?format=pdf&lang=p</a>t</li>
-												
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">LAGUARDIA, J. <em>et al</em>. Sistema de informação de agravos de notificação em saúde (SINAN): desafios no desenvolvimento de um sistema de informação em saúde. <strong>Epidemiologia e Serviços de Saúde</strong>, v. 13, n. 3, p. 135-146, set. 2004. </li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">LEVCOVITZ, E.; PEREIRA, T. R. C. <strong>SIH/SUS (Sistema AIH)</strong>: uma análise do sistema público de remuneraçäo de internaçöes hospitalares no Brasil-1983-1991. Rio de Janeiro: UERJ; IMS, 1993. (Série Estudos em Saúde Coletiva, n. 57). Disponível em: <a href='https://www.nescon.medicina.ufmg.br/biblioteca/imagem/0281.pdf' target='_blank'>https://www.nescon.medicina.ufmg.br/biblioteca/imagem/0281.pdf</a></li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">MELO, M. A. S.<em> et al</em>. Subnotificação no sinan e fatores gerenciais e operacionais associados: revisão sistemática da literatura. R<strong>evista de Administração da UEG</strong>, v. 9, n. 1, p. 26-26, 2018. Disponível em: <a href='https://www.revista.ueg.br/index.php/revista_administracao/article/view/7445' target='_blank'>https://www.revista.ueg.br/index.php/revista_administracao/article/view/7445</a></li>
-												
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">MENDES, A. C. G. <em>et al</em>. Avaliação do sistema de informações hospitalares - SIH/SUS como fonte complementar na vigilância e monitoramento de doenças de notificação compulsória. <strong>Informe Epidemiológico do SUS</strong>, v. 9, n. 2, p. 67-86, 2000. Disponível em: <a href='https://bvsms.saude.gov.br/bvs/periodicos/informe_epi_sus_v09_n2.pdf' target='_blank'>https://bvsms.saude.gov.br/bvs/periodicos/informe_epi_sus_v09_n2.pdf</a></li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">MUZY, J. <em>et al</em>. Oferta e demanda de procedimentos atribuíveis ao diabetes mellitus e suas complicações no Brasil.<strong> Ciência & Saúde Coletiva</strong>, v. 27, n. 4, p. 1653-1667, abr. 2022. Disponível em: <a href='https://www.scielo.br/j/csc/a/zbYv33HhbcPJqss5nGtpK3n/?format=pdf&lang=pt' target='_blank'>https://www.scielo.br/j/csc/a/zbYv33HhbcPJqss5nGtpK3n/?format=pdf&lang=pt</a></li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">POSTAL, L. <em>et al</em>. Sistema de agendamento online: uma ferramenta do PEC e-SUS APS para facilitar o acesso à Atenção Primária no Brasil. <strong>Ciência & Saúde Coletiva</strong>, v. 26, p. 2023-2034, 2021. Disponível em: <a href='https://www.scielo.br/j/csc/a/xMLGMTVS8LXJhyYYMfQkRtq/?format=pdf&lang=pt' target='_blank'>https://www.scielo.br/j/csc/a/xMLGMTVS8LXJhyYYMfQkRtq/?format=pdf&lang=pt</a></li>
-												
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">RANZANI, O. T.; MARINHO, M. F.; BIERRENBACH, A. L. Utilidade do Sistema de Informação Hospitalar na vigilância da mortalidade materna no Brasil. R<strong>evista Brasileira de Epidemiologia</strong>, v. 26, 2023. Disponível em: <a href='https://www.scielo.br/j/rbepid/a/FsfndN7G4dpjPtDmrTQtyJp/?format=pdf&lang=pt' target='_blank'>https://www.scielo.br/j/rbepid/a/FsfndN7G4dpjPtDmrTQtyJp/?format=pdf&lang=pt</a></li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">SECRETARIA DA SAÚDE DO ESTADO DA BAHIA. Secretaria da Saúde do Estado da Bahia. Superintendência de Vigilância e Proteção da Saúde. Diretoria de Vigilância Epidemiológica. <strong>Guia Rápido SIVEP Gripe</strong>. Disponível em: <a href='https://docs.bvsalud.org/biblioref/2021/03/1147534/guia-rapido-sivep-gripe_agosto-2020.pdf' target='_blank'>https://docs.bvsalud.org/biblioref/2021/03/1147534/guia-rapido-sivep-gripe_agosto-2020.pdf</a>. Acesso em: 15 jul. 2024.</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">VILLELA, D. A. M.; GOMES, M. F. C. O impacto da disponibilidade de dados e informação oportuna para a vigilância epidemiológica. <strong>Cadernos de Saúde Pública</strong>, v. 38, n. 7, 2022. Disponível em: <a href='https://www.scielo.br/j/csp/a/dDSpPy898L4Pj3WPLGxLdqN/?format=pdf&lang=pt' target='_blank'>https://www.scielo.br/j/csp/a/dDSpPy898L4Pj3WPLGxLdqN/?format=pdf&lang=pt</a></li>
-												
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ZACHARIAS, F. C. M. <em>et al</em>. e-SUS Atenção Primária: atributos determinantes para adoção e uso de uma inovação tecnológica. <strong>Cadernos de Saúde Pública</strong>, v. 37, n. 6, 2021. Disponível em: <a href='https://www.scielo.br/j/csp/a/CmLbcjLCR4d6xLvNbyW6Fgr/?format=pdf&lang=pt' target='_blank'>https://www.scielo.br/j/csp/a/CmLbcjLCR4d6xLvNbyW6Fgr/?format=pdf&lang=pt</a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="accordion-item">
-								<h5 class="accordion-header" id="heading1-item3">
-									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-item3" aria-expanded="false" aria-controls="collapse1-item3">Aula 3</button>
-								</h5>
-								<div id="collapse1-item3" class="accordion-collapse collapse" aria-labelledby="heading1-item3" data-bs-parent="">
-									<div class="accordion-body">
-										<div class="list">
-											<ul class="list-group">
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BARCELLOS, C. D. C. <em>et al</em>. Organização espacial, saúde e qualidade de vida: análise espacial e uso de indicadores na avaliação de situações de saúde. <strong>Informe Epidemiológico do SUS</strong>, v. 11, n. 3, p. 129-138, 2002. Disponível em: <a href='https://www.arca.fiocruz.br/handle/icict/713' target='_blank'>https://www.arca.fiocruz.br/handle/icict/713</a></li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. <strong>Lei nº 6.015, de 31 de dezembro de 1976</strong>. Dispõe sobre os registros públicos, e da outras providências. Disponível em: <a href='https://www.planalto.gov.br/ccivil_03/leis/L6015consolidado.htm' target='_blank'>https://www.planalto.gov.br/ccivil_03/leis/L6015consolidado.htm</a></li>
-												
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Saúde Brasil 2020/2021 - uma análise da situação da saúde e da qualidade da informação. Brasília: Ministério da Saúde; <a href='https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/vigilancia/saude_brasil_2020_2021_situacao_saude_web.pdf/@@download/file' target='_blank'>https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/vigilancia/saude_brasil_2020_2021_situacao_saude_web.pdf/@@download/file</a></li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Introdução à Análise de Situação de Saúde. <em>In:</em> <strong>Asis - Análise de Situação de Saúde</strong>. Brasília: Ministério da Saúde; Universidade Federal de Goiás, 2015. (v. 3, Caderno R). Disponível em: <a href='https://svs.aids.gov.br/daent/centrais-de-conteudos/publicacoes/cursos/analise-de-situacao-de-saude-2015-caderno-r.pdf' target='_blank'>https://svs.aids.gov.br/daent/centrais-de-conteudos/publicacoes/cursos/analise-de-situacao-de-saude-2015-caderno-r.pdf</a></li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">CARVALHO, Marilia Sá; SOUZA-SANTOS, Reinaldo. Análise de espaciais em saúde pública: métodos, problemas, perspectivas. <strong>Cadernos de Saúde Pública</strong>, v. 21, n. 2, p. 361-378, 2005. Disponível em: <a href='https://www.scielo.br/j/csp/a/HJ3R3BCkPCbCsk9YTgKqRWN/?format=pdf&lang=pt' target='_blank'>https://www.scielo.br/j/csp/a/HJ3R3BCkPCbCsk9YTgKqRWN/?format=pdf&lang=pt</a></li>
-												
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. <strong>Pesquisa Nacional por Amostra de Domicílios</strong> PNAD 2013. Rio de Janeiro: IBGE, 2013.</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">RISI JÚNIOR, João Baptista. Informação em saúde no Brasil: a contribuição da Ripsa. <strong>Ciência & Saúde Coletiva</strong>, v. 11, n. 4, p. 1049-1053, 2006. Disponível em: <a href='https://www.scielo.br/j/csc/a/YntJzFbXMN69KJkfsNvfMNn/?format=pdf&lang=pt' target='_blank'>https://www.scielo.br/j/csc/a/YntJzFbXMN69KJkfsNvfMNn/?format=pdf&lang=pt</a></li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">MARMOT, M.; WILKINSON, R. G. <strong>Social Determinants of Health</strong>. Oxford: Oxford University Press, 2005.</li>
-												
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">MENDES, E. V. <strong>O cuidado das condições crônicas na Atenção Primária à Saúde:</strong> o imperativo da consolidação da Estratégia da Saúde da Família. Brasília: Organização Pan-Americana da Saúde, 2012.</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. <strong>A experiência brasileira em sistemas de informação em saúde</strong>. v. 1: Produção e disseminação de informações sobre saúde no Brasil Brasília: Organização Pan-Americana da Saúde; Fundação Oswaldo Cruz; Editora do Ministério da Saúde, 2009. Disponível em: <a href='https://bvsms.saude.gov.br/bvs/publicacoes/experiencia_brasileira_sistemas_saude_volume1.pdf' target='_blank'>https://bvsms.saude.gov.br/bvs/publicacoes/experiencia_brasileira_sistemas_saude_volume1.pdf</a></li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ORGANIZACIÓN PANAMERICANA DE LA SALUD. Resúmenes metodológicos em epidemiología: análisis de la situación de salud. <strong>Boletín Epidemiológico</strong>, v. 20, n. 3, p. 1-3, 1999. Disponível em: <a href='https://iris.paho.org/bitstream/handle/10665.2/46302/BE_v20n3.pdf?sequence=1&isAllowed=y' target='_blank'>https://iris.paho.org/bitstream/handle/10665.2/46302/BE_v20n3.pdf?sequence=1&isAllowed=y</a></li>
-												
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ORGANIZAÇÃO PAN-AMERICANA DA SAÚDE. Indicadores de Salud: elementos básicos para el análisis de la situación de salud. <strong>Boletín Epidemiológico</strong>, v. 22, n. 4, p. 1-5, 2001.</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">PAIM, J. The Brazilian health system: history, advances, and challenges. <strong>The Lancet</strong>, v. 377, n. 9779, p. 1778-1797, 2011. Disponível em: <a href='https://repositoriohml.ufba.br/bitstream/ri/3028/1/Per%20int%202011.12.pdf' target='_blank'>https://repositoriohml.ufba.br/bitstream/ri/3028/1/Per%20int%202011.12.pdf</a></li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">SCHWARTZ, Sharon. The fallacy of the ecological fallacy: the potential misuse of a concept and the consequences. <strong>American Journal of Public Health</strong>, v. 84, n. 5, p. 819-824, 1994.</li>
-												
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">SOLAR, O.; IRWIN, A. <strong>A conceptual framework for action on the social determinants of health</strong>. Geneva: World Health Organization, 2010. (Social Determinants of Health Discussion Paper 2). Disponível em: <a href='https://iris.who.int/bitstream/handle/10665/44489/9789241500852_eng.pdf?sequence=1' target='_blank'>https://iris.who.int/bitstream/handle/10665/44489/9789241500852_eng.pdf?sequence=1</a></li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">SOUZA, M. <strong>Sistema de información de salud</strong>: conceptos básicos e implicaciones para las políticas de salud. New York: International Standards for Civil Registration and Vital Statistics Systems, 2011.</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">VIACAVA, F. Informações em saúde: a importância dos inquéritos populacionais. <strong>Ciência & Saúde Coletiva</strong>, v. 7, n. 4, p. 607-621, 2002. Disponível  em: <a href='https://www.scielo.br/j/csc/a/j8mV4fvjSk7K9brzbdCj77J/?format=pdf&lang=pt' target='_blank'>https://www.scielo.br/j/csc/a/j8mV4fvjSk7K9brzbdCj77J/?format=pdf&lang=pt</a></li>
-												
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">WALDMAN, Eliseu Alves; ROSA, Tereza Etsuko Costa. <strong>Vigilância em saúde pública</strong>. São Paulo, Universidade de São Paulo. Faculdade de Saúde Pública, 1998. Disponível em: <a href='https://bvsms.saude.gov.br/bvs/publicacoes/saude_cidadania_volume07.pdf' target='_blank'>https://bvsms.saude.gov.br/bvs/publicacoes/saude_cidadania_volume07.pdf</a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="accordion-item">
-								<h5 class="accordion-header" id="heading1-item4">
-									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-item4" aria-expanded="false" aria-controls="collapse1-item4">Aula 4</button>
-								</h5>
-								<div id="collapse1-item4" class="accordion-collapse collapse" aria-labelledby="heading1-item4" data-bs-parent="">
-									<div class="accordion-body">
-										<div class="list">
-											<ul class="list-group">
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BARCELLOS, C.; XAVIER, D. R. As diferentes fases, os seus impactos e os desafios da pandemia de covid-19 no Brasil. <strong>Revista Eletrônica de Comunicação, Informação & Inovação em Saúde</strong>, v. 16, n. 2, 2022. Disponível em: <a href='https://www.reciis.icict.fiocruz.br/index.php/reciis/article/view/3349' target='_blank'>https://www.reciis.icict.fiocruz.br/index.php/reciis/article/view/3349</a>. Acesso em: 26 jun. 2024.</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. <strong>Portaria nº 1.839, de 27 julho de 2020</strong>. Altera a Portaria de Consolidação nº 1/GM/MS, de 28 de setembro de 2017, para dispor sobre as ações que envolvam o uso de dados e indicadores para saúde pública no âmbito do Sistema Único de Saúde (SUS), e sobre o Módulo de Gestão de Dados e Indicadores (MGDI). Disponível em: <a href='https://bvsms.saude.gov.br/bvs/saudelegis/gm/2020/prt1839_28_07_2020.html#:~:text=Altera%20a%20Portaria%20de%20Consolida%C3%A7%C3%A3o,Dados%20e%20Indicadores%20(MGDI)' target='_blank'>https://bvsms.saude.gov.br/bvs/saudelegis/gm/2020/prt1839_28_07_2020.html#:~:text=Altera%20a%20Portaria%20de%20Consolida%C3%A7%C3%A3o,Dados%20e%20Indicadores%20(MGDI)</a></li>
-												
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">CARVALHO, C.C. <em>et al</em>. Análise comparativa de classificações de vulnerabilidade para municípios g100. <strong>Revista Brasileira de Estudos de População</strong> - REBEP, v. 40, p. 1-20, 2023. Disponível em: <a href='https://www.scielo.br/j/rbepop/a/x3WRtg5F7LyLwtgszQtxhxx/?format=html&lang=pt#' target='_blank'>https://www.scielo.br/j/rbepop/a/x3WRtg5F7LyLwtgszQtxhxx/?format=html&lang=pt#</a>. Acesso em: 26 jun. 2024.</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">FRIEBEL, R.; STEVENTON, A. Composite measures of healthcare quality: sensible in theory, problematic in practice. <strong>BMJ Qual Saf</strong>., 17 set. 2018. Disponível em: <a href='https://qualitysafety.bmj.com/content/early/2018/09/16/bmjqs-2018-008280.info' target='_blank'>https://qualitysafety.bmj.com/content/early/2018/09/16/bmjqs-2018-008280.info</a>. Acesso em: 26 jun. 2024. </li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">GUIMARÃES, J. R. S.; JANNUZZI, P. IDH, indicadores sintéticos e suas aplicações em políticas públicas: uma análise crítica. <strong>Revista Brasileira de Estudos Urbanos e Regionais</strong>, v. 7, n. 1, p. 73, 2005. <a href='https://doi.org/10.22296/2317-1529.2005v7n1p73' target='_blank'>https://doi.org/10.22296/2317-1529.2005v7n1p73</a>. Acesso em: 26 jun. 2024.</li>
-												
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. <strong>Síntese de indicadores sociais</strong>: uma análise das condições de vida da população brasileira: 2023. Rio de Janeiro: IBGE, 2023. 152 p. (Estudos e pesquisas. Informação demográfica e socioeconômica, n. 53).</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">INSTITUTO DE PESQUISA ECONÔMICA APLICADA. <strong>Atlas da Vulnerabilidade Social</strong>. Disponível em: <a href='http://ivs.ipea.gov.br/' target='_blank'>http://ivs.ipea.gov.br/</a>. Acesso em: 26 jun. 2024. /li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">JANNUZZI, P. M. <strong>Indicadores Sociais no Brasil:</strong> conceitos, fontes de dados e aplicações. 4. ed. Campinas: Editora Alínea; PUC-Campinas, 2009. v. 1. 141 p.</li>
-												
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ORGANISATION FOR ECONOMIC CO-OPERATION AND DEVELOPMENT. <strong>Handbook on Constructing Composite Indicators</strong>: methodology and user guide. Paris: OECD, 2008. Disponível em: <a href='https://www.oecd-ilibrary.org/docserver/9789264043466-en.pdf?expires=1731337906&id=id&accname=guest&checksum=FF811394FD32B23A6A20C53F1F885602' target='_blank'>https://www.oecd-ilibrary.org/docserver/9789264043466-en.pdf?expires=1731337906&id=id&accname=guest&checksum=FF811394FD32B23A6A20C53F1F885602</a>. Acesso em: 26 jun. 2024. </li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ORGANIZAÇÃO MUNDIAL DA SAÚDE. <strong>Constituição da Organização Mundial da Saúde</strong>. Geneva: OMS, 1946. Disponível em: <a href='https://edisciplinas.usp.br/pluginfile.php/5733496/mod_resource/content/0/Constitui%C3%A7%C3%A3o%20da%20Organiza%C3%A7%C3%A3o%20Mundial%20da%20Sa%C3%BAde%20%28WHO%29%20-%201946%20-%20OMS.pdf' target='_blank'>https://edisciplinas.usp.br/pluginfile.php/5733496/mod_resource/content/0/Constitui%C3%A7%C3%A3o%20da%20Organiza%C3%A7%C3%A3o%20Mundial%20da%20Sa%C3%BAde%20%28WHO%29%20-%201946%20-%20OMS.pdf</a></li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ORGANIZAÇÃO PAN-AMERICANA DA SAÚDE. <strong>Indicadores de saúde:</strong> elementos conceituais e práticos. Washington, D.C.: OPAS; 2018. Disponível em: <a href='https://iris.paho.org/bitstream/handle/10665.2/49057/9789275720059_por.pdf?sequence=5&isAllowed=y' target='_blank'>https://iris.paho.org/bitstream/handle/10665.2/49057/9789275720059_por.pdf?sequence=5&isAllowed=y</a>. Acesso em: 26 jun. 2024.</li>
-												
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">PROGRAMA DAS NAÇÕES UNIDAS PARA O DESENVOLVIMENTO. <strong>Índice de Desenvolvimento Humano Municipal Brasileiro</strong>. Brasília: PNUD, Ipea, FJP, 2013. ((Atlas do Desenvolvimento Humano no Brasil 2013). Disponível em: <a href='https://www.undp.org/sites/g/files/zskgke326/files/2023-07/indice_de_desenvolvimento_humano_municipal_brasileiro_-_2013.pdf' target='_blank'>https://www.undp.org/sites/g/files/zskgke326/files/2023-07/indice_de_desenvolvimento_humano_municipal_brasileiro_-_2013.pdf</a></li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">PROGRAMA DAS NAÇÕES UNIDAS PARA O DESENVOLVIMENTO. <strong>Atlas do Desenvolvimento Humano no Brasil</strong>. Disponível em: <a href='http://www.atlasbrasil.org.br/' target='_blank'>http://www.atlasbrasil.org.br/</a>. Acesso em: 26 jun. 2024.</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">PROJETO DE AVALIAÇÃO DO DESEMPENHO DO SISTEMA DE SAÚDE - PROADESS. Fiocruz, Icict. Disponível em: <a href='https://www.proadess.icict.fiocruz.br' target='_blank'>https://www.proadess.icict.fiocruz.br</a>. Acesso em: 26 jun. 2024. </li>
-												
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">REDE INTERAGENCIAL DE INFORMAÇÃO PARA A SAÚDE - RIPSA. <strong>Indicadores básicos para a saúde no Brasil:</strong> conceitos e aplicações. Brasília: Organização Pan-Americana da Saúde, 2008. 349 p. Disponível em: <a href='http://tabnet.datasus.gov.br/tabdata/livroidb/2ed/indicadores.pdf' target='_blank'>http://tabnet.datasus.gov.br/tabdata/livroidb/2ed/indicadores.pdf</a>. Acesso em: 26 jun. 2024.</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">REDE INTERAGENCIAL DE INFORMAÇÃO PARA A SAÚDE - RIPSA. Disponível em: <a href='https://www.ripsa.org.br/' target='_blank'>https://www.ripsa.org.br/</a>. Acesso em: 26 jun. 2024.</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">VALENTE, J. G. Uma avaliação crítica sobre o índice composto na avaliação dos sistemas de saúde no mundo. <strong>Revista Brasileira de Epidemiologia</strong>, v. 5, supl. 1, p. 83-90, 2002. Disponível em: <a href='https://www.scielo.br/j/rbepid/a/JvPdyqdqjwtwWbxxKwb96Zv/?lang=pt' target='_blank'>https://www.scielo.br/j/rbepid/a/JvPdyqdqjwtwWbxxKwb96Zv/?lang=pt</a>. Acesso em: 26 jun. 2024.</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- Fim do Accordion -->
+						<p class="mb-1">Debora Moreira Costa</p>
+						<p class="small text-muted"><em>Coordenação</em></p>
 					</div>
-				</div>
-			</div>
-		`,
-  },
-  bibliografiaMod3: {
-    ariaLabel: "bibliografiaMod3",
-    modalSize: "modal-xl",
-    modalTitle: "Bibliografia Módulo 3",
-    modalBody: `
-			<div class="row justify-content-center pt-5">
-				<div class="col-12 col-md-11">
+
+					<span class="h5 mb-3 d-block">Núcleo de Cooperação com Organismos Nacionais e Internacionais (CONI/SUBVS)</span>
+
 					<div class="mb-5">
-						<!-- Accordion -->
-						<div class="accordion accordion-flush" id="accordionExample2">
-							<div class="accordion-item">
-								<h5 class="accordion-header" id="heading1-item1">
-									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-item1" aria-expanded="true" aria-controls="collapse1-item1">Aula 1</button>
-								</h5>
-								<div id="collapse1-item1" class="accordion-collapse collapse" aria-labelledby="heading1-item1" data-bs-parent="">
-									<div class="accordion-body">
-										<div class="list">
-											<ul class="list-group">
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">INFRAESTRUTURA NACIONAL DE DADOS. BRASIL. Ministério da Gestão e da Inovação em Serviços Públicos. <strong>Infraestrutura Nacional de Dados</strong>. Brasília, DF: Governo Digital, 2023. Disponível em: <a href='https://www.gov.br/governodigital/pt-br/infraestrutura-nacional-de-dados' target='_blank'>https://www.gov.br/governodigital/pt-br/infraestrutura-nacional-de-dados</a>. Acesso em: 30 maio 2025.Serviços e Informações do Brasil</li>
+						<p class="mb-1">Karina Maia Lage</p>
+						<p class="small text-muted"><em>Coordenação</em></p>
 
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">REDE NACIONAL DE DADOS EM SAÚDE (RNDS). BRASIL. Ministério da Saúde. <strong>Rede Nacional de Dados em Saúde (RNDS)</strong>. Brasília, DF: Ministério da Saúde, 2020. Disponível em: <a href='https://www.gov.br/saude/pt-br/composicao/seidigi/rnds' target='_blank'>https://www.gov.br/saude/pt-br/composicao/seidigi/rnds</a>. Acesso em: 30 maio 2025.</li>
-
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="accordion-item">
-								<h5 class="accordion-header" id="heading1-item2">
-									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-item2" aria-expanded="false" aria-controls="collapse1-item2">Aula 2</button>
-								</h5>
-								<div id="collapse1-item2" class="accordion-collapse collapse" aria-labelledby="heading1-item2" data-bs-parent="">
-									<div class="accordion-body">
-										<div class="list">
-											<ul class="list-group">
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Datasus. <strong>Ata da 2ª Reunião CIINFO, 10 de dezembro de 2019</strong> - Versão Final Assinada. Disponível em: <a href='https://datasus.saude.gov.br/wp-content/uploads/2020/05/ATA-da-2a-Reuni%C3%A3o-CIINFO-10.12.2019-Vers%C3%A3o-FINAL-Assinada.pdf' target='_blank'>https://datasus.saude.gov.br/wp-content/uploads/2020/05/ATA-da-2a-Reuni%C3%A3o-CIINFO-10.12.2019-Vers%C3%A3o-FINAL-Assinada.pdf</a>. Acesso em: 13 jul. 2024.</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Gstão e Inovação dos Serviços Públicos. Instituto Nacional de Tecnologia da Informação. <strong>ICP-Brasil</strong>. Disponível em: <a href='https://www.gov.br/iti/pt-br/assuntos/icp-brasil' target='_blank'>https://www.gov.br/iti/pt-br/assuntos/icp-brasil</a>. Acesso em: 13 jul. 2024.</li>
-												
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. <strong>Lei n.º 13.709, de 14 de agosto de 2018</strong>. Dispõe sobre a proteção de dados pessoais e altera a Lei n.º 12.965, de 23 de abril de 2014 (Marco Civil da Internet). Este texto não substitui o publicado no DOU de 15.8.2018, e republicado parcialmente em 15.8.2018 - Edição extra Disponível em: <a href='https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm' target='_blank'>https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm</a>. Acesso em: 13 jul. 2024.</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. <strong>Portaria GM/MS n.º 1796, de 22 de julho de 2019</strong>. Redefine o Comitê de Informação e Informática em Saúde (CIINFO/MS) no âmbito do Ministério da Saúde. Disponível em: <a href='https://bvsms.saude.gov.br/bvs/saudelegis/gm/2019/prt1796_22_07_2019.html' target='_blank'>https://bvsms.saude.gov.br/bvs/saudelegis/gm/2019/prt1796_22_07_2019.html</a>. Acesso em: 13 jul. 2024.</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Secretaria-Executiva. Departamento de Monitoramento e Avaliação do SUS. <strong>Política Nacional de Informação e Informática em Saúde</strong>. Brasília: Ministério da Saúde, 2016. 56 p. Disponível em: <a href='https://bvsms.saude.gov.br/bvs/publicacoes/politica_nacional_infor_informatica_saude_2016.pdf' target='_blank'>https://bvsms.saude.gov.br/bvs/publicacoes/politica_nacional_infor_informatica_saude_2016.pdf</a></li>
-												
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Portaria nº 1.434, de 28 de maio de 2020. Meu SUS Digital: Legislação. <strong>Diário Oficial da União</strong>: Seção 1, Brasília, DF, n. 102, p. 231, 29 maio 2020. Disponível em: <a href='https://www.gov.br/saude/pt-br/composicao/seidigi/meususdigital/legislacao' target='_blank'>https://www.gov.br/saude/pt-br/composicao/seidigi/meususdigital/legislacao</a>. Acesso em: 13 jul. 2024.</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. <strong>Síndrome Respiratória Aguda Grave</strong>. SRAG 2021 e 2022. Disponível em: <a href='https://dados.gov.br/dados/conjuntos-dados/srag-2021-e-2022' target='_blank'>https://dados.gov.br/dados/conjuntos-dados/srag-2021-e-2022</a>. Acesso em: 13 jul. 2024.</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">D. Bender and K. Sartipi, "HL7 FHIR: An Agile and RESTful approach to healthcare information exchange," Proceedings of the 26th IEEE International Symposium on Computer-Based Medical Systems, Porto, Portugal, 2013, pp. 326-331, <a href='https://ieeexplore.ieee.org/document/6627810' target='_blank'>https://ieeexplore.ieee.org/document/6627810</a>. Acesso em: 22 maio 2025.</li>
-												
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BENDER, Duane; SARTIPI, KAMRAN. HL7 FHIR: An Agile and REST-ful approach to healthcare information exchange. <em>In:</em> Proceedings of the 26th IEEE International Symposium on Computer-based Medical Systems; 2013. Portugal. p. 326-31.</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">HARRIS, P. A. <em>et al</em>. Research Electronic Data Capture (REDCap): a metadata-driven methodology and workflow process for providing translational research informatics support. <strong>Journal of Biomedical Informatics</strong>, v. 42, n. 2, p. 377-381, 2009. Disponível em: <a href='https://www.sciencedirect.com/science/article/pii/S1532046408001226' target='_blank'>https://www.sciencedirect.com/science/article/pii/S1532046408001226</a>. Acesso em: 13 jul. 2024.</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">INSTITUTO DE ESTUDOS PARA POLÍTICAS DE SAÚDE. <strong>Panorama IEPS:</strong> Programa TechSUS- Governança e interoperabilidade de dados para a Saúde. (Panorama IEPS nº 4) Disponível em: <a href='https://ieps.org.br/wp-content/uploads/2023/04/panorama-ieps-4-techSUS-saude-digital.pdf' target='_blank'>https://ieps.org.br/wp-content/uploads/2023/04/panorama-ieps-4-techSUS-saude-digital.pdf</a>. Acesso em: 13 jul. 2024.</li>
-												
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">Ayaz M, Pasha MF, Alzahrani MY, Budiarto R, Stiawan D
-												The Fast Health Interoperability Resources (FHIR) Standard: Systematic Literature Review of Implementations, Applications, Challenges and Opportunities. JMIR Med Inform 2021;9(7):e21929. <a href='https://medinform.jmir.org/2021/7/e21929' target='_blank'>https://medinform.jmir.org/2021/7/e21929</a>. Acesso em: 22 maio 2025.
-												</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">VORISEK CN, LEHNE M, KLOPFENSTEIN SAI, MAYER PJ, BARTSCHKE A, HAESE T, THUN S. Fast Healthcare Interoperability Resources (FHIR) for Interoperability in Health Research: Systematic Review JMIR Med Inform 2022;10(7):e35724 <a href='https://medinform.jmir.org/2022/7/e35724/' target='_blank'>https://medinform.jmir.org/2022/7/e35724/</a> Acesso em : 16 maio 2025.</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">PRUD'HOMMEAUX E, COLLINS J, BOOTH D, PETERSON KJ, SOLBRIG HR, JIANG G. Development of a FHIR RDF data transformation and validation framework and its evaluation. J Biomed Inform. 2021 May;117:103755. doi: 10.1016/j.jbi.2021.103755. Epub 2021 Mar 26. PMID: 33781919; PMCID: PMC8131260. <a href='https://pmc.ncbi.nlm.nih.gov/articles/PMC8131260/' target='_blank'>https://pmc.ncbi.nlm.nih.gov/articles/PMC8131260/</a> Acesso em: 16 maio 2025</li>
-												
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">MORAIS NETO, O. L. D.; BARROS, M. B. D. A. Fatores de risco para mortalidade neonatal e pós-neonatal na Região Centro-Oeste do Brasil: linkage entre bancos de dados de nascidos vivos e óbitos infantis. <strong>Caderno de Saúde Pública</strong>, v. 16, n. 2, p. 477-85, 2000. Disponível em: <a href='https://www.scielo.br/j/csp/a/4j5FmhX3rKjGTC8fmHLrZxF/?format=pdf&lang=pt' target='_blank'>https://www.scielo.br/j/csp/a/4j5FmhX3rKjGTC8fmHLrZxF/?format=pdf&lang=pt</a></li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">NAKAMOTO, S. <strong>Bitcoin</strong>: a peer-to-peer electronic cash system. 2008. Disponível em: <a href='https://bitcoin.org/bitcoin.pdf' target='_blank'>https://bitcoin.org/bitcoin.pdf</a>. Acesso em: 13 jul. 2024.</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ORGANISATION FOR ECONOMIC CO-OPERATION AND DEVELOPMENT - OECD. <strong>Health Data Governance for the Digital Age</strong> - 2022. Disponível em: <a href='https://www.oecd-ilibrary.org/sites/68b60796-en/1/3/5/index.html?itemId=/content/publication/68b60796-en&_csp_=06e97bce8767c64c4b34a465198dee0c&itemIGO=oecd&itemContentType=book' target='_blank'>https://www.oecd-ilibrary.org/sites/68b60796-en/1/3/5/index.html?itemId=/content/publication/68b60796-en&_csp_=06e97bce8767c64c4b34a465198dee0c&itemIGO=oecd&itemContentType=book</a>. Acesso em: 13 jul. 2024.</li>
-												
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">SMITH, B.; JONES, J.; BROWN, A. Implementation of HL7 FHIR in Electronic Health Record Systems: Lessons Learned. <strong>IEEE Journal of Biomedical and Health Informatics</strong>, 2017. Disponível em: <a href='https://ieeexplore.ieee.org/document/7892358' target='_blank'>https://ieeexplore.ieee.org/document/7892358</a>. Acesso em: 13 jul. 2024.</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="accordion-item">
-								<h5 class="accordion-header" id="heading1-item3">
-									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-item3" aria-expanded="false" aria-controls="collapse1-item3">Aula 3</button>
-								</h5>
-								<div id="collapse1-item3" class="accordion-collapse collapse" aria-labelledby="heading1-item3" data-bs-parent="">
-									<div class="accordion-body">
-										<div class="list">
-											<ul class="list-group">
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">Araújo, M. S., Brito, M. B. R. de, Pessoa, L. T. S., Cadête, M. L. X., Marques, E. J. G., Coelho, L. N. L., … Resplandes, P. H. S. (2023). IMPACTO DA TELEMEDICINA NA PRESTAÇÃO DE CUIDADOS DE SAÚDE: DESAFIOS E OPORTUNIDADES. <strong>Revista Ibero-Americana De Humanidades, Ciências E Educação</strong>, 9(8), 1300–1306. <a href='https://doi.org/10.51891/rease.v9i8.10990' target='_blank'>https://doi.org/10.51891/rease.v9i8.10990</a></li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">Costa, M. V. da S., Camargos, M. C. S., Viana, S. M. N., & Mendes, U. V. de S. (2025). Avanços e desafios da interoperabilidade no Sistema Único de Saúde. <strong>Journal of Health Informatics</strong>, 17(1), 1112. <a href='https://doi.org/10.59681/2175-4411.v17.2025.1112' target='_blank'>https://doi.org/10.59681/2175-4411.v17.2025.1112</a></li>
-												
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">Rachid, Raquel <em>et al</em>. Saúde digital e a plataformização do Estado brasileiro. <strong>Ciência & Saúde Coletiva [online]</strong>. v. 28, n. 7 [Acessado 22 Maio 2025] , pp. 2143-2153. Disponível em: <<a href='https://doi.org/10.1590/1413-81232023287.14302022' target='_blank'>https://doi.org/10.1590/1413-81232023287.14302022</a>>. ISSN 1678-4561. <a href='https://doi.org/10.1590/1413-81232023287.14302022' target='_blank'>https://doi.org/10.1590/1413-81232023287.14302022</a>.</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">Brasil. Ministério da Saúde. Secretaria-Executiva. Departamento de Informática do SUS. <strong>Estratégia de Saúde Digital para o Brasil 2020-2028</strong> [recurso eletrônico]. / Ministério da Saúde, Secretaria-Executiva, Departamento de Informática do SUS. – Brasília : Ministério da Saúde, 2020. 128 p. : il. <a href='https://bvsms.saude.gov.br/bvs/publicacoes/estrategia_saude_digital_Brasil.pdf' target='_blank'>https://bvsms.saude.gov.br/bvs/publicacoes/estrategia_saude_digital_Brasil.pdf</a></li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ALBUQUERQUE, E. A. Y. <em>et al</em>. Prontuário Eletrônico do Paciente e certificação de software em saúde: Avanços que visam maior segurança dos dados médicos. <strong>Revista Brasileira de Inovação Tecnológica em Saúde</strong> ISSN: 2236-1103, v. 7, n. 2, 2017. <a href='https://revista.ibict.br/ciinf/article/view/5007' target='_blank'>https://revista.ibict.br/ciinf/article/view/5007</a></li>
-												
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">Brasil. Ministério da Saúde. Secretaria de Atenção à Saúde. Departamento de Atenção Básica. <strong>Diretrizes nacionais de implantação da estratégia e-SUS AB</strong> [recurso eletrônico] / Ministério da Saúde, Secretaria de Atenção à Saúde, Departamento de Atenção Básica. – Brasília : Ministério da Saúde, 2014. 11 p. <a href='https://bvsms.saude.gov.br/bvs/publicacoes/diretrizes_nacionais_implantacao_estrategia_esus.pdf' target='_blank'>https://bvsms.saude.gov.br/bvs/publicacoes/diretrizes_nacionais_implantacao_estrategia_esus.pdf</a></li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">Colleti Junior, J., Andrade, A. B. de ., & Carvalho, W. B. de .. (2018). Avaliação do uso de sistemas de prontuário eletrônico nas unidades de terapia intensiva brasileiras. <strong>Revista Brasileira De Terapia Intensiva</strong>, 30(3), 338–346. <a href='https://doi.org/10.5935/0103-507X.20180057' target='_blank'>https://doi.org/10.5935/0103-507X.20180057</a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="accordion-item">
-								<h5 class="accordion-header" id="heading1-item4">
-									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-item4" aria-expanded="false" aria-controls="collapse1-item4">Aula 4</button>
-								</h5>
-								<div id="collapse1-item4" class="accordion-collapse collapse" aria-labelledby="heading1-item4" data-bs-parent="">
-									<div class="accordion-body">
-										<div class="list">
-											<ul class="list-group">
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. MINISTÉRIO DA SAÚDE. Secretarie Executiva. Departamento de Monitoramento e Avaliação do SUS. <strong>Política Nacional de Informação e Informática em Saúde</strong> / Ministério da Saúde, Secretaria Executiva, Departamento de Monitoramento e Avaliação do SUS. – Brasília : Ministério da Saúde, 2016. 56 p. : il. <a href='https://bvsms.saude.gov.br/bvs/publicacoes/politica_nacional_infor_informatica_saude_2016.pdf' target='_blank'>https://bvsms.saude.gov.br/bvs/publicacoes/politica_nacional_infor_informatica_saude_2016.pdf</a></li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">SCHÖNHOLZER TE, PINTO IC, ZACHARIAS FCM, GAETE RAC, SERRANO-GALLARDO MDP. <strong>Implantação do sistema e-SUS Atenção Básica</strong>: impacto no cotidiano dos profissionais da Atenção Primária à Saúde. Rev. Latino-Am. Enfermagem. 2021;29:e3447. <a href='https://www.scielo.br/j/rlae/a/mpkGdqxpRBHH3B7cSyzjSXc/?format=pdf&lang=pt' target='_blank'>https://www.scielo.br/j/rlae/a/mpkGdqxpRBHH3B7cSyzjSXc/?format=pdf&lang=pt</a></li>
-												
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">DE ALENCAR, M. M. V.; ANDRADE, C. R. A. G.; E VÉRAS, A. R. de A. R.; FREITAS NETO, O. de G.; POL-FACHIN, L. <strong>Interoperabilidade e Sistemas de Informações em Saúde</strong>: o que estamos publicando no Brasil?. Brazilian Journal of Health Review, [S. l.], v. 6, n. 4, p. 17771–17790, 2023. DOI: 10.34119/bjhrv6n4-292. <a href='https://ojs.brazilianjournals.com.br/ojs/index.php/BJHR/article/view/62255' target='_blank'>https://ojs.brazilianjournals.com.br/ojs/index.php/BJHR/article/view/62255</a></li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">REIS-SANTOS, BARBARA. <strong>Sistemas de Informação em Saúde: o quanto estamos avançando?</strong>. Epidemiologia e Serviços de Saúde [online]. v. 32, n. 2, 2023. <a href='https://www.scielo.br/j/ress/a/YcfndkbP5rnMXS4chLM4WSr/?lang=pt' target='_blank'>https://www.scielo.br/j/ress/a/YcfndkbP5rnMXS4chLM4WSr/?lang=pt</a></li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">WORLD HEALTH ORGANIZATION. <strong>Global strategy on digital health 2020-2025</strong>. Geneva: World Health Organization; 2021. <a href='https://www.who.int/docs/default-source/documents/gs4dhdaa2a9f352b0445bafbc79ca799dce4d.pdf' target='_blank'>https://www.who.int/docs/default-source/documents/gs4dhdaa2a9f352b0445bafbc79ca799dce4d.pdf</a></li>
-												
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">COSTA, M. V. DA S., CAMARGOS, M. C. S., VIANA, S. M. N., & MENDES, U. V. DE S. <strong>Avanços e desafios da interoperabilidade no Sistema Único de Saúde</strong>. Journal of Health Informatics, 2025, 17(1). <a href='https://jhi.sbis.org.br/index.php/jhi-sbis/article/view/1112' target='_blank'>https://jhi.sbis.org.br/index.php/jhi-sbis/article/view/1112</a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- Fim do Accordion -->
+						<p class="mb-1">Lais da Silva Melo</p>
+						<p class="mb-1">Samira Diniz Resende</p>
+						<p class="mb-1">Viviane Lucia Carneiro</p>
+						<p class="small text-muted"><em>Especialistas em Políticas de Gestão e Saúde</em></p>
 					</div>
-				</div>
-			</div>
-		`,
-  },
-  bibliografiaMod4: {
-    ariaLabel: "bibliografiaMod4",
-    modalSize: "modal-xl",
-    modalTitle: "Bibliografia Módulo 4",
-    modalBody: `
-			<div class="row justify-content-center pt-5">
-				<div class="col-12 col-md-11">
+
+					<span class="h5 mb-3 d-block">Superintendência de Vigilância Epidemiológica</span>
+
 					<div class="mb-5">
-							<p>A bibliografia a seguir é comum às aulas 1, 2, 3 e 4.</p>
-
-							<div class="list">
-											<ul class="list-group">
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ASSOCIAÇÃO BRASILEIRA DE TELEMEDICINA E TELESSAÚDE. Relatório sobre Telemedicina no Brasil. 2023. Disponível em: <a href='https://www.abtms.org.br/' target='_blank'>https://www.abtms.org.br/</a>.</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BANCO MUNDIAL. Relatório sobre Saúde Global. 2020. Disponível em: <a href='https://www.worldbank.org/en/topic/health' target='_blank'>https://www.worldbank.org/en/topic/health</a>.</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">FUNDAÇÃO GETÚLIO VARGAS. Parcerias Público-Privadas na Saúde. 2021. Disponível em: <a href='https://www.fgv.br/' target='_blank'>https://www.fgv.br/</a>.</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">FROST & SULLIVAN. Mercado de Saúde Digital no Brasil. 2023. Disponível em: <a href='https://ww2.frost.com/' target='_blank'>https://ww2.frost.com/</a>.</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">GLOBAL MARKET INSIGHTS. Mercado Global de Saúde Digital. 2024. Disponível em: <a href='https://www.gminsights.com/' target='_blank'>https://www.gminsights.com/</a>.</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. Pesquisa Nacional de Saúde. 2019a. Disponível em: <a href='https://www.ibge.gov.br/' target='_blank'>https://www.ibge.gov.br/</a>.</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. Estatísticas de Saúde. 2019b. Disponível em: <a href='https://www.ibge.gov.br/' target='_blank'>https://www.ibge.gov.br/</a>.</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. População Quilombola. 2019c. Disponível em: <a href='https://www.ibge.gov.br/' target='_blank'>https://www.ibge.gov.br/</a>.</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">INTERNATIONAL DATA CORPORATION. Mercado Global de Dispositivos Vestíveis. 2024. Disponível em: <a href='https://www.idc.com/' target='_blank'>https://www.idc.com/</a>.</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">MCKINSEY & COMPANY. A IA na Saúde: Economia e Eficiência. 2023. Disponível em: <a href='https://www.mckinsey.com/' target='_blank'>https://www.mckinsey.com/</a>.</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">MINISTÉRIO DA SAÚDE. Boletim Epidemiológico de Arboviroses. 2022. Disponível em: <a href='https://www.saude.gov.br/' target='_blank'>https://www.saude.gov.br/</a>.</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">MINISTÉRIO DA SAÚDE. Indicadores de Mortalidade Materna. 2020. Disponível em: <a href='https://www.saude.gov.br/indicadores-de-saude' target='_blank'>https://www.saude.gov.br/indicadores-de-saude</a>.</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ORGANIZAÇÃO MUNDIAL DA SAÚDE. COVID-19 Dashboard. 2023. Disponível em: <a href='https://covid19.who.int/' target='_blank'>https://covid19.who.int/</a>.</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ORGANIZAÇÃO MUNDIAL DA SAÚDE. Doenças Crônicas. 2020. Disponível em: <a href='https://www.who.int/chronic_diseases/en/' target='_blank'>https://www.who.int/chronic_diseases/en/</a>.</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ORGANIZAÇÃO MUNDIAL DA SAÚDE. Envelhecimento e saúde. 2015. Disponível em: <a href='https://www.who.int/ageing/en/' target='_blank'>https://www.who.int/ageing/en/</a>.</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ORGANIZAÇÃO MUNDIAL DA SAÚDE. Tecnologias em Saúde. 2021. Disponível em: <a href='https://www.who.int/health-topics/technology' target='_blank'>https://www.who.int/health-topics/technology.</li>
-</a>
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ORGANIZAÇÃO PAN-AMERICANA DA SAÚDE. Saúde Mental no Brasil. 2020. Disponível em: <a href='https://www.paho.org/' target='_blank'>https://www.paho.org/</a>.</li>
-
-												<li class="list-group-item aos-init aos-animate" list-style='default' data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">SECRETARIA ESPECIAL DE SAÚDE INDÍGENA. Relatório de Saúde Indígena. 2021. Disponível em: <a href='https://www.gov.br/saude/pt-br/composicao/sesai' target='_blank'>https://www.gov.br/saude/pt-br/composicao/sesai</a>.</li>
-												
-											</ul>
-										</div>
+						<p class="mb-1">Aline Lara Cavalcante Oliva</p>
 					</div>
-				</div>
-			</div>
-		`,
-  },
-  autorMod1Aula1: {
-    ariaLabel: "autorMod1Aula1",
-    modalSize: "modal-xl",
-    modalTitle: "Sobre os autores",
-    modalBody: `
-			<div class="row justify-content-center pt-5">
-				<div class="col-12 col-md-10 col-lg-10">
-					<div class="mb-5">
-						<h5 class="mb-3">Uende Aparecida Figueiredo Gomes</h5>
-						<p class="mb-0">Professora-pesquisadora do Departamento de Engenharia Sanitária e Ambiental da Escola de Engenharia da Universidade Federal de Minas Gerais (DESA/UFMG).</p>
-					</div>
+
+					<span class="h5 mb-3 d-block">Conteudistas</span>
 					
 					<div class="mb-5">
-						<h5 class="mb-3">Alexandre Pessoa Dias </h5>
-						<p class="mb-0">Coordenador acadêmico do curso, professor-pesquisador da Escola Politécnica de Saúde Joaquim Venâncio da Fiocruz (ESPJV/Fiocruz).</p>
-					</div>
+						<p class="mb-1">André Peres Barbosa de Castro</p>
+						<p class="small text-muted"><em>Vigilância em Saúde: trajetórias globais e o percurso brasileiro</em></p>
 
+						<p class="mb-1">Barbara Bresani Salvi</p>
+						<p class="mb-1">Ricardo Gadelha de Abreu</p>
+						<p class="small text-muted"><em>Política Nacional de Vigilância em Saúde e Planejamento</em></p>
+
+						<p class="mb-1">Jaqueline Martins</p>
+						<p class="mb-1">Kauara Brito Campos</p>
+						<p class="small text-muted"><em>Sistema Nacional de Vigilância em Saúde</em></p>
+
+						<p class="mb-1">Marcio Henrique de Oliveira Garcia</p>
+						<p class="mb-1">Raquel Proença de Oliveira</p>
+						<p class="small text-muted"><em>Emergências em Saúde Pública</em></p>
+
+						<p class="mb-1">Sidney Fernandes Sales Júnior </p>
+						<p class="small text-muted mb-0"><em>Toxicologia básica de contaminantes inorgânicos e orgânicos</em></p>
+						<p class="small text-muted"><em>Toxicocinética e toxicodinâmica dos agentes tóxicos</em></p>
+
+						<p class="mb-1">Lorena Oliveira Souza Soares</p>
+						<p class="small text-muted"><em>Toxicocinética e toxicodinâmica dos agentes tóxicos</em></p>
+
+						<p class="mb-1">Julia Pinheiro de Souza Cruz Serra Lima</p>
+						<p class="mb-1">Laura de Jesus dos Santos</p>
+						<p class="small text-muted"><em>Toxicologia dos medicamentos e tabagismo</em></p>
+
+						<p class="mb-1">Barbara Costa Pereira</p>
+						<p class="mb-1">Ludmila da Silva Figueira Barone</p>
+						<p class="small text-muted"><em>Toxicologia dos alimentos e dos agrotóxicos</em></p>
+
+						<p class="mb-1">Leandro Vargas Barreto de Carvalho</p>
+						<p class="small text-muted"><em>Toxicologia Ocupacional</em></p>
+
+						<p class="mb-1">Rachel Ann Hauser Davis</p>
+						<p class="small text-muted mb-0"><em>Toxicologia aplicados aos metais</em></p>
+						<p class="small text-muted"><em>Exposição por metais e os determinantes sociais de saúde</em></p>
+
+						<p class="mb-1">Thais Braga Gomes Araujo</p>
+						<p class="small text-muted"><em>Abordagem inicial ao paciente potencialmente intoxicado e exames físicos para identificação de sinais e sintomas clínicos</em></p>
+
+						<p class="mb-1">Viviane Parreira</p>
+						<p class="mb-1">Raphael Mendonça Guimarães</p>
+						<p class="small text-muted"><em>Interpretação de testes laboratoriais e de imagem para avaliação de intoxicação</em></p>
+
+						<p class="mb-1">Andréa Sobral de Almeida </p>
+						<p class="small text-muted"><em>Vigilância epidemiológica e gestão da informação</em></p>
+
+						<p class="mb-1">Guilherme de Souza Meireles</p>
+						<p class="small text-muted"><em>Exposição por metais e os determinantes sociais de saúde</em></p>
+
+						<p class="mb-1">Frederico Peres da Costa</p>
+						<p class="small text-muted"><em>Comunicação de risco à saúde</em></p>
+					</div>
 				</div>
 			</div>
 		`,
-  },
-  glossario: {
-    ariaLabel: "glossario",
-    modalSize: "modal-lg",
-    modalTitle: "Glossário",
-    modalBody: `
-			<div class="accordion accordion-flush" id="accordionExample2">
-	<div class="accordion-item">
-		<h2 class="accordion-header" id="heading1-c">
-			<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-				data-bs-target="#collapse1-c" aria-expanded="false" aria-controls="collapse1-c">C</button>
-		</h2>
-		<div id="collapse1-c" class="accordion-collapse collapse" aria-labelledby="heading1-c" data-bs-parent="">
-			<div class="accordion-body">
-				<div class="mb-5">
-					<p class="mb-3"><strong>CIT</strong></p>
-					<p><strong>Comissão Intergestores Tripartite:</strong> Um fórum de discussão e deliberação que reúne
-						representantes do Ministério da Saúde, dos estados e dos municípios para tratar de temas
-						relacionados ao SUS.</p>
-				</div>
-			</div>
-		</div>
-	</div>
+	},
+	bibliografia: {
+		ariaLabel: 'bibliografia',
+		modalSize: 'modal-xl',
+		modalTitle: 'Bibliografia',
+		modalBody: `
+		<div class="row justify-content-center pt-5">
+    <div class="col-12 col-md-11">
+        <div class="mb-5">
+            <!-- Accordion Módulos-->
+            <div class="accordion accordion-flush" id="accordionBibliografia">
+                <div class="accordion-item">
+                    <h5 class="accordion-header" id="heading1-modulo1">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-modulo1" aria-expanded="true" aria-controls="collapse1-modulo1">Módulo 1</button>
+                    </h5>
+                    <div id="collapse1-modulo1" class="accordion-collapse collapse" aria-labelledby="heading1-modulo1" data-bs-parent="">
 
-	<div class="accordion-item">
-		<h2 class="accordion-header" id="heading1-e">
-			<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-				data-bs-target="#collapse1-e" aria-expanded="false" aria-controls="collapse1-e">E</button>
-		</h2>
-		<div id="collapse1-e" class="accordion-collapse collapse" aria-labelledby="heading1-e" data-bs-parent="">
-			<div class="accordion-body">
-				<div class="mb-5">
-					<p class="mb-3"><strong>ESD</strong></p>
-					<p><strong>Estratégia de Saúde Digital:</strong> Iniciativa do Ministério da Saúde para promover a
-						digitalização dos serviços de saúde no Brasil, com foco na integração de dados e no uso de
-						tecnologias emergentes.</p>
-				</div>
-			</div>
-		</div>
-	</div>
+                        <div class="accordion-body">
+                            <!-- Accordion Aulas -->
+                            <div class="accordion accordion-flush aos-init aos-animate" data-aos="fade-up" data-aos-easing="ease-out" data-aos-duration="800" id="accordionBibliografia-m1-aulas">
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="heading-m1-aula1">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m1-aula1" aria-expanded="true" aria-controls="collapse-m1-aula1">Aula 1</button>
+                                    </h5>
+                                    <div id="collapse-m1-aula1" class="accordion-collapse collapse" aria-labelledby="heading-m1-aula1" data-bs-parent="">
+                                        <div class="accordion-body">
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item">ALMEIDA FILHO, Naomar de; BARRETO, Maurício Lima (Ed.). <strong>Epidemiologia & saúde:</strong> Fundamentos, métodos, aplicações. reimpr. Rio de Janeiro: Guanabara Koogan, 2017. xxiv, 699 p. ISBN 8527716194.</li>
 
-	<div class="accordion-item">
-		<h2 class="accordion-header" id="heading1-i">
-			<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-				data-bs-target="#collapse1-i" aria-expanded="false" aria-controls="collapse1-i">I</button>
-		</h2>
-		<div id="collapse1-i" class="accordion-collapse collapse" aria-labelledby="heading1-i" data-bs-parent="">
-			<div class="accordion-body">
-				<div class="mb-5">
-					<p class="mb-3"><strong>IA</strong></p>
-					<p>Inteligência Artificial: Tecnologia que simula processos de inteligência humana, utilizada na
-						saúde para diagnósticos, previsão de surtos e personalização de tratamentos.</p>
-				</div>
+                                                    <li class="list-group-item">BARATA, R. B. Vigilância epidemiológica: breve histórico e a experiência dos Estados Unidos e do estado de São Paulo. <strong>Epidemiol. Serv. Saúde</strong>, v. 31, n. 2, e2021115. 2022. DOI 10.1590/s2237-962220220002000028.</li>
 
-				<div class="mb-5">
-					<p class="mb-3"><strong>IoT</strong></p>
-					<p><strong>Internet das Coisas:</strong> Tecnologia que conecta objetos do dia a dia à internet,
-						permitindo que eles coletem e compartilhem dados, sendo aplicada na saúde para monitoramento e
-						gestão de dados clínicos.</p>
-				</div>
-			</div>
-		</div>
-	</div>
+                                                    <li class="list-group-item">BARCELLOS, C.; QUITÉRIO, L. A. D. Vigilância ambiental em saúde e sua implantação no Sistema Único de Saúde. <strong>Rev Saude Publica</strong>, v. 40, n. 1. p. 170-177. 2006. DOI 10.1590/S0034-89102006000100025.</li>
 
-	<div class="accordion-item">
-		<h2 class="accordion-header" id="heading1-o">
-			<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-				data-bs-target="#collapse1-o" aria-expanded="false" aria-controls="collapse1-o">O</button>
-		</h2>
-		<div id="collapse1-o" class="accordion-collapse collapse" aria-labelledby="heading1-o" data-bs-parent="">
-			<div class="accordion-body">
-				<div class="mb-5">
-					<p class="mb-3"><strong>OMS</strong></p>
-					<p><strong>Organização Mundial da Saúde:</strong> Agência especializada das Nações Unidas que
-						coordena a saúde pública internacional e define normas e diretrizes globais para a saúde.</p>
-				</div>
-			</div>
-		</div>
-	</div>
+                                                    <li class="list-group-item">Brasil. Ministério da Saúde. Portaria nº 1.378, de 9 de julho de 2013. Regulamenta as responsabilidades e define diretrizes para execução e financiamento das ações de Vigilância em Saúde pela União, Estados, Distrito Federal e Municípios, relativos ao Sistema Nacional de Vigilância em Saúde e Sistema Nacional de Vigilância Sanitária. <strong>Diário Oficial da União</strong>, v. 131, Seção 1. p. 48-50, 2013. Disponível em: <a href='https://bvsms.saude.gov.br/bvs/saudelegis/gm/2013/prt1378_09_07_2013.html' target='_blank' rel='noopener noreferrer'>https://bvsms.saude.gov.br/bvs/saudelegis/gm/2013/prt1378_09_07_2013.html</a>. Acesso em: 31 ago. 2025.</li>
 
-	<div class="accordion-item">
-		<h2 class="accordion-header" id="heading1-p">
-			<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-				data-bs-target="#collapse1-p" aria-expanded="false" aria-controls="collapse1-p">P</button>
-		</h2>
-		<div id="collapse1-p" class="accordion-collapse collapse" aria-labelledby="heading1-p" data-bs-parent="">
-			<div class="accordion-body">
-				<div class="mb-5">
-					<p class="mb-3"><strong>PNIIS</strong></p>
-					<p><strong>Política Nacional de Informação e Informática em Saúde:</strong> Política elaborada para
-						consolidar as ações do SUS relacionadas à informação e tecnologia da informação em saúde, com
-						diretrizes para os três níveis da federação.</p>
-				</div>
-			</div>
-		</div>
-	</div>
+                                                    <li class="list-group-item">Brasil. Ministério da Saúde. Portaria nº 3.252, de 22 de dezembro de 2009. <strong>Diário Oficial da União</strong>, v. 245, Seção 1. p. 65-69, 2009. Disponível em: <a href='https://bvsms.saude.gov.br/bvs/saudelegis/gm/2009/prt3252_22_12_2009_comp.html' target='_blank' rel='noopener noreferrer'>https://bvsms.saude.gov.br/bvs/saudelegis/gm/2009/prt3252_22_12_2009_comp.html</a>. Acesso em: 6 set. 2025.</li>
 
-	<div class="accordion-item">
-		<h2 class="accordion-header" id="heading1-r">
-			<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-				data-bs-target="#collapse1-r" aria-expanded="false" aria-controls="collapse1-r">R</button>
-		</h2>
-		<div id="collapse1-r" class="accordion-collapse collapse" aria-labelledby="heading1-r" data-bs-parent="">
-			<div class="accordion-body">
-				<div class="mb-5">
-					<p class="mb-3"><strong>RNDS</strong></p>
-					<p><strong>Rede Nacional de Dados e Saúde:</strong> Plataforma de interoperabilidade do SUS que
-						integra dados de saúde em todo o país, promovendo a conectividade entre as diferentes regiões.
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
+                                                    <li class="list-group-item">Brasil. <strong>Mudanças climáticas para profissionais de saúde:</strong> guia de bolso [recurso eletrônico]. Brasília: Ministério da Saúde, 2024. <a href='https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/guias-e-manuais/2024/guia-mudancas-climaticas-para-profissionais-da-saude.pdf' target='_blank' rel='noopener noreferrer'>https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/guias-e-manuais/2024/guia-mudancas-climaticas-para-profissionais-da-saude.pdf</a>. ISBN 978-65-5993-649-6.</li>
 
-	<div class="accordion-item">
-		<h2 class="accordion-header" id="heading1-s">
-			<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-				data-bs-target="#collapse1-s" aria-expanded="false" aria-controls="collapse1-s">S</button>
-		</h2>
-		<div id="collapse1-s" class="accordion-collapse collapse" aria-labelledby="heading1-s" data-bs-parent="">
-			<div class="accordion-body">
-				<div class="mb-5">
-					<p class="mb-3"><strong>SNIS</strong></p>
-					<p><strong>Sistema Nacional de Informações em Saúde:</strong> Um sistema proposto para organizar as
-						informações em saúde no Brasil, gerido pelo Ministério da Saúde em parceria com estados e
-						municípios.</p>
-				</div>
+                                                    <li class="list-group-item">CHOI, B. C. K. The past, present, and future of public health surveillance. <strong>Scientifica</strong>, v. 2012. p. 875253. 2012. DOI 10.6064/2012/875253.</li>
 
-				<div class="mb-5">
-					<p class="mb-3"><strong>SUS</strong></p>
-					<p><strong>Sistema Único de Saúde:</strong> O sistema de saúde pública do Brasil que visa garantir
-						acesso universal, integral e gratuito aos serviços de saúde para toda a população.</p>
-				</div>
-			</div>
-		</div>
-	</div>
+                                                    <li class="list-group-item">ESCOREL, S.; TEIXEIRA, L. A. História das Políticas de Saúde no Brasil de 1822 a 1963: do império ao desenvolvimentismo populista. In: GIOVANELLA, L.; ESCOREL, S.; LOBATO, L. d. V. C.; NORONHA, L. d. V. C.; CARVALHO, J. C. de. <strong>Políticas e sistema de saúde no Brasil</strong>. Tradução: , [S. l.]: Editora FIOCRUZ, 2012. p. 279-321. ISBN 9788575413494.</li>
 
-	<div class="accordion-item">
-		<h2 class="accordion-header" id="heading1-t">
-			<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-				data-bs-target="#collapse1-t" aria-expanded="false" aria-controls="collapse1-t">T</button>
-		</h2>
-		<div id="collapse1-t" class="accordion-collapse collapse" aria-labelledby="heading1-t" data-bs-parent="">
-			<div class="accordion-body">
-				<p class="mb-3"><strong>TIC</strong></p>
-				<p><strong>Tecnologias de Informação e Comunicação:</strong> Conjunto de tecnologias usadas para o
-					processamento e comunicação de dados, fundamentais para a organização e gestão da informação em
-					saúde.</p>
-			</div>
-		</div>
-	</div>
+                                                    <li class="list-group-item">GIOVANELLA, L.; ESCOREL, S.; LOBATO, L. d. V. C.; NORONHA, L. d. V. C.; CARVALHO, J. C. de. <strong>Sistema de saúde brasileiro: história e configuração atual</strong>. [S.l.]: Editora FIOCRUZ, 2012. 180 p. ISBN 9788575413494. DOI 10.7476/9788575413494.</li>
+
+                                                    <li class="list-group-item">MEDRONHO, Roberto de Andrade; BLOCH, Kátia Vergetti; LUIZ, Ronir Raggio; WERNECK, Guilherme Loureiro (Ed.). <strong>Epidemiologia</strong>. 2. ed. São Paulo: Atheneu, 2009. [xxiv], 685 p. ISBN 978-8573799996.</li>
+
+                                                    <li class="list-group-item">OUQUAYROL, Maria Zélia; DA SILVA, Marcelo Gurgel Carlos (Ed.). <strong>Rouquayrol:</strong> Epidemiologia & saúde. 8. ed. Rio de Janeiro: MedBook, 2018. xxi, 719 p. ISBN 978-8583690290.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="heading-m1-aula2">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m1-aula2" aria-expanded="false" aria-controls="collapse-m1-aula2">Aula 2</button>
+                                    </h5>
+                                    <div id="collapse-m1-aula2" class="accordion-collapse collapse" aria-labelledby="heading-m1-aula2" data-bs-parent="">
+                                        <div class="accordion-body">
+                                            <span class='d-block'><em>Obrigatórias - PNVS</em></span>
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item">BRASIL. Agência Nacional de Vigilância Sanitária (ANVISA). Guia de Vigilância em Saúde para a Exposição a Metais Pesados. Brasília: ANVISA, 2020. Disponível em: <a href='https://www.gov.br/anvisa/pt-br target=' _blank' rel='noopener noreferrer'>https://www.gov.br/anvisa/pt-br</a>. Acesso em: 2 out. 2025.</li>
+
+                                                    <li class="list-group-item">BRASIL. Conselho Nacional de Saúde. Resolução nº 588, de 12 de julho de 2018. Institui a Política Nacional de Vigilância em Saúde. Diário Oficial da União, Brasília, 13 ago. 2018.</li>
+
+                                                    <li class="list-group-item">CONSELHO NACIONAL DE SAÚDE. Política Nacional de Vigilância em Saúde completa seis anos ainda com desafios para sua implementação. Brasília, 2024. Disponível em: https://www.gov.br/conselho-nacional-de-saude. Acesso em: 26 ago. 2025.</li>
+
+                                                    <li class="list-group-item">CSCI. Saúde e saneamento: uma avaliação das políticas públicas de prevenção, controle e contingência das arboviroses no Brasil. <strong>Ciência & Saúde Coletiva</strong>, v. 28, n. 6, p. 1767-1776, 2023.</li>
+
+                                                    <li class="list-group-item">FIOCRUZ. Abrascão promove o lançamento da Política Nacional de Vigilância em Saúde (PNVS). Rio de Janeiro: EPSJV, 2018. Disponível em: <a href='https://www.epsjv.fiocruz.br' target='_blank' rel='noopener noreferrer'>https://www.epsjv.fiocruz.br</a>. Acesso em: 26 ago. 2025.</li>
+
+                                                    <li class="list-group-item">GARCIA, L. P.; DUARTE, E. 1ª Conferência Nacional de Vigilância em Saúde: marco para a construção da Política Nacional de Vigilância em Saúde. <strong>Epidemiologia e Serviços de Saúde</strong>, v. 27, n. 2, e20180002, 2018.</li>
+
+                                                    <li class="list-group-item">INTERFACE. Caminhos possíveis para a avaliação das práticas da Vigilância em Saúde. <strong>Interface – Comunicação, Saúde, Educação</strong>, v. 21, supl. 1, p. 3183-3192, 2017..</li>
+
+                                                    <li class="list-group-item">MULTI EDUCATIVA. Gestão em Vigilância em Saúde: estratégias e implementação. São Paulo: Multi Educativa, 2024a.</li>
+
+                                                    <li class="list-group-item">MULTI EDUCATIVA. Gestão da Vigilância em Saúde: como monitorar riscos e proteger a população. São Paulo: Multi Educativa, 2024b.</li>
+
+                                                    <li class="list-group-item">OKUMOTO, O.; BRITO, S. M. F.; GARCIA, L. P. A Política Nacional de Vigilância em Saúde. <strong>Epidemiologia e Serviços de Saúde</strong>, v. 27, n. 3, e2018318, 2018.</li>
+
+                                                    <li class="list-group-item">OLIVEIRA, C. M.; CRUZ, M. M. Sistema de Vigilância em Saúde no Brasil: avanços e desafios. <strong>Saúde em Debate</strong>, v. 39, n. 104, p. 255-267, 2015.</li>
+
+                                                    <li class="list-group-item">RECKTENWALDT, M.; JUNGES, J. R. A organização e a prática da Vigilância em Saúde em municípios de pequeno porte. <strong>Saúde e Sociedade</strong>, v. 26, n. 2, p. 367-381, 2017.</li>
+
+                                                    <li class="list-group-item">REDALYC. Aspectos facilitadores e desafios para a implementação de um modelo de educação permanente para a Vigilância Sanitária. <strong>Revista Salud Colectiva</strong>, v. 16, n. 4, p. 1-12, 2020.</li>
+
+                                                    <li class="list-group-item">SANAR SAÚDE. Princípios da PNVS: o que você precisa saber! Blog Sanar Saúde, 2023. Disponível em: <a href='https://blog.sanarsaude.com' target='_blank' rel='noopener noreferrer'>https://blog.sanarsaude.com</a>. Acesso em: 26 ago. 2025.</li>
+                                                </ul>
+                                            </div>
+
+                                            <span class='d-block'><em>Obrigatórias - Planejamento</em></span>
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item">GIOVANELLA, L.; MENDES, A. Atenção primária à saúde e coordenação do cuidado no SUS. <strong>Saúde em Debate</strong>, v. 43, n. spe5, p. 8-22, 2019.</li>
+
+                                                    <li class="list-group-item">MATUS, C. Política, planejamento e governo. Brasília: IPEA, 1993.</li>
+
+                                                    <li class="list-group-item">PAIM, J. S.; TEIXEIRA, C. F. Política, planejamento e gestão em saúde: balanço do estado da arte. <strong>Revista de Saúde Pública</strong>, v. 40, n. spe, p. 73-78, 2006.</li>
+
+                                                    <li class="list-group-item">TANAKA, O. Y.; MELO, C. Avaliação de programas de saúde do adolescente: um modo de fazer. São Paulo: EDUSP, 2004.</li>
+
+                                                    <li class="list-group-item">TESTA, M. Pensamento estratégico e lógica de programação: o caso da saúde. São Paulo: Hucitec, 1992.</li>
+
+                                                    <li class="list-group-item">MENDES, E. V. (2011). As redes de atenção à saúde. Brasília: Organização Pan-Americana da Saúde.</li>
+
+                                                    <li class="list-group-item">TANAKA, O. Y., & Tamaki, E. M. (2012). O papel da avaliação para a tomada de decisão na gestão de serviços de saúde. <strong>Ciência & Saúde Coletiva</strong>, 17(4), 821-828.</li>
+
+                                                    <li class="list-group-item">TEIXEIRA, C. F., & Paim, J. S. (2000). Planejamento em saúde: conceitos, métodos e experiências. <strong>Ciência & Saúde Coletiva</strong>, 5(1), 17-39.</li>
+
+                                                    <li class="list-group-item">BRASIL. Ministério da Saúde. (2016). Planejamento no SUS: conceitos, métodos e experiências. Brasília: Ministério da Saúde.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="heading-m1-aula3">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m1-aula3" aria-expanded="false" aria-controls="collapse-m1-aula3">Aula 3</button>
+                                    </h5>
+                                    <div id="collapse-m1-aula3" class="accordion-collapse collapse" aria-labelledby="heading-m1-aula3" data-bs-parent="">
+                                        <div class="accordion-body">
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ALBUQUERQUE, M. I. N., Carvalho, E. M. F., & Lima, L. P. (2002). Vigilância epidemiológica: Conceitos e institucionalização. <em>Revista Brasileira de Saúde Materno Infantil, 2(2), 77–87</em>. Disponível em: <a href='https://www.scielo.br/j/rbsmi/a/6L4R958YLyJywqtG9WcRRCv/?format=html&lang=pt' target='_blank' rel='noopener noreferrer'>https://www.scielo.br/j/rbsmi/a/6L4R958YLyJywqtG9WcRRCv/?format=html&lang=pt</a>. Acesso em: 23 out. 2025. </li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Lei nº 6.259, de 30 de outubro de 1975. Dispõe sobre as organizações de Vigilância Epidemiológica, sobre o Programa Nacional de Imunizações, estabelece normas relativas à notificação compulsória de doenças, e dá outras providências. Diário Oficial da União, Poder Executivo, Brasília, DF, 31 out. 1975. Disponível em: <a href='https://www.planalto.gov.br/ccivil_03/leis/l6259.htm' target='_blank' rel='noopener noreferrer'>https://www.planalto.gov.br/ccivil_03/leis/l6259.htm</a>. Acesso em: 23 out. 2025.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Agência Nacional de Vigilância Sanitária. Cartilha de Vigilância Sanitária: cidadania e controle social. Brasília; Agência Nacional de Vigilância Sanitária; 2. ed.; 2002. 58 p. ilus. Disponível em: <a href='https://bvsms.saude.gov.br/bvs/publicacoes/cartilha_vigilancia.pdf' target='_blank' rel='noopener noreferrer'>https://bvsms.saude.gov.br/bvs/publicacoes/cartilha_vigilancia.pdf</a>. Acesso em: 24 out. 2025.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Asis - Análise de Situação de Saúde. Ministério da Saúde, Universidade Federal de Goiás. Brasília: Ministério da Saúde, 2015. 3v.: il. Disponível em: <a href='https://bvsms.saude.gov.br/bvs/publicacoes/asis_analise_situacao_saude_volume_1.pdf' target='_blank' rel='noopener noreferrer'>https://bvsms.saude.gov.br/bvs/publicacoes/asis_analise_situacao_saude_volume_1.pdf</a>. Acesso em: 29 set. 2025. </li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Portaria n.º 2.436, de 21 de setembro de 2017. Aprova a Política Nacional de Atenção Básica, no âmbito do Sistema Único de Saúde (SUS). Diário Oficial da União: seção 1, Brasília, DF, v. 183, n. 68, p. 68, 22 set. 2017. Disponível em: <a href='https://bvsms.saude.gov.br/bvs/saudelegis/gm/2017/prt2436_22_09_2017.html' target='_blank' rel='noopener noreferrer'>https://bvsms.saude.gov.br/bvs/saudelegis/gm/2017/prt2436_22_09_2017.html</a>. Acesso em: 23 out. 2025.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Portaria GM/MS nº 6.734, de 18 de março de 2025. Altera o Anexo 1 do Anexo V da Portaria de Consolidação GM/MS nº 4, de 28 de setembro 2017, para incluir a esporotricose humana na Lista Nacional de Notificação Compulsória de Doenças, Agravos e Eventos de Saúde Pública nos serviços de saúde públicos e privados em todo o território nacional. 2025a. Disponível em: <a href='https://pesquisa.in.gov.br/imprensa/jsp/visualiza/index.jsp?data=19/08/2024&jornal=515&pagina=127&totalArquivos=263' target='_blank' rel='noopener noreferrer'>https://pesquisa.in.gov.br/imprensa/jsp/visualiza/index.jsp?data=19/08/2024&jornal=515&pagina=127&totalArquivos=263</a>. Acesso em: 22 abr. 2025.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Conselho Nacional de Saúde. Resolução n.º 588, de 12 de julho de 2018. Fica instituída a Política Nacional de Vigilância em Saúde (PNVS), aprovada por meio desta resolução. Diário Oficial da República Federativa do Brasil: seção 1, Brasília, DF, p. 87, 13 ago. 2018. Disponível em: <a href='https://bvsms.saude.gov.br/bvs/saudelegis/cns/2018/res0588_13_08_2018.html' target='_blank' rel='noopener noreferrer'>https://bvsms.saude.gov.br/bvs/saudelegis/cns/2018/res0588_13_08_2018.html</a>. Acesso em: 23 out. 2025. </li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Secretaria de Vigilância em Saúde. Departamento de Saúde Ambiental, do Trabalhador e Vigilância das Emergências em Saúde Pública. EpiSUS fundamental: caderno de conteúdos. Ministério da Saúde, Secretaria de Vigilância em Saúde, Departamento de Saúde Ambiental, do Trabalhador e Vigilância das Emergências em Saúde Pública. Brasília: Ministério da Saúde, 2022. 236 p.: il. Disponível em: <a href='https://bvsms.saude.gov.br/bvs/publicacoes/episus_fundamental_apostila.pdf' target='_blank' rel='noopener noreferrer'>https://bvsms.saude.gov.br/bvs/publicacoes/episus_fundamental_apostila.pdf</a>. Acesso em: 23 out. 2025. </li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Guia de vigilância em saúde: volume 1. Ministério da Saúde, Secretaria de Vigilância em Saúde e Ambiente, Departamento de Ações Estratégicas de Epidemiologia e Vigilância em Saúde e Ambiente. 6. ed. rev. – Brasília: Ministério da Saúde, 2024a. 3 v.: il. Disponível em: <a href='https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/vigilancia/guia-de-vigilancia-em-saude-volume-1-6a-edicao/view' target='_blank' rel='noopener noreferrer'>https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/vigilancia/guia-de-vigilancia-em-saude-volume-1-6a-edicao/view</a>. Acesso em: 29 set. 2025.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Guia de vigilância em saúde: volume 3. Ministério da Saúde, Secretaria de Vigilância em Saúde e Ambiente, Departamento de Ações Estratégicas de Epidemiologia e Vigilância em Saúde e Ambiente. 6. ed. rev. Brasília: Ministério da Saúde, 2024b. 3 v.: il. Disponível em: <a href='https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/vigilancia/guia-de-vigilancia-em-saude-volume-3-6a-edicao/view' target='_blank' rel='noopener noreferrer'>https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/vigilancia/guia-de-vigilancia-em-saude-volume-3-6a-edicao/view</a>. Acesso em: 29 set. 2025.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Plano de contingência para emergência em saúde pública por rompimento de barragens. Ministério da Saúde, Secretaria de Vigilância em Saúde e Ambiente, Departamento de Emergências em Saúde Pública. Brasília: Ministério da Saúde, 2025b. 44 p. : il. Disponível em: <a href='https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/vigilancia-ambiental/plano-de-contingencia-barragens.pdf' target='_blank' rel='noopener noreferrer'>https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/vigilancia-ambiental/plano-de-contingencia-barragens.pdf</a>. Acesso em: 29 set. 2025.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">FERREIRA, A.B.H. Dicionário Aurélio da Língua Portuguesa. 5. ed. Curitiba: Editora Positivo, 2010. 2222 p.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ORGANIZAÇÃO PAN-AMERICANA DA SAÚDE. Indicadores de saúde. Elementos conceituais e práticos. Washington, D.C.: OPAS; 2018. Disponível em: <a href='https://www3.paho.org/hq/joomlatools-files/docman-files/Health_Indicators-June18-pt.pdf' target='_blank' rel='noopener noreferrer'>https://www3.paho.org/hq/joomlatools-files/docman-files/Health_Indicators-June18-pt.pdf</a>. Acesso em: 29 set. 2025.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">RAMOS, M. <em>et al</em>. Acidente de trabalho ampliado: o rompimento da barragem de Fundão nos jornais impressos do Espírito Santo. Rev. bras. saúde ocup. 45, 2020. <a href='https://doi.org/10.1590/2317-6369000013719' target='_blank' rel='noopener noreferrer'>https://doi.org/10.1590/2317-6369000013719</a> </li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">RIPSA. Rede Interagencial de Informações para a Saúde. Indicadores. Conceitos e critérios. Disponível em <a href='https://www.ripsa.org.br/indicadores/' target='_blank' rel='noopener noreferrer'>https://www.ripsa.org.br/indicadores/</a>. Acesso em: 25 set. 2025. </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="heading-m1-aula4">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m1-aula4" aria-expanded="false" aria-controls="collapse-m1-aula4">Aula 4</button>
+                                    </h5>
+                                    <div id="collapse-m1-aula4" class="accordion-collapse collapse" aria-labelledby="heading-m1-aula4" data-bs-parent="">
+                                        <div class="accordion-body">
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Conselho Nacional de Saúde. <em>Resolução nº 588, de 12 de julho de 2018</em>. Institui a Política Nacional de Vigilância em Saúde (PNVS). Diário Oficial da União, Brasília, DF, seção 1, n. 155, p. 87, 13 ago. 2018. Disponível em: <a href='https://bvsms.saude.gov.br/bvs/saudelegis/cns/2018/res0588_13_08_2018.html' target='_blank' rel='noopener noreferrer'>https://bvsms.saude.gov.br/bvs/saudelegis/cns/2018/res0588_13_08_2018.html</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Decreto nº 7.616, de 17 de novembro de 2011. <em>Dispõe sobre a declaração de Emergência em Saúde Pública de Importância Nacional (ESPIN) e institui a Força Nacional do Sistema Único de Saúde – FN-SUS</em>. Diário Oficial da União, Brasília, DF, seção 1, n. 221, p. 1, 18 nov. 2011. Disponível em: <a href='https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/decreto/d7616.htm' target='_blank' rel='noopener noreferrer'>https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/decreto/d7616.htm</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Decreto nº 10.593, de 24 de dezembro de 2020. <em>Dispõe sobre o Sistema Nacional de Proteção e Defesa Civil – SINPDEC e o Conselho Nacional de Proteção e Defesa Civil – CONPDEC</em>. Diário Oficial da União, Brasília, DF, 28 dez. 2020. Disponível em: <a href='https://www2.camara.leg.br/legin/fed/decret/2020/decreto-10593-24-dezembro-2020-790946-publicacaooriginal-162026-pe.html' target='_blank' rel='noopener noreferrer'>https://www2.camara.leg.br/legin/fed/decret/2020/decreto-10593-24-dezembro-2020-790946-publicacaooriginal-162026-pe.html</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Integração Nacional. <em>Instrução Normativa nº 02, de 20 de dezembro de 2016</em>. Estabelece a Classificação e Codificação Brasileira de Desastres – COBRADE. Diário Oficial da União, Brasília, DF, 21 dez. 2016. Disponível em: <a href='https://www.defesacivil.rs.gov.br/upload/arquivos/202105/04095316-cobrade-classificacao-e-codificacao-brasileira-de-desastres.pdf' target='_blank' rel='noopener noreferrer'>https://www.defesacivil.rs.gov.br/upload/arquivos/202105/04095316-cobrade-classificacao-e-codificacao-brasileira-de-desastres.pdf</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. <em>Plano de resposta às emergências em saúde pública</em>. Brasília, DF: Ministério da Saúde, 2014. Disponível em: <a href='https://bvsms.saude.gov.br/bvs/publicacoes/plano_resposta_emergencias_saude_publica.pdf' target='_blank' rel='noopener noreferrer'>https://bvsms.saude.gov.br/bvs/publicacoes/plano_resposta_emergencias_saude_publica.pdf</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. <em>Guia para elaboração de planos de contingência</em>. Brasília, DF: Ministério da Saúde, 2024. 42 p. Disponível em: <a href='https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/emergencia-em-saude-publica/guia-para-elaboracao-de-planos-de-contingencia' target='_blank' rel='noopener noreferrer'>https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/emergencia-em-saude-publica/guia-para-elaboracao-de-planos-de-contingencia</a>. Acesso em: 6 out. 2025.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">LIMA, A. M. M.; MONTEIRO, J. B. <em>Entre o risco e o desastre: uma análise conceitual dos múltiplos componentes envoltos em uma complexa equação</em>. Revista de Geografia, v. 39, n. 2, p. 59-84, 2022. DOI: 10.51359/2238-6211.2022.251953.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ORGANIZAÇÃO MUNDIAL DA SAÚDE. <em>Comunicação de riscos em emergências de saúde pública: um guia da OMS para políticas e práticas em comunicação de risco de emergência.</em> Genebra: OMS, 2018. Disponível em: <a href='https://iris.who.int/bitstream/handle/10665/259807/9789248550201-por.pdf' target='_blank' rel='noopener noreferrer'>https://iris.who.int/bitstream/handle/10665/259807/9789248550201-por.pdf</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">SOUZA, A. S. S. <em>et al</em>. <em>Histórico de implementação da gestão às emergências em saúde pública no Brasil</em>. Epidemiologia e Serviços de Saúde, v. 33, n. 2, e20240498, 2024. DOI: 10.1590/S2237-96222024v34e20240498.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">SOUZA, A. S. S. <em>et al</em>. <em>Brazil’s response to public health emergencies in 2023: lessons for the international community</em>. Revista Panamericana de Salud Pública, v. 49, e15, 2025. DOI: 10.26633/RPSP.2025.15.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">WORLD HEALTH ORGANIZATION. <em>International Health Regulations (2005)</em>. 3. ed. Genebra: World Health Organization, 2016. Disponível em: <a href='https://iris.who.int/handle/10665/246107' target='_blank' rel='noopener noreferrer'>https://iris.who.int/handle/10665/246107</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">WORLD HEALTH ORGANIZATION. WHO <em>Pandemic Agreement</em>. Genebra: World Health Organization, 2025. Disponível em: <a href='https://apps.who.int/gb/ebwha/pdf_files/WHA78/A78_R1-en.pdf' target='_blank' rel='noopener noreferrer'>https://apps.who.int/gb/ebwha/pdf_files/WHA78/A78_R1-en.pdf</a>. Acesso em: 6 fev. 2026.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h5 class="accordion-header" id="heading1-modulo2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-modulo2" aria-expanded="false" aria-controls="collapse1-modulo2">Módulo 2</button>
+                    </h5>
+                    <div id="collapse1-modulo2" class="accordion-collapse collapse" aria-labelledby="heading1-modulo2" data-bs-parent="">
+                        <div class="accordion-body">
+                            <!-- Accordion Aulas -->
+                            <div class="accordion accordion-flush aos-init aos-animate" data-aos="fade-up" data-aos-easing="ease-out" data-aos-duration="800" id="accordionBibliografia-m2-aulas">
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="heading-m2-aula1">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m2-aula1" aria-expanded="true" aria-controls="collapse-m2-aula1">Aula 1</button>
+                                    </h5>
+                                    <div id="collapse-m2-aula1" class="accordion-collapse collapse" aria-labelledby="heading-m2-aula1" data-bs-parent="">
+                                        <div class="accordion-body">
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">AGENCY FOR TOXIC SUBSTANCES AND DISEASE REGISTRY. <strong>Toxicological profile for arsenic</strong>. Atlanta: ATSDR, 2007.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">_______. <strong>Toxicological profile for benzene</strong>. Atlanta: ATSDR, 2007.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">_______. <strong>Toxicological profile for lead</strong>. Atlanta: ATSDR, 2007.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">_______. <strong>Toxicological profile for mercury</strong>. Atlanta: ATSDR, 1999.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ANDRADE, Maiza Ferreira de; MORAES, Luiz Roberto Santos. Contaminação por chumbo em Santo Amaro desafia décadas de pesquisas e a morosidade do poder público. <strong>Ambiente & Sociedade</strong>, v. 16, n. 2, p. 63–80, jun. 2013.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BASTA, Paulo César; HACON, Sandra de Souza. Impacto do mercúrio em áreas protegidas e povos da floresta na Amazônia Oriental: uma abordagem integrada saúde-ambiente. Aspectos metodológicos e resultados preliminares. Rio de Janeiro. Disponível em:<a href=' https://repositorio.bvspovosindigenas.fiocruz.br/items/37d0b467-c8b4-4f50-8c01-60b5f8ee1c96' target='_blank' rel='noopener noreferrer'> https://repositorio.bvspovosindigenas.fiocruz.br/items/37d0b467-c8b4-4f50-8c01-60b5f8ee1c96</a>.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">CARNEIRO, Fernando Ferreira <em>et al</em>. Dossiê ABRASCO: um alerta sobre os impactos dos agrotóxicos na saúde. Rio de Janeiro: EPSJV/Fiocruz, 2015.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">EATON, D. L.; KLAASSEN, C. D. Principles of toxicology. In: KLAASSEN, C. D. (ed.). C<strong>asarett and Doull’s toxicology: the basic science of poisons</strong>. 6. ed. New York: McGraw-Hill, 2001. p. 11–34.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">EKINO, Shigeo <em>et al</em>. Minamata disease revisited: an update on the acute and chronic manifestations of methyl mercury poisoning. <strong>Journal of the Neurological Sciences</strong>, v. 262, n. 1–2, p. 131–144, nov. 2007.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">KLAASSEN, C. D. (Ed.). <strong>Casarett and Doull’s Toxicology: The Basic Science of Poisons.</strong> 5. ed. New York: McGraw-Hill Education, 2001. p. 11–34.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ORGANIZAÇÃO MUNDIAL DA SAÚDE. Dioxinas e seus efeitos na saúde humana. Disponível em: <a href='https://www.who.int/news-room/fact-sheets/detail/dioxins-and-their-effects-on-human-health' target='_blank' rel='noopener noreferrer'>https://www.who.int/news-room/fact-sheets/detail/dioxins-and-their-effects-on-human-health</a>. </li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ROBERTS, James R.; REIGART, J. Routt. <strong>Recognition and management of pesticide poisonings</strong>. 6. ed. Washington, DC: United States Environmental Protection Agency, 2015.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">SANTOS, Rubens Martins; ORTIZ, Nilce; GUILHEN, Sabine Neusatz. Análise da Tragédia de Vila Socó em Cubatão (São Paulo, Brasil) usando a Matriz de Haddon. <strong>Journal of Environmental Protection</strong>, v. 15, n. 05, p. 620–639, 2024.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="heading-m2-aula2">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m2-aula2" aria-expanded="false" aria-controls="collapse-m2-aula2">Aula 2</button>
+                                    </h5>
+                                    <div id="collapse-m2-aula2" class="accordion-collapse collapse" aria-labelledby="heading-m2-aula2" data-bs-parent="">
+                                        <div class="accordion-body">
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">AGENCY FOR TOXIC SUBSTANCES AND DISEASE REGISTRY. <em>Toxicological profile for arsenic</em>. Atlanta: U.S. Department of Health and Human Services, Public Health Service, 2007.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">AGENCY FOR TOXIC SUBSTANCES AND DISEASE REGISTRY. <em>Toxicological profile for benzene</em>. Atlanta: U.S. Department of Health and Human Services, Public Health Service, 2007.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">AGENCY FOR TOXIC SUBSTANCES AND DISEASE REGISTRY. <em>Toxicological profile for cadmium</em>. Atlanta: U.S. Department of Health and Human Services, Public Health Service, 2012.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">AGENCY FOR TOXIC SUBSTANCES AND DISEASE REGISTRY. <em>Toxicological profile for cyanide</em>. Atlanta: U.S. Department of Health and Human Services, Public Health Service, 2006.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">AGENCY FOR TOXIC SUBSTANCES AND DISEASE REGISTRY. <em>Toxicological profile for fluorides, hydrogen fluoride, and fluorine</em>. Atlanta: U.S. Department of Health and Human Services, Public Health Service, 2003.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">AGENCY FOR TOXIC SUBSTANCES AND DISEASE REGISTRY. <em>Toxicological profile for lead</em>. Atlanta: U.S. Department of Health and Human Services, Public Health Service, 2020. Disponível em: https://www.atsdr.cdc.gov/toxprofiles/tp13.pdf. Acesso em: 16 ago. 2025.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BOISCHIO, Ana Paula Raggio; CÓLUS, Iracema Marilene Souza. Mercúrio e saúde: uma revisão. <em>Cadernos de Saúde Pública</em>, v. 16, n. 1, p. 19–32, 2000.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">CARNEIRO, Fernando Ferreira; PIGNATI, Wanderlei; RIGOTTO, Raquel Maria; AUGUSTO, Lia Giraldo da Silva (org.). <em>Dossiê ABRASCO: um alerta sobre os impactos dos agrotóxicos na saúde</em>. Rio de Janeiro: EPSJV/Fiocruz, 2015.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">DE SOUZA GUERRA, Carolina <em>et al</em>. Lead concentrations in whole blood, serum, saliva and house dust in samples collected at two time points (12 months apart) in Santo Amaro, BA, Brazil. <em>Environmental Research</em>, v. 142, p. 337–344, 2015.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">EATON, David L.; KLAASSEN, Curtis D. Principles of toxicology. In: KLAASSEN, Curtis D. (ed.). <em>Casarett and Doull’s toxicology</em>. 6. ed. New York: McGraw-Hill, 2001. p. 11–33.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">HILEWITZ, Daniel <em>et al</em>. Epidemiology of sensitivity to nickel, cobalt and chromium in Israel: a retrospective cohort study. <em>Contact Dermatitis</em>, 2025.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">JAFFERY, Farhat N.; MISRA, Virendra; VISWANATHAN, P. N. Convergence of clinical toxicology and epidemiology in relation to health effects of chemicals. <em>Environmental Toxicology and Pharmacology</em>, v. 12, n. 3, p. 169–179, 2002.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">LECTURIO. <em>Farmacocinética e farmacodinâmica</em>. [S.l.], 2025.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">METZGER, Ingrid F.; SOUZA-COSTA, Débora C.; TANUS-SANTOS, José E. Farmacogenética: princípios, aplicações e perspectivas. <em>Medicina (Ribeirão Preto)</em>, 2006.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">OGA, Seizi; CAMARGO, Márcia Maria de Almeida; BATISTUZZO, José Antonio de Oliveira. <em>Fundamentos de toxicologia</em>. 4. ed. São Paulo: Atheneu, 2014.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">OLIVEIRA, J. F. P. Curto período de exposição ao chumbo promove aumento da biodisponibilidade de óxido nítrico, via receptores AT2, e ativação de canais para K+ em aorta de ratos. 2015. Tese (Doutorado em Ciências Fisiológicas) – Universidade Federal do Espírito Santo, Centro de Ciências da Saúde, Vitória, 2015.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">PRICE, N. F.; LIN, P. I. D.; CARDENAS, A. <em>et al</em>. Prenatal metal exposures and kidney function in adolescence in Project Viva. <em>Environmental Health</em>, v. 23, p. 94, 2024.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">WANG, Yican <em>et al</em>. Investigating the relationship of co-exposure to multiple metals with chronic kidney disease: an integrated perspective from epidemiology and adverse outcome pathways. <em>Journal of Hazardous Materials</em>, v. 480, p. 135844, 2024.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">WORLD HEALTH ORGANIZATION. <em>Some non-heterocyclic polycyclic aromatic hydrocarbons and some related exposures</em>. Lyon: International Agency for Research on Cancer, 2010. (IARC Monographs on the Evaluation of Carcinogenic Risks to Humans, v. 92).</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="heading-m2-aula3">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m2-aula3" aria-expanded="false" aria-controls="collapse-m2-aula3">Aula 3</button>
+                                    </h5>
+                                    <div id="collapse-m2-aula3" class="accordion-collapse collapse" aria-labelledby="heading-m2-aula3" data-bs-parent="">
+                                        <div class="accordion-body">
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item">AMERICAN LUNG ASSOCIATION. 10 of the worst diseases smoking causes | State of Tobacco Control. Disponível em: <a href='https://www.lung.org/research/sotc/by-the-numbers/10-worst-diseases-smoking-causes' target='_blank' rel='noopener noreferrer'>https://www.lung.org/research/sotc/by-the-numbers/10-worst-diseases-smoking-causes</a>. Acesso em: 23 set. 2025.</li>
+
+                                                    <li class="list-group-item">AURORA, N. Pharmaceutical toxicology: understanding the risks and benefits of medications. <em>Journal of Pharmaceutical Toxicology</em>, v. 6, n. 2, p. 21–24, 2023. Disponível em: <a href='https://www.openaccessjournals.com/articles/pharmaceutical-toxicology-understanding-the-risks-and-benefits-of-medications-16214.html' target='_blank' rel='noopener noreferrer'>https://www.openaccessjournals.com/articles/pharmaceutical-toxicology-understanding-the-risks-and-benefits-of-medications-16214.html</a>. Acesso em: 1 set. 2025.</li>
+
+                                                    <li class="list-group-item">BOCCHINI, B. SUS oferece tratamento gratuito para quem quiser parar de fumar. <em>Agência Brasil</em>, São Paulo, 2022. Disponível em: <a href='https://agenciabrasil.ebc.com.br/saude/noticia/2022-05/sus-oferece-tratamento-gratuito-para-quem-quiser-parar-de-fumar' target='_blank' rel='noopener noreferrer'>https://agenciabrasil.ebc.com.br/saude/noticia/2022-05/sus-oferece-tratamento-gratuito-para-quem-quiser-parar-de-fumar</a>. Acesso em: 30 ago. 2025.</li>
+
+                                                    <li class="list-group-item">BRASIL. INSTITUTO NACIONAL DE CÂNCER – INCA. Mortalidade no Brasil. Programa Nacional de Controle do Tabagismo: Observatório da Política Nacional de Controle do Tabaco, 2025. Disponível em: <a href='https://www.gov.br/inca/pt-br/assuntos/gestor-e-profissional-de-saude/observatorio-da-politica-nacional-de-controle-do-tabaco/dados-e-numeros-do-tabagismo/mortalidade-no-brasil' target='_blank' rel='noopener noreferrer'>https://www.gov.br/inca/pt-br/assuntos/gestor-e-profissional-de-saude/observatorio-da-politica-nacional-de-controle-do-tabaco/dados-e-numeros-do-tabagismo/mortalidade-no-brasil</a>. Acesso em: 30 ago. 2025.</li>
+
+                                                    <li class="list-group-item">CONSUMO de tabaco e dispositivos eletrônicos de fumar – LENAD. São Paulo, 2025. Disponível em: <a href='https://lenad.uniad.org.br/resultados/lenad-iii-consumo-de-tabaco-e-defs/' target='_blank' rel='noopener noreferrer'>https://lenad.uniad.org.br/resultados/lenad-iii-consumo-de-tabaco-e-defs/</a>. Acesso em: 30 ago. 2025.</li>
+
+                                                    <li class="list-group-item">GOLAN, David E. <em>et al</em>. Farmacodinâmica. Principles of Pharmacology: <strong>The Pathophysiologic Basis of Drug Therapy</strong>, 3. ed. 2012. Disponível em: <a href='https://anestesiologia.paginas.ufsc.br/files/2015/02/Farmacodinamica-texto.pdf' target='_blank' rel='noopener noreferrer'>https://anestesiologia.paginas.ufsc.br/files/2015/02/Farmacodinamica-texto.pdf</a>. Acesso em: 23 set. 2025.</li>
+
+                                                    <li class="list-group-item">GUPTA, M. The Importance of Pharmaceutical Toxicology in Drug Development. <strong>Journal of Pharmaceutical Toxicology</strong>, v. 6, n. 2, p. 29–32, 2023. DOI: 10.37532/jpt.2023.6(2).29-32. Acesso em: 1 set. 2025. </li>
+
+                                                    <li class="list-group-item">HOGG, R. <em>et al</em>. Nicotinic acetylcholine receptors: from structure to brain function. <em>Reviews of Physiology, Biochemistry and Pharmacology</em>, v. 147, p. 1–46, 2003.</li>
+
+                                                    <li class="list-group-item">IARC WORKING GROUP ON THE EVALUATION OF CARCINOGENIC RISKS TO HUMANS. <em>Tobacco smoke and involuntary smoking</em>. Lyon (FR): International Agency for Research on Cancer, 2004. (IARC Monographs on the Evaluation of Carcinogenic Risks to Humans, n. 83). Cap. 1: Composition, exposure and regulations. Disponível em: <a href='https://www.ncbi.nlm.nih.gov/books/NBK316410/' target='_blank' rel='noopener noreferrer'>https://www.ncbi.nlm.nih.gov/books/NBK316410/</a>. Acesso em: 31 ago. 2025.</li>
+
+                                                    <li class="list-group-item">INSTITUTO NACIONAL DE CÂNCER – INCA. <em>Tabagismo</em>. 2025. Disponível em: INSTITUTO NACIONAL DE CÂNCER – INCA. Tabagismo. 2025. Disponível em: <a href='https://www.gov.br/inca/pt-br/assuntos/causas-e-prevencao-do-cancer/tabagismo/tabagismo' target='_blank' rel='noopener noreferrer'>https://www.gov.br/inca/pt-br/assuntos/causas-e-prevencao-do-cancer/tabagismo/tabagismo</a>. Acesso em: 23 set. 2025.. Acesso em: 23 set. 2025.</li>
+
+                                                    <li class="list-group-item">KATZUNG, B. G.; TREVOR, A. J. <em>Basic and clinical pharmacology</em>. 14. ed. New York: McGraw-Hill Education, 2017.</li>
+
+                                                    <li class="list-group-item">MARQUES, P. <em>et al</em>. An updated overview of e-cigarette impact on human health. <em>Respiratory Research</em>, v. 22, n. 1, p. 151, maio 2021.</li>
+
+                                                    <li class="list-group-item">NATIONAL ACADEMIES OF SCIENCES, ENGINEERING, AND MEDICINE <em>et al</em>. <em>Public health consequences of e-cigarettes</em>. Washington (DC): National Academies Press, 2018. Disponível em: <a href='http://www.ncbi.nlm.nih.gov/books/NBK507171/' target='_blank' rel='noopener noreferrer'>http://www.ncbi.nlm.nih.gov/books/NBK507171/</a>. Acesso em: 23 set. 2025.</li>
+
+                                                    <li class="list-group-item">NATIONAL CENTER FOR CHRONIC DISEASE PREVENTION AND HEALTH PROMOTION (US) OFFICE ON SMOKING AND HEALTH. <em>The health consequences of smoking—50 years of progress: a report of the Surgeon General. Atlanta: Centers for Disease Control and Prevention</em>, 2014. Disponível em: <a href='https://www.ncbi.nlm.nih.gov/books/NBK294308/' target='_blank' rel='noopener noreferrer'>https://www.ncbi.nlm.nih.gov/books/NBK294308/</a>. Acesso em: 28 ago. 2025.</li>
+
+                                                    <li class="list-group-item">OGA, Seizi; CAMARGO, Márcia Maria de Almeida; BATISTUZZO, José Antonio de Oliveira. <em>Fundamentos de toxicologia</em>. 4. ed. São Paulo: Atheneu, 2014.</li>
+
+                                                    <li class="list-group-item">PINTO, M. <em>et al</em>. Chemical characterisation of the vapour emitted by an e-cigarette using a ceramic wick-based technology. <em>Scientific Reports</em>, v. 12, n. 1, p. 16497, 3 out. 2022.</li>
+
+                                                    <li class="list-group-item">ROSEMBERG, J. <em>Nicotina – droga universal</em>. 1. ed. Rio de Janeiro: Instituto Nacional do Câncer – INCA, 2004. Disponível em: <a href='https://www.inca.gov.br/publicacoes/livros/nicotina-droga-universal' target='_blank' rel='noopener noreferrer'>https://www.inca.gov.br/publicacoes/livros/nicotina-droga-universal</a>. Acesso em: 30 ago. 2025.</li>
+
+                                                    <li class="list-group-item">SCHAAF, C. Nicotinic acetylcholine receptors in human genetic disease. <em>Genetics in Medicine</em>, v. 16, n. 9, p. 649–656, set. 2014.</li>
+
+                                                    <li class="list-group-item">SERENO, V. M. B.; SILVA, A. S.; SILVA, G. C. da. Perfil epidemiológico das intoxicações por medicamentos no Brasil entre os anos de 2013 a 2017 / Epidemiological profile of drug intoxications in Brazil between 2013 and 2017. <strong>Brazilian Journal of Development</strong>, v. 6, n. 6, p. 33892–33903, 2020. DOI: 10.34117/bjdv6n6-079. Disponível em: <a href='https://ojs.brazilianjournals.com.br/ojs/index.php/BRJD/article/view/11082' target='_blank' rel='noopener noreferrer'>https://ojs.brazilianjournals.com.br/ojs/index.php/BRJD/article/view/11082</a>. Acesso em: 24 set. 2025.</li>
+
+                                                    <li class="list-group-item">SHEHATA, S. et al. Vaping, environmental toxicants exposure, and lung cancer risk. <em>Cancers</em>, v. 15, n. 18, p. 4525, 12 set. 2023.</li>
+
+                                                    <li class="list-group-item">UNIVERSIDADE FEDERAL DA PARAÍBA (UFPB). Uso indiscriminado de medicamentos e automedicação no Brasil. <strong>Centro de Informação sobre Medicamentos</strong>, 2024. Disponível em: <a href='https://www.ufpb.br/cim/contents/noticias/uso-indiscriminado-de-medicamentos-e-automedicacao-no-brasil' target='_blank' rel='noopener noreferrer'>https://www.ufpb.br/cim/contents/noticias/uso-indiscriminado-de-medicamentos-e-automedicacao-no-brasil</a>. Acesso em: 1 set. 2025.</li>
+
+                                                    <li class="list-group-item">WISE, R. Doença pulmonar obstrutiva crônica (DPOC). <em>Manual MSD</em>, abr. 2024. Disponível em: <a href='https://www.msdmanuals.com/pt/profissional/distúrbios-pulmonares/doença-pulmonar-obstrutiva-crônica-e-doenças-relacionadas/doença-pulmonar-obstrutiva-crônica-dpoc' target='_blank' rel='noopener noreferrer'>https://www.msdmanuals.com/pt/profissional/distúrbios-pulmonares/doença-pulmonar-obstrutiva-crônica-e-doenças-relacionadas/doença-pulmonar-obstrutiva-crônica-dpoc</a>.</li>
+
+                                                    <li class="list-group-item">WORLD HEALTH ORGANIZATION. Antimicrobial resistance, 2023. Disponível em: <a href='https://www.who.int/news-room/fact-sheets/detail/antimicrobial-resistance' target='_blank' rel='noopener noreferrer'>https://www.who.int/news-room/fact-sheets/detail/antimicrobial-resistance</a>. Acesso em: 23 set. 2025.</li>
+
+                                                    <li class="list-group-item">WORLD HEALTH ORGANIZATION. Essential medicines, 2024. Disponível em: https://www.who.int/news-room/fact-sheets/detail/essential-medicines. Acesso em: 1 set. 2025.</li>
+
+                                                    <li class="list-group-item">YALCIN, E.; DE LA MONTE, S. Tobacco nitrosamines as culprits in disease: mechanisms reviewed. <em>Journal of Physiology and Biochemistry</em>, v. 72, n. 1, p. 107–120, mar. 2016.</li>
+
+                                                    <li class="list-group-item">YANG, L. <em>et al</em>. Maternal cigarette smoking before or during pregnancy increases the risk of birth congenital anomalies: a population-based retrospective cohort study of 12 million mother–infant pairs. <em>BMC Medicine</em>, v. 20, n. 1, p. 4, jan. 2022.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="heading-m2-aula4">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m2-aula4" aria-expanded="false" aria-controls="collapse-m2-aula4">Aula 4</button>
+                                    </h5>
+                                    <div id="collapse-m2-aula4" class="accordion-collapse collapse" aria-labelledby="heading-m2-aula4" data-bs-parent="">
+                                        <div class="accordion-body">
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item">ANVISA. Resolução RDC nº 296, de 29 de julho de 2019. Dispõe sobre as informações toxicológicas para rótulos e bulas de agrotóxicos, afins e preservativos de madeira. Diário Oficial da União, Brasília, DF, 29 jul. 2019. Disponível em: <a href='https://bvsms.saude.gov.br/bvs/saudelegis/anvisa/2019/rdc0296_29_07_2019.pdf' target='_blank' rel='noopener noreferrer'>https://bvsms.saude.gov.br/bvs/saudelegis/anvisa/2019/rdc0296_29_07_2019.pdf</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item">BRASIL. Agência Nacional de Vigilância Sanitária (ANVISA). Resolução RDC nº 722, de 1º de julho de 2022. Disponível em: <a href='https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&link=S&tipo=RDC&numeroAto=00000722&seqAto=002&valorAno=2022&orgao=RDC/DC/ANVISA/MS&cod_modulo=134&cod_menu=1696' target='_blank' rel='noopener noreferrer'>https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&link=S&tipo=RDC&numeroAto=00000722&seqAto=002&valorAno=2022&orgao=RDC/DC/ANVISA/MS&cod_modulo=134&cod_menu=1696</a>. Acesso em: 30 ago. 2025.</li>
+
+                                                    <li class="list-group-item">BRASIL. Agência Nacional de Vigilância Sanitária (ANVISA). Instrução Normativa nº 160, de 1º de julho de 2022. Disponível em: <a href='https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&link=S&tipo=INM&numeroAto=00000160&seqAto=000&valorAno=2022&orgao=ANVISA/MS&cod_modulo=134&cod_menu=1696' target='_blank' rel='noopener noreferrer'>https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&link=S&tipo=INM&numeroAto=00000160&seqAto=000&valorAno=2022&orgao=ANVISA/MS&cod_modulo=134&cod_menu=1696</a>. Acesso em: 30 ago. 2025.</li>
+
+                                                    <li class="list-group-item">BRASIL. Agência Nacional de Vigilância Sanitária (ANVISA). Conheça os novos guias de avaliação toxicológica de agrotóxicos. 2023. Disponível em: <a href='https://www.gov.br/anvisa/pt-br/assuntos/noticias-anvisa/2023/conheca-os-novos-guias-de-avaliacao-toxicologica-de-agrotoxicos' target='_blank' rel='noopener noreferrer'>https://www.gov.br/anvisa/pt-br/assuntos/noticias-anvisa/2023/conheca-os-novos-guias-de-avaliacao-toxicologica-de-agrotoxicos</a>. Acesso em: 30 set. 2025.</li>
+
+                                                    <li class="list-group-item">BRASIL. Lei nº 14.785, de 27 de dezembro de 2023. Lei dos agrotóxicos. Diário Oficial da União, Brasília, 28 dez. 2023. Disponível em: <a href='https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14785.htm' target='_blank' rel='noopener noreferrer'>https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14785.htm</a>. Acesso em: 20 ago. 2025.</li>
+
+                                                    <li class="list-group-item">BRASIL. Ministério da Saúde. Secretaria de Vigilância em Saúde e Ambiente. Boletim Epidemiológico: intoxicações exógenas por agrotóxicos no Brasil – 2013 a 2022. Brasília: Ministério da Saúde, v. 54, n. 12, 2023. Disponível em: <a href='https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/boletins/epidemiologicos/edicoes/2023/boletim-epidemiologico-volume-54-no-12' target='_blank' rel='noopener noreferrer'>https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/boletins/epidemiologicos/edicoes/2023/boletim-epidemiologico-volume-54-no-12</a>. Acesso em: 25 ago. 2025.</li>
+
+                                                    <li class="list-group-item">IBAMA – Instituto Brasileiro de Recursos Naturais Renováveis. Relatórios de comercialização de agrotóxicos: boletins anuais de produção, importação, exportação e vendas de agrotóxicos no Brasil. Brasília: IBAMA, 2025. Disponível em: <a href='http://www.ibama.gov.br/agrotoxicos/relatorios-de-comercializacao-de-agrotoxicos' target='_blank' rel='noopener noreferrer'>http://www.ibama.gov.br/agrotoxicos/relatorios-de-comercializacao-de-agrotoxicos</a>. Acesso em: 18 set. 2025.</li>
+
+                                                    <li class="list-group-item">KLAASSEN, Curtis D.; WATKINS III, John B. Fundamentos em toxicologia de Casarett e Doull. 2. ed. Porto Alegre: AMGH, 2012.</li>
+
+                                                    <li class="list-group-item">OGA, Seizi; CAMARGO, Márcia Maria de Almeida; BATISTUZZO, José Antonio de Oliveira. Fundamentos de toxicologia. 4. ed. São Paulo: Atheneu, 2014.</li>
+
+                                                    <li class="list-group-item">SHIBAMOTO, Takayuki; BJELDANES, Leonard F. Introdução à toxicologia de alimentos. Rio de Janeiro: Elsevier, 2014.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="heading-m2-aula5">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m2-aula5" aria-expanded="false" aria-controls="collapse-m2-aula5">Aula 5</button>
+                                    </h5>
+                                    <div id="collapse-m2-aula5" class="accordion-collapse collapse" aria-labelledby="heading-m2-aula5" data-bs-parent="">
+                                        <div class="accordion-body">
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item">AMORIM, L. C. A. Os biomarcadores e sua aplicação na avaliação da exposição aos agentes químicos ambientais. Revista Brasileira de Epidemiologia, v. 6, n. 2, p. 158–170, jun. 2003. Disponível em: <a href='https://doi.org/10.1590/S1415-790X2003000200009' target='_blank' rel='noopener noreferrer'>https://doi.org/10.1590/S1415-790X2003000200009</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item">AZEVEDO, F. A.; CHASIN, A. A. M. (Coord.). As bases toxicológicas da ecotoxicologia. São Carlos: RiMa; São Paulo: Intertox, 2003.</li>
+
+                                                    <li class="list-group-item">FUNDACENTRO. Manual de orientação sobre controle médico ocupacional da exposição a substâncias químicas. São Paulo: Fundacentro, 2014. Disponível em: <a href='http://arquivosbiblioteca.fundacentro.gov.br/exlibris/aleph/a23_1/apache_media/QLH7B8HET1QGHYRIJH3ADNE4A47XVU.pdf' target='_blank' rel='noopener noreferrer'>http://arquivosbiblioteca.fundacentro.gov.br/exlibris/aleph/a23_1/apache_media/QLH7B8HET1QGHYRIJH3ADNE4A47XVU.pdf</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item">FUNDACENTRO. Toxicologia ocupacional. São Paulo: Fundacentro, 2020. Disponível em: <a href='http://arquivosbiblioteca.fundacentro.gov.br/exlibris/aleph/u23_1/bd/Toxicologia_ocupacional_final.pdf' target='_blank' rel='noopener noreferrer'>http://arquivosbiblioteca.fundacentro.gov.br/exlibris/aleph/u23_1/bd/Toxicologia_ocupacional_final.pdf</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item">ILO – INTERNATIONAL LABOR ORGANIZATION. Enciclopédia de saúde ocupacional e segurança: princípios gerais de toxicologia. Disponível em: <a href='https://www.iloencyclopaedia.org/pt/part-iv-66769/toxicology-57951/general-principles-of-toxicology' target='_blank' rel='noopener noreferrer'>https://www.iloencyclopaedia.org/pt/part-iv-66769/toxicology-57951/general-principles-of-toxicology</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item">PEIXOTO, N. F.; FERREIRA, L. S. Higiene ocupacional III. Santa Maria: Universidade Federal de Santa Maria, Colégio Técnico Industrial de Santa Maria; Rede e-Tec Brasil, 2013. Disponível em: <a href='https://www.ufsm.br/unidades-universitarias/ctism/cte/seguranca-do-trabalho-ctism-apostilas' target='_blank' rel='noopener noreferrer'>https://www.ufsm.br/unidades-universitarias/ctism/cte/seguranca-do-trabalho-ctism-apostilas</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item">PIVETTA, F.; MACHADO, J. M. H.; ARAÚJO, U. C.; MOREIRA, M. F. R.; APOSTOLI, P. Monitoramento biológico: conceitos e aplicações em saúde pública. Cadernos de Saúde Pública, v. 17, n. 3, p. 545–554, maio 2001. Disponível em: <a href='https://doi.org/10.1590/S0102-311X2001000300010' target='_blank' rel='noopener noreferrer'>https://doi.org/10.1590/S0102-311X2001000300010</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item">ROSA, H. V. D.; MARTINS, I.; SIQUEIRA, M. E. P. B.; COLACIOPPO, S. Monitoramento ambiental e biológico. In: OGA, S.; CAMARGO, M. M. A.; BATISTUZZO, J. A. O. (Org.). Fundamentos de toxicologia. 5. ed. São Paulo: Atheneu, 2021.</li>
+
+                                                    <li class="list-group-item">THORNE, O. S. Toxicologia ocupacional. In: KLASSEN, C. D.; WATKINS III, J. B. (Org.). Fundamentos em toxicologia de Casarett e Doull. 2. ed. Porto Alegre: AMGH, 2012.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h5 class="accordion-header" id="heading1-modulo3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-modulo3" aria-expanded="false" aria-controls="collapse1-modulo3">Módulo 3</button>
+                    </h5>
+                    <div id="collapse1-modulo3" class="accordion-collapse collapse" aria-labelledby="heading1-modulo3" data-bs-parent="">
+                        <div class="accordion-body">
+                            <!-- Accordion Aulas -->
+                            <div class="accordion accordion-flush aos-init aos-animate" data-aos="fade-up" data-aos-easing="ease-out" data-aos-duration="800" id="accordionBibliografia-m3-aulas">
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="heading-m3-aula1">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m3-aula1" aria-expanded="true" aria-controls="collapse-m3-aula1">Aula 1</button>
+                                    </h5>
+                                    <div id="collapse-m3-aula1" class="accordion-collapse collapse" aria-labelledby="heading-m3-aula1" data-bs-parent="">
+                                        <div class="accordion-body">
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">INSTITUTO NACIONAL DE CÂNCER (INCA). <em>Metais pesados, câncer e os riscos ambientais</em>. Rio de Janeiro: INCA. Disponível em: <a href='https://ninho.inca.gov.br/jspui/bitstream/123456789/15363/1/Metais%20e%20Cancer.pdf' target='_blank' rel='noopener noreferrer'>https://ninho.inca.gov.br/jspui/bitstream/123456789/15363/1/Metais%20e%20Cancer.pdf</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">OLSON, K. R. (Org.). <em>Manual de toxicologia clínica</em> [recurso eletrônico]. 6. ed. Porto Alegre: AMGH, 2014. Disponível em: <a href='https://saude.ufpr.br/medtrab/wp-content/uploads/sites/25/2016/08/Manual-de-Toxicologia-Clínica_pdf.pdf' target='_blank' rel='noopener noreferrer'>https://saude.ufpr.br/medtrab/wp-content/uploads/sites/25/2016/08/Manual-de-Toxicologia-Clínica_pdf.pdf</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ORGANIZAÇÃO PAN-AMERICANA DA SAÚDE (OPAS).<em> O impacto de substâncias químicas sobre a saúde pública: fatores conhecidos e desconhecidos</em>. Brasília: OPAS, 2018. Disponível em: <a href='https://iris.paho.org/bitstream/handle/10665.2/49122/OPASBRA180022-por.pdf' target='_blank' rel='noopener noreferrer'>https://iris.paho.org/bitstream/handle/10665.2/49122/OPASBRA180022-por.pdf</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">PERUZZO, L. C. <em>Toxicologia e segurança</em>. Indaial: UNIASSELVI, 2018. 215 p. Disponível em: <a href='https://www.ispsn.org/sites/default/files/documentos-virtuais/pdf/toxicologia_e_seguranca_-_lucile_cecilia_peruzzo_0.pdf' target='_blank' rel='noopener noreferrer'>https://www.ispsn.org/sites/default/files/documentos-virtuais/pdf/toxicologia_e_seguranca_-_lucile_cecilia_peruzzo_0.pdf</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">TEIXEIRA, A. G. Toxicologia. Londrina: Editora e Distribuidora Educacional S.A., 2016. 184 p. ISBN 978-85-8482-694-0. Disponível em: <a href='http://cm-kls-content.s3.amazonaws.com/201602/INTERATIVAS_2_0/TOXICOLOGIA/U1/LIVRO_UNICO.pdf' target='_blank' rel='noopener noreferrer'>http://cm-kls-content.s3.amazonaws.com/201602/INTERATIVAS_2_0/TOXICOLOGIA/U1/LIVRO_UNICO.pdf</a>. Acesso em: 10 fev. 2026.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="heading-m3-aula2">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m3-aula2" aria-expanded="false" aria-controls="collapse-m3-aula2">Aula 2</button>
+                                    </h5>
+                                    <div id="collapse-m3-aula2" class="accordion-collapse collapse" aria-labelledby="heading-m3-aula2" data-bs-parent="">
+                                        <div class="accordion-body">
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ALVES, C. B. C. <em>et al</em>. Intoxicação crônica por chumbo após acidente por arma de fogo: relato de caso. Brazilian Journal of Health Review, v. 7, n. 1, p. 189–199, 2024.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">AP NEWS. Trabalhadores denunciam mortes e adoecimentos por exposição ao mercúrio. 2024. Disponível em: <a href='https://apnews.com/article/amazon-mercury-gold-mining-yanomami-brazil-indigenous-8809d4f22c84dd6e81bb7a1f5f3ba9f6' target='_blank' rel='noopener noreferrer'>https://apnews.com/article/amazon-mercury-gold-mining-yanomami-brazil-indigenous-8809d4f22c84dd6e81bb7a1f5f3ba9f6</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">DUFFUS, J. H. “Heavy metals”: a meaningless term? Pure and Applied Chemistry, v. 74, n. 5, p. 793–807, 2002.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">FUNDAÇÃO CENTRO DE REFERÊNCIA EM SEGURANÇA, SAÚDE NO TRABALHO (FUNDACENTRO). Estudo do Banco Mundial aponta morte de 5,5 milhões de pessoas devido à intoxicação por chumbo. Brasília: Fundacentro, 2023. Disponível em: <a href='https://www.gov.br/fundacentro/pt-br/comunicacao/noticias/noticias/2023/setembro/estudo-do-banco-mundial-aponta-morte-de-5-5-milhoes-de-pessoas-devido-a-intoxicacao-por-chumbo' target='_blank' rel='noopener noreferrer'>https://www.gov.br/fundacentro/pt-br/comunicacao/noticias/noticias/2023/setembro/estudo-do-banco-mundial-aponta-morte-de-5-5-milhoes-de-pessoas-devido-a-intoxicacao-por-chumbo</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">FUNDAÇÃO OSWALDO CRUZ (FIOCRUZ). Fiocruz apresenta novos dados de estudo que avalia a saúde da população de Brumadinho. Disponível em: <a href='https://fiocruz.br/noticia/2025/01/fiocruz-apresenta-novos-dados-de-estudo-que-avalia-saude-da-populacao-de-brumadinho' target='_blank' rel='noopener noreferrer'>https://fiocruz.br/noticia/2025/01/fiocruz-apresenta-novos-dados-de-estudo-que-avalia-saude-da-populacao-de-brumadinho</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">INSTITUTO NACIONAL DE CÂNCER (Brasil). Metais pesados, câncer e os riscos ambientais. Rio de Janeiro: INCA, 2024. 22 p.: il. color.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">MANZINI, F. F.; SÁ, K. B. de; PLICAS, L. M. de A. Metais pesados: fonte e ação toxicológica. Fórum Ambiental da Alta Paulista, [S. l.], v. 6, n. 12, 2010. DOI: 10.17271/19800827612201026. Disponível em: <a href='https://publicacoes.amigosdanatureza.org.br/index.php/forum_ambiental/article/view/26' target='_blank' rel='noopener noreferrer'>https://publicacoes.amigosdanatureza.org.br/index.php/forum_ambiental/article/view/26</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">OGA, S.; CAMARGO, M. M. A.; BATISTUZZO, J. A. O. Fundamentos de toxicologia. 4. ed. São Paulo: Atheneu, 2014.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">RUSYNIAK, D. E. et al. Heavy metal poisoning: management of intoxication and antidotes. In: Molecular, Clinical and Environmental Toxicology: Volume 2 – Clinical Toxicology. p. 365–396, 2010.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">SAMPAIO, A. Caso do bolo envenenado: saiba como funciona a atuação técnica do Instituto-Geral de Perícias. Instituto-Geral de Perícias do Rio Grande do Sul, 13 jan. 2025. Disponível em: <a href='https://igp.rs.gov.br/caso-do-bolo-envenenado-saiba-como-funciona-a-atuacao-tecnica-do-instituto-geral-de-pericias' target='_blank' rel='noopener noreferrer'>https://igp.rs.gov.br/caso-do-bolo-envenenado-saiba-como-funciona-a-atuacao-tecnica-do-instituto-geral-de-pericias</a>. Acesso em: 10 fev. 2026.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="heading-m3-aula3">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m3-aula3" aria-expanded="false" aria-controls="collapse-m3-aula3">Aula 3</button>
+                                    </h5>
+                                    <div id="collapse-m3-aula3" class="accordion-collapse collapse" aria-labelledby="heading-m3-aula3" data-bs-parent="">
+                                        <div class="accordion-body">
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ATSDR – AGENCY FOR TOXIC SUBSTANCES AND DISEASE REGISTRY. Toxicological profile for arsenic. Atlanta: ATSDR, 2020a.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ATSDR – AGENCY FOR TOXIC SUBSTANCES AND DISEASE REGISTRY. Toxicological profile for lead. Atlanta: ATSDR, 2020b.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Portaria nº 204, de 17 de fevereiro de 2016. Brasília: Ministério da Saúde, 2016.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério do Trabalho. Norma Regulamentadora nº 7 (NR-7): Programa de Controle Médico de Saúde Ocupacional (PCMSO). Brasília: Ministério do Trabalho, 2018.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">CDC – CENTERS FOR DISEASE CONTROL AND PREVENTION. Blood lead reference value. Atlanta: CDC, 2021.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">CLARKSON, T. W.; MAGOS, L.; MYERS, G. J. The toxicology of mercury: current exposures and clinical manifestations. New England Journal of Medicine, v. 349, n. 18, p. 1731–1737, 2003.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">GRANDJEAN, P.; LANDRIGAN, P. J. Neurobehavioural effects of developmental toxicity. The Lancet Neurology, v. 13, n. 3, p. 330–338, 2014.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">JARUP, L.; AKESSON, A. Current status of cadmium as an environmental health problem. Toxicology and Applied Pharmacology, v. 238, p. 201–208, 2009.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">KLAASSEN, C. D. (Ed.). Casarett and Doull’s toxicology: the basic science of poisons. 9. ed. New York: McGraw-Hill, 2019.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">LANPHEAR, B. P. et al. Low-level lead exposure and children’s intellectual function: an international pooled analysis. Environmental Health Perspectives, v. 126, n. 10, p. 1–9, 2018.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">NRC – NATIONAL RESEARCH COUNCIL. Potential health risks from recurrent lead exposure of DOD firing range personnel. Washington, DC: National Academies Press, 2012.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">SMITH, A. H. et al. Cancer risks from arsenic in drinking water. Environmental Health Perspectives, v. 126, n. 5, p. 057002, 2018.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">VALKO, M.; RHODES, C. J.; MONCOL, J. Free radicals, metals and antioxidants in oxidative stress-induced cancer. Chemico-Biological Interactions, v. 160, p. 1–40, 2006.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">WHO – WORLD HEALTH ORGANIZATION. Preventing disease through healthy environments: exposure to cadmium – a major public health concern. Geneva: WHO, 2019.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="heading-m3-aula4">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m3-aula4" aria-expanded="false" aria-controls="collapse-m3-aula4">Aula 4</button>
+                                    </h5>
+                                    <div id="collapse-m3-aula4" class="accordion-collapse collapse" aria-labelledby="heading-m3-aula4" data-bs-parent="">
+                                        <div class="accordion-body">
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Módulo de Princípios de Epidemiologia para o Controle de Enfermidades (MOPECE). Módulo 3: Medição das condições de saúde e doença na população. Brasília, DF: Ministério da Saúde, [s.d.]. Disponível em: <a href='https://bvsms.saude.gov.br/bvs/publicacoes/modulo_principios_epidemiologia_3.pdf' target='_blank' rel='noopener noreferrer'>https://bvsms.saude.gov.br/bvs/publicacoes/modulo_principios_epidemiologia_3.pdf</a>. Acesso em: 7 set. 2025.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Experiências exitosas em vigilância em saúde de populações expostas a agrotóxicos no Brasil. Brasília, DF: Ministério da Saúde, 2019. (Agrotóxicos na ótica do Sistema Único de Saúde). Disponível em: <a href='https://bvsms.saude.gov.br/bvs/publicacoes/agrotoxicos_otica_sistema_unico_saude_v2.pdf' target='_blank' rel='noopener noreferrer'>https://bvsms.saude.gov.br/bvs/publicacoes/agrotoxicos_otica_sistema_unico_saude_v2.pdf</a>. Acesso em: 25 out. 2025.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Guia de Vigilância em Saúde. 5. ed. Brasília, DF: Ministério da Saúde, 2022. 1.126 p. Disponível em: <a href='https://bvsms.saude.gov.br/bvs/publicacoes/guia_vigilancia_saude_5ed_rev_atual.pdf' target='_blank' rel='noopener noreferrer'>https://bvsms.saude.gov.br/bvs/publicacoes/guia_vigilancia_saude_5ed_rev_atual.pdf</a>. Acesso em: 7 set. 2025.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Portaria nº 204, de 17 de fevereiro de 2016. Define a Lista Nacional de Notificação Compulsória de doenças, agravos e eventos de saúde pública. Diário Oficial da União: seção 1, Brasília, DF, 2016. Disponível em: <a href='https://bvsms.saude.gov.br/bvs/saudelegis/gm/2016/prt0204_17_02_2016.html' target='_blank' rel='noopener noreferrer'>https://bvsms.saude.gov.br/bvs/saudelegis/gm/2016/prt0204_17_02_2016.html</a>. Acesso em: 7 set. 2025.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Secretaria de Vigilância em Saúde. Agrotóxicos na ótica do Sistema Único de Saúde. Brasília, DF: Ministério da Saúde, 2019. 2 v. il. ISBN 978-85-334-2428-9. Disponível em: <a href='https://bvsms.saude.gov.br/bvs/publicacoes/agrotoxicos_otica_sistema_unico_saude_v2.pdf' target='_blank' rel='noopener noreferrer'>https://bvsms.saude.gov.br/bvs/publicacoes/agrotoxicos_otica_sistema_unico_saude_v2.pdf</a>. Acesso em: 25 out. 2025.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Secretaria-Executiva. Departamento de Monitoramento e Avaliação do SUS. Política Nacional de Informação e Informática em Saúde. Brasília, DF: Ministério da Saúde, 2016. 56 p. ISBN 978-85-334-2353-4. Disponível em: <a href='https://bvsms.saude.gov.br/bvs/publicacoes/politica_nacional_informacao_informatica_saude.pdf' target='_blank' rel='noopener noreferrer'>https://bvsms.saude.gov.br/bvs/publicacoes/politica_nacional_informacao_informatica_saude.pdf</a>. Acesso em: 25 out. 2025.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">DATASUS – DEPARTAMENTO DE INFORMÁTICA DO SISTEMA ÚNICO DE SAÚDE. Acesso a sistemas e informações em saúde. Disponível em: <a href='https://datasus.saude.gov.br/' target='_blank' rel='noopener noreferrer'>https://datasus.saude.gov.br/</a>. Acesso em: 7 set. 2025.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">FRANCO, G. <em>et al</em>. Vigilância em saúde brasileira: reflexões e contribuição ao debate da 1ª Conferência Nacional de Vigilância em Saúde. Ciência & Saúde Coletiva, v. 22, n. 10, p. 3137–3148, 2017. DOI: 10.1590/1413-812320172210.18092017.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ROUQUAYROL, M. Z.; GOLDBAUM, M. (Org.). Epidemiologia & saúde. 8. ed. Rio de Janeiro: MedBook, 2018. 719 p.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">SILVA, A. P. B. et al. Avaliação do sistema de Vigilância em Saúde das Populações Expostas a Substâncias Químicas, Brasil, 2011 a 2021. Revista Panamericana de Salud Pública, v. 49, e6, 2025. DOI: 10.26633/RPSP.2025.6.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">TEIXEIRA, M. G. et al. Vigilância epidemiológica e emergências em saúde pública produzidas por agentes infecciosos. Rio de Janeiro: Fundação Oswaldo Cruz, 2021. 34 p. (Textos para Discussão, n. 57). Disponível em: <a href='https://homologacao-saudeamanha.icict.fiocruz.br/wp-content/uploads/2021/05/TEIXEIRA-MG-et-al-2021-Vigilancia-Epidemiologica-Saude-Publica-agentes-infecciosos-Fiocruz-Saude-Amanha-TD057.pdf' target='_blank' rel='noopener noreferrer'>https://homologacao-saudeamanha.icict.fiocruz.br/wp-content/uploads/2021/05/TEIXEIRA-MG-et-al-2021-Vigilancia-Epidemiologica-Saude-Publica-agentes-infecciosos-Fiocruz-Saude-Amanha-TD057.pdf</a>. Acesso em: 7 set. 2025.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">WALDMAN, E. A.; ROSA, T. E. C. Vigilância em saúde pública. São Paulo: e-Coleções FSP/USP, [s.d.]. Disponível em: <a href='https://colecoes.abcd.usp.br/fsp/items/show/2385' target='_blank' rel='noopener noreferrer'>https://colecoes.abcd.usp.br/fsp/items/show/2385</a>. Acesso em: 7 set. 2025.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">WORLD HEALTH ORGANIZATION. Global strategy on digital health 2020–2025. Geneva: WHO, 2021. Disponível em: <a href='https://www.who.int/docs/default-source/documents/gs4dhdaa2a9f352b0445bafbc79ca799dce4d.pdf' target='_blank' rel='noopener noreferrer'>https://www.who.int/docs/default-source/documents/gs4dhdaa2a9f352b0445bafbc79ca799dce4d.pdf</a>. Acesso em: 7 set. 2025.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="heading-m3-aula5">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m3-aula5" aria-expanded="false" aria-controls="collapse-m3-aula5">Aula 5</button>
+                                    </h5>
+                                    <div id="collapse-m3-aula5" class="accordion-collapse collapse" aria-labelledby="heading-m3-aula5" data-bs-parent="">
+                                        <div class="accordion-body">
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">AGÊNCIA GOV (Agência Brasil de Comunicação). Yanomamis de nove aldeias estão contaminados por mercúrio. 4 abr. 2024. Disponível em: <a href='https://agenciagov.ebc.com.br/noticias/202404/yanomamis-de-nove-aldeias-assediadas-pelo-garimpo-estao-contaminados-por-mercurio' target='_blank' rel='noopener noreferrer'>https://agenciagov.ebc.com.br/noticias/202404/yanomamis-de-nove-aldeias-assediadas-pelo-garimpo-estao-contaminados-por-mercurio</a>. Acesso em: 22 ago. 2025.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">AGÊNCIA NACIONAL DE MINERAÇÃO (ANM). Disponível em:<a href=' http://www.anm.gov.br/' target='_blank' rel='noopener noreferrer'> http://www.anm.gov.br/</a>. Acesso em: 26 ago. 2025.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BARTH, Christian (Canal Christian Barth). Metais Pesados (animação explicativa). [s.l.]: s.n., s.d. Disponível em: <a href='https://www.youtube.com/watch?v=GAh2CdV5CfI' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=GAh2CdV5CfI</a>. Acesso em: 08 set. 2025.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BUSS, P. M.; PELLEGRINI FILHO, A. A saúde e seus determinantes sociais. Physis: Revista de Saúde Coletiva, Rio de Janeiro, v. 17, n. 1, p. 77-93, 2007.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">COSTA, B. B. (org.). Saúde coletiva: conceitos, práticas e determinantes em saúde. Vol. 2. [Livro digital]. 1. ed. São Paulo: Aya Editora, 2025. 116 p. DOI: <a href='https://doi.org/10.47573/aya.5379.2.410' target='_blank' rel='noopener noreferrer'>https://doi.org/10.47573/aya.5379.2.410</a>. ISBN: 978-65-5379-684-3.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">CONSELHO REGIONAL DE QUÍMICA – IV REGIÃO (CRQ-SP). Tabela Periódica Interativa. Disponível em: <a href='https://crqsp.org.br/tabelaperiodica/' target='_blank' rel='noopener noreferrer'>https://crqsp.org.br/tabelaperiodica/</a>. Acesso em: 08 set. 2025.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">CRICHTON, Robert R. <em>Metal Toxicity – An Introduction</em>. In: Metal Chelation in Medicine. RSC Metallobiology Series, edited volume, Chapter 1. Cambridge: Royal Society of Chemistry, 2016. Disponível em: <a href='https://books.rsc.org/books/edited-volume/538/chapter/186451/Metal-Toxicity-An-Introduction' target='_blank' rel='noopener noreferrer'>https://books.rsc.org/books/edited-volume/538/chapter/186451/Metal-Toxicity-An-Introduction</a>. Acesso em: 20 ago. 2025.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">CIÊNCIA ANIMADA (Canal Ciência Animada). De onde vem o ferro – BNCC (EF01CI01). [s.l.]: s.n., s.d. Disponível em: <a href='https://www.youtube.com/watch?v=6NuKda-T5Bo' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=6NuKda-T5Bo</a>. Acesso em: 08 set. 2025.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">HAIDAR, Z.; FATEMA, K.; SHOILY, S. S.; SAJIB, A. A. Disease-associated metabolic pathways affected by heavy metals and metalloid. Toxicology Reports, [S.l.], v. 10, p. 554–570, 2023. DOI: <a href='https://doi.org/10.1016/j.toxrep.2023.04.010' target='_blank' rel='noopener noreferrer'>https://doi.org/10.1016/j.toxrep.2023.04.010</a></li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">INSTITUTO BRASILEIRO DE MINERAÇÃO (IBRAM). [s.l.]: [s.n.], s.d. Disponível em: <a href='https://portaldamineracao.com.br/' target='_blank' rel='noopener noreferrer'>https://portaldamineracao.com.br/</a>. Acesso em: 08 set. 2025.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">INSTITUTO NACIONAL DE CÂNCER JOSÉ ALENCAR GOMES DA SILVA (INCA). Metais e câncer. Rio de Janeiro: INCA, [2024]. Disponível em: <a href='https://ninho.inca.gov.br/jspui/bitstream/123456789/15363/1/Metais%20e%20Cancer.pdf' target='_blank' rel='noopener noreferrer'>https://ninho.inca.gov.br/jspui/bitstream/123456789/15363/1/Metais%20e%20Cancer.pdf</a>. Acesso em: 22 ago. 2025.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">JAZIDA. Mineração no Brasil. Blog Jazida, 20 out. 2023. Disponível em: <a href='https://blog.jazida.com/mineracao-no-brasil/' target='_blank' rel='noopener noreferrer'>https://blog.jazida.com/mineracao-no-brasil/</a>. Acesso em: 22 ago. 2025.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">KOYAMA, H.; KAMOGASHIRA, T.; YAMASOBA, T. <em>Heavy metal exposure: molecular pathways, clinical implications, and protective strategies</em>. Antioxidants, Basel, v. 13, n. 1, p. 76, 2024. DOI: <a href='https://doi.org/10.3390/antiox13010076' target='_blank' rel='noopener noreferrer'>https://doi.org/10.3390/antiox13010076</a>.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">MALTA, D. C. (org.); SILVA, A. G.; GOMES, C. S.; SOUZA, J. B. Determinantes sociais em saúde: doenças crônicas não transmissíveis e seus fatores de risco e de proteção na população adulta brasileira. 1. ed. São Paulo: Rema Editora, 2025. </li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">OBREGÓN, P. L.; ESPINOZA-QUIÑONES, F. R.; OLIVEIRA, L. G. O. DE. Intoxicações de mercúrio e chumbo com maior prevalência em crianças e trabalhadores no Paraná. Cadernos Saúde Coletiva, 9 abr. 2021.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">PAHO IRIS. Determinantes ambientais e sociais da saúde - PAHO IRIS. Disponível em: <a href='https://iris.paho.org/bitstream/handle/10665.2/51687/9789275731291_por.pdf' target='_blank' rel='noopener noreferrer'>https://iris.paho.org/bitstream/handle/10665.2/51687/9789275731291_por.pdf</a> . 2011.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">SUS TV. Determinantes sociais da saúde. [s.l.]: s.n., 2019. Disponível em: <a href='https://www.youtube.com/watch?v=2JJNDeUkVtI' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=2JJNDeUkVtI</a>. Acesso em: 08 set. 2025.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="heading-m3-aula6">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m3-aula6" aria-expanded="false" aria-controls="collapse-m3-aula6">Aula 6</button>
+                                    </h5>
+                                    <div id="collapse-m3-aula6" class="accordion-collapse collapse" aria-labelledby="heading-m3-aula6" data-bs-parent="">
+                                        <div class="accordion-body">
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">COVELLO, V.; SANDMAN, P. Risk communication: evolution and revolution. In: WOLBARST, A. Solutions to an environment in peril. Baltimore: Johns Hopkins University Press, 2001. p. 164–178.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">KRIMSKY, S.; PLOUGH, A. Environmental hazards: communicating risks as a social process. Dover, MA: Auburn House Publishing Company, 1988.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">NATIONAL RESEARCH COUNCIL. Recommendations for improving risk communication. In: NATIONAL RESEARCH COUNCIL. Improving risk communication. Washington, DC: National Academies Press, 1989. p. 16–19.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fim do Accordion Módulos -->
+        </div>
+
+    </div>
 </div>
 		`,
-  },
+	},
+	materialcomplementar: {
+		ariaLabel: 'materialcomplementar',
+		modalSize: 'modal-xl',
+		modalTitle: 'Material Complementar',
+		modalBody: `
+			<div class="row justify-content-center pt-5">
+    <div class="col-12 col-md-11">
+        <div class="mb-5">
+            <!-- Accordion Módulos-->
+            <div class="accordion accordion-flush" id="accordionMaterialComplementar">
+                <div class="accordion-item">
+                    <h5 class="accordion-header" id="heading1-material-modulo1">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-material-modulo1" aria-expanded="true" aria-controls="collapse1-material-modulo1">Módulo 1</button>
+                    </h5>
+                    <div id="collapse1-material-modulo1" class="accordion-collapse collapse" aria-labelledby="heading1-material-modulo1" data-bs-parent="">
+
+                        <div class="accordion-body">
+                            <!-- Accordion Aulas -->
+                            <div class="accordion accordion-flush aos-init aos-animate" data-aos="fade-up" data-aos-easing="ease-out" data-aos-duration="800" id="accordionMaterialComplementar-m1-aulas">
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="heading-m1-material-complementar-aula1">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m1-material-complementar-aula1" aria-expanded="true" aria-controls="collapse-m1-material-complementar-aula1">Aula 1</button>
+                                    </h5>
+                                    <div id="collapse-m1-material-complementar-aula1" class="accordion-collapse collapse" aria-labelledby="heading-m1-material-complementar-aula1" data-bs-parent="">
+                                        <div class="accordion-body">
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item">ARREAZA, Ana Lucia V.; MORAES, José Cássio de. Vigilância da saúde: fundamentos, interfaces e tendências. Ciência & Saúde Coletiva, Rio de Janeiro, v. 15, n. 4, p. 2215–2228, 2010. DOI: 10.1590/S1413-81232010000400036. Disponível em: <a href='https://www.scielo.br/j/csc/a/nC4LpHzs3bS7RVztSq8SZnc/' target='_blank' rel='noopener noreferrer'>https://www.scielo.br/j/csc/a/nC4LpHzs3bS7RVztSq8SZnc/</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item">AVANCI, Joviana Quintes <em>et al</em>. Ações de vigilância das violências em serviços da atenção primária, hospitalar e de reabilitação no Brasil. Ciência & Saúde Coletiva, v. 30, n. 3, e17372024, 2025. DOI: 10.1590/1413-81232025303.17372024.</li>
+
+                                                    <li class="list-group-item">BAQUI, Patricia <em>et al</em>. Ethnic and regional variations in hospital mortality from COVID-19 in Brazil. The Lancet Global Health, v. 8, n. 8, p. e1018–e1026, 2020. DOI: 10.1016/S2214-109X(20)30285-0.</li>
+
+                                                    <li class="list-group-item">BARATA, Rita Barradas. Investigação de surtos e epidemias: transformações na teoria, nos conceitos e nas práticas do século XVIII ao século XXI. Saúde e Sociedade, São Paulo, v. 33, n. 1, e220310pt, 2024. DOI: 10.1590/s0104-12902024220310pt.</li>
+
+                                                    <li class="list-group-item">BRASIL. 1ª Conferência Nacional de Vigilância em Saúde: Vigilância em Saúde – direito, conquistas e defesa de um SUS público de qualidade. Brasília, 2018. Disponível em: <a href='http://ces.saude.mg.gov.br/wp-content/uploads/2016/06/Documento-Orientador-1%C2%AA-CEVS.pdf' target='_blank' rel='noopener noreferrer'>http://ces.saude.mg.gov.br/wp-content/uploads/2016/06/Documento-Orientador-1%C2%AA-CEVS.pdf</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item">BRASIL. Ministério da Saúde. Secretaria de Vigilância em Saúde. <em>Saúde ambiental: guia básico para construção de indicadores</em>. 1. ed. Brasília, 2011. 128 p. (Série B. Textos básicos de saúde). ISBN 9788533417779.</li>
+
+                                                    <li class="list-group-item">CAIRUS, Henrique F.; RIBEIRO, Wilson A. <em>Textos hipocráticos: o doente, o médico e a doença</em>. Rio de Janeiro: Editora FIOCRUZ, 2005. 251 p. ISBN 9788575413753.</li>
+
+                                                    <li class="list-group-item">CAMPOS, Gastão Wagner de Sousa <em>et al</em>. <em>Tratado de saúde coletiva.</em> 2. ed. rev. ampl. São Paulo: HUCITEC, 2012. 968 p. ISBN 9788564806566.</li>
+
+                                                    <li class="list-group-item">CANAL USP. Da colonização à abolição: a história das epidemias no Brasil. YouTube, 24 mar. 2020. Disponível em: <a href='https://www.youtube.com/watch?v=HRTkFCe7xwI' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=HRTkFCe7xwI</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item">CONSELHO NACIONAL DE SECRETARIAS MUNICIPAIS DE SAÚDE (CONASEMS). Aula 21 - Vigilância em saúde: (parte 1). YouTube, 24 fev. 2022. Disponível em: <a href='https://www.youtube.com/watch?v=zszLy8ckb0E' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=zszLy8ckb0E</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item">CONSELHO NACIONAL DE SECRETARIAS MUNICIPAIS DE SAÚDE (CONASEMS). Aula 22 - Vigilância em saúde (parte 2). YouTube, 24 fev. 2022. Disponível em: <a href='https://www.youtube.com/watch?v=Q0hYz3lKrG8' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=Q0hYz3lKrG8</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item">DA SILVA JUNIOR, Jarbas Barbosa. <em>A nova face da vigilância epidemiológica</em>. Epidemiologia e Serviços de Saúde, Brasília, v. 12, n. 1, 2003. DOI: 10.5123/S1679-49742003000100001.</li>
+
+                                                    <li class="list-group-item">FRANCO, Geraldo <em>et al</em>. <em>Vigilância em saúde brasileira: reflexões e contribuição ao debate da 1ª Conferência Nacional de Vigilância em Saúde</em>. Ciência & Saúde Coletiva, Rio de Janeiro, v. 22, n. 10, p. 3137–3148, 2017. DOI: 10.1590/1413-812320172210.18092017.</li>
+
+                                                    <li class="list-group-item">HENRIQUES, Carolina Maria P.; MOURA, Natália F. O. de; SOUZA, Paulo B. de. <em>Desafios e lições da pandemia de COVID-19 para a Vigilância em Saúde no Brasil</em>. Revista Brasileira de Epidemiologia, v. 27, e240049, 2024. DOI: 10.1590/1980-549720240049.2.</li>
+
+                                                    <li class="list-group-item">LEE, Lisa M. <em>et al</em>. <em>Principles and practice of public health surveillance</em>. Oxford: Oxford University Press, 2010. 766 p. ISBN 9780195372922. DOI: 10.1093/acprof:oso/9780195372922.001.0001.</li>
+
+                                                    <li class="list-group-item">METEORO BRASIL. A história da vigilância em saúde no Brasil. YouTube, 13 set. 2021. Disponível em: <a href='https://www.youtube.com/watch?v=DXXL4EBwxZo' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=DXXL4EBwxZo</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item">PRAZER, KARNAL – CANAL OFICIAL DE LEANDRO KARNAL. História das Epidemias | Leandro Karnal. YouTube, 2 ago. 2021. Disponível em:<a href=' https://www.youtube.com/watch?v=vt8d0FKj7k4' target='_blank' rel='noopener noreferrer'> https://www.youtube.com/watch?v=vt8d0FKj7k4</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item">ROSEN, George. <em>Uma história da saúde pública</em>. São Paulo: HUCITEC, 1994. 423 p. ISBN 9788527102629.</li>
+
+                                                    <li class="list-group-item">TV SENADO. A Revolta da Vacina. YouTube, 30 out. 2017. Disponível em: <a href='https://www.youtube.com/watch?v=6i6v9f_aWjg' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=6i6v9f_aWjg</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item">VIDEOSAÚDE DISTRIBUIDORA DA FIOCRUZ. A história da saúde pública no Brasil – 500 anos na busca de soluções. YouTube, 22 fev. 2016. Disponível em: <a href='https://www.youtube.com/watch?v=7ouSg6oNMe8' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=7ouSg6oNMe8</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item">WORLD HEALTH ORGANIZATION. Noncommunicable diseases: progress monitor 2025. Geneva, 2025. Disponível em: <a href='https://iris.who.int/server/api/core/bitstreams/7a228681-a190-4c29-b2a8-9d4255dc49d1/content' target='_blank' rel='noopener noreferrer'>https://iris.who.int/server/api/core/bitstreams/7a228681-a190-4c29-b2a8-9d4255dc49d1/content</a>.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="heading-m1-material-complementar-aula2">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m1-material-complementar-aula2" aria-expanded="false" aria-controls="collapse-m1-material-complementar-aula2">Aula 2</button>
+                                    </h5>
+                                    <div id="collapse-m1-material-complementar-aula2" class="accordion-collapse collapse" aria-labelledby="heading-m1-material-complementar-aula2" data-bs-parent="">
+                                        <div class="accordion-body">
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item">BRASIL. Ministério da Saúde. Instrumentos de planejamento do SUS. Brasília, DF: Ministério da Saúde, [s.d.]. Disponível em: <a href='https://www.gov.br/saude/pt-br/acesso-a-informacao/gestao-do-sus/instrumentos-de-planejamento' target='_blank' rel='noopener noreferrer'>https://www.gov.br/saude/pt-br/acesso-a-informacao/gestao-do-sus/instrumentos-de-planejamento</a>. Acesso em: 2 out. 2025.</li>
+
+                                                    <li class="list-group-item">BRASIL. Ministério da Saúde. Vigilância em Saúde das Populações Expostas a Contaminantes e Substâncias Químicas (VIGIPEQ). Brasília, DF: Ministério da Saúde, [s.d.]. Disponível em: <a href='https://www.gov.br/saude/pt-br/composicao/svsa/saude-ambiental/vigipeq' target='_blank' rel='noopener noreferrer'>https://www.gov.br/saude/pt-br/composicao/svsa/saude-ambiental/vigipeq</a>. Acesso em: 2 out. 2025.</li>
+
+                                                    <li class="list-group-item">BRASIL. Ministério da Saúde. Manual de planejamento do SUS: articulação interfederativa. Brasília, DF: Ministério da Saúde, [s.d.]. Disponível em: <a href='https://bvsms.saude.gov.br/bvs/publicacoes/articulacao_interfederativa_v4_manual_planejamento_atual.pdf' target='_blank' rel='noopener noreferrer'>https://bvsms.saude.gov.br/bvs/publicacoes/articulacao_interfederativa_v4_manual_planejamento_atual.pdf</a>. Acesso em: 2 out. 2025.</li>
+
+                                                    <li class="list-group-item">BRASIL DE FATO. Documentário denuncia contaminação por contato com lama tóxica da Samarco. São Paulo, 5 fev. 2019. Disponível em: <a href='https://www.brasildefato.com.br/2019/02/05/documentario-denuncia-contaminacao-por-contato-com-lama-toxica-da-samarco/' target='_blank' rel='noopener noreferrer'>https://www.brasildefato.com.br/2019/02/05/documentario-denuncia-contaminacao-por-contato-com-lama-toxica-da-samarco/</a>. Acesso em: 2 out. 2025.</li>
+
+                                                    <li class="list-group-item">CONASEMS. Aula 21 - Vigilância em saúde (parte 1). YouTube, 24 fev. 2022. Disponível em: <a href='https://www.youtube.com/watch?v=zszLy8ckb0E' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=zszLy8ckb0E</a>. Acesso em: 2 out. 2025.</li>
+
+                                                    <li class="list-group-item">CONASEMS. Vigilância em saúde (parte 2). YouTube, 25 fev. 2022. Disponível em: <a href='https://www.youtube.com/watch?v=Q0hYz3lKrG8' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=Q0hYz3lKrG8</a>. Acesso em: 2 out. 2025.</li>
+
+                                                    <li class="list-group-item">DATASUS. TABNET: intoxicação exógena – SINAN. Brasília, DF: Ministério da Saúde, [s.d.]. Disponível em: <a href='http://tabnet.datasus.gov.br/cgi/tabcgi.exe?sinannet/cnv/Intoxbr.def' target='_blank' rel='noopener noreferrer'>http://tabnet.datasus.gov.br/cgi/tabcgi.exe?sinannet/cnv/Intoxbr.def</a>. Acesso em: 2 out. 2025.</li>
+
+                                                    <li class="list-group-item">DATASUS. Tutorial TABNET. Brasília, DF: Ministério da Saúde, 2020. Disponível em: <a href='https://datasus.saude.gov.br/wp-content/uploads/2020/02/Tutorial-TABNET-2020.pdf' target='_blank' rel='noopener noreferrer'>https://datasus.saude.gov.br/wp-content/uploads/2020/02/Tutorial-TABNET-2020.pdf</a>. Acesso em: 2 out. 2025.</li>
+
+                                                    <li class="list-group-item">DATASUS. Portal DATASUS. Brasília, DF: Ministério da Saúde, [s.d.]. Disponível em: <a href='https://datasus.saude.gov.br/' target='_blank' rel='noopener noreferrer'>https://datasus.saude.gov.br/</a>. Acesso em: 2 out. 2025.</li>
+
+                                                    <li class="list-group-item">FIOCRUZ. Vigilância em saúde – ligado em saúde. Rio de Janeiro: Fiocruz, [s.d.]. Vídeo. Disponível em: <a href='https://fiocruz.br/video/vigilancia-em-saude-ligado-em-saude' target='_blank' rel='noopener noreferrer'>https://fiocruz.br/video/vigilancia-em-saude-ligado-em-saude</a>. Acesso em: 2 out. 2025.</li>
+
+                                                    <li class="list-group-item">FIOCRUZ. Vigilância genômica de dengue, chikungunya e Zika. Rio de Janeiro: Fiocruz, [s.d.]. Vídeo. Disponível em: <a href='https://fiocruz.br/video/projeto-da-fiocruz-gera-mais-de-120-genomas-completos-de-dengue-zika-e-chikungunya' target='_blank' rel='noopener noreferrer'>https://fiocruz.br/video/projeto-da-fiocruz-gera-mais-de-120-genomas-completos-de-dengue-zika-e-chikungunya</a>. Acesso em: 2 out. 2025.</li>
+
+                                                    <li class="list-group-item">FOLHA DE S. PAULO. Fantasmas da lama: a vida dos atingidos pela mineração em MG, oito anos após Mariana. YouTube, 5 nov. 2023. Disponível em: <a href='https://www.youtube.com/watch?v=8xwOIFizqA0' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=8xwOIFizqA0</a>. Acesso em: 2 out. 2025.</li>
+
+                                                    <li class="list-group-item">FIOCRUZ. Carlos Machado: tragédia de Brumadinho e saúde pública. YouTube, 31 jan. 2019. Disponível em: <a href='https://www.youtube.com/watch?v=YlMMk_-ZDKM' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=YlMMk_-ZDKM</a>. Acesso em: 2 out. 2025.</li>
+
+                                                    <li class="list-group-item">MURAD, Vinícius. COP30: documentário mostra a luta do povo Munduruku contra o garimpo ilegal. <em>CNN Brasil</em>, São Paulo, 8 set. 2025. Disponível em: <a href='https://www.cnnbrasil.com.br/nacional/cop30-documentario-mostra-a-luta-do-povo-munduruku-contra-o-garimpo-ilegal/' target='_blank' rel='noopener noreferrer'>https://www.cnnbrasil.com.br/nacional/cop30-documentario-mostra-a-luta-do-povo-munduruku-contra-o-garimpo-ilegal/</a>. Acesso em: 2 out. 2025.</li>
+
+                                                    <li class="list-group-item">PAIM, Jairnilson Silva. O que é o SUS. Rio de Janeiro: Editora Fiocruz, 2009.</li>
+
+                                                    <li class="list-group-item">PEREIRA, João Carlos; SILVA, Maria Fernanda da. O impacto das tecnologias educacionais na aprendizagem ativa. <em>Revista Brasileira de Ensino Superior Online</em>, São Paulo, v. 15, n. 2, p. 123–145, jul./dez. 2025. Disponível em: <a href='https://www.scielo.br/j/rbso/a/RFccCXPZH4Z57Dw5gTzBmpj/' target='_blank' rel='noopener noreferrer'>https://www.scielo.br/j/rbso/a/RFccCXPZH4Z57Dw5gTzBmpj/</a>. Acesso em: 2 out. 2025.</li>
+
+                                                    <li class="list-group-item">PORTO, Marcelo Firpo de Souza. Saúde, ambiente e sustentabilidade: uma análise interdisciplinar. Rio de Janeiro: Editora Fiocruz, 2012.</li>
+
+                                                    <li class="list-group-item">RELATOS de vítimas de Brumadinho. [S.l.]: [s.n.], [s.d.]. Vídeo (YouTube). Disponível em: <a href='https://www.youtube.com/watch?v=PZ3X52sq1pA' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=PZ3X52sq1pA</a>. Acesso em: 2 out. 2025.</li>
+
+                                                    <li class="list-group-item">SERVIÇO de vigilância em saúde e sua importância no planejamento das ações executadas pelo SUS. [S.l.]: [s.n.], [s.d.]. Vídeo (YouTube). Disponível em: <a href='https://www.youtube.com/watch?v=TOW_ij0zjh8' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=TOW_ij0zjh8</a>. Acesso em: 2 out. 2025.</li>
+
+                                                    <li class="list-group-item">TABNET: utilização avançada. [S.l.]: [s.n.], [s.d.]. Vídeo (YouTube). Disponível em: <a href='https://www.youtube.com/watch?v=PJTx7STy0Xc' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=PJTx7STy0Xc</a>. Acesso em: 2 out. 2025.</li>
+
+                                                    <li class="list-group-item">USO do TABNET – vídeo curto. [S.l.]: [s.n.], [s.d.]. Vídeo. Disponível em: <a href='http://go.microsoft.com/fwlink/p/?LinkId=255141' target='_blank' rel='noopener noreferrer'>http://go.microsoft.com/fwlink/p/?LinkId=255141</a>. Acesso em: 2 out. 2025.</li>
+
+                                                    <li class="list-group-item">VIDEOSAÚDE DISTRIBUIDORA DA FIOCRUZ. A história da saúde pública no Brasil – 500 anos na busca de soluções. YouTube, 22 fev. 2016. Disponível em: <a href='https://www.youtube.com/watch?v=7ouSg6oNMe8' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=7ouSg6oNMe8</a>. Acesso em: 6 fev. 2026.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="heading-m1-material-complementar-aula3">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m1-material-complementar-aula3" aria-expanded="false" aria-controls="collapse-m1-material-complementar-aula3">Aula 3</button>
+                                    </h5>
+                                    <div id="collapse-m1-material-complementar-aula3" class="accordion-collapse collapse" aria-labelledby="heading-m1-material-complementar-aula3" data-bs-parent="">
+                                        <div class="accordion-body">
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item">BRASIL. Ministério da Saúde, Universidade Federal de Goiás. Asis - Análise de Situação de Saúde. Brasília: Ministério da Saúde, 2015. 3v.: il. Disponível em: <a href='https://bvsms.saude.gov.br/bvs/publicacoes/asis_analise_situacao_saude_volume_1.pdf' target='_blank' rel='noopener noreferrer'>https://bvsms.saude.gov.br/bvs/publicacoes/asis_analise_situacao_saude_volume_1.pdf</a>. Acesso em: 24 out. 2025. </li>
+
+                                                    <li class="list-group-item">BRASIL. Ministério da Saúde. Gabinete do Ministro. Portaria de Consolidação Nº 4, de 28 de setembro de 2017. Consolidação das normas sobre os sistemas e os subsistemas do Sistema Único de Saúde. Anexo III Ações e Serviços de Vigilância em Saúde (Origem: PRT MS/GM 1378/2013). Disponível em: <a href='https://bvsms.saude.gov.br/bvs/saudelegis/gm/2017/prc0004_03_10_2017.html' target='_blank' rel='noopener noreferrer'>https://bvsms.saude.gov.br/bvs/saudelegis/gm/2017/prc0004_03_10_2017.html</a>. Acesso em: 24 out. 2025.</li>
+
+                                                    <li class="list-group-item">BRASIL. Ministério da Saúde. Gabinete do Ministro. Portaria de Consolidação Nº 4, de 28 de setembro de 2017. Consolidação das normas sobre os sistemas e os subsistemas do Sistema Único de Saúde. Anexo V Sistema Nacional de Vigilância Epidemiológica (SNVE) (Origem: PRT MS/GM 204/2016). Capítulo I Da lista nacional de notificação compulsória de doenças, agravos e eventos de saúde pública. Disponível em: <a href='https://bvsms.saude.gov.br/bvs/saudelegis/gm/2017/prc0004_03_10_2017.html' target='_blank' rel='noopener noreferrer'>https://bvsms.saude.gov.br/bvs/saudelegis/gm/2017/prc0004_03_10_2017.html</a>. Acesso em: 24 out. 2025.</li>
+
+                                                    <li class="list-group-item">BRASIL. Ministério da Saúde. Gabinete do Ministro. Portaria de Consolidação No. 5, de 28 de setembro de 2017. Estabelece as normas sobre as ações e os serviços de saúde do Sistema Único de Saúde. Disponível em: <a href='https://portalsinan.saude.gov.br/images/documentos/Legislacoes/Portaria_Consolidacao_5_28_SETEMBRO_2017.pdf' target='_blank' rel='noopener noreferrer'>https://portalsinan.saude.gov.br/images/documentos/Legislacoes/Portaria_Consolidacao_5_28_SETEMBRO_2017.pdf</a>. Acesso em: 24 out. 2025.</li>
+
+                                                    <li class="list-group-item">BRASIL. Decreto n. 78.231, de 12 de agosto de 1976. Regulamenta a Lei nº 6.259, de 30 de outubro de 1975, que dispõe sobre a organização das ações de Vigilância Epidemiológica, sobre o Programa Nacional de Imunizações, estabelece normas relativas à notificação compulsória de doenças, e dá outras providências. Diário Oficial da União, Poder Executivo, Brasília, DF, 13 ago. 1976. Disponível em: <a href='https://www.planalto.gov.br/ccivil_03/decreto/1970-1979/d78231.htm' target='_blank' rel='noopener noreferrer'>https://www.planalto.gov.br/ccivil_03/decreto/1970-1979/d78231.htm</a>. Acesso em: 24 out. 2025.</li>
+
+                                                    <li class="list-group-item">BRASIL. Lei nº 8.080, de 19 de setembro de 1990. Dispõe sobre as condições para a promoção, proteção e recuperação da saúde, a organização e o funcionamento dos serviços correspondentes. Diário Oficial da União, Poder Executivo, Brasília, DF, 20 set. 1990. Disponível em: <a href='https://www.planalto.gov.br/ccivil_03/leis/L8080.htm#art15' target='_blank' rel='noopener noreferrer'>https://www.planalto.gov.br/ccivil_03/leis/L8080.htm#art15</a>. Acesso em: 24 out. 2025.</li>
+
+                                                    <li class="list-group-item">BRASIL. Lei nº 9.782, de 26 de janeiro de 1999. Define o Sistema Nacional de Vigilância Sanitária, cria a Agência Nacional de Vigilância Sanitária, e dá outras providências. Diário Oficial da União, Poder Executivo, Brasília, DF, 27 jan. 1999. Disponível em: <a href='https://www.planalto.gov.br/ccivil_03/leis/l9782.htm' target='_blank' rel='noopener noreferrer'>https://www.planalto.gov.br/ccivil_03/leis/l9782.htm</a>. Acesso em: 24 out. 2025.</li>
+
+                                                    <li class="list-group-item">BRASIL. Ministério da Saúde. Secretaria de Vigilância em Saúde. Departamento de Saúde Ambiental, do Trabalhador e Vigilância das Emergências em Saúde Pública. A evolução da Vigilância em Saúde Ambiental e Saúde do Trabalhador no Sistema Único de Saúde (2011 – 2021). Brasília: Ministério da Saúde, 2022. Disponível em: <a href='https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/saude-do-trabalhador/a-evolucao-da-vigilancia-em-saude-ambiental-e-saude-do-trabalhador.pdf/view' target='_blank' rel='noopener noreferrer'>https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/saude-do-trabalhador/a-evolucao-da-vigilancia-em-saude-ambiental-e-saude-do-trabalhador.pdf/view</a>. </li>
+
+                                                    <li class="list-group-item">COSTA, M. C. <em>et al</em>. Vigilância em Saúde no SUS – Construção, Efeitos e Perspectivas. Ciência & Saúde Coletiva, 2018. 23(6):1811-1818. Disponível em: <a href='https://www.scielo.br/j/csc/a/FxcSJBQq8G7CNSxhTyT7Qbn/' target='_blank' rel='noopener noreferrer'>https://www.scielo.br/j/csc/a/FxcSJBQq8G7CNSxhTyT7Qbn/</a>.</li>
+
+                                                    <li class="list-group-item">MINISTÉRIO DA SAÚDE. Composição. Vigilância em Saúde e Ambiente. Saúde do Trabalhador. Disponível em: <a href='https://www.gov.br/saude/pt-br/composicao/svsa/saude-do-trabalhador' target='_blank' rel='noopener noreferrer'>https://www.gov.br/saude/pt-br/composicao/svsa/saude-do-trabalhador</a>. Acesso em: 24 out. 2025.</li>
+
+                                                    <li class="list-group-item">MINISTÉRIO DA SAÚDE. Agência Nacional de Vigilância Sanitária - Anvisa – Centrais de conteúdo. Disponível em: <a href='https://www.gov.br/anvisa/pt-br/centraisdeconteudo' target='_blank' rel='noopener noreferrer'>https://www.gov.br/anvisa/pt-br/centraisdeconteudo</a>. Acesso em: 24 out. 2025.</li>
+
+                                                    <li class="list-group-item">MINISTÉRIO DA SAÚDE. Secretaria de Vigilância em Saúde e Ambiente. Coordenação-Geral de Informações e Análises Epidemiológicas. Departamento de Análise Epidemiológica e Vigilância de Doenças Não Transmissíveis. Sistemas de Informação. Disponível em: <a href='https://svs.aids.gov.br/daent/cgiae/istemas-informacao/' target='_blank' rel='noopener noreferrer'>https://svs.aids.gov.br/daent/cgiae/istemas-informacao/</a>. Acesso em: 24 out. 2025.</li>
+
+                                                    <li class="list-group-item">ORGANIZAÇÃO PAN-AMERICANA DA SAÚDE. Diretrizes da OMS para questões éticas na vigilância em saúde pública. 2023. Disponível em: <a href='https://iris.paho.org/bitstream/handle/10665.2/57542/9789275719848_por.pdf?sequence=1&isAllowed=y' target='_blank' rel='noopener noreferrer'>https://iris.paho.org/bitstream/handle/10665.2/57542/9789275719848_por.pdf?sequence=1&isAllowed=y</a>. </li>
+
+                                                    <li class="list-group-item">RIPSA. Rede Interagencial de Informação para a Saúde. Indicadores básicos para a saúde no Brasil: conceitos e aplicações. 2. ed. Brasília: Organização Pan-Americana da Saúde, 2008. 349 p.: il. Disponível em: <a href='http://tabnet.datasus.gov.br/tabdata/livroidb/2ed/indicadores.pdf' target='_blank' rel='noopener noreferrer'>http://tabnet.datasus.gov.br/tabdata/livroidb/2ed/indicadores.pdf</a>. Acesso em: 24 out. 2025. </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="heading-m1-material-complementar-aula4">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m1-material-complementar-aula4" aria-expanded="false" aria-controls="collapse-m1-material-complementar-aula4">Aula 4</button>
+                                    </h5>
+                                    <div id="collapse-m1-material-complementar-aula4" class="accordion-collapse collapse" aria-labelledby="heading-m1-material-complementar-aula4" data-bs-parent="">
+                                        <div class="accordion-body">
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item">AGUILAR, G. M. O. <em>et al</em>. Preparação, vigilância e resposta às emergências de saúde pública na Cidade do Rio de Janeiro, Brasil, de 2021 a 2024. <em>Ciência & Saúde Coletiva</em>, v. 30, n. 7, e18832024, 2025. DOI: 10.1590/1413-81232025307.18832024.</li>
+
+                                                    <li class="list-group-item">BBC NEWS BRASIL. Brumadinho: o documentário da BBC (parte 2). YouTube, 28 maio 2019. Disponível em: <a href='https://www.youtube.com/watch?v=TUlq8pjOU4U' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=TUlq8pjOU4U</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item">BBC NEWS BRASIL. Como a COVID-19 mudou o mundo: 21 notícias que marcaram o século XXI. YouTube, 5 nov. 2023. Disponível em: <a href='https://www.youtube.com/watch?v=fRT8AS-007I' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=fRT8AS-007I</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item">BRASIL. Ministério da Saúde. <em>Estratégia da Vigilância Baseada em Eventos: mini guia.</em> Brasília, DF: Ministério da Saúde, 2023. 28 p. ISBN 978-65-87589-84-8.</li>
+
+                                                    <li class="list-group-item">CARMO, E. H. Emergências de saúde pública: breve histórico, conceitos e aplicações. <em>Saúde em Debate</em>, v. 44, n. especial 2, p. 9-19, jul. 2020. DOI: 10.1590/0103-11042020e201.</li>
+
+                                                    <li class="list-group-item">CARMO, E. H.; PENNA, G. O.; OLIVEIRA, W. K. Emergências de saúde pública: conceito, caracterização, preparação e resposta. <em>Estudos Avançados</em>, v. 22, n. 64, p. 19-32, 2008. DOI: 10.1590/S0103-40142008000300003.</li>
+
+                                                    <li class="list-group-item">FOOD AND AGRICULTURE ORGANIZATION OF THE UNITED NATIONS; UNITED NATIONS ENVIRONMENT PROGRAMME; WORLD HEALTH ORGANIZATION; WORLD ORGANISATION FOR ANIMAL HEALTH. <em>One Health Joint Plan of Action (2022–2026): working together for the health of humans, animals, plants and the environment</em>. Rome: FAO, 2022. DOI: 10.4060/cc2289en.</li>
+
+                                                    <li class="list-group-item">VIVER BEM ANANINDEUA/PA. A tragédia humanitária na Terra Indígena Yanomami. YouTube, 30 JAN. 2023. Disponível em: <a href='https://www.youtube.com/watch?v=BpNFT8SFAc0' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=BpNFT8SFAc0</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item">G1. Garimpo ilegal, desnutrição: Entenda a situação da reserva. YouTube, 24 jan. 2023. Disponível em: <a href='https://www.youtube.com/watch?v=WQauthpCP4I' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=WQauthpCP4I</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item">G1. Repórteres reencontram crianças yanomami que comoveram o país durante crise humanitária. YouTube, 4 de maio 2025. Disponível em: <a href='https://www.youtube.com/watch?v=Td_J0J2zWkA' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=Td_J0J2zWkA</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item">INEGÁVEL O FILME. Inegável: um olhar sobre o início da vacinação contra a COVID-19 na cidade do Rio de Janeiro. YouTube, 1 fev 2022. Disponível em: <a href='https://www.youtube.com/watch?v=jUccdPBSyS4' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=jUccdPBSyS4</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item">HERSTEIN, J. J. <em>et al</em>. Emergency preparedness: what is the future? Antimicrobial Stewardship & Healthcare Epidemiology, v. 1, n. 1, e29, 2021. DOI: 10.1017/ash.2021.190.</li>
+
+                                                    <li class="list-group-item">MERALI, S. et al. Community-based surveillance advances the Global Health Security Agenda in Ghana. <em>PLoS One</em>, v. 15, n. 8, e0237320, 2020. DOI: 10.1371/journal.pone.0237320.</li>
+
+                                                    <li class="list-group-item">NORZIN, T. et al. Event-based surveillance: providing early warning for communicable disease threats. <em>Canada Communicable Disease Report</em>, v. 49, n. 2/3, p. 29-34, 2023. DOI: 10.14745/ccdr.v49i23a01.</li>
+
+                                                    <li class="list-group-item">OLIVEIRA E CRUZ, D. M. D. et al. Centro de operações de emergência na COVID-19: a experiência do município do Rio de Janeiro. Revista Panamericana de Salud Pública, v. 46, e29, 2022. DOI: 10.26633/RPSP.2022.9.</li>
+
+                                                    <li class="list-group-item">ORGANIZAÇÃO PAN-AMERICANA DA SAÚDE. Investimento e desenvolvimento da preparação para emergências de saúde a longo prazo durante a pandemia de COVID-19: orientação provisória para os Estados Membros da OMS. Brasília, DF: OPAS, 2020. Licença CC BY-NC-SA 3.0 IGO.</li>
+
+                                                    <li class="list-group-item">PAN AMERICAN HEALTH ORGANIZATION. Strategy on epidemic intelligence for strengthening early warning of health emergencies 2024–2029. Washington, D.C.: PAHO, 2024. (61st Directing Council of PAHO, 76th Session of the Regional Committee of WHO for the Americas, CD61/12, Rev. 1).</li>
+
+                                                    <li class="list-group-item">RODRIGUES-JR., A. L. A inteligência epidemiológica como modelo de organização em saúde. Ciência & Saúde Coletiva, v. 17, n. 3, p. 797-805, 2012. DOI: 10.1590/S1413-81232012000300027.</li>
+
+                                                    <li class="list-group-item">WORLD HEALTH ORGANIZATION. A guide to establishing event-based surveillance. Geneva: WHO, 2008. ISBN 978-92-9061-321-3.</li>
+
+                                                    <li class="list-group-item">WORLD HEALTH ORGANIZATION. Early detection, assessment and response to acute public health events: implementation of early warning and response with a focus on event-based surveillance. Geneva: WHO, 2014. Disponível em: <a href='https://iris.who.int/bitstream/handle/10665/112667/WHO_HSE_GCR_LYO_2014.4_eng.pdf' target='_blank' rel='noopener noreferrer'>https://iris.who.int/bitstream/handle/10665/112667/WHO_HSE_GCR_LYO_2014.4_eng.pdf</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item">WORLD HEALTH ORGANIZATION. Framework for a public health emergency operations centre. Geneva: WHO, 2015. Disponível em: <a href='https://iris.who.int/handle/10665/196135' target='_blank' rel='noopener noreferrer'>https://iris.who.int/handle/10665/196135</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item">WORLD HEALTH ORGANIZATION. WHO guidance for contingency planning. Geneva: WHO, 2018. Licença CC BY-NC-SA 3.0 IGO.</li>
+
+                                                    <li class="list-group-item">WORLD HEALTH ORGANIZATION. Guidance for after action review (AAR). Geneva: WHO, 2019. Disponível em: <a href='https://www.who.int/publications/i/item/WHO-WHE-CPI-2019.4' target='_blank' rel='noopener noreferrer'>https://www.who.int/publications/i/item/WHO-WHE-CPI-2019.4</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item">WORLD HEALTH ORGANIZATION. Strengthening health emergency preparedness in cities and urban settings: guidance for national and local authorities. Geneva: WHO, 2021. Licença CC BY-NC-SA 3.0 IGO.</li>
+
+                                                    <li class="list-group-item">WORLD HEALTH ORGANIZATION. Strengthening health emergency prevention, preparedness, response and resilience. Geneva: WHO, 2023.</li>
+
+                                                    <li class="list-group-item">WORLD HEALTH ORGANIZATION. Emergency response framework: internal WHO procedures. Geneva: WHO, 2024. ISBN 978-92-4-005806-4 (versão eletrônica); ISBN 978-92-4-005807-1 (versão impressa).</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h5 class="accordion-header" id="heading1-material-modulo2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-material-modulo2" aria-expanded="false" aria-controls="collapse1-material-modulo2">Módulo 2</button>
+                    </h5>
+                    <div id="collapse1-material-modulo2" class="accordion-collapse collapse" aria-labelledby="heading1-material-modulo2" data-bs-parent="">
+                        <div class="accordion-body">
+                            <!-- Accordion Aulas -->
+                            <div class="accordion accordion-flush aos-init aos-animate" data-aos="fade-up" data-aos-easing="ease-out" data-aos-duration="800" id="accordionMaterialComplementar-m2-aulas">
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="heading-m2-material-complementar-aula1">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m2-material-complementar-aula1" aria-expanded="true" aria-controls="collapse-m2-material-complementar-aula1">Aula 1</button>
+                                    </h5>
+                                    <div id="collapse-m2-material-complementar-aula1" class="accordion-collapse collapse" aria-labelledby="heading-m2-material-complementar-aula1" data-bs-parent="">
+                                        <div class="accordion-body">
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item">AL-HOCEIMA CITY, MOROCCO. <em>Assessing the impact of organic and inorganic micropollutants released from a wastewater treatment plant on humans and aquatic environment</em>. Toxicology Reports, 2024. DOI: 10.1016/j.toxrep.2024.101699.</li>
+
+                                                    <li class="list-group-item">APOSTILA de Toxicologia Básica. Salvador: Centro de Informação e Assistência Toxicológica da Bahia (CIAVE), 2009. Disponível em: <a href='https://www.saude.ba.gov.br/wp-content/uploads/2017/08/Apostila_CIAVE_Ago_2009_A4.pdf' target='_blank' rel='noopener noreferrer'>https://www.saude.ba.gov.br/wp-content/uploads/2017/08/Apostila_CIAVE_Ago_2009_A4.pdf</a>.</li>
+
+                                                    <li class="list-group-item">EFFECTS of organic and inorganic contaminants and their mixtures on metabolic health and gene expression in developmentally exposed zebrafish. bioRxiv, 2024. DOI: 10.1101/2024.10.28.620642.</li>
+
+                                                    <li class="list-group-item">ENSP FIOCRUZ. Entrevista: Fiocruz diz não a pulverização aérea de agrotóxicos em áreas urbanas. YouTube, 17 jun. 2016. Disponível em: <a href='https://www.youtube.com/watch?v=uQWfwGxiViY' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=uQWfwGxiViY</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item">MANUAL de Toxicologia Clínica. Curitiba: Universidade Federal do Paraná, [s.d.]. Disponível em: <a href='https://saude.ufpr.br/medtrab/wp-content/uploads/sites/25/2016/08/Manual-de-Toxicologia-Cl%C3%ADnica_pdf.pdf' target='_blank' rel='noopener noreferrer'>https://saude.ufpr.br/medtrab/wp-content/uploads/sites/25/2016/08/Manual-de-Toxicologia-Cl%C3%ADnica_pdf.pdf</a>.</li>
+
+                                                    <li class="list-group-item">MARKDCATLIN. Routes of exposure to toxic materials 1965 DOD. YouTube, 20 jan. 2011. Disponível em: <a href='https://www.youtube.com/watch?v=88QRIGOto4Y' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=88QRIGOto4Y</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item">MENTE FORA DO CUBO. O Desastre de Minamata. YouTube, 13 ago. 2024. Disponível em: <a href='https://www.youtube.com/watch?v=6e5wODc-S-Y' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=6e5wODc-S-Y</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item">THE OCCUPATIONAL SAFETY LEADERSHIP PODCAST. Episode 13 Chemical Routes of Exposure. YouTube, 24 dez. 2022. Disponível em: <a href='https://www.youtube.com/watch?v=kt2x_iC7k18' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=kt2x_iC7k18</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item">TOXICOLOGIA e segurança. [S.l.]: ISPSN, [s.d.]. Disponível em: <a href='https://www.ispsn.org/sites/default/files/documentos-virtuais/pdf/toxicologia_e_seguranca_-_lucile_cecilia_peruzzo_0.pdf' target='_blank' rel='noopener noreferrer'>https://www.ispsn.org/sites/default/files/documentos-virtuais/pdf/toxicologia_e_seguranca_-_lucile_cecilia_peruzzo_0.pdf</a>.</li>
+
+                                                    <li class="list-group-item">TOXICOLOGIA: uma abordagem multidisciplinar – volume I. [S.l.]: CAPES, [s.d.]. Disponível em: <a href='https://educapes.capes.gov.br/handle/capes/699865' target='_blank' rel='noopener noreferrer'>https://educapes.capes.gov.br/handle/capes/699865</a>.</li>
+
+                                                    <li class="list-group-item">VITRIOL. Cidade de Chumbo – Parte 1. YouTube, 19 out. 2019. Disponível em: <a href='https://www.youtube.com/watch?v=3WSl4FFiivQ' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=3WSl4FFiivQ</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item">VSN INTERNATIONAL. Dose response analysis in toxicology. YouTube, 21 set. 2020. Disponível em: <a href='https://www.youtube.com/watch?v=LZcRA9CoHsc' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=LZcRA9CoHsc</a>. Acesso em: 6 fev. 2026.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="heading-m2-material-complementar-aula2">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m2-material-complementar-aula2" aria-expanded="false" aria-controls="collapse-m2-material-complementar-aula2">Aula 2</button>
+                                    </h5>
+                                    <div id="collapse-m2-material-complementar-aula2" class="accordion-collapse collapse" aria-labelledby="heading-m2-material-complementar-aula2" data-bs-parent="">
+                                        <div class="accordion-body">
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item">AGENCY FOR TOXIC SUBSTANCES AND DISEASE REGISTRY. ATSDR ToxFAQs e Toxicological Profiles. Atlanta: ATSDR, [s.d.]. Disponível em: <a href='https://www.atsdr.cdc.gov/toxicological-profiles/about/index.html' target='_blank' rel='noopener noreferrer'>https://www.atsdr.cdc.gov/toxicological-profiles/about/index.html</a>.</li>
+
+                                                    <li class="list-group-item">A CRITICAL review on the toxicological and epidemiological evidence integration for assessing human health risks to environmental chemical exposures. Reviews on Environmental Health, 2024. DOI: 10.1515/reveh-2024-0072.</li>
+
+                                                    <li class="list-group-item">CASARETT, Louis J.; DOULL, John. Casarett & Doull’s toxicology: the basic science of poisons. 9. ed. New York: McGraw-Hill Education, 2019. Disponível em: <a href='https://accesspharmacy.mhmedical.com/book.aspx?bookid=2462' target='_blank' rel='noopener noreferrer'>https://accesspharmacy.mhmedical.com/book.aspx?bookid=2462</a>.</li>
+
+                                                    <li class="list-group-item">RADIOLOGANDO. Efeitos biológicos causados pela radiação ionizante | Radiologando. YouTube, 23 ago. 2022. Disponível em: <a href='https://www.youtube.com/watch?v=XKj30u-dig4' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=XKj30u-dig4</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item">HAYES, A. Wallace. Hayes’ principles and methods of toxicology. 6. ed. Boca Raton: CRC Press, 2014. Disponível em: <a href='https://www.taylorfrancis.com/books/mono/10.1201/b17359' target='_blank' rel='noopener noreferrer'>https://www.taylorfrancis.com/books/mono/10.1201/b17359</a>.</li>
+
+                                                    <li class="list-group-item">HUMAN exposure to chemical mixtures: challenges for the integration of toxicology with epidemiology data in risk assessment. Food and Chemical Toxicology, v. 103, p. 188–193, 2017. DOI: 10.1016/j.fct.2017.03.012.</li>
+
+                                                    <li class="list-group-item">G1. Fantástico: Crescem os casos graves de intoxicação por bebidas adulteradas com metanol em SP. YouTube, 29 set. 2025. Disponível em: <a href='https://www.youtube.com/watch?v=lzbuI_dA_lU' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=lzbuI_dA_lU</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item">KIS KIS - KEEP IT SHORT. SHORT film on the outbreak of an epidemy | Snow – by Isaac Ergas. YouTube, 10 jul. 2024. Disponível em: <a href='https://www.youtube.com/watch?v=qATr4D_lqZU' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=qATr4D_lqZU</a>. Acesso em: 6 fev. 2026.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="heading-m2-material-complementar-aula3">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m2-material-complementar-aula3" aria-expanded="false" aria-controls="collapse-m2-material-complementar-aula3">Aula 3</button>
+                                    </h5>
+                                    <div id="collapse-m2-material-complementar-aula3" class="accordion-collapse collapse" aria-labelledby="heading-m2-material-complementar-aula3" data-bs-parent="">
+                                        <div class="accordion-body">
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item">AMBOSS: MEDICAL KNOWLEDGE DISTILLED. Farmacodinâmica - Parte 1: Como os Medicamentos Agem no Corpo. YouTube, 3 out. 2019. Disponível em: <a href='https://www.youtube.com/watch?v=PhfhMBO-w9Q' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=PhfhMBO-w9Q</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item">DRAUZIO VARELLA. Como a nicotina age no cérebro. YouTube, 28 set. 2022. Disponível em: <a href='https://www.youtube.com/watch?v=D8RE-JL-oMY' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=D8RE-JL-oMY</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item">DRAUZIO VARELLA. Como eu larguei o cigarro e dicas para quem quer parar. YouTube, 14 nov. 2022. Disponível em: <a href='https://www.youtube.com/watch?v=Jtpd9d93wX8' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=Jtpd9d93wX8</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item">NEUROSCIENTIFICALLY CHALLENGED. Neurociência de 2 Minutos: Nicotina. YouTube, 23 abr. 2019. Disponível em: <a href='https://www.youtube.com/watch?v=I02WbuLiivw' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=I02WbuLiivw</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item">ONU BRASIL. Controle do tabaco pode economizar bilhões de dólares e salvar milhões de vidas. YouTube, 12 jan. 2017. Disponível em: <a href='https://www.youtube.com/watch?v=T8bH0vFP2PM' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=T8bH0vFP2PM</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item">ONU BRASIL. OMS alerta para perigo dos cigarros eletrônicos. YouTube, 2 set. 2014. Disponível em: <a href='https://www.youtube.com/watch?v=X4FrEVGAf5s' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=X4FrEVGAf5s</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item">TRATAMENTOENFISEMA. Enfisema Pulmonar e Válvulas Brônquicas Unidirecionais. YouTube, 28 jun. 2010. Disponível em: <a href='https://www.youtube.com/watch?v=r7U_Ih7-se4' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=r7U_Ih7-se4</a>. Acesso em: 6 fev. 2026.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="heading-m2-material-complementar-aula4">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m2-material-complementar-aula4" aria-expanded="false" aria-controls="collapse-m2-material-complementar-aula4">Aula 4</button>
+                                    </h5>
+                                    <div id="collapse-m2-material-complementar-aula4" class="accordion-collapse collapse" aria-labelledby="heading-m2-material-complementar-aula4" data-bs-parent="">
+                                        <div class="accordion-body">
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item">CANAL VP - NUTRIÇÃO FUNCIONAL. Uso de Agrotóxicos Brasil x UE | Especialistas | Larissa Bombardi | VP Nutrição Funcional. YouTube, 5 fev. 2019. Disponível em: <a href='https://www.youtube.com/watch?v=t0c3k6r5J9Q' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=t0c3k6r5J9Q</a>. Acesso em: 6 fev. 2026.</li>
+
+                                                    <li class="list-group-item">OLÁ, CIÊNCIA. Como realmente eliminar o agrotóxico dos alimentos. YouTube, 3 abr. 2025. Disponível em: <a href='https://www.youtube.com/watch?v=F5O0lC-38fM' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=F5O0lC-38fM</a>. Acesso em: 6 fev. 2026.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="heading-m2-material-complementar-aula5">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m2-material-complementar-aula5" aria-expanded="false" aria-controls="collapse-m2-material-complementar-aula5">Aula 5</button>
+                                    </h5>
+                                    <div id="collapse-m2-material-complementar-aula5" class="accordion-collapse collapse" aria-labelledby="heading-m2-material-complementar-aula5" data-bs-parent="">
+                                        <div class="accordion-body">
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item">ACGIH – AMERICAN CONFERENCE OF GOVERNMENTAL INDUSTRIAL HYGIENISTS. <em>TLVs® e BEIs®</em>. Disponível em: <a href='https://www.acgih.org/data-hub/' target='_blank' rel='noopener noreferrer'>https://www.acgih.org/data-hub/</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item">ARAÚJO, U. C. et al. Avaliação da exposição ocupacional ao chumbo: proposta de uma estratégia de monitoramento para prevenção dos efeitos clínicos e subclínicos. <em>Cadernos de Saúde Pública</em>, 1999. Disponível em: <a href='https://www.scielo.br/j/csp/a/qXz57RSKQXGtHVkZQfZvrJc/?lang=pt' target='_blank' rel='noopener noreferrer'>https://www.scielo.br/j/csp/a/qXz57RSKQXGtHVkZQfZvrJc/?lang=pt</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item">CAMPOS, É. A.; SILVA, I. F.; WARDEN, C. F. Exposição a metais em população adulta residente em áreas industriais: revisão sistemática da literatura. <em>Ciência & Saúde Coletiva</em>, v. 26, n. 6, p. 2253–2270, 2021. Disponível em: <a href='https://doi.org/10.1590/1413-81232021266.07612019' target='_blank' rel='noopener noreferrer'>https://doi.org/10.1590/1413-81232021266.07612019</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item">HUMAN BIOMONITORING FOR EUROPEAN UNION (HBM4EU). <em>Biomarcadores de efeito: o que se precisa saber?</em> Disponível em: <a href='https://www.hbm4eu.eu/wp-content/uploads/2018/12/20166_brief_n1_biomarkers_PT_v02_HL_JG.pdf' target='_blank' rel='noopener noreferrer'>https://www.hbm4eu.eu/wp-content/uploads/2018/12/20166_brief_n1_biomarkers_PT_v02_HL_JG.pdf</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item">HUMAN BIOMONITORING FOR EUROPEAN UNION (HBM4EU). <em>Infográficos sobre Hg, As, Pb, Cd e Cr VI</em>. Disponível em: <a href='https://www.hbm4eu.eu/citizens-corner/infographics/' target='_blank' rel='noopener noreferrer'>https://www.hbm4eu.eu/citizens-corner/infographics/</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item">INTERTOX. Webinar: Limites de exposição ocupacional. Youtube, 17 dez. 2018. Disponível em: <a href='https://www.youtube.com/watch?v=_RWd4xxz_Es' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=_RWd4xxz_Es</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item">JOMOVA, K.; ALOMAR, S. Y.; NEPOVIMOVA, E.; KUCA, K.; VALKO, M. Heavy metals: toxicity and human health effects. <em>Archives of Toxicology</em>, v. 99, n. 1, p. 153–209, 2025. Disponível em: <a href='https://doi.org/10.1007/s00204-024-03903-2' target='_blank' rel='noopener noreferrer'>https://doi.org/10.1007/s00204-024-03903-2</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item">MOTA, P. J.; ALONZO, H. G. A.; ANDRÉ, L. C.; CÂMARA, V. M.; CAMPOLINA, D.; SANTOS, A. S. E.; FRÓES-ASMUS, C. I. R.; PEIXOTO, S. V. Prevalence of metal levels above the reference values in a municipality affected by the collapse of a mining tailings dam: Brumadinho Health Project. <em>Revista Brasileira de Epidemiologia</em>, v. 25, e220014, 2022. Disponível em: <a href='https://doi.org/10.1590/1980-549720220014.supl.2' target='_blank' rel='noopener noreferrer'>https://doi.org/10.1590/1980-549720220014.supl.2</a>. Acesso em: 10 fev. 2026.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h5 class="accordion-header" id="heading1-material-modulo3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-material-modulo3" aria-expanded="false" aria-controls="collapse1-material-modulo3">Módulo 3</button>
+                    </h5>
+                    <div id="collapse1-material-modulo3" class="accordion-collapse collapse" aria-labelledby="heading1-material-modulo3" data-bs-parent="">
+                        <div class="accordion-body">
+                            <!-- Accordion Aulas -->
+                            <div class="accordion accordion-flush aos-init aos-animate" data-aos="fade-up" data-aos-easing="ease-out" data-aos-duration="800" id="accordionMaterialComplementar-m3-aulas">
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="heading-m3-material-complementar-aula1">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m3-material-complementar-aula1" aria-expanded="true" aria-controls="collapse-m3-material-complementar-aula1">Aula 1</button>
+                                    </h5>
+                                    <div id="collapse-m3-material-complementar-aula1" class="accordion-collapse collapse" aria-labelledby="heading-m3-material-complementar-aula1" data-bs-parent="">
+                                        <div class="accordion-body">
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item">ACADEMIA DOS CURIOSOS. Mercúrio e seus efeitos tóxicos no corpo humano e no mundo. YouTube, 6 jun. 2023. Disponível em: <a href='https://www.youtube.com/watch?v=dfBVuif-QK4' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=dfBVuif-QK4</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item">ANDRADE, D. F.; ROCHA, M. S. da. A toxicidade do arsênio e sua natureza. Revista Acadêmica Oswaldo Cruz, n. 10, p. 1–11, 2013. Disponível em: <a href='https://oswaldocruz.br/revista_academica/content/pdf/Edicao_10_Andrade_Daiene_Flor.pdf' target='_blank' rel='noopener noreferrer'>https://oswaldocruz.br/revista_academica/content/pdf/Edicao_10_Andrade_Daiene_Flor.pdf</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item">ARAÚJO, U. C. <em>et al</em>. Avaliação da exposição ocupacional ao chumbo: proposta de uma estratégia de monitoramento para prevenção dos efeitos clínicos e subclínicos. Cadernos de Saúde Pública, 1999. Disponível em:<a href=' https://www.scielo.br/j/csp/a/qXz57RSKQXGtHVkZQfZvrJc/?lang=pt' target='_blank' rel='noopener noreferrer'> https://www.scielo.br/j/csp/a/qXz57RSKQXGtHVkZQfZvrJc/?lang=pt</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item">@TUTORIALDEQUÍMICACOMPROFESSORE. ARSÊNIO – conheça as curiosidades e aplicações desse elemento químico. YouTube, [s.d.]. Disponível em: <a href='https://www.youtube.com/shorts/FxaJ3ffiITM' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/shorts/FxaJ3ffiITM</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item">BISINOTI, M. C.; JARDIM, W. F. O emprego de técnicas analíticas na especiação de metais pesados e a sua importância para o estudo do ambiente. 2004. Disponível em: <a href='https://lqa.iqm.unicamp.br/cadernos/caderno2.pdf' target='_blank' rel='noopener noreferrer'>https://lqa.iqm.unicamp.br/cadernos/caderno2.pdf</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item">BRASIL. Ministério da Saúde. Guia de Vigilância em Saúde: intoxicação exógena. Brasília: Ministério da Saúde, [s.d.]. p. 1065–1077. Disponível em: <a href='https://www.cevs.rs.gov.br/upload/arquivos/202201/31102342-intoxicacao-exogena-guia-de-vigilancia-em-saude.pdf' target='_blank' rel='noopener noreferrer'>https://www.cevs.rs.gov.br/upload/arquivos/202201/31102342-intoxicacao-exogena-guia-de-vigilancia-em-saude.pdf</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item">BRASIL. Ministério da Saúde. Secretaria de Vigilância em Saúde. Departamento de Vigilância das Doenças Transmissíveis. Orientações para a notificação de intoxicações por mercúrio. Brasília: Ministério da Saúde, 2021. 14 p. Disponível em: <a href='https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/intoxicacao/orientacoes-para-a-notificacao-de-intoxicacoes-por-mercurio' target='_blank' rel='noopener noreferrer'>https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/intoxicacao/orientacoes-para-a-notificacao-de-intoxicacoes-por-mercurio</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item">CARVALHO, F. M. et al. Intoxicação por chumbo e cádmio em trabalhadores de oficinas para reforma de baterias em Salvador, Brasil. Revista de Saúde Pública, v. 19, n. 5, p. 411–420, 1985.</li>
+
+                                                    <li class="list-group-item">DUBEY, R.; VERMA, P.; KUMAR, S. Cr(III) genotoxicity and oxidative stress: an occupational health risk for leather tannery workers of South Asian developing countries. Toxicology and Industrial Health, v. 38, n. 2, p. 112–126, 2022.</li>
+
+                                                    <li class="list-group-item">FACULDADE DE SAÚDE PÚBLICA DA USP. Exposição ao chumbo | fsp/usp | exsat #5. YouTube, 4 abr. 2019. Disponível em: <a href='https://www.youtube.com/watch?v=B9WsssVbU70' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=B9WsssVbU70</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item">JARDIM, A. N. O.; CALDAS, E. D. Exposição humana a substâncias químicas potencialmente tóxicas na dieta e os riscos para saúde: revisão. Química Nova, v. 32, n. 7, p. 1898–1909, 2009.</li>
+
+                                                    <li class="list-group-item">KHOURY, E. D. T. et al. Manifestações neurológicas em ribeirinhos de áreas expostas ao mercúrio na Amazônia brasileira. Cadernos de Saúde Pública, v. 29, n. 11, p. 2191–2202, 2013. DOI: 10.1590/0102-311X00158012.</li>
+
+                                                    <li class="list-group-item">MANZINI, F. F.; SÁ, K. B.; PLICAS, L. M. A. Metais pesados: fonte e ação toxicológica. Boletim de Tecnologia e Desenvolvimento de Embalagens, v. 1, p. 1–5, 1996.</li>
+
+                                                    <li class="list-group-item">MANZINI, F. F.; SÁ, K. B.; PLICAS, L. M. A. Metais pesados: fonte e ação toxicológica. Fórum Ambiental da Alta Paulista, v. 6, p. 800–815, 2010.</li>
+
+                                                    <li class="list-group-item">METRÓPOLES. Estudo da USP encontra chumbo no leite humano: entenda. YouTube, 24 set. 2024. Disponível em: <a href='https://www.youtube.com/watch?v=xlxDnK-3N7o' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=xlxDnK-3N7o</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item">MOREIRA, F. A. et al. Determinação dos níveis de exposição de metais em trabalhadores da construção naval: impactos e desafios. Revista Brasileira de Medicina do Trabalho, v. 15, n. 3, p. 147–154, 2017.</li>
+
+                                                    <li class="list-group-item">MOREIRA, F. R.; MOREIRA, J. C. A importância da análise de especiação do chumbo em plasma para a avaliação dos riscos à saúde. Química Nova, v. 27, n. 2, p. 179–184, 2004.</li>
+
+                                                    <li class="list-group-item">MUNIZ, D. H. F.; OLIVEIRA-FILHO, E. C. Metais pesados provenientes de rejeitos de mineração e seus efeitos sobre a saúde e o meio ambiente. Universitas: Ciências da Saúde, v. 4, n. 1/2, p. 83–100, 2006.</li>
+
+                                                    <li class="list-group-item">PROFESSOR POLÍMEROS 2025. Cádmio: o metal que ameaça sua saúde?! YouTube, [s.d.]. Disponível em: <a href='https://www.youtube.com/shorts/BUYL1EybKSc' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/shorts/BUYL1EybKSc</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item">REINALDO, M. A. Cromo: intoxicações por metais pesados. YouTube, [s.d.]. Disponível em: <a href='https://www.youtube.com/watch?v=lWPqgHmY35c' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=lWPqgHmY35c</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item">SCHIFER, T. S.; BOGUSZ JUNIOR, S.; MONTANO, M. A. E. Aspectos toxicológicos do chumbo. Infarma, v. 17, n. 5/6, p. 31–39, 2005.</li>
+
+                                                    <li class="list-group-item">TAVARES, T. M.; CARVALHO, F. M. Avaliação de exposição de populações humanas a metais pesados no ambiente: exemplos do Recôncavo Baiano. Química Nova, v. 15, n. 2, p. 147–154, 1992.</li>
+
+                                                    <li class="list-group-item">TEIXEIRA, D. C. <em>et al</em>. Exposição a contaminantes ambientais inorgânicos e danos à saúde humana. Brazilian Journal of Health Review, v. 3, n. 4, p. 10353–10369, 2020.</li>
+
+                                                    <li class="list-group-item">TOMITA, N. E.; PADULA, N. A. M. R. Intoxicação por chumbo em crianças e o discurso da imprensa. Ciência & Saúde Coletiva, v. 10, supl., p. 67–75, 2005. DOI: 10.1590/S1413-81232005000500014.</li>
+
+                                                    <li class="list-group-item">TV PUC-RIO. Química e Fiocruz analisaram contaminação por mercúrio. YouTube, 27 mar. 2023. Disponível em: <a href='https://www.youtube.com/watch?v=KeEZbO7SrhI' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=KeEZbO7SrhI</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item">UNIMED GOIÂNIA. Arsênio. YouTube, 2 jun. 2021. Disponível em: <a href='https://www.youtube.com/watch?v=6rwnCimhke8' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=6rwnCimhke8</a>. Acesso em: 10 fev. 2026.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="heading-m3-material-complementar-aula2">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m3-material-complementar-aula2" aria-expanded="false" aria-controls="collapse-m3-material-complementar-aula2">Aula 2</button>
+                                    </h5>
+                                    <div id="collapse-m3-material-complementar-aula2" class="accordion-collapse collapse" aria-labelledby="heading-m3-material-complementar-aula2" data-bs-parent="">
+                                        <div class="accordion-body">
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item">IBSI - INSTITUTO BRASILEIRO DE SAÚDE INTEGRATIVA. Como o mercúrio pode causar degeneração dos neurônios cerebrais. YouTube, 15 mai. 2020. Disponível em: <a href='https://youtu.be/FaT4QDkNahU' target='_blank' rel='noopener noreferrer'>https://youtu.be/FaT4QDkNahU</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item">JORNALISMO TV CULTURA. Munduruku: condenados pelo mercúrio. YouTube, 19 abr. 2023. Disponível em: <a href='https://youtu.be/mDCayIcO5gw' target='_blank' rel='noopener noreferrer'>https://youtu.be/mDCayIcO5gw</a>. Acesso em: 10 fev. 2026.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="heading-m3-material-complementar-aula3">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m3-material-complementar-aula3" aria-expanded="false" aria-controls="collapse-m3-material-complementar-aula3">Aula 3</button>
+                                    </h5>
+                                    <div id="collapse-m3-material-complementar-aula3" class="accordion-collapse collapse" aria-labelledby="heading-m3-material-complementar-aula3" data-bs-parent="">
+                                        <div class="accordion-body">
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item">BRASIL. Ministério da Saúde. Diretrizes de vigilância e atenção à saúde de populações expostas a metais pesados. Brasília, DF: Ministério da Saúde, 2022. Disponível em: <a href='https://www.gov.br/saude/pt-br' target='_blank' rel='noopener noreferrer'>https://www.gov.br/saude/pt-br</a>. Acesso em: 13 fev. 2026.</li>
+
+                                                    <li class="list-group-item">LABORATORY SOLUTIONS FROM METTLER TOLEDO. Equilibrando o futuro - temporada 2, episódio 7. YouTube, 8 set. 2025. disponível em: <a href='https://www.youtube.com/watch?v=cg2rznwddku' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=cg2rznwddku</a>. acesso em: 11 fev. 2026.</li>
+
+                                                    <li class="list-group-item">CADMIUM — Chemical safety and health: health impacts. world health organization (who). disponível em: <a href='https://www.who.int/teams/environment-climate-change-and-health/chemical-safety-and-health/health-impacts/chemicals/cadmium' target='_blank' rel='noopener noreferrer'>https://www.who.int/teams/environment-climate-change-and-health/chemical-safety-and-health/health-impacts/chemicals/cadmium</a>. acesso em: 11 fev. 2026.</li>
+
+                                                    <li class="list-group-item">CNN BRASIL. Cientista explica como chumbo influenciou na evolução do cérebro humano. YouTube, 17 out. 2025. disponível em: <a href='https://www.youtube.com/watch?v=ma32dkxflew' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=ma32dkxflew</a>. acesso em: 11 fev. 2026.</li>
+
+                                                    <li class="list-group-item">DANINBLUE. The minamata mercury disaster (mini-documentary). YouTube, 7 fev. 2024. disponível em: <a href='https://www.youtube.com/watch?v=mdtwwzkflhe' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=mdtwwzkflhe</a>. acesso em: 11 fev. 2026.</li>
+
+                                                    <li class="list-group-item">WORLD HEALTH ORGANIZATION (WHO). Who guideline for clinical management of exposure to lead. geneva: world health organization, [s.d.]. disponível em: <a href='https://www.who.int/publications/b/60593' target='_blank' rel='noopener noreferrer'>https://www.who.int/publications/b/60593</a>. acesso em: 13 fev. 2026.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="heading-m3-material-complementar-aula4">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m3-material-complementar-aula4" aria-expanded="false" aria-controls="collapse-m3-material-complementar-aula4">Aula 4</button>
+                                    </h5>
+                                    <div id="collapse-m3-material-complementar-aula4" class="accordion-collapse collapse" aria-labelledby="heading-m3-material-complementar-aula4" data-bs-parent="">
+                                        <div class="accordion-body">
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item">BRASIL. Ministério da Saúde. Ficha de investigação de intoxicação exógena: Sistema de Informação de Agravos de Notificação – SINAN. Brasília: Ministério da Saúde, [s. d.]. Disponível em: <a href='https://bvsms.saude.gov.br/bvs/publicacoes/intoxicacao_exogena_sinan.pdf' target='_blank' rel='noopener noreferrer'>https://bvsms.saude.gov.br/bvs/publicacoes/intoxicacao_exogena_sinan.pdf</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item">BRASIL. Ministério da Saúde. Guia de investigação de surtos e epidemias. Brasília: Ministério da Saúde, [s. d.]. Disponível em: <a href='https://bvsms.saude.gov.br/bvs/publicacoes/guia_investigacao_surtos_epidemias.pdf' target='_blank' rel='noopener noreferrer'>https://bvsms.saude.gov.br/bvs/publicacoes/guia_investigacao_surtos_epidemias.pdf</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item">BRASIL. Ministério da Saúde. Lista completa das doenças e agravos de notificação obrigatória. Portal SINAN. Disponível em: <a href='https://portalsinan.saude.gov.br/doencas-e-agravos?showall=1&limitstart=' target='_blank' rel='noopener noreferrer'>https://portalsinan.saude.gov.br/doencas-e-agravos?showall=1&limitstart=</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item">BRASIL. Ministério da Saúde. Sistemas de informação em saúde no Brasil: contextos históricos. Brasília: Ministério da Saúde, [s. d.]. Disponível em: <a href='https://bvsms.saude.gov.br/bvs/publicacoes/sistemas_informacao_atencao_saude_contextos_historicos.pdf' target='_blank' rel='noopener noreferrer'>https://bvsms.saude.gov.br/bvs/publicacoes/sistemas_informacao_atencao_saude_contextos_historicos.pdf</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item">ORGANIZAÇÃO MUNDIAL DA SAÚDE (OMS). Fluxo da informação em saúde. Infográfico. [s. l.]: OMS, 2017. Disponível em: <a href='https://www.afro.who.int/sites/default/files/2017-06/AHO_Country_H_Infos_Systems_2nd_edition.pdf' target='_blank' rel='noopener noreferrer'>https://www.afro.who.int/sites/default/files/2017-06/AHO_Country_H_Infos_Systems_2nd_edition.pdf</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item">VIDEOSAÚDE DISTRIBUIDORA DA FIOCRUZ. Ep. 01 – Webinário CEE/Fiocruz: A Vigilância Epidemiológica no SUS. YouTube, 23 jul. 2024. Disponível em: <a href='https://www.youtube.com/watch?v=MR2Te6GnE1w' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=MR2Te6GnE1w</a>. Acesso em: 10 fev. 2026.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="heading-m3-material-complementar-aula5">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m3-material-complementar-aula5" aria-expanded="false" aria-controls="collapse-m3-material-complementar-aula5">Aula 5</button>
+                                    </h5>
+                                    <div id="collapse-m3-material-complementar-aula5" class="accordion-collapse collapse" aria-labelledby="heading-m3-material-complementar-aula5" data-bs-parent="">
+                                        <div class="accordion-body">
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item">BRASIL. Falta de áreas verdes aumenta exposição a metais pesados em recém-nascidos, aponta pesquisa. Disponível em: <a href='https://www.gov.br/saude/pt-br/assuntos/noticias/2024/setembro/falta-de-areas-verdes-aumenta-exposicao-a-metais-pesados-em-recem-nascidos-aponta-pesquisa' target='_blank' rel='noopener noreferrer'>https://www.gov.br/saude/pt-br/assuntos/noticias/2024/setembro/falta-de-areas-verdes-aumenta-exposicao-a-metais-pesados-em-recem-nascidos-aponta-pesquisa</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item">BRASIL. Ministério da Saúde. Combate à desinformação na área da saúde: uma luta de todos. Disponível em: <a href='https://www.gov.br/saude/pt-br/assuntos/saude-com-ciencia/noticias/2024/maio/combate-a-desinformacao-na-area-da-saude-uma-luta-de-todos' target='_blank' rel='noopener noreferrer'>https://www.gov.br/saude/pt-br/assuntos/saude-com-ciencia/noticias/2024/maio/combate-a-desinformacao-na-area-da-saude-uma-luta-de-todos</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item">BRASIL. Ministério da Saúde. Secretaria de Atenção Primária à Saúde (SAPS). Populações em situação de vulnerabilidade e desigualdade social. Disponível em: <a href='https://www.gov.br/saude/pt-br/composicao/saps/equidade/o-que-e-equidade/populacoes-em-situacao-de-vulnerabilidade-e-desigualdade-social' target='_blank' rel='noopener noreferrer'>https://www.gov.br/saude/pt-br/composicao/saps/equidade/o-que-e-equidade/populacoes-em-situacao-de-vulnerabilidade-e-desigualdade-social</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item">CARVALHO, L. V. B. de <em>et al</em>. Exposição ocupacional a substâncias químicas, fatores e saúde do trabalhador: uma visão integrada. Saúde em Debate, v. 41, n. spe2, p. 313–326, 2017.</li>
+
+                                                    <li class="list-group-item">DÁSKALOS. Você sabe o que foi o desastre de Minamata – ENEM 2022. YouTube, 13 set. 2022. Disponível em: <a href='https://www.youtube.com/watch?v=OLVFxwHWuE0' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=OLVFxwHWuE0</a>. Acesso em: 25 set. 2025.</li>
+
+                                                    <li class="list-group-item">FIORATI, R. C.; ELUI, V. M. Determinantes sociais da saúde, iniquidades e inclusão social entre pessoas com deficiência. Revista Latino-Americana de Enfermagem, v. 23, n. 2, p. 329–336, 2015.</li>
+
+                                                    <li class="list-group-item">FIOCRUZ. Pesquisa mostra que população de Brumadinho tem alta exposição a metais pesados. 2022. Disponível em: <a href='https://fiocruz.br/noticia/2022/07/pesquisa-mostra-que-populacao-de-brumadinho-tem-alta-exposicao-metais-pesados' target='_blank' rel='noopener noreferrer'>https://fiocruz.br/noticia/2022/07/pesquisa-mostra-que-populacao-de-brumadinho-tem-alta-exposicao-metais-pesados</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item">FRANZOSO, C. Desastre de Minamata. YouTube, 1 abr. 2014. Disponível em: <a href='https://www.youtube.com/watch?v=_zMG0MsyIQ0' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=_zMG0MsyIQ0</a>. Acesso em: 2 set. 2025.</li>
+
+                                                    <li class="list-group-item">FUNDAÇÃO OSWALDO CRUZ (FIOCRUZ). DSSBR – Determinantes sociais da saúde: o que é. Rio de Janeiro: Fiocruz, 2025. Disponível em: <a href='https://dssbr.ensp.fiocruz.br/dss-o-que-e/' target='_blank' rel='noopener noreferrer'>https://dssbr.ensp.fiocruz.br/dss-o-que-e/</a>. Acesso em: 23 set. 2025.</li>
+
+                                                    <li class="list-group-item">GARBOIS, J. A.; SODRÉ, F.; DALBELLO-ARAÚJO, M. Da noção de determinação social à de determinantes sociais da saúde. Saúde em Debate, v. 41, n. 112, p. 1–11, 2017.</li>
+
+                                                    <li class="list-group-item">INSTITUTO NACIONAL DE CÂNCER (INCA). Exposição no trabalho e no ambiente. Disponível em: <a href='https://www.gov.br/inca/pt-br/assuntos/causas-e-prevencao-do-cancer/exposicao-no-trabalho-e-no-ambiente/amianto' target='_blank' rel='noopener noreferrer'>https://www.gov.br/inca/pt-br/assuntos/causas-e-prevencao-do-cancer/exposicao-no-trabalho-e-no-ambiente/amianto</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item">MENDES, F. <em>et al</em>. Armed violence in Manguinhos/RJ, Brazil: health and daily life of health and education workers. Cadernos de Saúde Pública, v. 29, n. 7, p. e04502024, jul. 2024.</li>
+
+                                                    <li class="list-group-item">MONIZ, G. <em>et al</em>. Desigualdades em saúde: uma perspectiva global. Ciência & Saúde Coletiva, [S.l.], v. 22, n. 3, p. 737–746, 2017. Disponível em: <a href='https://www.scielo.br/j/csc/a/XLS4hCMT6k5nMQy8BJzJhHx/?format=html&lang=pt' target='_blank' rel='noopener noreferrer'>https://www.scielo.br/j/csc/a/XLS4hCMT6k5nMQy8BJzJhHx/?format=html&lang=pt</a>. Acesso em: 10 fev. 2026.</li>
+
+                                                    <li class="list-group-item">PRECOMA, D. B. A educação como determinante social associado ao risco cardiovascular. Arquivos Brasileiros de Cardiologia, v. 117, n. 1, p. 13–14, jul. 2021.</li>
+
+                                                    <li class="list-group-item">RIBEIRO, K. G. <em>et al</em>. Determinantes sociais da saúde dentro e fora de casa. Saúde em Debate, v. 48, n. 140, e8590, 2024.</li>
+
+                                                    <li class="list-group-item">SANEAMENTO SALVA. Pontos de Vista: Drauzio explica as principais doenças causadas da falta de saneamento. YouTube, 19 nov. 2025. Disponível em: <a href='https://www.youtube.com/watch?v=bXRYCcmAXt0' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=bXRYCcmAXt0</a>. Acesso em: 13 fev. 2026.</li>
+
+                                                    <li class="list-group-item">SANT’ANNA, C. F. <em>et al</em>. Determinantes sociais de saúde: características da comunidade e trabalho das enfermeiras na saúde da família. Revista Gaúcha de Enfermagem, v. 31, n. 1, p. 92–99, 2010.</li>
+
+                                                    <li class="list-group-item">SILVA, M. A. <em>et al</em>. Saúde ambiental, determinantes sociais e vigilância à exposição de contaminantes químicos no Brasil: revisão integrativa de literatura. Aracê, v. 7, n. 1, p. 1384–1415, 2025.</li>
+
+                                                    <li class="list-group-item">WWF-BRASIL. Especial Minamata: o que aconteceu no Japão poderia se repetir aqui? YouTube, 19 nov. 2018. Disponível em: <a href='https://www.youtube.com/watch?v=lWQO7aaqiVc' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=lWQO7aaqiVc</a>. Acesso em: 25 set. 2025.</li>
+
+                                                    <li class="list-group-item">YANOMAMIS de nove aldeias estão contaminados por mercúrio. Disponível em: <a href='https://agenciagov.ebc.com.br/noticias/202404/yanomamis-de-nove-aldeias-assediadas-pelo-garimpo-estao-contaminados-por-mercurio' target='_blank' rel='noopener noreferrer'>https://agenciagov.ebc.com.br/noticias/202404/yanomamis-de-nove-aldeias-assediadas-pelo-garimpo-estao-contaminados-por-mercurio</a>. Acesso em: 10 fev. 2026.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="heading-m3-material-complementar-aula6">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m3-material-complementar-aula6" aria-expanded="false" aria-controls="collapse-m3-material-complementar-aula6">Aula 6</button>
+                                    </h5>
+                                    <div id="collapse-m3-material-complementar-aula6" class="accordion-collapse collapse" aria-labelledby="heading-m3-material-complementar-aula6" data-bs-parent="">
+                                        <div class="accordion-body">
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item">CARVALHO, A.; BURGESS, J. Cultural circuits of climate change in UK broadsheet newspapers, 1985–2003. Risk Analysis, Hoboken, v. 25, n. 6, p. 1457–1469, 2005. DOI: 10.1111/j.1539-6924.2005.00692.x.</li>
+
+                                                    <li class="list-group-item">MORENO, A. R.; PERES, F. El estado del arte de la comunicación de riesgos en la región de América Latina. Revista de Comunicación y Salud, Madrid, v. 1, n. 1, p. 55–71, 2011.</li>
+
+                                                    <li class="list-group-item">PERES, F. Biossegurança, saúde, ambiente e comunicação de riscos: um debate necessário. Ciência & Saúde Coletiva, Rio de Janeiro, v. 17, p. 294–297, 2012.</li>
+
+                                                    <li class="list-group-item">PERES, F. <em>et al</em>. Design of risk communication strategies based on risk perception among farmers exposed to pesticides in Rio de Janeiro State, Brazil. American Journal of Industrial Medicine, Hoboken, v. 56, n. 1, p. 77–89, 2013.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fim do Accordion Módulos -->
+        </div>
+
+    </div>
+</div>
+		`,
+	},
+	glossario: {
+		ariaLabel: 'glossario',
+		modalSize: 'modal-lg',
+		modalTitle: 'Glossário',
+		modalBody: `
+			<div class="aba">
+				<ul class="nav nav-pills nav-fill mb-3" id="pills-tab" role="tablist">
+					<li class="nav-item" role="presentation">
+						<button class="nav-link active" id="pills-atores-tab" data-bs-toggle="pill" data-bs-target="#pills-atores" type="button" role="tab" aria-controls="pills-atores" aria-selected="true">Atores</button>
+					</li>
+					<li class="nav-item" role="presentation">
+						<button class="nav-link" id="pills-seguranca-tab" data-bs-toggle="pill" data-bs-target="#pills-seguranca" type="button" role="tab" aria-controls="pills-seguranca" aria-selected="false">Segurança</button>
+					</li>
+					<li class="nav-item" role="presentation">
+						<button class="nav-link" id="pills-processos-tab" data-bs-toggle="pill" data-bs-target="#pills-processos" type="button" role="tab" aria-controls="pills-processos" aria-selected="false">Processos</button>
+					</li>
+					<li class="nav-item" role="presentation">
+						<button class="nav-link" id="pills-documentos-tab" data-bs-toggle="pill" data-bs-target="#pills-documentos" type="button" role="tab" aria-controls="pills-documentos" aria-selected="false">Documentos</button>
+					</li>
+				</ul>
+				<div class="tab-content p-0" id="pills-tabContent">
+					<!-- Atores -->
+					<div class="tab-pane fade show active" id="pills-atores" role="tabpanel" aria-labelledby="pills-atores-tab">
+						<div class="accordion accordion-flush" id="accordionExample2">
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="heading1-a">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-a" aria-expanded="true" aria-controls="collapse1-a">A</button>
+								</h2>
+								<div id="collapse1-a" class="accordion-collapse collapse" aria-labelledby="heading1-a" data-bs-parent="">
+									<div class="accordion-body">
+										<p><strong>ANVISA</strong></p>
+										<p>Agência Nacional de Vigilância Sanitária, autarquia que exerce atividades de regulação, normatização, controle e fiscalização na área de vigilância sanitária.</p>
+										<p><strong>Autoridade Nacional Reguladora do Medicamento (ANARME) ou Entidade Reguladora de Moçambique</strong></p>
+										<p>Instituição pública, dotada de personalidade jurídica, autonomia administrativa, financeira e patrimonial, que desempenha funções de regulamentação, supervisão, fiscalização e sancionamento, nos termos definidos pela Lei.</p>
+										<p><strong>Autoridades Regulatórias</strong></p>
+										<p>Instituições que têm poder regulatório, ou seja, autoridades que analisam os dados submetidos e conduzem inspeções. Podem também serem denominadas autoridades competentes.</p>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="heading1-c">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-c" aria-expanded="false" aria-controls="collapse1-c">C</button>
+								</h2>
+								<div id="collapse1-c" class="accordion-collapse collapse" aria-labelledby="heading1-c" data-bs-parent="">
+									<div class="accordion-body">
+										<p><strong>Centro de Pesquisa</strong></p>
+										<p>Local onde, usualmente, as atividades ligadas ao estudo são conduzidas. Ensaios Clínicos podem ser conduzidos em um único centro ou em vários centros simultaneamente (Estudos Multicêntricos).</p>
+										<p><strong>Comitê de Coordenação</strong></p>
+										<p>Comitê organizado pelo patrocinador para coordenar a condução de um estudo multicêntrico.</p>
+										<p><strong>Comitê de Ética em Pesquisa (CEP)</strong></p>
+										<p>Organização independente, multidisciplinar, cuja responsabilidade é garantir a proteção dos direitos, segurança e bem-estar dos seres humanos envolvidos em um estudo, por meio da aprovação e revisão contínua do protocolo do estudo e dos materiais e métodos utilizados para a obtenção e documentação do consentimento dos participantes de pesquisa.</p>
+										<p><strong>Comitê de Ética Independente (IEC)</strong></p>
+										<p>Uma organização independente (um conselho de revisão ou um comitê institucional, regional, nacional ou supranacional) constituído por profissionais da área médica/científica e membros pertencentes a outras áreas, cuja responsabilidade é garantir a proteção dos direitos, segurança e bem-estar dos seres humanos envolvidos em um estudo e assegurar publicamente a sua proteção, através da revisão e aprovação/parecer favorável sobre o protocolo do estudo, adequação dos investigadores, recursos e dos materiais e métodos utilizados para a obtenção e documentação do consentimento dos participantes de pesquisa, entre outras atividades. A situação legal, composição, função, operação e exigências regulatórias pertinentes ao Comitê de Ética Independente podem ser diferentes em cada país, mas devem permitir que ele atue em consonância com o Guia das BPC (ICH).</p>
+										<p><strong>Comitê Independente de Monitoramento de Dados (IDMC)</strong></p>
+										<p>Também conhecido como Conselho de Monitoramento de Dados e Segurança, Comitê de Monitoramento ou Comitê de Monitoramento de Dados. É um comitê independente de monitoramento de dados que, pode ser implementado pelo investigador, para avaliar periodicamente o desenvolvimento de um estudo clínico, os dados de segurança e os limites críticos de eficácia, além de recomendar ao patrocinador a continuidade, a modificação, ou o encerramento do estudo.</p>
+										<p><strong>Comitê Institucional de Bioética Para Saúde (CIBS)</strong></p>
+										<p>Entidade criada pelo Comitê Nacional de Bioética para a Saúde (CNBS) de Moçambique, com competências delegadas para avaliação de aspectos éticos de propostas de investigação em saúde a nível de uma ou mais instituições, e que apenas efetua avaliação de protocolos de investigação provenientes ou realizados em colaboração com as respectivas instituições.</p>
+										<p><strong>Comitê Nacional de Bioética para a Saúde (CNBS) de Moçambique</strong></p>
+										<p>Órgão independente multidisciplinar, que faz avaliação dos protocolos de investigação na área da saúde para aferir a aplicação dos princípios éticos na realização da pesquisa tendo em conta a proteção dos participantes. Assegura a proteção dos direitos, segurança e bem-estar dos participantes nos estudos. Faz também a tutela e monitoria da atividade dos Comités Institucionais de Bioética para a Saúde (CIBS). O CNBS e os CIBS avaliam os aspectos metodológicos de protocolos de investigação quando os Comitês Científicos das instituições proponentes de protocolos não estiverem em funcionamento, e sempre que houver aspectos metodológicos que impactem a Bioética.</p>
+										<p><strong>CONEP</strong></p>
+										<p>Comissão Nacional de Ética em Pesquisa, é uma instância colegiada, de natureza consultiva, deliberativa, normativa, educativa e independente, vinculada ao Conselho Nacional de Saúde/MS.</p>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="heading1-i">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-i" aria-expanded="false" aria-controls="collapse1-i">I</button>
+								</h2>
+								<div id="collapse1-i" class="accordion-collapse collapse" aria-labelledby="heading1-i" data-bs-parent="">
+									<div class="accordion-body">
+										<p><strong>Instituição</strong></p>
+										<p>Qualquer entidade, agência ou instalação médica ou odontológica onde sejam conduzidos estudos clínicos.</p>
+										<p><strong>Investigador de Coordenação</strong></p>
+										<p>Um investigador responsável pela coordenação de investigadores de diferentes centros participantes de um estudo multicêntrico.</p>
+										<p><strong>Investigador/Investigador Principal/Pesquisador</strong></p>
+										<p>Pessoa responsável por conduzir o estudo clínico em um centro de pesquisa. Pesquisador responsável ou Investigador Principal é o responsável legal pelo estudo, líder da equipe do estudo. Um médico qualificado (ou dentista, conforme o caso), que for um investigador ou um subinvestigador do ensaio, deve ser responsável por todas as decisões médicas (ou odontológicas) relacionadas ao ensaio.</p>
+										<p><strong>Investigador/ Instituição</strong></p>
+										<p>Expressão que significa “o investigador e/ou instituição”, quando e onde solicitada pelas exigências regulatórias aplicáveis.</p>
+										<p><strong>Investigador-Patrocinador</strong></p>
+										<p>Indivíduo que implementa e conduz, sozinho ou em grupo, um estudo clínico e sob cuja imediata direção o produto sob investigação é administrado, fornecido ou utilizado por um paciente. O termo não inclui qualquer pessoa que não um indivíduo (ex.: não inclui uma corporação ou uma agência). As responsabilidades de um investigador-patrocinador incluem tanto as do patrocinador como as do investigador.</p>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="heading1-o">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-o" aria-expanded="false" aria-controls="collapse1-o">O</button>
+								</h2>
+								<div id="collapse1-o" class="accordion-collapse collapse" aria-labelledby="heading1-o" data-bs-parent="">
+									<div class="accordion-body">
+										<p><strong>Organização de Pesquisa Contratada (CRO)</strong></p>
+										<p>Uma pessoa ou organização (comercial, acadêmica ou outra) contratada pelo patrocinador para realizar um ou mais de seus deveres e funções relativos a estudos clínicos.</p>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="heading1-p">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-p" aria-expanded="false" aria-controls="collapse1-p">P</button>
+								</h2>
+								<div id="collapse1-p" class="accordion-collapse collapse" aria-labelledby="heading1-p" data-bs-parent="">
+									<div class="accordion-body">
+										<p><strong>Participante de Pesquisa</strong></p>
+										<p>Pela regulamentação brasileira, indivíduo que, de forma esclarecida e voluntária, ou sob o esclarecimento e autorização de seu(s) responsável(eis) legal(ais), aceita ser pesquisado. Podem pertencer ao grupo dos que recebem o produto sob investigação ou ao grupo de controle. Além disso, podem ser portadores de alguma comorbidade/patologia ou indivíduos saudáveis.</p>
+										<p><strong>Populações Vulneráveis</strong></p>
+										<p>Indivíduos cuja vontade de participar do estudo possa ser indevidamente influenciada pela expectativa, justificada ou não, de benefícios associados à participação, ou de uma reação negativa, em caso de recusa, por parte de membros seniores de alguma hierarquia da qual façam parte ou à qual estejam submetidos. Exemplos são indivíduos pertencentes a grupos com uma estrutura hierárquica constituída, como estudantes de medicina, farmácia, odontologia e enfermagem, funcionários de hospitais e laboratórios, da indústria farmacêutica, membros das forças armadas e detentos. Outros participantes de pesquisa vulneráveis são aqueles portadores de doenças incuráveis ou que estejam em casas de repouso, pessoas desempregadas ou miseráveis, pacientes em situações de emergência, grupos étnicos minoritários, pessoas sem moradia, nômades, refugiados, menores e aqueles incapazes de atestar o próprio consentimento.</p>
+										<p><strong>Patrocinador</strong></p>
+										<p>Pessoa física ou jurídica, pública ou privada que apoia a pesquisa de variadas formas, seja com financiamento, infraestrutura, recursos humanos ou apoio institucional.</p>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="heading1-r">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-r" aria-expanded="false" aria-controls="collapse1-r">R</button>
+								</h2>
+								<div id="collapse1-r" class="accordion-collapse collapse" aria-labelledby="heading1-r" data-bs-parent="">
+									<div class="accordion-body">
+										<p><strong>Representante legal</strong></p>
+										<p>Pessoa física ou jurídica autorizada pela legislação aplicável para consentir, em nome do participante de pesquisa, sua participação em um estudo clínico.</p>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="heading1-s">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-s" aria-expanded="false" aria-controls="collapse1-s">S</button>
+								</h2>
+								<div id="collapse1-s" class="accordion-collapse collapse" aria-labelledby="heading1-s" data-bs-parent="">
+									<div class="accordion-body">
+										<p><strong>Sub Investigador</strong></p>
+										<p>Qualquer membro específico da equipe do estudo clínico, designado e supervisionado pelo investigador no centro de pesquisa para conduzir procedimentos essenciais e/ou tomar decisões importantes relacionadas ao estudo.</p>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="heading1-t">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-t" aria-expanded="false" aria-controls="collapse1-t">T</button>
+								</h2>
+								<div id="collapse1-t" class="accordion-collapse collapse" aria-labelledby="heading1-t" data-bs-parent="">
+									<div class="accordion-body">
+										<p><strong>Testemunha Imparcial</strong></p>
+										<p>Pessoa, não relacionada ao estudo, não sendo injustamente influenciada pelas pessoas nele envolvidas, que participe do processo de consentimento, inclusive registrando participação assinando o Termo de Consentimento Livre e Esclarecido (TCLE), caso o participante de pesquisa, ou seu responsável legal, não saiba ler e/ou escrever, garantindo assim que as informações redigidas destinadas aos participantes sejam as mesmas informadas verbalmente.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Segurança -->
+					<div class="tab-pane fade" id="pills-seguranca" role="tabpanel" aria-labelledby="pills-seguranca-tab">
+						<div class="accordion accordion-flush" id="accordionExample2">
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="heading2-c">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2-c" aria-expanded="true" aria-controls="collapse2-c">C</button>
+								</h2>
+								<div id="collapse2-c" class="accordion-collapse collapse" aria-labelledby="heading2-c" data-bs-parent="">
+									<div class="accordion-body">
+										<p><strong>Comparador (Produto)</strong></p>
+										<p>Um produto sob investigação ou comercializado ou placebo, usado como referência em um estudo clínico.</p>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="heading2-d">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2-d" aria-expanded="false" aria-controls="collapse2-d">D</button>
+								</h2>
+								<div id="collapse2-d" class="accordion-collapse collapse" aria-labelledby="heading2-d" data-bs-parent="">
+									<div class="accordion-body">
+										<p><strong>Desvio de Protocolo</strong></p>
+										<p>Qualquer não cumprimento dos procedimentos ou requisitos definidos na versão aprovada do protocolo, sem implicações maiores na integridade do ensaio, na qualidade dos dados ou nos direitos e segurança dos participantes.</p>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="heading2-e">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2-e" aria-expanded="false" aria-controls="collapse2-e">E</button>
+								</h2>
+								<div id="collapse2-e" class="accordion-collapse collapse" aria-labelledby="heading2-e" data-bs-parent="">
+									<div class="accordion-body">
+										<p><strong>Evento Adverso (EA)</strong></p>
+										<p>Qualquer ocorrência médica inconveniente ou sinal desfavorável ou não planejado (incluindo achados laboratoriais anormais), sintoma, ou doença temporariamente associada com o uso de um produto farmacêutico sob investigação, relacionadas ou não ao produto farmacêutico sob investigação, e que não, necessariamente, tenha uma relação causal com o tratamento.</p>
+										<p><strong>Evento Adverso Grave (EAG) / Evento Adverso Sério (EAS)</strong></p>
+										<p>Qualquer ocorrência médica adversa que, em qualquer dose: - resulte em morte, - represente risco à vida, - implique em hospitalização ou prolongamento de uma hospitalização existente, - resulte em persistente inabilidade/incapacidade significativa, ou - cause anomalia congênita.</p>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="heading2-p">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2-p" aria-expanded="false" aria-controls="collapse2-p">P</button>
+								</h2>
+								<div id="collapse2-p" class="accordion-collapse collapse" aria-labelledby="heading2-p" data-bs-parent="">
+									<div class="accordion-body">
+										<p><strong>Placebo</strong></p>
+										<p>Formulação sem efeito farmacológico, administrada ao participante do ensaio clínico com a finalidade de mascaramento ou de ser comparador.</p>
+										<p><strong>Produto Investigacional (ou produto experimental)</strong></p>
+										<p>Forma farmacêutica de um ingrediente ativo ou placebo que está sendo provada ou usada como referência em um estudo clínico (Ensaio Clínico). Incluindo produto com autorização prévia de comercialização, mas utilizado ou formulado ou empacotado de maneira diferente daquela aprovada.</p>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="heading2-r">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2-r" aria-expanded="false" aria-controls="collapse2-r">R</button>
+								</h2>
+								<div id="collapse2-r" class="accordion-collapse collapse" aria-labelledby="heading2-r" data-bs-parent="">
+									<div class="accordion-body">
+										<p><strong>Reação Adversa ao medicamento (RAM)</strong></p>
+										<p>Qualquer resposta prejudicial ou indesejável, não intencional, a um medicamento, que ocorre nas doses usualmente empregadas para profilaxia, diagnóstico ou terapia de doenças. No conceito de RAM pode-se observar a existência de uma relação causal entre o uso do medicamento e a ocorrência do evento.</p>
+										<p><strong>Reação Adversa Inesperada ao medicamento</strong></p>
+										<p>Uma reação adversa, cuja natureza ou severidade não seja condizente com as informações aplicáveis ao produto (ex.: Brochura do Investigador para produtos sob investigação não aprovados ou bula/resumo das características do produto para os aprovados).</p>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="heading2-v">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2-v" aria-expanded="false" aria-controls="collapse2-v">V</button>
+								</h2>
+								<div id="collapse2-v" class="accordion-collapse collapse" aria-labelledby="heading2-v" data-bs-parent="">
+									<div class="accordion-body">
+										<p><strong>Violação de protocolo de ensaio clínico</strong></p>
+										<p>Desvio de protocolo de ensaio clínico que possa afetar a qualidade dos dados, que comprometa a integridade do estudo ou que possa afetar a segurança ou os direitos dos participantes do ensaio clínico.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Processos -->
+					<div class="tab-pane fade" id="pills-processos" role="tabpanel" aria-labelledby="pills-processos-tab">
+						<div class="accordion accordion-flush" id="accordionExample2">
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="heading3-a">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3-a" aria-expanded="true" aria-controls="collapse3-a">A</button>
+								</h2>
+								<div id="collapse3-a" class="accordion-collapse collapse" aria-labelledby="heading3-a" data-bs-parent="">
+									<div class="accordion-body">
+										<p><strong>Adesão (em relação aos estudos)</strong></p>
+										<p>Seguir todas as exigências relativas ao estudo, às Boas Práticas Clínicas e às exigências regulatórias aplicáveis.</p>
+										<p><strong>Acesso Direto</strong></p>
+										<p>Permissão para examinar, analisar, verificar e reproduzir quaisquer registros e relatórios que sejam importantes para avaliar o estudo clínico. Qualquer parte (ex.: autoridades regulatórias nacionais e estrangeiras, auditores e monitores do patrocinador) com acesso direto deverá ter o devido cuidado, com as restrições estabelecidas pelas exigências regulatórias aplicáveis, para que se mantenha confidencialidade dos participantes de pesquisa e das informações de propriedade do patrocinador.</p>
+										<p><strong>Assentimento livre e esclarecido</strong></p>
+										<p>Anuência do participante da pesquisa – criança, adolescente ou indivíduos impedidos de forma temporária ou não de consentir, na medida de sua compreensão e respeitadas suas singularidades, após esclarecimento sobre a natureza da pesquisa, justificativa, objetivos, métodos, potenciais benefícios e riscos. A obtenção do assentimento não elimina a necessidade do consentimento do responsável.</p>
+										<p><strong>Auditoria</strong></p>
+										<p>Verificação independente e sistemática das atividades e documentos relativos ao estudo, a fim de determinar se o protocolo, os procedimentos operacionais padrões do patrocinador (POP), as Boas Práticas Clínicas (BPC) e as exigências regulatórias aplicáveis estão sendo cumpridas.</p>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="heading3-b">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3-b" aria-expanded="false" aria-controls="collapse3-b">B</button>
+								</h2>
+								<div id="collapse3-b" class="accordion-collapse collapse" aria-labelledby="heading3-b" data-bs-parent="">
+									<div class="accordion-body">
+										<p><strong>Bem-estar (dos participantes de pesquisa)</strong></p>
+										<p>Integridade física e mental dos indivíduos envolvidos em um estudo clínico.</p>
+										<p><strong>Boas Práticas Clínicas (BPC)</strong></p>
+										<p>Padrão de qualidade ética e científica para o planejamento, condução, registro e relato de estudos clínicos que envolvam a participação de seres humanos. O objetivo é assegurar a proteção dos direitos, integridade e confidencialidade dos participantes da pesquisa, assim como, a credibilidade dos dados e a precisão dos resultados.</p>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="heading3-c">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3-c" aria-expanded="false" aria-controls="collapse3-c">C</button>
+								</h2>
+								<div id="collapse3-c" class="accordion-collapse collapse" aria-labelledby="heading3-c" data-bs-parent="">
+									<div class="accordion-body">
+										<p><strong>Caráter Cego/Mascaramento</strong></p>
+										<p>Procedimento no qual uma ou mais partes envolvidas no estudo é mantida desinformada sobre as indicações do tratamento. O caráter cego geralmente refere-se aos participantes de pesquisa. Caso o estudo seja duplo-cego, significa que não somente o participante, mas os investigadores, monitores e, em alguns casos, os analistas de dados são mantidos desinformados quanto ao tratamento.</p>
+										<p><strong>Confidencialidade </strong></p>
+										<p>Prevenir a divulgação para outros, que não os indivíduos autorizados, sobre a identidade de um participante de pesquisa ou de uma informação de propriedade do patrocinador.</p>
+										<p><strong>Consentimento Livre e Esclarecido</strong></p>
+										<p>Processo através do qual um participante confirma voluntariamente sua intenção de participar em um ensaio em particular, após ter sido informado de todos os aspectos do ensaio que forem relevantes para a decisão do participante de entrar no estudo.</p>
+										<p><strong>Controle de Qualidade</strong></p>
+										<p>Técnicas e atividades operacionais adotadas dentro do sistema de garantia de qualidade para assegurar que todas as exigências de qualidade relacionadas às atividades do estudo sejam atendidas.</p>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="heading3-e">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3-e" aria-expanded="false" aria-controls="collapse3-e">E</button>
+								</h2>
+								<div id="collapse3-e" class="accordion-collapse collapse" aria-labelledby="heading3-e" data-bs-parent="">
+									<div class="accordion-body">
+										<p><strong>Estudo Clínico</strong></p>
+										<p>Qualquer investigação em seres humanos que pretenda descobrir ou verificar os efeitos clínicos, farmacêuticos e/ou outros efeitos farmacodinâmicos de um produto sob investigação; e/ou identificar quaisquer reações adversas a um produto sob investigação; e/ou estudar a absorção, distribuição, metabolismo e excreção de um produto sob investigação com o objetivo de apurar sua segurança e/ou eficácia.</p>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="heading3-f">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3-f" aria-expanded="false" aria-controls="collapse3-f">F</button>
+								</h2>
+								<div id="collapse3-f" class="accordion-collapse collapse" aria-labelledby="heading3-f" data-bs-parent="">
+									<div class="accordion-body">
+										<p><strong>Farmacocinética</strong></p>
+										<p>Em geral, são todas as modificações que um sistema biológico produz em um princípio ativo. É o estudo da cinética (relação quantitativa entre a variável independente tempo e a variável dependente concentração) dos processos de absorção, distribuição, biotransformação e excreção dos medicamentos (princípios ativos e/ou seus metabolitos).</p>
+										<p><strong>Farmacodinâmica</strong></p>
+										<p>Modificações que um princípio ativo produz em um sistema biológico, ou seja, é o estudo dos efeitos bioquímicos e fisiológicos dos medicamentos e seus mecanismos de ação.</p>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="heading3-g">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3-g" aria-expanded="false" aria-controls="collapse3-g">G</button>
+								</h2>
+								<div id="collapse3-g" class="accordion-collapse collapse" aria-labelledby="heading3-g" data-bs-parent="">
+									<div class="accordion-body">
+										<p><strong>Garantia de Qualidade</strong></p>
+										<p>Todas as ações planejadas e sistemáticas realizadas para garantir que o estudo seja desenvolvido e os dados sejam gerados, documentados, relatados e arquivados conforme as Boas Práticas Clínicas (BPC) e as exigências regulatórias aplicáveis.</p>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="heading3-i">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3-i" aria-expanded="false" aria-controls="collapse3-i">I</button>
+								</h2>
+								<div id="collapse3-i" class="accordion-collapse collapse" aria-labelledby="heading3-i" data-bs-parent="">
+									<div class="accordion-body">
+										<p><strong>Inspeção</strong></p>
+										<p>Atividade de uma autoridade regulatória a fim de avaliar documentos, instalações, registros e quaisquer outros recursos que se considerem relacionados ao estudo clínico, os quais podem estar localizados na instituição onde está sendo conduzido o estudo, nas dependências do patrocinador e/ou nas organizações de pesquisa contratadas (CRO), ou em outros estabelecimentos tidos como apropriados pelas autoridades regulatórias.</p>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="heading3-m">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3-m" aria-expanded="false" aria-controls="collapse3-m">M</button>
+								</h2>
+								<div id="collapse3-m" class="accordion-collapse collapse" aria-labelledby="heading3-m" data-bs-parent="">
+									<div class="accordion-body">
+										<p><strong>Monitoria</strong></p>
+										<p>Atividade de acompanhamento do progresso de um estudo clínico, garantindo que sua condução, registros e relatos sejam realizados de acordo com o protocolo, os Procedimentos Operacionais Padrão (POP), as Boas Práticas Clínicas (BPC) e as exigências regulatórias aplicáveis.</p>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="heading3-r">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3-r" aria-expanded="false" aria-controls="collapse3-r">R</button>
+								</h2>
+								<div id="collapse3-r" class="accordion-collapse collapse" aria-labelledby="heading3-r" data-bs-parent="">
+									<div class="accordion-body">
+										<p><strong>Randomização</strong></p>
+										<p>Processo de designação aleatória dos participantes de pesquisa ao tratamento ou ao grupo-controle, de forma a reduzir parcialidades.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Documentos  -->
+					<div class="tab-pane fade" id="pills-documentos" role="tabpanel" aria-labelledby="pills-documentos-tab">
+						<div class="accordion accordion-flush" id="accordionExample2">
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="heading4-a">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4-a" aria-expanded="true" aria-controls="collapse4-a">A</button>
+								</h2>
+								<div id="collapse4-a" class="accordion-collapse collapse" aria-labelledby="heading4-a" data-bs-parent="">
+									<div class="accordion-body">
+										<p><strong>Aprovação (em relação às Instâncias Regulatórias)</strong></p>
+										<p>É a decisão afirmativa de que o estudo clínico foi analisado e pode ser conduzido, seguindo as Boas Práticas Clínicas (BPC) e as exigências regulatórias aplicáveis, observando as recomendações específicas de cada uma destas instâncias.</p>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="heading4-b">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4-b" aria-expanded="false" aria-controls="collapse4-b">B</button>
+								</h2>
+								<div id="collapse4-b" class="accordion-collapse collapse" aria-labelledby="heading4-b" data-bs-parent="">
+									<div class="accordion-body">
+										<p><strong>Brochura do Investigador</strong></p>
+										<p>Documento que apresenta a compilação dos dados clínicos e não clínicos acerca dos produtos sob investigação, relevante para o estudo do(s) produto(s) sob investigação em seres humanos. No caso de medicamento já comercializado pode ser substituído pela Bula.</p>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="heading4-c">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4-c" aria-expanded="false" aria-controls="collapse4-c">C</button>
+								</h2>
+								<div id="collapse4-c" class="accordion-collapse collapse" aria-labelledby="heading4-c" data-bs-parent="">
+									<div class="accordion-body">
+										<p><strong>Certificado de Auditoria</strong></p>
+										<p>Declaração de confirmação do auditor de que a auditoria foi realizada.</p>
+										<p><strong>Código de Identificação do Participante</strong></p>
+										<p>Código identificador exclusivo, designado pelo investigador (ou pelo patrocinador) para cada participante de pesquisa, com intuito de manter sua identidade em sigilo.</p>
+										<p><strong>Contrato</strong></p>
+										<p>Formato de documento que apresenta o acordo por escrito, datado e assinado entre duas ou mais partes envolvidas que estabeleça quaisquer determinações de delegação e distribuição de tarefas e obrigações e, se apropriado, sobre assuntos financeiros. O protocolo pode servir de base para o contrato.</p>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="heading4-d">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4-d" aria-expanded="false" aria-controls="collapse4-d">D</button>
+								</h2>
+								<div id="collapse4-d" class="accordion-collapse collapse" aria-labelledby="heading4-d" data-bs-parent="">
+									<div class="accordion-body">
+										<p><strong>Dados Fonte</strong></p>
+										<p>Todas as informações dos registros originais, sendo cópias autenticadas de registros originais de achados clínicos, observações ou ainda outras atividades de uma pesquisa clínica necessárias para a reconstrução e avaliação do estudo. Os dados fonte estão contidos nos documentos fonte (registros originais ou cópias autenticadas).</p>
+										<p><strong>Documentação</strong></p>
+										<p>Todos os registros, sob qualquer forma (incluindo dados escritos, eletrônicos, magnéticos e ópticos, eletrocardiogramas, raios-X e demais exames de imagem, entre outros), que descrevem ou registram os métodos, condutas e/ou resultados de um estudo, os fatores que o afetaram e as ações realizadas.</p>
+										<p><strong>Documentos Essenciais</strong></p>
+										<p>Documentos que, individual ou coletivamente, permitem a avaliação da condução ética e da qualidade dos dados produzidos por um estudo clínico.</p>
+										<p><strong>Documentos Fonte</strong></p>
+										<p>Documentos, dados e registros originais (ex.: registros hospitalares, tabelas clínicas e administrativas, anotações laboratoriais, memorandos, diários de paciente ou checklists de avaliação, registros de prescrição farmacêutica, dados registrados por documentos automatizados, cópias ou transcrições autenticadas após verificação de sua precisão, microficha, negativos fotográficos, microfilmes ou registros magnéticos, raios-X, arquivos de pacientes e registros arquivados na farmácia, nos laboratórios e nos departamentos envolvidos no estudo clínico).</p>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="heading4-e">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4-e" aria-expanded="false" aria-controls="collapse4-e">E</button>
+								</h2>
+								<div id="collapse4-e" class="accordion-collapse collapse" aria-labelledby="heading4-e" data-bs-parent="">
+									<div class="accordion-body">
+										<p><strong>Emenda ao Protocolo</strong></p>
+										<p>Documento que descreve as alterações ou esclarecimentos formais feitos ao protocolo.</p>
+										<p><strong>Exigências Regulatórias Aplicáveis</strong></p>
+										<p>Quaisquer leis ou regulamentos sobre a condução de estudos que envolvem seres humanos, com produtos sob investigação ou não.</p>
+										<p><strong>Ficha Clínica (Case Report Form - CRF)</strong></p>
+										<p>Documento impresso, óptico ou eletrônico elaborado para registrar todas as informações exigidas pelo protocolo a serem relatadas ao patrocinador sobre cada participante de pesquisa.</p>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="heading4-p">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4-p" aria-expanded="false" aria-controls="collapse4-p">P</button>
+								</h2>
+								<div id="collapse4-p" class="accordion-collapse collapse" aria-labelledby="heading4-p" data-bs-parent="">
+									<div class="accordion-body">
+										<p><strong>Parecer</strong></p>
+										<p>Documento que emite o resultado da análise em relação ao estudo submetido ao Comitê de Ética em Pesquisa (CEP).</p>
+										<p><strong>Procedimentos Operacionais Padrão (POP)</strong></p>
+										<p>Instruções escritas e detalhadas para a uniformidade de desempenho de uma determinada função.</p>
+										<p><strong>Produto sob investigação</strong></p>
+										<p>Forma de apresentação farmacêutica de um princípio ativo ou placebo sendo testado ou usado como referência em um estudo clínico, incluindo um produto com autorização comercial / de comercialização quando usado ou apresentado (formulado ou embalado) sob uma forma diferente da aprovada, ou usado para uma indicação não aprovada, ou quando usado para obter maiores informações sobre a forma aprovada.</p>
+										<p><strong>Protocolo</strong></p>
+										<p>Documento que descreve toda a base do estudo, contendo justificativa, objetivos, desenho, metodologia, considerações estatísticas e organização do estudo. No entanto, estas informações podem ser fornecidas, de forma mais detalhada, por outros documentos referenciados pelo protocolo. Considera-se o termo protocolo o documento em si e às emendas ao protocolo.</p>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="heading4-r">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4-r" aria-expanded="false" aria-controls="collapse4-r">R</button>
+								</h2>
+								<div id="collapse4-r" class="accordion-collapse collapse" aria-labelledby="heading4-r" data-bs-parent="">
+									<div class="accordion-body">
+										<p><strong>Relatório de Auditoria</strong></p>
+										<p>Avaliação por escrito realizada pelo auditor do patrocinador sobre os resultados e impressões da auditoria.</p>
+										<p><strong>Relatório de Estudo Clínico</strong></p>
+										<p>Descrição por escrito do ensaio/estudo de qualquer agente terapêutico, profilático ou de diagnóstico conduzido em seres humanos, no qual as descrições clínicas e estatísticas, apresentações e análises estão plenamente integradas em um único relatório.</p>
+										<p><strong>Relatório Interino do Estudo Clínico</strong></p>
+										<p>Relatório contendo os resultados intermediários e sua avaliação baseada em análises realizadas no decorrer de um estudo.</p>
+										<p><strong>Relatório de Monitoria</strong></p>
+										<p>Relatório que descreve os achados e as impressões do monitor para o patrocinador, após cada visita de monitoria do estudo e/ou outros comunicados relacionados, de acordo com os POP do patrocinador.</p>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="heading4-t">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4-t" aria-expanded="false" aria-controls="collapse4-t">T</button>
+								</h2>
+								<div id="collapse4-t" class="accordion-collapse collapse" aria-labelledby="heading4-t" data-bs-parent="">
+									<div class="accordion-body">
+										<p><strong>Trilha de Auditoria</strong></p>
+										<p>Documentação que permite a reconstrução do curso dos eventos e /ou achados.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		`,
+	}
 };
 
 // Get all buttons and links that have "modal" in the data-bs-toggle
 const modalButtons = document.querySelectorAll('[data-bs-toggle="modal"]');
 
-document.addEventListener("DOMContentLoaded", function (event) {
-  //do work
+document.addEventListener('DOMContentLoaded', function (event) {
+	//do work
 
-  modalButtons.forEach((btn) => {
-    // Check if the modal exist
-    const modalId = btn.getAttribute("data-bs-target").slice(1);
-    const createdModalId = document.getElementById(modalId);
-    const modalOrigin = btn.getAttribute("data-bs-target").slice(7);
-    const hasPropriety = Object.hasOwn(modalInfos, modalOrigin);
+	modalButtons.forEach(btn => {
+		// Check if the modal exist
+		const modalId = btn.getAttribute('data-bs-target').slice(1);
 
-    if (!createdModalId && hasPropriety) {
-      // console.log('modalOrigin: ' + modalOrigin + ' hasPropriety: ' + hasPropriety);
+		const createdModalId = document.getElementById(modalId);
 
-      // If don't exist create one
-      createModal(modalId);
-    }
-  });
+		if (!createdModalId) {
+			// If don't exist create one
+			createModal(modalId);
+		}
+	});
 });
 
 function createModal(id) {
-  const newModal = document.createElement("div");
-  const modalLabel = id.slice(6);
+	const newModal = document.createElement('div');
+	const modalLabel = id.slice(6);
 
-  newModal.classList.add("modal", "fade");
-  newModal.setAttribute("id", id);
-  newModal.setAttribute("tabindex", "-1");
-  newModal.setAttribute("aria-labelledby", modalLabel);
-  newModal.setAttribute("aria-hidden", "true");
+	newModal.classList.add('modal', 'fade');
+	newModal.setAttribute('id', id);
+	newModal.setAttribute('tabindex', '-1');
+	newModal.setAttribute('aria-labelledby', modalLabel);
+	newModal.setAttribute('aria-hidden', 'true');
 
-  newModal.innerHTML = `
+	newModal.innerHTML = `
 		<div class="modal-dialog ${modalInfos[modalLabel].modalSize}">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -1158,11 +2143,5 @@ function createModal(id) {
 		</div>
 	`;
 
-  document.body.appendChild(newModal);
+	document.body.appendChild(newModal);
 }
-
-//Before and after
-const container = document.querySelector(".antes-e-depois--container");
-document.querySelector(".antes-e-depois--slider").addEventListener("input", (e) => {
-  container.style.setProperty("--position", `${e.target.value}%`);
-});
