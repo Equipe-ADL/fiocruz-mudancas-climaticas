@@ -162,21 +162,24 @@ section {
 }
 
 #page-title.mod1 {
-	background-image: linear-gradient(0deg, var(--fio-sys-color-primary-background-light) 0%, transparent 40%), url("../../media/images/page-title-background-m1.jpg");
+	background-image: linear-gradient(0deg, var(--fio-sys-color-primary-background-light) 0%, transparent 25%), url("../../media/images/page-title-background-m5.jpg");
 }
 
 #page-title.mod2 {
-	background-image: linear-gradient(0deg, var(--fio-sys-color-primary-background-light) 0%, transparent 40%), url("../../media/images/page-title-background-m2.jpg");
+	background-image: linear-gradient(0deg, var(--fio-sys-color-primary-background-light) 0%, transparent 25%), url("../../media/images/page-title-background-m2.jpg");
 }
 
 #page-title.mod3 {
-	background-image: linear-gradient(0deg, var(--fio-sys-color-primary-background-light) 0%, transparent 40%), url("../../media/images/page-title-background-m3.jpg");
+	background-image: linear-gradient(0deg, var(--fio-sys-color-primary-background-light) 0%, transparent 25%), url("../../media/images/page-title-background-m3.jpg");
 }
 
 #page-title.mod4 {
-	background-image: linear-gradient(0deg, var(--fio-sys-color-primary-background-light) 0%, transparent 40%), url("../../media/images/page-title-background-m4.jpg");
+	background-image: linear-gradient(0deg, var(--fio-sys-color-primary-background-light) 0%, transparent 25%), url("../../media/images/page-title-background-m4.jpg");
 }
 
+#page-title.mod5 {
+	background-image: linear-gradient(0deg, var(--fio-sys-color-primary-background-light) 0%, transparent 25%), url("../../media/images/page-title-background-m5.jpg");
+}
 #page-title .container,
 #page-title .container .row {
 	height: 100%;
@@ -184,14 +187,17 @@ section {
 
 #page-title .title {
 	text-align: left;
-	color: var(--fio-sys-color-primary-medium);
-	font-size: calc(var(--fio-sys-typography-head-lg-size) * 0.7);
+	color: var(--fio-sys-color-secondary-accent-dark-contrast);
+	font-size: var(--fio-sys-typography-head-lg-size);
+	text-transform: uppercase;
+	letter-spacing: var(--fio-sys-typography-label-tracking);
+	font-family: var(--fio-sys-typography-family-primary-SemiBold);
 }
 
 #page-title .title .label {
 	font-family: var(--fio-sys-typography-label-family);
 	font-size: var(--fio-sys-typography-label-md-size);
-	color: var(--fio-sys-color-primary-dark);
+	color: var(--fio-sys-color-secondary-accent-dark-contrast);
 	line-height: var(--fio-sys-typography-label-height);
 	text-transform: var(--fio-sys-typography-label-transform);
 	letter-spacing: var(--fio-sys-typography-label-tracking);
@@ -216,8 +222,8 @@ section {
 	}
 
 	#page-title .title {
-		text-align: right;
-		font-size: var(--fio-sys-typography-head-xl-size);
+		text-align: left;
+		font-size: var(--fio-sys-typography-head-lg-size);
 		line-height: var(--fio-sys-typography-head-sm-line-height);
 	}
 

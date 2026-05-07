@@ -61,7 +61,7 @@
 	--fio-sys-color-secondary-accent-medium: var(--fio-ref-color-tertiary-40);
 	--fio-sys-color-secondary-accent-medium-contrast: var(--fio-ref-color-tertiary-95);
 	--fio-sys-color-secondary-accent-dark: var(--fio-ref-color-tertiary-30);
-	--fio-sys-color-secondary-accent-dark-contrast: var(--fio-ref-color-tertiary-90);
+	--fio-sys-color-secondary-accent-dark-contrast: var(--fio-ref-color-tertiary-100);
 
 	/* Neutral */
 	--fio-sys-color-neutral-extra-light: var(--fio-ref-color-neutral-95);
