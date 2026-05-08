@@ -2,7 +2,7 @@
 
 .header {
 	align-items: center;
-	background: linear-gradient(180deg, rgba(101, 119, 106, 0.7), rgba(101, 119, 106, 0));
+	background: linear-gradient(180deg, rgba(94, 115, 98, 1), rgba(94, 115, 98, 0.4));
 	display: flex;
 	gap: 16px;
 	height: 80px;
@@ -12,6 +12,11 @@
 	transition: 0.25s ease-out;
 	width: 100%;
 	z-index: 101;
+}
+
+.header.interna {
+	align-items: center;
+	background: linear-gradient(180deg, rgba(94, 115, 98, 1), rgba(94, 115, 98, 1));
 }
 .header > *:last-child {
 	flex: auto;
