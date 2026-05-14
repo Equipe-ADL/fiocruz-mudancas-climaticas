@@ -204,37 +204,40 @@
 		],
 		"description": "Accordion com imagens",
 	},
-	"Box de Atenção": {
+	"Box Atenção": {
 		"prefix": "atenção",
 		"body": [
 			"<!-- Box de Atenção -->",
-			"<div class=\"box\" data-box=\"Atenção\">",
+			"<div class=\"box\" data-box=\"atenção\">",
     "	<div class=\"card aos-init aos-animate card--in\" data-aos=\"fade-right\" data-aos-easing=\"ease-out\" data-aos-duration=\"600\">",
     "		<div class=\"card-header\">",
     "			<span class=\"icone material-symbols-rounded\" aria-hidden=\"true\"></span>",
-    "			<span class=\"label\">Atenção</span>",
+    "			<span class=\"label\">atenção</span>",
     "		</div>",
 			"",
     "		<div class=\"custom-shape-divider-top-1751890676\">",
-    "			<svg data-name=\"Layer 1\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1200 120\" preserveAspectRatio=\"none\">",
-    "				<path d=\"M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z\" class=\"shape-fill\"></path>",
-    "			</svg>",
+			"",
     "		</div>",
     "		<div class=\"card-body\">",
     "			<div>",
-    "				<p>Mauris quis nisi ex. Vivamus et sodales ipsum, vulputate interdum nisl. Proin sit amet tellus sem. Etiam fringilla, diam et pellentesque sodales, mi est maximus ex, vitae malesuada augue tortor vitae nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac luctus eros, quis lobortis odio. Morbi in massa quis lorem porttitor tempus.</p>",
+    "				<p>Mauris quis nisi ex. Vivamus et sodales ipsum,",
+    "					vulputate interdum nisl. Proin sit amet tellus",
+    "					sem. Etiam fringilla, diam et pellentesque",
+    "					sodales, mi est maximus ex, vitae malesuada",
+    "					augue tortor vitae nisi. Lorem ipsum dolor sit",
+    "					amet, consectetur adipiscing elit. Pellentesque",
+    "					ac luctus eros, quis lobortis odio. Morbi in",
+    "					massa quis lorem porttitor tempus.</p>",
     "			</div>",
     "		</div>",
 			"",
     "		<div class=\"custom-shape-divider-bottom-1751890016\">",
-    "			<svg data-name=\"Layer 1\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1200 120\" preserveAspectRatio=\"none\">",
-    "				<path d=\"M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z\" class=\"shape-fill\"></path>",
-    "			</svg>",
+			"",
     "		</div>",
     "	</div>",
 			"</div>"
 		],
-		"description": "Box de Atenção"
+		"description": "Box Atenção"
 	},
 	"Box de Curiosidade": {
 		"prefix": "curiosidade",
@@ -326,23 +329,30 @@
 		],
 		"description": "Box de Material Complementar"
 	},
-	"Box de Para Refletir": {
+	"Box Para Refletir": {
 		"prefix": "para-refletir",
 		"body": [
-			"<!-- Box de Para refletir -->",
-			"<div class=\"box\" data-box=\"Para Refletir\">",
+			"<!-- Box de Para Refletir -->",
+			"<div class=\"box\" data-box=\"para refletir\">",
     "	<div class=\"card card--in\">",
     "		<div class=\"card-header\">",
     "			<span class=\"icone material-symbols-rounded\" aria-hidden=\"true\"></span>",
-    "			<span class=\"label\">Para Refletir</span>",
+    "			<span class=\"label\">para refletir</span>",
     "		</div>",
     "		<div class=\"card-body\">",
-    "			<p>Mauris quis nisi ex. Vivamus et sodales ipsum, vulputate interdum nisl. Proin sit amet tellus sem. Etiam fringilla, diam et pellentesque sodales, mi est maximus ex, vitae malesuada augue tortor vitae nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac luctus eros, quis lobortis odio. Morbi in massa quis lorem porttitor tempus.</p>",
+    "			<p>Mauris quis nisi ex. Vivamus et sodales ipsum,",
+    "				vulputate interdum nisl. Proin sit amet tellus sem.",
+    "				Etiam fringilla, diam et pellentesque sodales, mi",
+    "				est maximus ex, vitae malesuada augue tortor vitae",
+    "				nisi. Lorem ipsum dolor sit amet, consectetur",
+    "				adipiscing elit. Pellentesque ac luctus eros, quis",
+    "				lobortis odio. Morbi in massa quis lorem porttitor",
+    "				tempus.</p>",
     "		</div>",
     "	</div>",
 			"</div>"
 		],
-		"description": "Box de Para Refletir"
+		"description": "Box Para Refletir"
 	},
 	"Box de Para Escutar": {
 		"prefix": "para-escutar",
