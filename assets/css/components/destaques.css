@@ -18,8 +18,6 @@
 .olho-de-texto p:last-child::after {
 	content: url('../../../media/templates/destaque-graphism.png');
 	display: block;
-	/* width:80px;
-	height:80px; */
 	width: 180px;
 	height: auto;
 	position:relative;
@@ -43,7 +41,7 @@
 
 /*** Destaque Box Cor - Média ênfase ***/
 .box-cor {
-  	background: linear-gradient(0deg, rgba(28, 130, 130, 0.1), rgba(210, 164, 64, 0.1)), url(../../../media/templates/bg-box-cor.png) no-repeat center;
+  	background: linear-gradient(0deg, rgba(234, 233, 220, 0.2), rgba(234, 233, 220, 0.8)), url(../../../media/templates/bg-box-cor.png) no-repeat center;
 	--_destaque-box-cor-title-color:var(--fio-sys-color-accent-dark);
 	--_destaque-box-cor-text-color:var(--fio-sys-color-neutral-normal);
 	--_destaque-box-cor-border-color: var(--fio-sys-color-accent-dark);
@@ -137,7 +135,7 @@
 	--_destaque-background-position: center;
 	--_destaque-background-attachment: fixed;
 	--_destaque-margin:var(--fio-sys-size-margin-xxl) 0;
-	--_destaque-color: var(--fio-sys-color-primary-background-light);
+	--_destaque-color: var(--fio-sys-color-primary-background-dark);
 
 	/* background: linear-gradient(0deg, rgba(0, 48, 102, 0.7), rgba(0, 48, 102, 0.7)), url('../../../media/templates/bg-destaque.jpg'); */
 	background-image: var(--destaque-background-gradient), var(--_destaque-background-image);
@@ -158,7 +156,7 @@
 .destaque-parallax p, 
 .destaque-parallax li, 
 .destaque-parallax .list .list-group .list-group-item {
-	color: var(--_destaque-color);
+	color: var(--fio-ref-color-tertiary-30);
 	font-size: var(--fio-sys-typography-size-1);
 }
 

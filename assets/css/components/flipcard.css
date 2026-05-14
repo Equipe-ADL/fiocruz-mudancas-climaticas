@@ -110,7 +110,7 @@
 .flipcard .flip-card-front .card-title {
 	/* text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.65) !important; */
 	text-align: center;
-	color:var(--fio-sys-color-primary-medium);
+	color:var(--fio-ref-color-tertiary-40);
 	line-height: var(--fio-sys-typography-head-md-line-height);
 }
 
@@ -150,7 +150,7 @@
 
 /*Fundos para flipcard*/
 .flipcard .flip-card .fundo1 {
-	background-image: url(../../../sources/recursos-visuais/images/fundo-flipcard.jpg);
+	background-image: url(../../../sources/recursos-visuais/images/fundo-flipcard.png);
 	background-size: cover;
 	background-color: var(--fio-sys-color-primary-light);
 	border-color: var(--fio-sys-color-primary-light);
