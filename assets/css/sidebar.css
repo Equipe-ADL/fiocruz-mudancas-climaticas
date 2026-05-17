@@ -1,5 +1,6 @@
 :root {
 	--hidebar-button-border: none;
+	--hidebar-background: var(--fio-sys-color-primary-dark);
 }
 #hidebar-button {
 	display: none;
@@ -178,7 +179,7 @@
 	background-color: var(--_sidebar-lesson-btn--hover);
 }
 #sidebar .accordion .accordion-item.accordion-lesson .accordion-header .accordion-button:not(.collapsed) {
-	background-color: var(--_sidebar-lesson-btn--active);	
+	background-color: var(--_sidebar-lesson-btn--active);
 }
 
 #sidebar .sidebar__section .sidebar__section-accordion .accordion-module .accordion-body.list-group {
@@ -200,18 +201,18 @@
 }
 
 #sidebar .sidebar__section .sidebar__section-accordion a.list-group-item.module-link {
-    background: transparent;
-    color: #fff;
-    font-weight: 800;
-    border: none;
+	background: transparent;
+	color: #fff;
+	font-weight: 800;
+	border: none;
 	border-radius: 8px;
-    font-family: var(--fio-sys-typography-family-primary-bold);
+	font-family: var(--fio-sys-typography-family-primary-bold);
 }
 
 #sidebar .sidebar__section .sidebar__section-accordion a.list-group-item.active {
 	background-color: var(--_sidebar-module-btn--active);
-    color: var(--fio-sys-color-neutral-white);
-    line-height: var(--_sidebar-line-height);
+	color: var(--fio-sys-color-neutral-white);
+	line-height: var(--_sidebar-line-height);
 }
 
 #sidebar .sidebar__section .sidebar__section-accordion .accordion-body.list-group .list-group-item:hover {
@@ -331,11 +332,14 @@
 		position: fixed;
 		left: 380px;
 		top: 100px;
-		background-color: var(--fio-ref-color-secondary-30);
+		background-color: var(--hidebar-background);
 		border-top-right-radius: 12px;
 		border-bottom-right-radius: 12px;
 		border: none;
-		box-shadow: 4px 0 0 0 var(--hidebar-button-border), 0 4px 0 0 var(--hidebar-button-border), 0 -4px 0 0 var(--hidebar-button-border);
+		box-shadow:
+			4px 0 0 0 var(--hidebar-button-border),
+			0 4px 0 0 var(--hidebar-button-border),
+			0 -4px 0 0 var(--hidebar-button-border);
 		padding: 12px;
 		padding-left: 6px;
 		z-index: 99;
@@ -348,7 +352,10 @@
 	}
 	#hidebar-button:hover {
 		--hidebar-button-border: var(--_sidebar-module-btn--hover);
-		box-shadow: 4px 0 0 0 var(--hidebar-button-border), 0 4px 0 0 var(--hidebar-button-border), 0 -4px 0 0 var(--hidebar-button-border);
+		box-shadow:
+			4px 0 0 0 var(--hidebar-button-border),
+			0 4px 0 0 var(--hidebar-button-border),
+			0 -4px 0 0 var(--hidebar-button-border);
 		text-decoration: none;
 	}
 	#hidebar-button:before {
