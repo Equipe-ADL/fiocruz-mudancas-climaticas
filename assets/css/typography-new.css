@@ -85,11 +85,13 @@ figure.link-image a[target="_blank"]::after {
 #page-content strong > a,
 #page-content strong > a:visited,
 #page-content em > a,
-#page-content em > a:visited {
-  color: var(--fio-sys-color-accent-medium);
+#page-content em > a:visited,
+#page-content li > a {
+  background-color: var(--fio-sys-color-accent-medium);
+  color: #fff;
   font-weight: 600;
   padding: 0 2px;
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 /* #page-content p > a:visited {
@@ -98,10 +100,11 @@ figure.link-image a[target="_blank"]::after {
 } */
 
 #page-content p > a:hover,
-#page-content strong > a:hover  {
-  background-color: var(--fio-sys-color-accent-medium);
-  color: var(--fio-sys-color-accent-medium-contrast);
-  text-decoration: none;
+#page-content strong > a:hover,
+#page-content li > a:hover  {
+  background-color:var(--fio-sys-color-accent-dark);
+  /* color: var(--fio-sys-color-accent-medium-contrast); */
+  text-decoration: underline;
 }
 
 h1,
