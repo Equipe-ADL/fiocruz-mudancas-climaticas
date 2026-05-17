@@ -16,7 +16,7 @@
 }  */
 
 .olho-de-texto p:last-child::after {
-	content: url('../../../media/templates/destaque-graphism.png');
+	content: url('../../../media/templates/destaque-graphism.svg');
 	display: block;
 	width: 180px;
 	height: auto;
