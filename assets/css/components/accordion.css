@@ -15,6 +15,9 @@
 	font-weight: 800;
 	text-transform: uppercase;
 }
+.accordion p {
+	font-size: var(--fio-sys-typography-size--1);
+}
 .accordion-item:first-of-type .accordion-button {
 	border-top-left-radius: var(--fio-sys-spacing-border-radius-lg);
 	border-top-right-radius: var(--fio-sys-spacing-border-radius-lg);

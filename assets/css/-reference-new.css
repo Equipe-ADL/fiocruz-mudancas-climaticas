@@ -16,12 +16,12 @@
 
 	/* Palettes */
 
-	--fio-ref-color-primary-0: hsl(var(--fio-ref-color-primary), 0%);
+	--fio-ref-color-primary-0: hsl(var(--fio-ref-color-primary), 40%);
 	--fio-ref-color-primary-10: hsl(var(--fio-ref-color-primary), 10%);
 	--fio-ref-color-primary-20: hsl(var(--fio-ref-color-primary), 20%);
 	--fio-ref-color-primary-30: hsl(var(--fio-ref-color-primary), 30%);
 	--fio-ref-color-primary-40: hsl(var(--fio-ref-color-primary), 40%);
-	--fio-ref-color-primary-50: hsl(var(--fio-ref-color-primary), 50%);
+	--fio-ref-color-primary-50: hsl(var(--fio-ref-color-primary), 45%);
 	--fio-ref-color-primary-60: hsl(var(--fio-ref-color-primary), 60%);
 	--fio-ref-color-primary-70: hsl(var(--fio-ref-color-primary), 70%);
 	--fio-ref-color-primary-80: hsl(var(--fio-ref-color-primary), 80%);
@@ -30,12 +30,12 @@
 	--fio-ref-color-primary-99: hsl(var(--fio-ref-color-primary), 99%);
 	--fio-ref-color-primary-100: hsl(var(--fio-ref-color-primary), 100%);
 
-	--fio-ref-color-secondary-0: hsl(var(--fio-ref-color-secondary), 0%);
+	--fio-ref-color-secondary-0: hsl(var(--fio-ref-color-secondary), 40%);
 	--fio-ref-color-secondary-10: hsl(var(--fio-ref-color-secondary), 10%);
 	--fio-ref-color-secondary-20: hsl(var(--fio-ref-color-secondary), 20%);
 	--fio-ref-color-secondary-30: hsl(var(--fio-ref-color-secondary), 32%);
-	--fio-ref-color-secondary-40: hsl(var(--fio-ref-color-secondary), 40%);
-	--fio-ref-color-secondary-50: hsl(var(--fio-ref-color-secondary), 50%);
+	--fio-ref-color-secondary-40: hsl(var(--fio-ref-color-secondary), 42%);
+	--fio-ref-color-secondary-50: hsl(var(--fio-ref-color-secondary), 42%);
 	--fio-ref-color-secondary-60: hsl(var(--fio-ref-color-secondary), 60%);
 	--fio-ref-color-secondary-70: hsl(var(--fio-ref-color-secondary), 70%);
 	--fio-ref-color-secondary-80: hsl(var(--fio-ref-color-secondary), 80%);
