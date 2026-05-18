@@ -86,7 +86,8 @@ figure.link-image a[target="_blank"]::after {
 #page-content strong > a:visited,
 #page-content em > a,
 #page-content em > a:visited,
-#page-content li > a {
+#page-content li > a,
+#page-content span.figure-caption a {
 	background-color: var(--fio-sys-color-primary-40);
 	color: #fff;
 	font-weight: 600;
@@ -101,7 +102,8 @@ figure.link-image a[target="_blank"]::after {
 
 #page-content p > a:hover,
 #page-content strong > a:hover,
-#page-content li > a:hover {
+#page-content li > a:hover,
+#page-content span.figure-caption a:hover  {
 	background-color: var(--fio-sys-color-primary-30);
 	/* color: var(--fio-sys-color-accent-medium-contrast); */
 	text-decoration: underline;

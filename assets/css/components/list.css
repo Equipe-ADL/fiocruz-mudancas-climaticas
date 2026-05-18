@@ -33,7 +33,7 @@
 }
 
 .list .list-group .list-group-item::before {
-	color: var(--fio-sys-color-primary-40);
+	color: #D06719;
 	content: "label_important";
 	font-family: "Material Symbols Rounded";
 	font-size: 18px;
@@ -41,32 +41,33 @@
 	line-height: var(--fio-sys-typography-height-125);
 	position: absolute;
 	text-shadow: var(--fio-sys-size-shadow-sm);
+	text-shadow: 4px 1px #f8d5ba;
 	vertical-align: middle;
 }
 
 .list .list-group .list-group-item[list-style="video"]::before {
-	color: var(--fio-sys-color-primary-40);
+	color: #D06719;
 	content: "movie";
 	font-family: "Material Symbols Rounded";
 	vertical-align: middle;
 }
 
 .list .list-group .list-group-item[list-style="audio"]::before {
-	color: var(--fio-sys-color-primary-40);
+	color: #D06719;
 	content: "headphones";
 	font-family: "Material Symbols Rounded";
 	vertical-align: middle;
 }
 
 .list .list-group .list-group-item[list-style="file"]::before {
-	color: var(--fio-sys-color-primary-40);
+	color: #D06719;
 	content: "article";
 	font-family: "Material Symbols Rounded";
 	vertical-align: middle;
 }
 
 .list .list-group .list-group-item[list-style="page"]::before {
-	color: var(--fio-sys-color-primary-40);
+	color: #D06719;
 	content: "tab";
 	font-family: "Material Symbols Rounded";
 	vertical-align: middle;

@@ -228,6 +228,7 @@
 #sidebar .sidebar__section .sidebar__section-accordion .accordion-body.list-group {
 	padding: 16px 1px 16px 20px;
 	gap: 16px;
+	background-color: transparent;
 }
 #sidebar .sidebar__section .sidebar__section-accordion .accordion .list-group-item {
 	background-color: transparent;

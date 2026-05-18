@@ -20,7 +20,7 @@
 .destaque-parallax span:first-child,
 .destaque-parallax p,
 .destaque-parallax li {
-	color: var(--fio-sys-color-neutral-white);
+	color: var(--fio-sys-color-neutral-100);
 }
 
 .destaque-parallax p {

@@ -89,13 +89,14 @@ audio::-webkit-media-controls-panel {
 .media .media__transcription .transcription-button {
 	margin-right: auto;
 	/* margin-left: auto; */
-	margin-bottom: var(--fio-sys-spacing-margin-md);
+	margin-bottom: var(--fio-sys-size-margin-md);
 	position: relative;
 }
 
 
 .box .card .media .media__transcription {
-	text-align: start;
+	text-align: end;
+	margin-top: var(--fio-sys-size-padding-sm);
 }
 
 .media .media__transcription .transcription-button .transcription-button-label {
@@ -118,10 +119,9 @@ audio::-webkit-media-controls-panel {
 }
 
 .media .media__transcription .transcription-button .transcription-button-label::after {
-	background-color: var(--fio-sys-color-accent-normal);
 	border-radius: var(--fio-sys-size-radius-full);
 	content: 'keyboard_arrow_down';
-	color: var(--fio-sys-color-neutral-white);
+	color: var(--fio-sys-color-primary-40);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -141,7 +141,8 @@ audio::-webkit-media-controls-panel {
 }
 
 .media .media__transcription .transcription-content {
-	background: linear-gradient(0deg, rgba(255, 127, 0, 0.3), rgba(255, 255, 255, 0.05)), url(../../../media/templates/bg-box-atencao.svg) no-repeat right;
+	/* background: linear-gradient(0deg, rgba(255, 127, 0, 0.3), rgba(255, 255, 255, 0.05)), url(../../../media/templates/bg-box-atencao.svg) no-repeat right; */
+	background-color: var(--fio-sys-color-primary-95);
 	padding: var(--fio-sys-size-padding-md);
 }
 

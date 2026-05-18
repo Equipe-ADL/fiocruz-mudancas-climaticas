@@ -208,7 +208,7 @@
 		"prefix": "atenção",
 		"body": [
 			"<!-- Box de Atenção -->",
-			"<div class=\"box\" data-box=\"atenção\">",
+			"<div class=\"box\" data-box=\"atenção\" id=\"box-atention\">",
     "	<div class=\"card aos-init aos-animate card--in\" data-aos=\"fade-right\" data-aos-easing=\"ease-out\" data-aos-duration=\"600\">",
     "		<div class=\"card-header\">",
     "			<span class=\"icone material-symbols-rounded\" aria-hidden=\"true\"></span>",

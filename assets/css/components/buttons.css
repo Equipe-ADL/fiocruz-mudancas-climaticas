@@ -93,7 +93,7 @@ button.disabled,
 
 /* Home button */
 .fio-button-home {
-	color: var(--fio-sys-color-primary-medium);
+	color: var(--fio-sys-color-primary-30);
 	font-family: "Montserrat SemiBold";
 	letter-spacing: var(--fio-sys-typography-spacing-small);
 	--_background-color: transparent;
@@ -131,12 +131,12 @@ button.disabled,
 .fio-button-secondary {
 	--_button-color-secondary: transparent;
 	--_button-color-secondary--hover: var(--fio-sys-color-accent-normal);
-	--_button-text-color-secondary: var(--fio-sys-color-primary-medium);
-	--_button-text-color-secondary--hover: var(--fio-sys-color-primary-light);
-	--_button-outline-color-secondary: var(--fio-sys-color-primary-medium);
-	--_button-outline-color-secondary--hover: var(--fio-sys-color-primary-light);
+	--_button-text-color-secondary: var(--fio-sys-color-primary-30);
+	--_button-text-color-secondary--hover: var(--fio-sys-color-primary-70);
+	--_button-outline-color-secondary: var(--fio-sys-color-primary-30);
+	--_button-outline-color-secondary--hover: var(--fio-sys-color-primary-70);
 	--_button-color-secondary--active: var(--fio-sys-color-accent-dark);
-	--_button-text-color-secondary--active: var(--fio-sys-color-neutral-white);
+	--_button-text-color-secondary--active: var(--fio-sys-color-neutral-100);
 
 	background-color: var(--_button-color-secondary);
 	color: var(--_button-outline-color-secondary);

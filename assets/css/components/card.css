@@ -1,6 +1,6 @@
 .card {
 	/* Card - base */
-	--_card-background: var(--fio-sys-color-neutral-white);
+	--_card-background: var(--fio-sys-color-neutral-100);
 	--_card-border-color: var(--fio-sys-color-primary-light);
 	--_card-border-width: var(--fio-sys-size-stroke-xs);
 	--_card-border-radius: var(--fio-sys-size-radius-sm);
@@ -13,12 +13,12 @@
 	--_card-header-padding-y: var(--fio-sys-size-padding-sm);
 	--_card-header-padding-x: var(--fio-sys-size-padding-sm);
 
-	--_card-header-background: var(--fio-sys-color-primary-medium-contrast);
-	--_card-header-family: var(--fio-sys-typography-family-primary-bold);
+	--_card-header-background: var(--fio-sys-color-primary-90);
+	--_card-header-family: var(--fio-sys-typography-family-primary);
 	--_card-header-tracking: var(--fio-sys-typography-spacing-normal);
 	--_card-header-line-height: var(--fio-sys-typography-height-125);
 	--_card-header-size: var(--fio-sys-typography-size-0);
-	--_card-header-color: var(--fio-sys-color-primary-medium);
+	--_card-header-color: var(--fio-sys-color-primary-40);
 	--_card-header-border-color: var(--fio-sys-color-primary-light);
 	--_card-header-border-width: 0;
 
@@ -39,41 +39,6 @@
 	overflow: hidden;
 }
 	
-
-#modulo1 .card {
-	/* Card - header */
-	--_card-header-background: var(--fio-sys-color-secondary1-normal);
-	--_card-header-border-color: var(--fio-sys-color-secondary1-normal);
-}
-
-#modulo2 .card {
-	/* Card - header */
-	--_card-header-background: var(--fio-sys-color-secondary2-normal);
-	--_card-header-border-color: var(--fio-sys-color-secondary2-normal);
-}
-
-#modulo3 .card {
-	/* Card - header */
-	--_card-header-background: var(--fio-sys-color-secondary3-normal);
-	--_card-header-border-color: var(--fio-sys-color-secondary3-normal);
-}
-
-#modulo4 .card {
-	/* Card - header */
-	--_card-header-background: var(--fio-sys-color-secondary4-normal);
-	--_card-header-border-color: var(--fio-sys-color-secondary4-normal);
-	--_card-header-color: var(--fio-sys-color-text);
-}
-
-#modulo5 .card {
-	/* Card - header */
-	--_card-header-background: var(--fio-sys-color-secondary5-normal);
-	--_card-header-border-color: var(--fio-sys-color-secondary5-normal);
-}
-
-
-
-
 .card.card-primary {
 	background-color: var(--_card-background-primary);
 	border-color: var(--_card-border-color-primary);
@@ -103,6 +68,7 @@
 	color: var(--_card-header-color);
 	font-family: var(--_card-header-family);
 	font-size: var(--_card-header-size);
+	font-weight: 700;
 	letter-spacing: var(--_card-header-tracking);
 	line-height: var(--_card-header-line-height);
 	margin: 0;
@@ -146,7 +112,7 @@
 	border-bottom-left-radius: var(--_card-border-radius);
 	border-bottom-right-radius: var(--_card-border-radius);
 	padding: var(--_card-footer-padding-y) var(--_card-footer-padding-x);
-	background-color: var(--fio-sys-color-neutral-white);
+	background-color: var(--fio-sys-color-neutral-100);
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;

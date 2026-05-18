@@ -44,6 +44,7 @@
 }
 .header .mobile-toggle-open .mobile-toggle__button .icon {
 	font-size: 32px;
+	color: var(--fio-sys-color-primary-100);
 }
 
 .header .brand {
@@ -117,10 +118,10 @@
 				text-decoration-inset: -10px;
 			}
 			:visited .material-symbols-rounded {
-				color: var(--fio-sys-color-neutral-white);
+				color: var(--fio-sys-color-neutral-100);
 			}
 			.material-symbols-rounded {
-				color: var(--fio-sys-color-neutral-white);
+				color: var(--fio-sys-color-neutral-100);
 			}
 			&.active {
 				background-color: transparent;

@@ -167,7 +167,7 @@
 
 /* Black and White - Color */
 .color-white {
-	color: var(--fio-sys-color-neutral-white);
+	color: var(--fio-sys-color-neutral-100);
 }
 .color-black {
 	color: var(--fio-sys-color-neutral-black);
@@ -175,7 +175,7 @@
 
 /* Black and White - Background */
 .background-white {
-	background-color: var(--fio-sys-color-neutral-white);
+	background-color: var(--fio-sys-color-neutral-100);
 }
 .background-black {
 	background-color: var(--fio-sys-color-neutral-black);

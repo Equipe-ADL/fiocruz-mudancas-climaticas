@@ -1,7 +1,7 @@
 /* --- TABELA --- */
 
 .table {
-	background-color: var(--fio-sys-color-neutral-white);
+	background-color: var(--fio-sys-color-neutral-100);
 	font-size: var(--fio-sys-typography-size--1);
 }
 
@@ -22,13 +22,13 @@
 
 .table-responsive th {
 	background-color: var(--fio-sys-color-primary-medium);
-	color: var(--fio-sys-color-neutral-white);
+	color: var(--fio-sys-color-neutral-100);
 	border: 1px solid var(--fio-sys-color-primary-light);
 	font-family: var(--fio-sys-typography-family-primary-bold);
 }
 
 .table-responsive th a {
-	color: var(--fio-sys-color-neutral-white);
+	color: var(--fio-sys-color-neutral-100);
 }
 
 .table-responsive td,
@@ -120,7 +120,7 @@ Tabela em mobile (colunas viram linhas, em blocos de informação)
 	}
 
 	.no-more-tables tr:nth-of-type(odd) td {
-		border-bottom: 1px solid var(--fio-sys-color-neutral-white);
+		border-bottom: 1px solid var(--fio-sys-color-neutral-100);
 	}
 
 	.no-more-tables td:before {
