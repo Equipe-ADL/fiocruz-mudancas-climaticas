@@ -419,59 +419,34 @@ const modalInfos = {
                                     </h5>
                                     <div id="collapse-m1-aula2" class="accordion-collapse collapse" aria-labelledby="heading-m1-aula2" data-bs-parent="">
                                         <div class="accordion-body">
-                                            <span class='d-block'><em>Obrigatórias - PNVS</em></span>
                                             <div class="list mb-5">
                                                 <ul class="list-group">
-                                                    <li class="list-group-item">BRASIL. Agência Nacional de Vigilância Sanitária (ANVISA). Guia de Vigilância em Saúde para a Exposição a Metais Pesados. Brasília: ANVISA, 2020. Disponível em: <a href='https://www.gov.br/anvisa/pt-br target=' _blank' rel='noopener noreferrer'>https://www.gov.br/anvisa/pt-br</a>. Acesso em: 2 out. 2025.</li>
+                                                    <li class="list-group-item">BRASIL. Ministério da Saúde. <em>Saúde Mental dos Trabalhadores dos Serviços de Saúde:</em> diretrizes para formulação de políticas públicas em Emergências em Saúde Pública. Brasília: Ministério da Saúde, 2024. </li>
 
-                                                    <li class="list-group-item">BRASIL. Conselho Nacional de Saúde. Resolução nº 588, de 12 de julho de 2018. Institui a Política Nacional de Vigilância em Saúde. Diário Oficial da União, Brasília, 13 ago. 2018.</li>
+                                                    <li class="list-group-item">FREITAS, C. M.; BARCELLOS, C. Desastre no Rio Grande do Sul, Brasil: crise climática, resposta do Sistema Único de Saúde e desafios dos novos tempos. <em>Cadernos de Saúde Pública</em>, v. 40, n. 11, e00114424, 2024.</li>
 
-                                                    <li class="list-group-item">CONSELHO NACIONAL DE SAÚDE. Política Nacional de Vigilância em Saúde completa seis anos ainda com desafios para sua implementação. Brasília, 2024. Disponível em: https://www.gov.br/conselho-nacional-de-saude. Acesso em: 26 ago. 2025.</li>
+                                                    <li class="list-group-item">FREITAS, C. M.; SILVA, E. L.; ROCHA, V. Do risco à reconstrução: estratégias dos sistemas de saúde em desastres e emergências em saúde pública. <em>Políticas e Sistemas de Saúde no Brasil</em>. Rio de Janeiro: Fiocruz, Cebes, 2025 (no prelo). </li>
 
-                                                    <li class="list-group-item">CSCI. Saúde e saneamento: uma avaliação das políticas públicas de prevenção, controle e contingência das arboviroses no Brasil. <strong>Ciência & Saúde Coletiva</strong>, v. 28, n. 6, p. 1767-1776, 2023.</li>
+                                                    <li class="list-group-item">FREITAS, C. L. S. de; PAIVA, F. S. de. Desastres socioambientais e sofrimento psicossocial no contexto latino-americano: uma revisão integrativa. <em>Psicol. Soc</em>. [Internet]. 2025; 37:e298777. Disponível em: <a href='https://doi.org/10.1590/1807-0310/2025v37298777' target='_blank' rel='noopener noreferrer'>https://doi.org/10.1590/1807-0310/2025v37298777</a>. Acesso em: 05 maio 2025.</li>
 
-                                                    <li class="list-group-item">FIOCRUZ. Abrascão promove o lançamento da Política Nacional de Vigilância em Saúde (PNVS). Rio de Janeiro: EPSJV, 2018. Disponível em: <a href='https://www.epsjv.fiocruz.br' target='_blank' rel='noopener noreferrer'>https://www.epsjv.fiocruz.br</a>. Acesso em: 26 ago. 2025.</li>
+                                                    <li class="list-group-item">INTERGOVERNMENTAL PANEL ON CLIMATE CHANGE (IPCC). Climate Change:<em></em> Impacts, Adaptation and Vulnerability. Summary for Policymakers. Cambridge: Cambridge University Press, 2022.</li>
 
-                                                    <li class="list-group-item">GARCIA, L. P.; DUARTE, E. 1ª Conferência Nacional de Vigilância em Saúde: marco para a construção da Política Nacional de Vigilância em Saúde. <strong>Epidemiologia e Serviços de Saúde</strong>, v. 27, n. 2, e20180002, 2018.</li>
+                                                    <li class="list-group-item">OXFORD LANGUAGES. Word of the Year 2019: Climate Emergency. Disponível em: <a href='https://languages.oup.com/word-of-the-year/2019/' target='_blank' rel='noopener noreferrer'>https://languages.oup.com/word-of-the-year/2019/</a>. Acesso em: 30 set. 2025.</li>
 
-                                                    <li class="list-group-item">INTERFACE. Caminhos possíveis para a avaliação das práticas da Vigilância em Saúde. <strong>Interface – Comunicação, Saúde, Educação</strong>, v. 21, supl. 1, p. 3183-3192, 2017..</li>
+                                                    <li class="list-group-item">UNITED NATIONS OFFICE FOR DISASTER RISK REDUCTION (UNDRR). Sendai Framework Terminology on Disaster Risk Reduction. 2023. Disponível em: <a href='https://www.undrr.org/terminology#R' target='_blank' rel='noopener noreferrer'>https://www.undrr.org/terminology#R</a>. Acesso em: 30 abr. 2025.</li>
 
-                                                    <li class="list-group-item">MULTI EDUCATIVA. Gestão em Vigilância em Saúde: estratégias e implementação. São Paulo: Multi Educativa, 2024a.</li>
-
-                                                    <li class="list-group-item">MULTI EDUCATIVA. Gestão da Vigilância em Saúde: como monitorar riscos e proteger a população. São Paulo: Multi Educativa, 2024b.</li>
-
-                                                    <li class="list-group-item">OKUMOTO, O.; BRITO, S. M. F.; GARCIA, L. P. A Política Nacional de Vigilância em Saúde. <strong>Epidemiologia e Serviços de Saúde</strong>, v. 27, n. 3, e2018318, 2018.</li>
-
-                                                    <li class="list-group-item">OLIVEIRA, C. M.; CRUZ, M. M. Sistema de Vigilância em Saúde no Brasil: avanços e desafios. <strong>Saúde em Debate</strong>, v. 39, n. 104, p. 255-267, 2015.</li>
-
-                                                    <li class="list-group-item">RECKTENWALDT, M.; JUNGES, J. R. A organização e a prática da Vigilância em Saúde em municípios de pequeno porte. <strong>Saúde e Sociedade</strong>, v. 26, n. 2, p. 367-381, 2017.</li>
-
-                                                    <li class="list-group-item">REDALYC. Aspectos facilitadores e desafios para a implementação de um modelo de educação permanente para a Vigilância Sanitária. <strong>Revista Salud Colectiva</strong>, v. 16, n. 4, p. 1-12, 2020.</li>
-
-                                                    <li class="list-group-item">SANAR SAÚDE. Princípios da PNVS: o que você precisa saber! Blog Sanar Saúde, 2023. Disponível em: <a href='https://blog.sanarsaude.com' target='_blank' rel='noopener noreferrer'>https://blog.sanarsaude.com</a>. Acesso em: 26 ago. 2025.</li>
+                                                    <li class="list-group-item">WORLD HEALTH ORGANIZATION (WHO). <em>Glossary of Health Emergency and Disaster Risk Management Terminology</em>. Geneva: WHO, 2019.</li>
                                                 </ul>
                                             </div>
 
-                                            <span class='d-block'><em>Obrigatórias - Planejamento</em></span>
+                                            <span class='d-block'><em>Bibliografia complementar</em></span>
                                             <div class="list mb-5">
                                                 <ul class="list-group">
-                                                    <li class="list-group-item">GIOVANELLA, L.; MENDES, A. Atenção primária à saúde e coordenação do cuidado no SUS. <strong>Saúde em Debate</strong>, v. 43, n. spe5, p. 8-22, 2019.</li>
+                                                    <li class="list-group-item">BRASIL. Ministério do Meio Ambiente e Mudança do Clima. Secretaria Nacional de Mudança do Clima. <em>Plano Clima-Adaptação</em>. 2024. Disponível em: <a href='https://www.gov.br/mma/pt-br/composicao/smc/plano-clima/plano-clima-adaptacao' target='_blank' rel='noopener noreferrer'>https://www.gov.br/mma/pt-br/composicao/smc/plano-clima/plano-clima-adaptacao</a>. Acesso em: 30 jul. 2025.</li>
 
-                                                    <li class="list-group-item">MATUS, C. Política, planejamento e governo. Brasília: IPEA, 1993.</li>
+                                                    <li class="list-group-item">BRASIL. Ministério da Saúde. <em>Plano Clima Participativo:</em> aberta consulta pública para as estratégias na área de saúde – AdaptaSUS. Disponível em: <a href='https://brasilparticipativo.presidencia.gov.br/processes/planoclima/f/543/' target='_blank' rel='noopener noreferrer'>https://brasilparticipativo.presidencia.gov.br/processes/planoclima/f/543/</a>. Acesso em: 16 set. 2025.</li>
 
-                                                    <li class="list-group-item">PAIM, J. S.; TEIXEIRA, C. F. Política, planejamento e gestão em saúde: balanço do estado da arte. <strong>Revista de Saúde Pública</strong>, v. 40, n. spe, p. 73-78, 2006.</li>
-
-                                                    <li class="list-group-item">TANAKA, O. Y.; MELO, C. Avaliação de programas de saúde do adolescente: um modo de fazer. São Paulo: EDUSP, 2004.</li>
-
-                                                    <li class="list-group-item">TESTA, M. Pensamento estratégico e lógica de programação: o caso da saúde. São Paulo: Hucitec, 1992.</li>
-
-                                                    <li class="list-group-item">MENDES, E. V. (2011). As redes de atenção à saúde. Brasília: Organização Pan-Americana da Saúde.</li>
-
-                                                    <li class="list-group-item">TANAKA, O. Y., & Tamaki, E. M. (2012). O papel da avaliação para a tomada de decisão na gestão de serviços de saúde. <strong>Ciência & Saúde Coletiva</strong>, 17(4), 821-828.</li>
-
-                                                    <li class="list-group-item">TEIXEIRA, C. F., & Paim, J. S. (2000). Planejamento em saúde: conceitos, métodos e experiências. <strong>Ciência & Saúde Coletiva</strong>, 5(1), 17-39.</li>
-
-                                                    <li class="list-group-item">BRASIL. Ministério da Saúde. (2016). Planejamento no SUS: conceitos, métodos e experiências. Brasília: Ministério da Saúde.</li>
+                                                    <li class="list-group-item">SINIMBÚ, F. Crise climática é amplificadora de outras crises, alerta pesquisadora. Especialista analisa os efeitos das mudanças climáticas para o planeta. <em>Agência Brasil</em>. Brasília, 22 de janeiro de 2025. Disponível em: <a href='https://agenciabrasil.ebc.com.br/meio-ambiente/noticia/2025-01/crise-climatica-e-amplificadora-de-outras-crises-alerta-pesquisadora' target='_blank' rel='noopener noreferrer'>https://agenciabrasil.ebc.com.br/meio-ambiente/noticia/2025-01/crise-climatica-e-amplificadora-de-outras-crises-alerta-pesquisadora</a>. Acesso em: 16 set. 2025.</li>
                                                 </ul>
                                             </div>
                                         </div>
