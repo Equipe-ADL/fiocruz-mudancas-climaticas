@@ -1,12 +1,11 @@
 /* --- FOOTER --- */
 
-:root {
-	--logo-space: 20px;
-}
-
 footer {
+	--_logo-space: 20px;
+	--_border-bottom-color: var(--fio-sys-color-primary-50);
+
 	background-color: inherit;
-	border-bottom: 20px solid var(--fio-sys-color-primary-medium);
+	border-bottom: 20px solid var(--_border-bottom-color);
 	padding: 60px 0 40px;
 	position: relative;
 	z-index: 99;
@@ -14,7 +13,7 @@ footer {
 footer .logos {
 	padding: 20px 0;
 	display: flex;
-	gap: var(--logo-space);
+	gap: var(--_logo-space);
 	list-style: none;
 	margin: 0;
 	flex-wrap: wrap;
@@ -49,7 +48,7 @@ footer .logos li.apoio::before {
 footer .logos.principais {
 	/* border-top: 1px solid var(--fio-sys-color-neutral-light); */
 	display: flex;
-	margin-top: var(--logo-space);
+	margin-top: var(--_logo-space);
 }
 
 footer .logos img {
@@ -62,17 +61,17 @@ footer .logos img {
 	footer .logos.principais {
 		border: none;
 		/* border-left: 1px solid var(--fio-sys-color-neutral-light); */
-		padding-left: var(--logo-space);
+		padding-left: var(--_logo-space);
 		/* margin-left: var(--logo-space); */
 		margin-top: 0;
 	}
 }
 @media (min-width: 992px) {
 	:root {
-		--logo-space: 30px;
+		--_logo-space: 30px;
 	}
 	footer .logos {
-		gap: var(--logo-space);
+		gap: var(--_logo-space);
 	}
 	footer .logos img {
 		height: 60px;
@@ -87,5 +86,4 @@ footer .logos img {
 	footer .logos img {
 		height: 100px;
 	}
-
 }

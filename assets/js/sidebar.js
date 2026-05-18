@@ -1,309 +1,502 @@
-// sidebar.js - versão 1.4 (corrigida)
+// sidebar.js - versão 3.0
 // Autores: Aline Polycarpo, Danilo Blum, Luciana Nunes
 
-document.addEventListener("DOMContentLoaded", () => {
-  // --- Ajuste de altura da página (DESKTOP) ---
-  (function () {
-    const sidebarEl = document.getElementById("sidebar");
-    const contentEl = document.getElementsByClassName("content")[0];
-    const pageTitleEl = document.getElementById("page-title");
-    const footerEl = document.getElementsByTagName("footer")[0];
+document.addEventListener("DOMContentLoaded", initSidebar);
 
-    if (!sidebarEl || !contentEl || !pageTitleEl || !footerEl) return;
+function initSidebar() {
+	const sidebarRoot = document.getElementById("sidebar");
+	if (!sidebarRoot) return;
 
-    const sectionsToDiscount = pageTitleEl.offsetHeight + footerEl.offsetHeight;
+	/* =================================================
+	DOM HELPERS
+	================================================= */
 
-    if (sidebarEl.offsetHeight > contentEl.offsetHeight) {
-      const pageContent = document.getElementById("page-content");
-      if (pageContent) {
-        pageContent.style.minHeight =
-          sidebarEl.offsetHeight - sectionsToDiscount + "px";
-      }
-    }
-  })();
+	function el(tag, classes = [], text = null) {
+		const element = document.createElement(tag);
 
-  // --- Renderização da sidebar ---
-  const sidebarRoot = document.getElementById("sidebar");
+		if (classes.length) element.classList.add(...classes);
 
-  if (!sidebarRoot) return;
+		if (text !== null) element.textContent = text;
 
-  function getCurrentPath() {
-    return window.location.pathname.replace(/\/$/, "");
-  }
+		return element;
+	}
 
-  function getBasePath() {
-    const pathParts = window.location.pathname.split("/").filter(Boolean);
+	/* =================================================
+	UTILS
+	================================================= */
 
-    // Encontra o índice da primeira pasta que parece um módulo (ex: "modulo1", "modulo2", etc.)
-    const moduleIndex = pathParts.findIndex((part) => /^modulo\d+/i.test(part));
+	function getCurrentPath() {
+		return window.location.pathname.replace(/\/$/, "");
+	}
 
-    // Se encontrou um módulo, retorna tudo que vem antes dele como basePath
-    if (moduleIndex > 0) {
-      return "/" + pathParts.slice(0, moduleIndex).join("/");
-    }
+	function getBasePath() {
+		const parts = window.location.pathname.split("/").filter(Boolean);
 
-    // Se não encontrou módulo, não há base (raiz)
-    return "";
-  }
+		const index = parts.findIndex((p) => /^modulo\d+/i.test(p));
 
+		return index > 0 ? "/" + parts.slice(0, index).join("/") : "";
+	}
 
-  const hasActiveChild = (items) =>
-    items.some(
-      (item) => {
-        const fullPath = getBasePath() + item.path;
-        return (
-          (item.type === "link" && fullPath === getCurrentPath()) ||
-          (item.type === "accordion" && hasActiveChild(item.items))
-        );
-      }
-    );
+	let modalCache = null;
 
+	function loadModalFile() {
+		if (modalCache) {
+			return Promise.resolve(modalCache);
+		}
 
-  const renderItems = (items, parentId, typeLevel = "module") =>
-    items
-      .map((item, index) => {
-        if (item.type === "link") {
-          const iconClass = item.icon ? `icon-${item.icon}` : "";
-          return `
-            <a href="${getBasePath() + item.path}" 
-  class="list-group-item link-item ${iconClass} ${getCurrentPath() === getBasePath() + item.path ? "active" : ""}">
-  ${item.title}
-</a>
-          `;
-        }
+		const src = "/js/modal-content/modal-sidebar.html";
 
-        if (item.type === "accordion") {
-          const accordionId = `${parentId}-${index}`;
-          const isActive = hasActiveChild(item.items);
-          const accordionClass =
-            typeLevel === "module" ? "accordion-module" : "accordion-lesson";
+		return fetch(src)
+			.then((res) => {
+				if (!res.ok) {
+					throw new Error("Erro ao carregar modais: " + src);
+				}
+				return res.text();
+			})
+			.then((html) => {
+				modalCache = html;
+				return html;
+			});
+	}
 
-          return `
-            <div class="accordion-item ${accordionClass}">
-              <h2 class="accordion-header" id="${accordionId}-header">
-                <button class="accordion-button ${isActive ? "" : "collapsed"
-            }" type="button" 
-                  data-bs-toggle="collapse" 
-                  data-bs-target="#${accordionId}">
-                  ${item.title}
-                </button>
-              </h2>
-              <div id="${accordionId}" 
-                  class="accordion-collapse collapse ${isActive ? "show" : ""
-            }"
-                  ${typeLevel === "lesson"
-              ? `data-bs-parent="#${parentId}"`
-              : ""
-            }>
-                <div class="accordion-body list-group">
-                  ${renderItems(item.items, accordionId, "lesson")}
-                </div>
-              </div>
-            </div>
-          `;
-        }
+	const basePath = getBasePath();
 
-        return `<span class="list-group-item disabled">Tipo desconhecido</span>`;
-      })
-      .join("");
+	const hasActiveChild = (items) =>
+		items?.some((item) => {
+			if (item.type === "link") {
+				const full = basePath + item.path;
 
-  const renderSidebar = () => {
-    sidebarRoot.innerHTML = `
-      <div class="sidebar__inner">
-        <!-- Seção Mobile -->
-        <section class="sidebar__section mobile-only">
-          <div class="sidebar__section-header">
-            <div class="course-name">
-              <h2>${course.title}</h2>
-            </div>
-            <div class="mobile-toggle-close">
-              <a class="mobile-toggle__button" role="button" tabindex="0">
-                <span class="icon material-symbols-rounded">read_more</span>
-              </a>
-            </div>
-          </div>
-        </section>
+				return full === getCurrentPath();
+			}
 
-        <!-- Botão de esconder sidebar -->
-        <!-- <section class="sidebar__section">
-          <div class="sidebar__section-hidebar">
-            <a id="hidebar-button" role="button" tabindex="0"></a>
-          </div>
-        </section> -->
+			if (item.type === "accordion") {
+				return hasActiveChild(item.items);
+			}
+		});
 
-        <!-- Lista de módulos -->
-        <section class="sidebar__section">
-          <div class="sidebar__section-accordion">
-            <div class="accordion" id="sidebarAccordion">
-              ${course.modules
-        .map((module, moduleIndex) => {
-          //const moduleId = `module-${moduleIndex}`;
-          //const isActive = hasActiveChild(module.items);
-          // 👉 CASO 1: módulo é LINK (ex: Encerramento do curso)
-          if (module.type === "link") {
-            const iconClass = module.icon ? `icon-${module.icon}` : "";
-            const fullPath = getBasePath() + module.path;
+	/* =================================================
+	COMPONENT REGISTRY
+	================================================= */
 
-            return `
-              <a href="${fullPath}"
-                class="list-group-item link-item module-link ${iconClass}
-                ${getCurrentPath() === fullPath ? "active" : ""}">
-                ${module.title}
-              </a>
-            `;
-          }
+	const Components = {
+		link: createLinkItem,
 
-          // 👉 CASO 2: módulo é ACCORDION (com items)
-          const moduleId = `module-${moduleIndex}`;
-          const isActive = hasActiveChild(module.items);
+		accordion: createAccordionItem,
 
-          return `
-                    <div class="accordion-item accordion-module">
-                      <h2 class="accordion-header" id="${moduleId}-header">
-                        <button class="accordion-button ${isActive ? "" : "collapsed"
-            }" 
-                          type="button" 
-                          data-bs-toggle="collapse" 
-                          data-bs-target="#${moduleId}">
-                          ${module.title}
-                        </button>
-                      </h2>
-                      <div id="${moduleId}" 
-                          class="accordion-collapse collapse ${isActive ? "show" : ""
-            }" 
-                          data-bs-parent="#sidebarAccordion">
-                        <div class="accordion-body list-group accordion" 
-                            id="${moduleId}-lessons">
-                          ${renderItems(
-              module.items,
-              `${moduleId}-lessons`,
-              "lesson"
-            )}
-                        </div>
-                      </div>
-                    </div>
-                  `;
-        })
-        .join("")}
-            </div>
-          </div>
-        </section>
-      </div>
-    `;
-  };
+		modal: createModalItem,
+	};
 
-  // --- Atualiza visual do link ativo dinamicamente ---
-  const updateActiveState = () => {
-    const links = sidebarRoot.querySelectorAll(".link-item");
-    const current = getCurrentPath();
+	/* =================================================
+	LINK COMPONENT
+	================================================= */
 
-    links.forEach((link) => {
-      if (link.getAttribute("href") === current) {
-        link.classList.add("active");
+	function createLinkItem(item) {
+		const full = basePath + item.path;
 
-        // Abre accordions ancestrais
-        const collapse = link.closest(".accordion-collapse");
-        if (collapse && !collapse.classList.contains("show")) {
-          const button = collapse
-            .closest(".accordion-item")
-            ?.querySelector(".accordion-button");
-          button?.classList.remove("collapsed");
-          collapse.classList.add("show");
-        }
-      } else {
-        link.classList.remove("active");
-      }
-    });
-  };
+		const link = el("a", ["list-group-item", "link-item"], item.title);
 
-  // --- Render e inicializa ---
-  renderSidebar();
-  updateActiveState();
+		link.href = full;
 
-  // --- Observa mudanças de rota (pushState / replaceState / popstate) ---
-  const observeNavigation = () => {
-    const _wrap = (type) => {
-      const orig = history[type];
-      return function () {
-        const rv = orig.apply(this, arguments);
-        // Aguarda o DOM atualizar antes de disparar o evento
-        setTimeout(() => window.dispatchEvent(new Event("locationchange")), 50);
-        return rv;
-      };
-    };
+		if (item.icon) link.classList.add(`icon-${item.icon}`);
 
-    history.pushState = _wrap("pushState");
-    history.replaceState = _wrap("replaceState");
+		if (full === getCurrentPath()) link.classList.add("active");
 
-    window.addEventListener("popstate", () =>
-      setTimeout(() => window.dispatchEvent(new Event("locationchange")), 50)
-    );
+		return link;
+	}
 
-    // Evento unificado para qualquer mudança de rota
-    window.addEventListener("locationchange", updateActiveState);
-  };
+	/* =================================================
+	MODAL COMPONENT
+	================================================= */
 
-  observeNavigation();
+	function createModalItem(item) {
+		const button = el("button", ["list-group-item", "link-item"], item.title);
 
-  // --- StickySidebar ---
+		button.type = "button";
 
-  // --- StickySidebar (ativo apenas no desktop) ---
-  if (typeof StickySidebar !== "undefined" && window.innerWidth > 992) {
-    new StickySidebar("#sidebar", {
-      topSpacing: 0,
-      bottomSpacing: 0,
-      containerSelector: ".content",
-      innerWrapperSelector: ".sidebar__inner",
-    });
-    console.log("StickySidebar ativado (desktop)");
-  }
+		button.dataset.bsToggle = "modal";
+		button.dataset.bsTarget = `#${item.modal.id}`;
 
+		if (item.icon) button.classList.add(`icon-${item.icon}`);
 
-  // --- Botão para recolher / expandir sidebar (DESKTOP) ---
-  const hidebarButton = document.getElementById("hidebar-button");
-  const pageWrapper = document.getElementById("page");
-  const sidebarInner = document.querySelector(".sidebar__inner");
+		createModalIfNeeded(item.modal);
 
-  if (hidebarButton && pageWrapper && sidebarInner) {
-    hidebarButton.addEventListener("click", () => {
-      const sidebarInnerPosition = window.getComputedStyle(sidebarInner).position;
-      const isFixed = sidebarInnerPosition === "fixed";
+		return button;
+	}
 
-      if (!sidebarRoot.classList.contains("hide")) {
-        sidebarRoot.style.marginLeft = "-370px";
-        if (isFixed) sidebarInner.style.left = "-370px";
-        hidebarButton.style.left = "10px";
-        pageWrapper.style.marginLeft = "10px";
-        hidebarButton.classList.toggle("hidebar-button--close");
-        sidebarRoot.classList.add("hide");
-      } else {
-        sidebarRoot.style.marginLeft = "0px";
-        if (isFixed) sidebarInner.style.left = "0px";
-        hidebarButton.style.left = "380px";
-        pageWrapper.style.marginLeft = "380px";
-        hidebarButton.classList.toggle("hidebar-button--close");
-        sidebarRoot.classList.remove("hide");
-      }
-    });
-  }
+	/* =================================================
+	MODAL BUILDER
+	================================================= */
 
-  // --- Mobile toggle ---
-  const sidebarToggleOpen = document.querySelector(".mobile-toggle-open .mobile-toggle__button");
-  const sidebarToggleClose = document.querySelector(".mobile-toggle-close .mobile-toggle__button");
-  const htmlPage = document.querySelector("html");
+	function createModalIfNeeded(config) {
+		if (document.getElementById(config.id)) return;
 
-  if (sidebarToggleOpen) {
-    sidebarToggleOpen.addEventListener("click", () => {
-      sidebarRoot.classList.add("sidebar-show");
-      htmlPage.classList.add('html-overflow');
-    });
-  }
+		const modal = el("div", ["modal", "fade"]);
+		modal.id = config.id;
 
-  if (sidebarToggleClose) {
-    sidebarToggleClose.addEventListener("click", () => {
-      sidebarRoot.classList.remove("sidebar-show");
-      htmlPage.classList.remove('html-overflow');
-    });
-  }
+		const dialog = el("div", ["modal-dialog"]);
 
-});
+		if (config.size) dialog.classList.add(`modal-${config.size}`);
+
+		const content = el("div", ["modal-content"]);
+
+		const header = el("div", ["modal-header"]);
+
+		const title = el("h5", ["modal-title"], config.title || "");
+
+		const close = el("button", ["close"]);
+		close.dataset.bsDismiss = "modal";
+		close.innerHTML = "&times;";
+
+		header.append(title, close);
+
+		const body = el("div", ["modal-body"]);
+
+		loadModalContent(config.id, body);
+
+		content.append(header, body);
+
+		if (config.footer) {
+			const footer = el("div", ["modal-footer"]);
+
+			const btn = el("button", ["button-primary"], config.footer);
+
+			btn.dataset.bsDismiss = "modal";
+
+			footer.appendChild(btn);
+
+			content.appendChild(footer);
+		}
+
+		dialog.appendChild(content);
+
+		modal.appendChild(dialog);
+
+		document.body.appendChild(modal);
+	}
+
+	function loadModalContent(id, body) {
+		loadModalFile().then((html) => {
+			const container = document.createElement("div");
+			container.innerHTML = html;
+
+			const modalContent = container.querySelector("#" + id);
+
+			if (!modalContent) {
+				console.warn("Modal não encontrado:", id);
+				return;
+			}
+
+			body.appendChild(modalContent.cloneNode(true));
+		});
+	}
+
+	/* =================================================
+	ACCORDION COMPONENT
+	================================================= */
+
+	function createAccordionItem(item, parent, parentId, index) {
+		const id = `${parentId}-${index}`;
+
+		const isActive = hasActiveChild(item.items);
+
+		const accordionItem = el("div", ["accordion-item"]);
+
+		const header = el("h2", ["accordion-header"]);
+		header.id = `${id}-header`;
+
+		const button = el("button", ["accordion-button"], item.title);
+
+		if (!isActive) button.classList.add("collapsed");
+
+		button.type = "button";
+
+		button.dataset.bsToggle = "collapse";
+		button.dataset.bsTarget = `#${id}`;
+
+		button.setAttribute("aria-expanded", isActive ? "true" : "false");
+
+		header.appendChild(button);
+
+		const collapse = el("div", ["accordion-collapse", "collapse"]);
+		collapse.id = id;
+
+		if (isActive) collapse.classList.add("show");
+
+		collapse.dataset.bsParent = `#${parentId}`;
+
+		const body = el("div", ["accordion-body", "list-group"]);
+
+		const nestedAccordion = el("div", ["accordion"]);
+		nestedAccordion.id = `${id}-items`;
+
+		body.appendChild(nestedAccordion);
+
+		collapse.appendChild(body);
+
+		accordionItem.append(header, collapse);
+
+		parent.appendChild(accordionItem);
+
+		renderItems(item.items, nestedAccordion, nestedAccordion.id);
+	}
+
+	/* =================================================
+	RENDER ENGINE
+	================================================= */
+
+	function renderItems(items, parent, parentId) {
+		items?.forEach((item, i) => {
+			const component = Components[item.type];
+
+			if (!component) {
+				console.warn("Tipo não suportado:", item.type);
+
+				return;
+			}
+
+			if (item.type === "accordion") {
+				component(item, parent, parentId, i);
+			} else {
+				parent.appendChild(component(item));
+			}
+		});
+	}
+
+	/* =================================================
+	RENDER SIDEBAR
+	================================================= */
+
+	function renderSidebar() {
+		sidebarRoot.innerHTML = "";
+
+		const sidebarInner = el("div", ["sidebar__inner"]);
+
+		sidebarInner.appendChild(createMobileHeader());
+
+		sidebarInner.appendChild(createModules());
+
+		sidebarRoot.appendChild(sidebarInner);
+	}
+
+	/* =================================================
+	MOBILE HEADER
+	================================================= */
+
+	function createMobileHeader() {
+		const section = el("section", ["sidebar__section", "mobile-only"]);
+
+		const header = el("div", ["sidebar__section-header"]);
+
+		const courseName = el("div", ["course-name"]);
+
+		const title = el("h2", [], course.title);
+
+		courseName.appendChild(title);
+
+		const toggle = el("div", ["mobile-toggle-close"]);
+
+		const button = el("a", ["mobile-toggle__button"]);
+
+		button.role = "button";
+
+		const icon = el("span", ["icon", "material-symbols-rounded"], "read_more");
+
+		button.appendChild(icon);
+
+		toggle.appendChild(button);
+
+		header.append(courseName, toggle);
+
+		section.appendChild(header);
+
+		return section;
+	}
+
+	/* =================================================
+	MODULES ROOT
+	================================================= */
+
+	function createModules() {
+		const section = el("section", ["sidebar__section"]);
+
+		const wrap = el("div", ["sidebar__section-accordion"]);
+
+		const accordion = el("div", ["accordion"]);
+
+		accordion.id = "sidebarAccordion";
+
+		renderItems(course.modules, accordion, "sidebarAccordion");
+
+		wrap.appendChild(accordion);
+
+		section.appendChild(wrap);
+
+		return section;
+	}
+
+	/* =================================================
+	ACTIVE STATE
+	================================================= */
+
+	function updateActiveState() {
+		const links = sidebarRoot.querySelectorAll(".link-item");
+
+		const current = getCurrentPath();
+
+		links.forEach((link) => {
+			if (link.getAttribute("href") === current) {
+				link.classList.add("active");
+
+				const collapse = link.closest(".accordion-collapse");
+
+				if (collapse && !collapse.classList.contains("show")) {
+					const button = collapse.closest(".accordion-item")?.querySelector(".accordion-button");
+
+					button?.classList.remove("collapsed");
+
+					collapse.classList.add("show");
+				}
+			} else {
+				link.classList.remove("active");
+			}
+		});
+	}
+
+	/* =================================================
+	NAVIGATION OBSERVER
+	================================================= */
+
+	function observeNavigation() {
+		const wrap = (type) => {
+			const orig = history[type];
+
+			history[type] = function () {
+				const rv = orig.apply(this, arguments);
+
+				setTimeout(() => {
+					window.dispatchEvent(new Event("locationchange"));
+				}, 50);
+
+				return rv;
+			};
+		};
+
+		wrap("pushState");
+
+		wrap("replaceState");
+
+		window.addEventListener("popstate", () => {
+			setTimeout(() => {
+				window.dispatchEvent(new Event("locationchange"));
+			}, 50);
+		});
+
+		window.addEventListener("locationchange", updateActiveState);
+	}
+
+	/* =================================================
+	STICKY SIDEBAR
+	================================================= */
+
+	function initStickySidebar() {
+		if (typeof StickySidebar !== "undefined" && window.innerWidth > 992) {
+			new StickySidebar("#sidebar", {
+				topSpacing: 0,
+
+				bottomSpacing: 0,
+
+				containerSelector: ".content",
+
+				innerWrapperSelector: ".sidebar__inner",
+			});
+		}
+	}
+
+	/* =================================================
+	HIDE SIDEBAR
+	================================================= */
+
+	function initHideSidebar() {
+		const hideBtn = document.getElementById("hidebar-button");
+
+		const page = document.getElementById("page");
+
+		const inner = document.querySelector(".sidebar__inner");
+
+		if (!hideBtn || !page || !inner) return;
+
+		hideBtn.addEventListener("click", () => {
+			const fixed = window.getComputedStyle(inner).position === "fixed";
+
+			if (!sidebarRoot.classList.contains("hide")) {
+				sidebarRoot.style.marginLeft = "-370px";
+
+				if (fixed) inner.style.left = "-370px";
+
+				hideBtn.style.left = "10px";
+
+				page.style.marginLeft = "10px";
+
+				hideBtn.classList.toggle("hidebar-button--close");
+
+				sidebarRoot.classList.add("hide");
+			} else {
+				sidebarRoot.style.marginLeft = "0";
+
+				if (fixed) inner.style.left = "0";
+
+				hideBtn.style.left = "380px";
+
+				page.style.marginLeft = "380px";
+
+				hideBtn.classList.toggle("hidebar-button--close");
+
+				sidebarRoot.classList.remove("hide");
+			}
+		});
+	}
+
+	/* =================================================
+	MOBILE TOGGLE
+	================================================= */
+
+	function initMobileToggle() {
+		const open = document.querySelector(".mobile-toggle-open .mobile-toggle__button");
+
+		const close = document.querySelector(".mobile-toggle-close .mobile-toggle__button");
+
+		const html = document.querySelector("html");
+
+		if (open) {
+			open.addEventListener("click", () => {
+				sidebarRoot.classList.add("sidebar-show");
+
+				html.classList.add("html-overflow");
+			});
+		}
+
+		if (close) {
+			close.addEventListener("click", () => {
+				sidebarRoot.classList.remove("sidebar-show");
+
+				html.classList.remove("html-overflow");
+			});
+		}
+	}
+
+	/* =================================================
+	INIT
+	================================================= */
+
+	renderSidebar();
+
+	updateActiveState();
+
+	observeNavigation();
+
+	initStickySidebar();
+
+	initHideSidebar();
+
+	initMobileToggle();
+}

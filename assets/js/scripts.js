@@ -1,13 +1,13 @@
 // Stick Header
 
-window.addEventListener('scroll', function () {
-	const header = document.querySelector('.header');
-	const titleHeight = document.querySelector('.header').scrollHeight;
+window.addEventListener("scroll", function () {
+	const header = document.querySelector(".header");
+	const titleHeight = document.querySelector(".header").scrollHeight;
 
 	if (window.scrollY > 150) {
-		header.classList.add('header--sticky');
+		header.classList.add("header--sticky");
 	} else {
-		header.classList.remove('header--sticky');
+		header.classList.remove("header--sticky");
 	}
 });
 
@@ -31,10 +31,10 @@ var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
 
 // Botão de copiar podcast
 
-const copyButton = document.querySelectorAll('.copy-to-clip');
+const copyButton = document.querySelectorAll(".copy-to-clip");
 
-copyButton.forEach(btn => {
-	btn.addEventListener('click', () => {
+copyButton.forEach((btn) => {
+	btn.addEventListener("click", () => {
 		copyToClipboard(btn);
 		// tooltipShow(btn);
 
@@ -43,14 +43,14 @@ copyButton.forEach(btn => {
 });
 
 function copyToClipboard(e) {
-	const textToCopy = e.getAttribute('data-link');
-	const textarea = document.createElement('textarea');
-	textarea.setAttribute('readonly', '');
-	textarea.style.position = 'absolute';
+	const textToCopy = e.getAttribute("data-link");
+	const textarea = document.createElement("textarea");
+	textarea.setAttribute("readonly", "");
+	textarea.style.position = "absolute";
 	textarea.value = textToCopy;
 	document.body.appendChild(textarea);
 	textarea.select();
-	document.execCommand('copy');
+	document.execCommand("copy");
 	document.body.removeChild(textarea);
 }
 function tooltipFeedback(b) {
@@ -58,43 +58,43 @@ function tooltipFeedback(b) {
 
 	// feedback.tooltip('show');
 
-	b.addEventListener('mouseout', () => {
-		feedback.tooltip('hide');
+	b.addEventListener("mouseout", () => {
+		feedback.tooltip("hide");
 	});
 }
 
 // Lightbox (insert the class "lightbox" into <figure>)
 
-const imageToLightbox = document.querySelectorAll('.lightbox');
+const imageToLightbox = document.querySelectorAll(".lightbox");
 
-imageToLightbox.forEach(image => {
-	image.addEventListener('click', () => {
-		if (!image.classList.contains('lightbox--show')) {
-			const getImage = image.querySelector('img');
-			const getImageSrc = getImage.getAttribute('src');
-			const imageLightbox = document.createElement('div');
+imageToLightbox.forEach((image) => {
+	image.addEventListener("click", () => {
+		if (!image.classList.contains("lightbox--show")) {
+			const getImage = image.querySelector("img");
+			const getImageSrc = getImage.getAttribute("src");
+			const imageLightbox = document.createElement("div");
 
-			imageLightbox.classList.add('lightbox__image');
+			imageLightbox.classList.add("lightbox__image");
 
 			document.body.appendChild(imageLightbox);
 			imageLightbox.innerHTML = `<img src="${getImageSrc}"/>`;
 			console.log(getImageSrc);
 
-			image.classList.add('lightbox--show');
+			image.classList.add("lightbox--show");
 
-			document.body.style.overflow = 'hidden';
-			document.body.style.userSelect = 'none';
+			document.body.style.overflow = "hidden";
+			document.body.style.userSelect = "none";
 
 			closeLightbox(imageLightbox);
 		}
 
 		function closeLightbox(e) {
-			const lightboxOpen = document.querySelector('.lightbox__image');
-			e.addEventListener('click', () => {
+			const lightboxOpen = document.querySelector(".lightbox__image");
+			e.addEventListener("click", () => {
 				document.body.removeChild(e);
-				image.classList.remove('lightbox--show');
-				document.body.style.overflow = 'auto';
-				document.body.style.userSelect = 'auto';
+				image.classList.remove("lightbox--show");
+				document.body.style.overflow = "auto";
+				document.body.style.userSelect = "auto";
 			});
 		}
 	});
@@ -139,24 +139,22 @@ imageToLightboxWithScroll.forEach((imageScroll) => {
 
 // Boxes - inserir o título de acordo com o atributo
 
-const boxes = document.querySelectorAll('.box');
+const boxes = document.querySelectorAll(".box");
 
-boxes.forEach(box => {
-	const boxAttribute = box.getAttribute('data-box');
+boxes.forEach((box) => {
+	const boxAttribute = box.getAttribute("data-box");
 
-	const boxLabel = box.querySelector('.label');
+	const boxLabel = box.querySelector(".label");
 
 	boxLabel.innerHTML = boxAttribute;
 });
 
-
-
 // Modal - Criação dos modais principais
 const modalInfos = {
 	creditos: {
-		ariaLabel: 'creditos',
-		modalSize: 'modal-lg',
-		modalTitle: 'Créditos',
+		ariaLabel: "creditos",
+		modalSize: "modal-lg",
+		modalTitle: "Créditos",
 		modalBody: `
 			<div class="row justify-content-center pt-5">
 				<div class="col-12 col-md-10 col-lg-10">
@@ -360,9 +358,9 @@ const modalInfos = {
 		`,
 	},
 	bibliografia: {
-		ariaLabel: 'bibliografia',
-		modalSize: 'modal-xl',
-		modalTitle: 'Bibliografia',
+		ariaLabel: "bibliografia",
+		modalSize: "modal-xl",
+		modalTitle: "Bibliografia",
 		modalBody: `
 		<div class="row justify-content-center pt-5">
     <div class="col-12 col-md-11">
@@ -1015,9 +1013,9 @@ const modalInfos = {
 		`,
 	},
 	materialcomplementar: {
-		ariaLabel: 'materialcomplementar',
-		modalSize: 'modal-xl',
-		modalTitle: 'Material Complementar',
+		ariaLabel: "materialcomplementar",
+		modalSize: "modal-xl",
+		modalTitle: "Material Complementar",
 		modalBody: `
 			<div class="row justify-content-center pt-5">
     <div class="col-12 col-md-11">
@@ -1632,9 +1630,9 @@ const modalInfos = {
 		`,
 	},
 	glossario: {
-		ariaLabel: 'glossario',
-		modalSize: 'modal-lg',
-		modalTitle: 'Glossário',
+		ariaLabel: "glossario",
+		modalSize: "modal-lg",
+		modalTitle: "Glossário",
 		modalBody: `
 			<div class="aba">
 				<ul class="nav nav-pills nav-fill mb-3" id="pills-tab" role="tablist">
@@ -1651,7 +1649,7 @@ const modalInfos = {
 						<button class="nav-link" id="pills-documentos-tab" data-bs-toggle="pill" data-bs-target="#pills-documentos" type="button" role="tab" aria-controls="pills-documentos" aria-selected="false">Documentos</button>
 					</li>
 				</ul>
-				<div class="tab-content p-0" id="pills-tabContent">
+				<div class="tab-content" id="pills-tabContent">
 					<!-- Atores -->
 					<div class="tab-pane fade show active" id="pills-atores" role="tabpanel" aria-labelledby="pills-atores-tab">
 						<div class="accordion accordion-flush" id="accordionExample2">
@@ -2094,18 +2092,18 @@ const modalInfos = {
 				</div>
 			</div>
 		`,
-	}
+	},
 };
 
 // Get all buttons and links that have "modal" in the data-bs-toggle
 const modalButtons = document.querySelectorAll('[data-bs-toggle="modal"]');
 
-document.addEventListener('DOMContentLoaded', function (event) {
+document.addEventListener("DOMContentLoaded", function (event) {
 	//do work
 
-	modalButtons.forEach(btn => {
+	modalButtons.forEach((btn) => {
 		// Check if the modal exist
-		const modalId = btn.getAttribute('data-bs-target').slice(1);
+		const modalId = btn.getAttribute("data-bs-target").slice(1);
 
 		const createdModalId = document.getElementById(modalId);
 
@@ -2117,14 +2115,14 @@ document.addEventListener('DOMContentLoaded', function (event) {
 });
 
 function createModal(id) {
-	const newModal = document.createElement('div');
+	const newModal = document.createElement("div");
 	const modalLabel = id.slice(6);
 
-	newModal.classList.add('modal', 'fade');
-	newModal.setAttribute('id', id);
-	newModal.setAttribute('tabindex', '-1');
-	newModal.setAttribute('aria-labelledby', modalLabel);
-	newModal.setAttribute('aria-hidden', 'true');
+	newModal.classList.add("modal", "fade");
+	newModal.setAttribute("id", id);
+	newModal.setAttribute("tabindex", "-1");
+	newModal.setAttribute("aria-labelledby", modalLabel);
+	newModal.setAttribute("aria-hidden", "true");
 
 	newModal.innerHTML = `
 		<div class="modal-dialog ${modalInfos[modalLabel].modalSize}">
