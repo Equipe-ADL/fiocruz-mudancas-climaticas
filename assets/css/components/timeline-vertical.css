@@ -19,7 +19,7 @@
 .timeline-vertical .card .card-header {
     /*background-color:var(--fio-ref-color-tertiary-90);*/
     border-bottom: none;
-    padding: var(--fio-sys-spacing-padding-lg);
+    padding: var(--fio-sys-size-padding-lg);
     padding-bottom: 20px;
 }
 
@@ -27,7 +27,7 @@
     background-color:transparent;
     border-top:none;
     text-align: left;
-    padding: var(--fio-sys-spacing-padding-lg);
+    padding: var(--fio-sys-size-padding-lg);
     padding-top: 0;
 }
 
@@ -53,8 +53,8 @@
 	left: 18px;
 	height: 100%;
 	width: 2px;
-	background: var(--fio-sys-color-secondary-accent-medium);
-	opacity: 0.3;
+	background: #D06719;
+	opacity: 1;
 }
 
 
@@ -107,8 +107,8 @@
 	height: 40px;
 	color: var(--fio-sys-color-neutral-100);
 	border-radius: 50%;
-	-webkit-box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
-	box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+	-webkit-box-shadow: 0 0 0 4px var(--fio-sys-color-primary-80), inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 0 4px var(--fio-sys-color-primary-80), inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
 }
 
 .cd-timeline__img h4 {
@@ -161,7 +161,7 @@
 }
 
 .cd-timeline__img.cd-timeline__option1 {
-	background: var(--fio-sys-color-primary-medium);
+	background: var(--fio-sys-color-primary-40);
 }
 
 @media only screen and (min-width: 1170px) {

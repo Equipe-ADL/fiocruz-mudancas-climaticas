@@ -111,7 +111,7 @@
 		align-items: center;
 	}
 
-	#modulo1 #page-title {
+	/* #modulo1 #page-title {
 		background-image: url("../../../media/templates/page-title-background-m1.jpg"), linear-gradient(var(--fio-sys-color-neutral-100), var(--fio-sys-color-neutral-100));
 	}
 
@@ -129,7 +129,7 @@
 
 	#modulo5 #page-title {
 		background-image: url("../../../media/templates/page-title-background-m5.jpg"), linear-gradient(var(--fio-sys-color-neutral-100), var(--fio-sys-color-neutral-100));
-	}
+	} */
 
 	#page-title .container,
 	#page-title .container .row {
