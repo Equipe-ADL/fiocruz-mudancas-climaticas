@@ -1,14 +1,14 @@
 // Stick Header
 
 window.addEventListener("scroll", function () {
-	const header = document.querySelector(".header");
-	const titleHeight = document.querySelector(".header").scrollHeight;
+    const header = document.querySelector(".header");
+    const titleHeight = document.querySelector(".header").scrollHeight;
 
-	if (window.scrollY > 150) {
-		header.classList.add("header--sticky");
-	} else {
-		header.classList.remove("header--sticky");
-	}
+    if (window.scrollY > 150) {
+        header.classList.add("header--sticky");
+    } else {
+        header.classList.remove("header--sticky");
+    }
 });
 
 // (function () {
@@ -26,7 +26,7 @@ window.addEventListener("scroll", function () {
 // Popover
 var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
 var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-	return new bootstrap.Popover(popoverTriggerEl);
+    return new bootstrap.Popover(popoverTriggerEl);
 });
 
 // Botão de copiar podcast
@@ -34,33 +34,33 @@ var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
 const copyButton = document.querySelectorAll(".copy-to-clip");
 
 copyButton.forEach((btn) => {
-	btn.addEventListener("click", () => {
-		copyToClipboard(btn);
-		// tooltipShow(btn);
+    btn.addEventListener("click", () => {
+        copyToClipboard(btn);
+        // tooltipShow(btn);
 
-		tooltipFeedback(btn);
-	});
+        tooltipFeedback(btn);
+    });
 });
 
 function copyToClipboard(e) {
-	const textToCopy = e.getAttribute("data-link");
-	const textarea = document.createElement("textarea");
-	textarea.setAttribute("readonly", "");
-	textarea.style.position = "absolute";
-	textarea.value = textToCopy;
-	document.body.appendChild(textarea);
-	textarea.select();
-	document.execCommand("copy");
-	document.body.removeChild(textarea);
+    const textToCopy = e.getAttribute("data-link");
+    const textarea = document.createElement("textarea");
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "absolute";
+    textarea.value = textToCopy;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
 }
 function tooltipFeedback(b) {
-	let feedback = $('[data-toggle="tooltip"]');
+    let feedback = $('[data-toggle="tooltip"]');
 
-	// feedback.tooltip('show');
+    // feedback.tooltip('show');
 
-	b.addEventListener("mouseout", () => {
-		feedback.tooltip("hide");
-	});
+    b.addEventListener("mouseout", () => {
+        feedback.tooltip("hide");
+    });
 }
 
 // Lightbox (insert the class "lightbox" into <figure>)
@@ -68,36 +68,36 @@ function tooltipFeedback(b) {
 const imageToLightbox = document.querySelectorAll(".lightbox");
 
 imageToLightbox.forEach((image) => {
-	image.addEventListener("click", () => {
-		if (!image.classList.contains("lightbox--show")) {
-			const getImage = image.querySelector("img");
-			const getImageSrc = getImage.getAttribute("src");
-			const imageLightbox = document.createElement("div");
+    image.addEventListener("click", () => {
+        if (!image.classList.contains("lightbox--show")) {
+            const getImage = image.querySelector("img");
+            const getImageSrc = getImage.getAttribute("src");
+            const imageLightbox = document.createElement("div");
 
-			imageLightbox.classList.add("lightbox__image");
+            imageLightbox.classList.add("lightbox__image");
 
-			document.body.appendChild(imageLightbox);
-			imageLightbox.innerHTML = `<img src="${getImageSrc}"/>`;
-			console.log(getImageSrc);
+            document.body.appendChild(imageLightbox);
+            imageLightbox.innerHTML = `<img src="${getImageSrc}"/>`;
+            console.log(getImageSrc);
 
-			image.classList.add("lightbox--show");
+            image.classList.add("lightbox--show");
 
-			document.body.style.overflow = "hidden";
-			document.body.style.userSelect = "none";
+            document.body.style.overflow = "hidden";
+            document.body.style.userSelect = "none";
 
-			closeLightbox(imageLightbox);
-		}
+            closeLightbox(imageLightbox);
+        }
 
-		function closeLightbox(e) {
-			const lightboxOpen = document.querySelector(".lightbox__image");
-			e.addEventListener("click", () => {
-				document.body.removeChild(e);
-				image.classList.remove("lightbox--show");
-				document.body.style.overflow = "auto";
-				document.body.style.userSelect = "auto";
-			});
-		}
-	});
+        function closeLightbox(e) {
+            const lightboxOpen = document.querySelector(".lightbox__image");
+            e.addEventListener("click", () => {
+                document.body.removeChild(e);
+                image.classList.remove("lightbox--show");
+                document.body.style.overflow = "auto";
+                document.body.style.userSelect = "auto";
+            });
+        }
+    });
 });
 
 // Lightbox Scroll (insert the class "lightbox-scroll" into <figure>)
@@ -105,36 +105,36 @@ imageToLightbox.forEach((image) => {
 const imageToLightboxWithScroll = document.querySelectorAll(".lightbox-scroll");
 
 imageToLightboxWithScroll.forEach((imageScroll) => {
-	imageScroll.addEventListener("click", () => {
-		if (!imageScroll.classList.contains("lightbox-scroll--show")) {
-			const getImageScroll = imageScroll.querySelector("img");
-			const getImageScrollSrc = getImageScroll.getAttribute("src");
-			const imageLightboxScroll = document.createElement("div");
+    imageScroll.addEventListener("click", () => {
+        if (!imageScroll.classList.contains("lightbox-scroll--show")) {
+            const getImageScroll = imageScroll.querySelector("img");
+            const getImageScrollSrc = getImageScroll.getAttribute("src");
+            const imageLightboxScroll = document.createElement("div");
 
-			imageLightboxScroll.classList.add("lightbox-scroll__image");
+            imageLightboxScroll.classList.add("lightbox-scroll__image");
 
-			document.body.appendChild(imageLightboxScroll);
-			imageLightboxScroll.innerHTML = `<img src="${getImageScrollSrc}"/>`;
-			console.log(getImageScrollSrc);
+            document.body.appendChild(imageLightboxScroll);
+            imageLightboxScroll.innerHTML = `<img src="${getImageScrollSrc}"/>`;
+            console.log(getImageScrollSrc);
 
-			imageScroll.classList.add("lightbox-scroll--show");
+            imageScroll.classList.add("lightbox-scroll--show");
 
-			document.body.style.overflow = "hidden";
-			document.body.style.userSelect = "none";
+            document.body.style.overflow = "hidden";
+            document.body.style.userSelect = "none";
 
-			closeLightboxScroll(imageLightboxScroll);
-		}
+            closeLightboxScroll(imageLightboxScroll);
+        }
 
-		function closeLightboxScroll(s) {
-			const lightboxScrollOpen = document.querySelector(".lightbox-scroll__image");
-			s.addEventListener("click", () => {
-				document.body.removeChild(s);
-				imageScroll.classList.remove("lightbox-scroll--show");
-				document.body.style.overflow = "auto";
-				document.body.style.userSelect = "auto";
-			});
-		}
-	});
+        function closeLightboxScroll(s) {
+            const lightboxScrollOpen = document.querySelector(".lightbox-scroll__image");
+            s.addEventListener("click", () => {
+                document.body.removeChild(s);
+                imageScroll.classList.remove("lightbox-scroll--show");
+                document.body.style.overflow = "auto";
+                document.body.style.userSelect = "auto";
+            });
+        }
+    });
 });
 
 // Boxes - inserir o título de acordo com o atributo
@@ -142,20 +142,20 @@ imageToLightboxWithScroll.forEach((imageScroll) => {
 const boxes = document.querySelectorAll(".box");
 
 boxes.forEach((box) => {
-	const boxAttribute = box.getAttribute("data-box");
+    const boxAttribute = box.getAttribute("data-box");
 
-	const boxLabel = box.querySelector(".label");
+    const boxLabel = box.querySelector(".label");
 
-	boxLabel.innerHTML = boxAttribute;
+    boxLabel.innerHTML = boxAttribute;
 });
 
 // Modal - Criação dos modais principais
 const modalInfos = {
-	creditos: {
-		ariaLabel: "creditos",
-		modalSize: "modal-lg",
-		modalTitle: "Créditos",
-		modalBody: `
+    creditos: {
+        ariaLabel: "creditos",
+        modalSize: "modal-lg",
+        modalTitle: "Créditos",
+        modalBody: `
 			<div class="row justify-content-center pt-5">
 				<div class="col-12 col-md-10 col-lg-10">
 					<span class="h5 mb-3 d-block">Ministério da Saúde</span>
@@ -356,12 +356,12 @@ const modalInfos = {
 				</div>
 			</div>
 		`,
-	},
-	bibliografia: {
-		ariaLabel: "bibliografia",
-		modalSize: "modal-xl",
-		modalTitle: "Bibliografia",
-		modalBody: `
+    },
+    bibliografia: {
+        ariaLabel: "bibliografia",
+        modalSize: "modal-xl",
+        modalTitle: "Bibliografia",
+        modalBody: `
 		<div class="row justify-content-center pt-5">
     <div class="col-12 col-md-11">
         <div class="mb-5">
@@ -384,27 +384,20 @@ const modalInfos = {
                                         <div class="accordion-body">
                                             <div class="list mb-5">
                                                 <ul class="list-group">
-                                                    <li class="list-group-item">ALMEIDA FILHO, Naomar de; BARRETO, Maurício Lima (Ed.). <strong>Epidemiologia & saúde:</strong> Fundamentos, métodos, aplicações. reimpr. Rio de Janeiro: Guanabara Koogan, 2017. xxiv, 699 p. ISBN 8527716194.</li>
+                                                    <li class="list-group-item">BRASIL. Ministério da Saúde.<em> Plano Clima Participativo:</em> aberta consulta pública para as estratégias na área de saúde – AdaptaSUS. Disponível em: <a href='https://shre.ink/AdaptaSUS' target='_blank' rel='noopener noreferrer'>https://shre.ink/AdaptaSUS</a>. Acesso em: 16 set. 2025.</li>
 
-                                                    <li class="list-group-item">BARATA, R. B. Vigilância epidemiológica: breve histórico e a experiência dos Estados Unidos e do estado de São Paulo. <strong>Epidemiol. Serv. Saúde</strong>, v. 31, n. 2, e2021115. 2022. DOI 10.1590/s2237-962220220002000028.</li>
+                                                    <li class="list-group-item">COELHO, C. A. W. et al. <em>Mudança do clima no Brasil:</em> síntese atualizada e perspectivas para decisões estratégicas. Brasília: Ministério da Ciência, Tecnologia e Inovação, 2024. Disponível em: <a href='https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/cgcl/arquivos/Relatorio_Mudanca_Clima_Brasil.pdf' target='_blank' rel='noopener noreferrer'>https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/cgcl/arquivos/Relatorio_Mudanca_Clima_Brasil.pdf</a>. Acesso em: 30 set. 2025.</li>
 
-                                                    <li class="list-group-item">BARCELLOS, C.; QUITÉRIO, L. A. D. Vigilância ambiental em saúde e sua implantação no Sistema Único de Saúde. <strong>Rev Saude Publica</strong>, v. 40, n. 1. p. 170-177. 2006. DOI 10.1590/S0034-89102006000100025.</li>
+                                                    <li class="list-group-item">FREITAS, C. M. de; SILVA, E. L.; ROCHA, V. <em>Brasil 2050</em> – emergência climática, os desastres e os desafios para gestão de riscos e a adaptação. Rio de Janeiro: Fiocruz, 2025. Disponível em: <a href='https://saudeamanha.fiocruz.br/textos-discussao/td-90-brasil-2050-a-emergencia-climatica-os-desastres-e-os-desafios-para-gestao-de-riscos-e-a-adaptacao' target='_blank' rel='noopener noreferrer'>https://saudeamanha.fiocruz.br/textos-discussao/td-90-brasil-2050-a-emergencia-climatica-os-desastres-e-os-desafios-para-gestao-de-riscos-e-a-adaptacao</a>. Acesso em: 27 out. 2025.</li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <span class='d-block'><em>Bibliografia complementar</em></span>
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item">BBC News Brasil. <em>Como podemos esfriar o planeta e frear o aquecimento global?</em> São Paulo: Canal BBC News Brasil, 2021, (8min45s.). Disponível em: <a href='https://youtu.be/uOrXw8lTmVo?si=uFMGjLgC3jtDKkuE' target='_blank' rel='noopener noreferrer'>https://youtu.be/uOrXw8lTmVo?si=uFMGjLgC3jtDKkuE</a>.</li>
 
-                                                    <li class="list-group-item">Brasil. Ministério da Saúde. Portaria nº 1.378, de 9 de julho de 2013. Regulamenta as responsabilidades e define diretrizes para execução e financiamento das ações de Vigilância em Saúde pela União, Estados, Distrito Federal e Municípios, relativos ao Sistema Nacional de Vigilância em Saúde e Sistema Nacional de Vigilância Sanitária. <strong>Diário Oficial da União</strong>, v. 131, Seção 1. p. 48-50, 2013. Disponível em: <a href='https://bvsms.saude.gov.br/bvs/saudelegis/gm/2013/prt1378_09_07_2013.html' target='_blank' rel='noopener noreferrer'>https://bvsms.saude.gov.br/bvs/saudelegis/gm/2013/prt1378_09_07_2013.html</a>. Acesso em: 31 ago. 2025.</li>
-
-                                                    <li class="list-group-item">Brasil. Ministério da Saúde. Portaria nº 3.252, de 22 de dezembro de 2009. <strong>Diário Oficial da União</strong>, v. 245, Seção 1. p. 65-69, 2009. Disponível em: <a href='https://bvsms.saude.gov.br/bvs/saudelegis/gm/2009/prt3252_22_12_2009_comp.html' target='_blank' rel='noopener noreferrer'>https://bvsms.saude.gov.br/bvs/saudelegis/gm/2009/prt3252_22_12_2009_comp.html</a>. Acesso em: 6 set. 2025.</li>
-
-                                                    <li class="list-group-item">Brasil. <strong>Mudanças climáticas para profissionais de saúde:</strong> guia de bolso [recurso eletrônico]. Brasília: Ministério da Saúde, 2024. <a href='https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/guias-e-manuais/2024/guia-mudancas-climaticas-para-profissionais-da-saude.pdf' target='_blank' rel='noopener noreferrer'>https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/guias-e-manuais/2024/guia-mudancas-climaticas-para-profissionais-da-saude.pdf</a>. ISBN 978-65-5993-649-6.</li>
-
-                                                    <li class="list-group-item">CHOI, B. C. K. The past, present, and future of public health surveillance. <strong>Scientifica</strong>, v. 2012. p. 875253. 2012. DOI 10.6064/2012/875253.</li>
-
-                                                    <li class="list-group-item">ESCOREL, S.; TEIXEIRA, L. A. História das Políticas de Saúde no Brasil de 1822 a 1963: do império ao desenvolvimentismo populista. In: GIOVANELLA, L.; ESCOREL, S.; LOBATO, L. d. V. C.; NORONHA, L. d. V. C.; CARVALHO, J. C. de. <strong>Políticas e sistema de saúde no Brasil</strong>. Tradução: , [S. l.]: Editora FIOCRUZ, 2012. p. 279-321. ISBN 9788575413494.</li>
-
-                                                    <li class="list-group-item">GIOVANELLA, L.; ESCOREL, S.; LOBATO, L. d. V. C.; NORONHA, L. d. V. C.; CARVALHO, J. C. de. <strong>Sistema de saúde brasileiro: história e configuração atual</strong>. [S.l.]: Editora FIOCRUZ, 2012. 180 p. ISBN 9788575413494. DOI 10.7476/9788575413494.</li>
-
-                                                    <li class="list-group-item">MEDRONHO, Roberto de Andrade; BLOCH, Kátia Vergetti; LUIZ, Ronir Raggio; WERNECK, Guilherme Loureiro (Ed.). <strong>Epidemiologia</strong>. 2. ed. São Paulo: Atheneu, 2009. [xxiv], 685 p. ISBN 978-8573799996.</li>
-
-                                                    <li class="list-group-item">OUQUAYROL, Maria Zélia; DA SILVA, Marcelo Gurgel Carlos (Ed.). <strong>Rouquayrol:</strong> Epidemiologia & saúde. 8. ed. Rio de Janeiro: MedBook, 2018. xxi, 719 p. ISBN 978-8583690290.</li>
+                                                    <li class="list-group-item">MOROSINI, L. Crise climática aumenta doenças. Desastres favorecem o aparecimento de novas doenças e produzem efeito cascata negativo na atenção à saúde. <em>Revista Radis</em>. Rio de Janeiro, 10 de maio de 2024. Disponível em: <a href='https://radis.ensp.fiocruz.br/reportagem/mudancas-climaticas/crise-climatica-aumenta-doencas/' target='_blank' rel='noopener noreferrer'>https://radis.ensp.fiocruz.br/reportagem/mudancas-climaticas/crise-climatica-aumenta-doencas/</a>. Acesso em: 30 set. 2025.</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -483,29 +476,20 @@ const modalInfos = {
                                         <div class="accordion-body">
                                             <div class="list mb-5">
                                                 <ul class="list-group">
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Conselho Nacional de Saúde. <em>Resolução nº 588, de 12 de julho de 2018</em>. Institui a Política Nacional de Vigilância em Saúde (PNVS). Diário Oficial da União, Brasília, DF, seção 1, n. 155, p. 87, 13 ago. 2018. Disponível em: <a href='https://bvsms.saude.gov.br/bvs/saudelegis/cns/2018/res0588_13_08_2018.html' target='_blank' rel='noopener noreferrer'>https://bvsms.saude.gov.br/bvs/saudelegis/cns/2018/res0588_13_08_2018.html</a>. Acesso em: 6 fev. 2026.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">FREITAS, C. M. et al. <em>Orientações para gestão de risco de desastres e emergências em saúde pública:</em> abordagem integrada atenção primária e vigilância em saúde. Rio de Janeiro: Fundação Oswaldo Cruz e Ministério da Saúde, 2023. 116 p. Disponível em: <a href='https://arca.fiocruz.br/items/40e47741-f71d-4f8c-a887-4762361d864e' target='_blank' rel='noopener noreferrer'>https://arca.fiocruz.br/items/40e47741-f71d-4f8c-a887-4762361d864e</a>. Acesso em: 30 out. 2025.</li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Decreto nº 7.616, de 17 de novembro de 2011. <em>Dispõe sobre a declaração de Emergência em Saúde Pública de Importância Nacional (ESPIN) e institui a Força Nacional do Sistema Único de Saúde – FN-SUS</em>. Diário Oficial da União, Brasília, DF, seção 1, n. 221, p. 1, 18 nov. 2011. Disponível em: <a href='https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/decreto/d7616.htm' target='_blank' rel='noopener noreferrer'>https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/decreto/d7616.htm</a>. Acesso em: 6 fev. 2026.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">LAMBERTI-CASTRONUOVO, A. et al. Primary health care disaster preparedness: a review of the literature and the proposal of a new framework. <em>International Journal of Disaster Risk Reduction</em>, v. 81, p. 103278, 2022.</li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Decreto nº 10.593, de 24 de dezembro de 2020. <em>Dispõe sobre o Sistema Nacional de Proteção e Defesa Civil – SINPDEC e o Conselho Nacional de Proteção e Defesa Civil – CONPDEC</em>. Diário Oficial da União, Brasília, DF, 28 dez. 2020. Disponível em: <a href='https://www2.camara.leg.br/legin/fed/decret/2020/decreto-10593-24-dezembro-2020-790946-publicacaooriginal-162026-pe.html' target='_blank' rel='noopener noreferrer'>https://www2.camara.leg.br/legin/fed/decret/2020/decreto-10593-24-dezembro-2020-790946-publicacaooriginal-162026-pe.html</a>. Acesso em: 6 fev. 2026.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">WORLD HEALTH ORGANIZATION (WHO). <em>Health emergency and disaster risk management framework</em>. Genebra: WHO, 2019.</li>
+                                                </ul>
+                                            </div>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Integração Nacional. <em>Instrução Normativa nº 02, de 20 de dezembro de 2016</em>. Estabelece a Classificação e Codificação Brasileira de Desastres – COBRADE. Diário Oficial da União, Brasília, DF, 21 dez. 2016. Disponível em: <a href='https://www.defesacivil.rs.gov.br/upload/arquivos/202105/04095316-cobrade-classificacao-e-codificacao-brasileira-de-desastres.pdf' target='_blank' rel='noopener noreferrer'>https://www.defesacivil.rs.gov.br/upload/arquivos/202105/04095316-cobrade-classificacao-e-codificacao-brasileira-de-desastres.pdf</a>. Acesso em: 6 fev. 2026.</li>
+                                            <span class='d-block'><em>Bibliografia complementar</em></span>
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Secretaria de Vigilância em Saúde e Ambiente. Departamento de Vigilância em Saúde Ambiental e Saúde do Trabalhador. <em>Mudanças climáticas para profissionais de saúde:</em> guia de bolso [recurso eletrônico]. 2. ed. Brasília: Ministério da Saúde, 2025.</li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. <em>Plano de resposta às emergências em saúde pública</em>. Brasília, DF: Ministério da Saúde, 2014. Disponível em: <a href='https://bvsms.saude.gov.br/bvs/publicacoes/plano_resposta_emergencias_saude_publica.pdf' target='_blank' rel='noopener noreferrer'>https://bvsms.saude.gov.br/bvs/publicacoes/plano_resposta_emergencias_saude_publica.pdf</a>. Acesso em: 6 fev. 2026.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. <em>Guia para elaboração de planos de contingência</em>. Brasília, DF: Ministério da Saúde, 2024. 42 p. Disponível em: <a href='https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/emergencia-em-saude-publica/guia-para-elaboracao-de-planos-de-contingencia' target='_blank' rel='noopener noreferrer'>https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/emergencia-em-saude-publica/guia-para-elaboracao-de-planos-de-contingencia</a>. Acesso em: 6 out. 2025.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">LIMA, A. M. M.; MONTEIRO, J. B. <em>Entre o risco e o desastre: uma análise conceitual dos múltiplos componentes envoltos em uma complexa equação</em>. Revista de Geografia, v. 39, n. 2, p. 59-84, 2022. DOI: 10.51359/2238-6211.2022.251953.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ORGANIZAÇÃO MUNDIAL DA SAÚDE. <em>Comunicação de riscos em emergências de saúde pública: um guia da OMS para políticas e práticas em comunicação de risco de emergência.</em> Genebra: OMS, 2018. Disponível em: <a href='https://iris.who.int/bitstream/handle/10665/259807/9789248550201-por.pdf' target='_blank' rel='noopener noreferrer'>https://iris.who.int/bitstream/handle/10665/259807/9789248550201-por.pdf</a>. Acesso em: 6 fev. 2026.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">SOUZA, A. S. S. <em>et al</em>. <em>Histórico de implementação da gestão às emergências em saúde pública no Brasil</em>. Epidemiologia e Serviços de Saúde, v. 33, n. 2, e20240498, 2024. DOI: 10.1590/S2237-96222024v34e20240498.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">SOUZA, A. S. S. <em>et al</em>. <em>Brazil’s response to public health emergencies in 2023: lessons for the international community</em>. Revista Panamericana de Salud Pública, v. 49, e15, 2025. DOI: 10.26633/RPSP.2025.15.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">WORLD HEALTH ORGANIZATION. <em>International Health Regulations (2005)</em>. 3. ed. Genebra: World Health Organization, 2016. Disponível em: <a href='https://iris.who.int/handle/10665/246107' target='_blank' rel='noopener noreferrer'>https://iris.who.int/handle/10665/246107</a>. Acesso em: 6 fev. 2026.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">WORLD HEALTH ORGANIZATION. WHO <em>Pandemic Agreement</em>. Genebra: World Health Organization, 2025. Disponível em: <a href='https://apps.who.int/gb/ebwha/pdf_files/WHA78/A78_R1-en.pdf' target='_blank' rel='noopener noreferrer'>https://apps.who.int/gb/ebwha/pdf_files/WHA78/A78_R1-en.pdf</a>. Acesso em: 6 fev. 2026.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">NOGUEIRA, P. T. A. <em>et al</em>. A necessidade de construção de assistência e Vigilância em Saúde no contexto das mudanças climáticas – ‘um passo à frente e você não estará mais no mesmo lugar’. <em>Saúde em Debate</em>, v. 48, p. e8696, 2024.</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -937,12 +921,12 @@ const modalInfos = {
     </div>
 </div>
 		`,
-	},
-	materialcomplementar: {
-		ariaLabel: "materialcomplementar",
-		modalSize: "modal-xl",
-		modalTitle: "Material Complementar",
-		modalBody: `
+    },
+    materialcomplementar: {
+        ariaLabel: "materialcomplementar",
+        modalSize: "modal-xl",
+        modalTitle: "Material Complementar",
+        modalBody: `
 			<div class="row justify-content-center pt-5">
     <div class="col-12 col-md-11">
         <div class="mb-5">
@@ -1554,12 +1538,12 @@ const modalInfos = {
     </div>
 </div>
 		`,
-	},
-	glossario: {
-		ariaLabel: "glossario",
-		modalSize: "modal-lg",
-		modalTitle: "Glossário",
-		modalBody: `
+    },
+    glossario: {
+        ariaLabel: "glossario",
+        modalSize: "modal-lg",
+        modalTitle: "Glossário",
+        modalBody: `
 			<div class="aba">
 				<ul class="nav nav-pills nav-fill mb-3" id="pills-tab" role="tablist">
 					<li class="nav-item" role="presentation">
@@ -2018,39 +2002,39 @@ const modalInfos = {
 				</div>
 			</div>
 		`,
-	},
+    },
 };
 
 // Get all buttons and links that have "modal" in the data-bs-toggle
 const modalButtons = document.querySelectorAll('[data-bs-toggle="modal"]');
 
 document.addEventListener("DOMContentLoaded", function (event) {
-	//do work
+    //do work
 
-	modalButtons.forEach((btn) => {
-		// Check if the modal exist
-		const modalId = btn.getAttribute("data-bs-target").slice(1);
+    modalButtons.forEach((btn) => {
+        // Check if the modal exist
+        const modalId = btn.getAttribute("data-bs-target").slice(1);
 
-		const createdModalId = document.getElementById(modalId);
+        const createdModalId = document.getElementById(modalId);
 
-		if (!createdModalId) {
-			// If don't exist create one
-			createModal(modalId);
-		}
-	});
+        if (!createdModalId) {
+            // If don't exist create one
+            createModal(modalId);
+        }
+    });
 });
 
 function createModal(id) {
-	const newModal = document.createElement("div");
-	const modalLabel = id.slice(6);
+    const newModal = document.createElement("div");
+    const modalLabel = id.slice(6);
 
-	newModal.classList.add("modal", "fade");
-	newModal.setAttribute("id", id);
-	newModal.setAttribute("tabindex", "-1");
-	newModal.setAttribute("aria-labelledby", modalLabel);
-	newModal.setAttribute("aria-hidden", "true");
+    newModal.classList.add("modal", "fade");
+    newModal.setAttribute("id", id);
+    newModal.setAttribute("tabindex", "-1");
+    newModal.setAttribute("aria-labelledby", modalLabel);
+    newModal.setAttribute("aria-hidden", "true");
 
-	newModal.innerHTML = `
+    newModal.innerHTML = `
 		<div class="modal-dialog ${modalInfos[modalLabel].modalSize}">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -2067,5 +2051,5 @@ function createModal(id) {
 		</div>
 	`;
 
-	document.body.appendChild(newModal);
+    document.body.appendChild(newModal);
 }
