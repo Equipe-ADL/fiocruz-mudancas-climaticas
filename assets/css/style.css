@@ -192,11 +192,11 @@ section {
 }
 
 
-#page-content.mod1 .container:first-child .row:first-child > div:first-child::after,
-#page-content.mod2 .container:first-child .row:first-child > div:first-child::after,
-#page-content.mod3 .container:first-child .row:first-child > div:first-child::after,
-#page-content.mod4 .container:first-child .row:first-child > div:first-child::after,
-#page-content.mod5 .container:first-child .row:first-child > div:first-child::after {
+#page-content.mod1 .container:first-child > .row:first-child > div:first-child::after,
+#page-content.mod2 .container:first-child > .row:first-child > div:first-child::after,
+#page-content.mod3 .container:first-child > .row:first-child > div:first-child::after,
+#page-content.mod4 .container:first-child > .row:first-child > div:first-child::after,
+#page-content.mod5 .container:first-child > .row:first-child > div:first-child::after {
     content: url(../../../media/templates/destaque-graphism.svg);
     display: block;
     width: 250px;
