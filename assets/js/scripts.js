@@ -566,43 +566,18 @@ const modalInfos = {
                                         <div class="accordion-body">
                                             <div class="list mb-5">
                                                 <ul class="list-group">
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">AGENCY FOR TOXIC SUBSTANCES AND DISEASE REGISTRY. <em>Toxicological profile for arsenic</em>. Atlanta: U.S. Department of Health and Human Services, Public Health Service, 2007.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério do Meio Ambiente e Mudança do Clima. Ministério da Ciência, Tecnologia e Inovação. Ministério da Saúde. <em>Plano Clima Adaptação</em> – Plano Setorial de Saúde: Versão preliminar. Brasília: MMA/MCTI/MS, 2025.</li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">AGENCY FOR TOXIC SUBSTANCES AND DISEASE REGISTRY. <em>Toxicological profile for benzene</em>. Atlanta: U.S. Department of Health and Human Services, Public Health Service, 2007.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Fundação Oswaldo Cruz. <em>Guia de preparação e respostas do setor saúde aos desastres</em>. Rio de Janeiro: Fiocruz, 2018.</li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">AGENCY FOR TOXIC SUBSTANCES AND DISEASE REGISTRY. <em>Toxicological profile for cadmium</em>. Atlanta: U.S. Department of Health and Human Services, Public Health Service, 2012.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">FREITAS, Carlos Machado de; SILVA, Eliane L. e; ROCHA, Vânia. <em>Brasil 2050</em>: a emergência climática, os desastres e os desafios para gestão de riscos e a adaptação. Rio de Janeiro: ENSP/Fiocruz, 2025. (Saúde Amanhã/Textos para Discussão, 90). Disponível em: <a href='https://arca.fiocruz.br/items/d5342e72-5925-49dc-97de-17138ec27819' target='_blank' rel='noopener noreferrer'>https://arca.fiocruz.br/items/d5342e72-5925-49dc-97de-17138ec27819</a>. Acesso em: 03 nov. 2025.</li>
+                                                </ul>
+                                            </div>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">AGENCY FOR TOXIC SUBSTANCES AND DISEASE REGISTRY. <em>Toxicological profile for cyanide</em>. Atlanta: U.S. Department of Health and Human Services, Public Health Service, 2006.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">AGENCY FOR TOXIC SUBSTANCES AND DISEASE REGISTRY. <em>Toxicological profile for fluorides, hydrogen fluoride, and fluorine</em>. Atlanta: U.S. Department of Health and Human Services, Public Health Service, 2003.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">AGENCY FOR TOXIC SUBSTANCES AND DISEASE REGISTRY. <em>Toxicological profile for lead</em>. Atlanta: U.S. Department of Health and Human Services, Public Health Service, 2020. Disponível em: https://www.atsdr.cdc.gov/toxprofiles/tp13.pdf. Acesso em: 16 ago. 2025.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BOISCHIO, Ana Paula Raggio; CÓLUS, Iracema Marilene Souza. Mercúrio e saúde: uma revisão. <em>Cadernos de Saúde Pública</em>, v. 16, n. 1, p. 19–32, 2000.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">CARNEIRO, Fernando Ferreira; PIGNATI, Wanderlei; RIGOTTO, Raquel Maria; AUGUSTO, Lia Giraldo da Silva (org.). <em>Dossiê ABRASCO: um alerta sobre os impactos dos agrotóxicos na saúde</em>. Rio de Janeiro: EPSJV/Fiocruz, 2015.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">DE SOUZA GUERRA, Carolina <em>et al</em>. Lead concentrations in whole blood, serum, saliva and house dust in samples collected at two time points (12 months apart) in Santo Amaro, BA, Brazil. <em>Environmental Research</em>, v. 142, p. 337–344, 2015.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">EATON, David L.; KLAASSEN, Curtis D. Principles of toxicology. In: KLAASSEN, Curtis D. (ed.). <em>Casarett and Doull’s toxicology</em>. 6. ed. New York: McGraw-Hill, 2001. p. 11–33.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">HILEWITZ, Daniel <em>et al</em>. Epidemiology of sensitivity to nickel, cobalt and chromium in Israel: a retrospective cohort study. <em>Contact Dermatitis</em>, 2025.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">JAFFERY, Farhat N.; MISRA, Virendra; VISWANATHAN, P. N. Convergence of clinical toxicology and epidemiology in relation to health effects of chemicals. <em>Environmental Toxicology and Pharmacology</em>, v. 12, n. 3, p. 169–179, 2002.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">LECTURIO. <em>Farmacocinética e farmacodinâmica</em>. [S.l.], 2025.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">METZGER, Ingrid F.; SOUZA-COSTA, Débora C.; TANUS-SANTOS, José E. Farmacogenética: princípios, aplicações e perspectivas. <em>Medicina (Ribeirão Preto)</em>, 2006.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">OGA, Seizi; CAMARGO, Márcia Maria de Almeida; BATISTUZZO, José Antonio de Oliveira. <em>Fundamentos de toxicologia</em>. 4. ed. São Paulo: Atheneu, 2014.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">OLIVEIRA, J. F. P. Curto período de exposição ao chumbo promove aumento da biodisponibilidade de óxido nítrico, via receptores AT2, e ativação de canais para K+ em aorta de ratos. 2015. Tese (Doutorado em Ciências Fisiológicas) – Universidade Federal do Espírito Santo, Centro de Ciências da Saúde, Vitória, 2015.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">PRICE, N. F.; LIN, P. I. D.; CARDENAS, A. <em>et al</em>. Prenatal metal exposures and kidney function in adolescence in Project Viva. <em>Environmental Health</em>, v. 23, p. 94, 2024.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">WANG, Yican <em>et al</em>. Investigating the relationship of co-exposure to multiple metals with chronic kidney disease: an integrated perspective from epidemiology and adverse outcome pathways. <em>Journal of Hazardous Materials</em>, v. 480, p. 135844, 2024.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">WORLD HEALTH ORGANIZATION. <em>Some non-heterocyclic polycyclic aromatic hydrocarbons and some related exposures</em>. Lyon: International Agency for Research on Cancer, 2010. (IARC Monographs on the Evaluation of Carcinogenic Risks to Humans, v. 92).</li>
+                                            <span class='d-block'><em>Bibliografia complementar</em></span>
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">MOROSINI, Liseane. Crise climática aumenta doenças. RADIS <em>Comunicação e Saúde</em>, Rio de Janeiro, 10 maio 2024. Disponível em: <a href='https://radis.ensp.fiocruz.br/reportagem/mudancas-climaticas/crise-climatica-aumenta-doencas/' target='_blank' rel='noopener noreferrer'>https://radis.ensp.fiocruz.br/reportagem/mudancas-climaticas/crise-climatica-aumenta-doencas/</a>. Acesso em: 25 nov. 2025.</li>
                                                 </ul>
                                             </div>
                                         </div>
