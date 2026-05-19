@@ -163,11 +163,11 @@ h6,
 }
 
 p {
-	color: var(--fio-sys-color-primary-dark);
+	color: var(--fio-sys-color-neutral-10);
 	font-family: var(--fio-sys-typography-family-primary-regular);
 	font-size: var(--fio-sys-typography-size-0);
-	font-weight: var(--fio-sys-typography-weight-medium);
-	letter-spacing: var(--fio-sys-typography-spacing-medium);
+	font-weight: var(--fio-sys-typography-weight-normal);
+	letter-spacing: var(--fio-sys-typography-spacing-normal);
 	line-height: 1.75;
 	margin-bottom: var(--fio-sys-size-margin-lg);
 }

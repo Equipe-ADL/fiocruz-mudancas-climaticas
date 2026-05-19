@@ -104,7 +104,8 @@
 		padding: 80px 0 120px;
 		overflow: hidden;
 		background-image: url("../../../media/templates/page-title-background-m1.jpg"), linear-gradient(var(--fio-sys-color-neutral-100), var(--fio-sys-color-neutral-100));
-		background-position: center bottom;
+		/* background-position: center bottom; */
+		background-position: center 0;
 		background-repeat: no-repeat;
 		background-size: cover;
 		display: grid;

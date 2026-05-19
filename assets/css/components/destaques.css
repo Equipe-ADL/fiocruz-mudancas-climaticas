@@ -166,12 +166,12 @@
 .destaque-parallax p, 
 .destaque-parallax li, 
 .destaque-parallax .list .list-group .list-group-item {
-	color: var(--fio-ref-color-tertiary-30);
+	color: var(--fio-sys-color-primary-20);
 	font-size: var(--fio-sys-typography-size-1);
 }
 
 .destaque-parallax .list .list-group .list-group-item::before {
-	color:var(--fio-ref-color-primary-40);
+	color:var(--fio-sys-color-primary-20);
 }
 
 
@@ -182,7 +182,7 @@
 
 .destaque-parallax a {
 	color: var(--fio-sys-color-neutral-100)!important;
-	background-color: var(--fio-ref-color-primary-40);
+	background-color: var(--fio-sys-color-primary-40);
 }
 
 .destaque-parallax a.fio-button-primary {

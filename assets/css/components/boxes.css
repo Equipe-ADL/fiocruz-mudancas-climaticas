@@ -131,7 +131,7 @@
 .saiba-mais .saiba-mais__content {
 	background: var(--fio-sys-color-tertiary-95);
 	border-radius: 0 0 var(--fio-sys-size-radius-lg) var(--fio-sys-size-radius-lg);
-	padding: var(--fio-sys-size-padding-sm);
+	padding: var(--fio-sys-size-padding-lg);
 	color: var(--fio-sys-color-text-dark);
 }
 

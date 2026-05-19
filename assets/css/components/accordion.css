@@ -31,7 +31,7 @@
 }
 
 .accordion p {
-	font-size: var(--fio-sys-typography-size--1);
+	font-size: var(--fio-sys-typography-size-0);
 }
 .accordion-item:first-of-type .accordion-button {
 	border-top-left-radius: var(--fio-sys-size-radius-lg);

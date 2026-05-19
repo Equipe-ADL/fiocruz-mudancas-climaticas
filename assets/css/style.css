@@ -143,10 +143,9 @@ section {
 /* PAGE CONTENT */
 
 #page-content {
-	margin-top: 80px;
 	background: transparent;
 	background-repeat: no-repeat;
-	background-position: right 0;
+	background-position: right 80px;
 	background-size: auto;
 	position: relative;
 }
@@ -191,6 +190,21 @@ section {
 		background-position: -1200px 0px;
 	}
 }
+
+
+#page-content.mod1 .container:first-child .row:first-child > div:first-child::after,
+#page-content.mod2 .container:first-child .row:first-child > div:first-child::after,
+#page-content.mod3 .container:first-child .row:first-child > div:first-child::after,
+#page-content.mod4 .container:first-child .row:first-child > div:first-child::after,
+#page-content.mod5 .container:first-child .row:first-child > div:first-child::after {
+    content: url(../../../media/templates/destaque-graphism.svg);
+    display: block;
+    width: 250px;
+    height: auto;
+    position: relative;
+    transform: translate(-18%, -15%);
+}
+
 
 /* TÍTULOS */
 .heading__block {

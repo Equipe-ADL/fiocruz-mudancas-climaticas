@@ -625,7 +625,7 @@
     "		<button class=\"fio-button button-md fio-button-primary collapsed\" type=\"collapsed\" data-bs-toggle=\"collapse\" data-bs-target=\"#saiba-mais1\" aria-expanded=\"false\" aria-controls=\"saiba-mais1\"><span class=\"icone material-symbols-rounded\" aria-hidden=\"true\">touch_app</span> Saiba",
     "			mais</button>",
     "	</div>",
-    "	<div class=\"saiba-mais__content collapse\" id=\"saiba-mais1\" style=\"\">",
+    "	<div class=\"saiba-mais__content collapse\" id=\"saiba-mais1\">",
     "		<p>Ferramenta adotada para registrar os primeiros casos de",
     "			COVID-19. Já utilizada em crises anteriores, como",
     "			chikungunya e microcefalia.</p>",
@@ -853,6 +853,15 @@
 			"</div>"
 		],
 		"description": "Modal com texto",
+	},
+	"Orientação sobre interação": {
+		"prefix": "txt-interação",
+		"body": [
+			"<div class=\"col-12 mb-5\">",
+    "	<p class=\"text-muted text-center\"><span class=\"material-symbols-rounded\" style=\"transform: rotateX(180deg)\">pan_tool_alt</span> <span class=\"d-none d-lg-inline\">Clique</span><span class=\"d-inline d-lg-none\">Toque</span> no botão dos cards e reflita sobre alguns desses eventos</p>",
+			"</div>"
+		],
+		"description": "Orientação sobre interação"
 	},
 	"Popover": {
 		"prefix": "popover",
