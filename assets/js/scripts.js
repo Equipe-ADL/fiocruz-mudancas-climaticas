@@ -391,7 +391,7 @@ const modalInfos = {
                                                     <li class="list-group-item">FREITAS, C. M. de; SILVA, E. L.; ROCHA, V. <em>Brasil 2050</em> – emergência climática, os desastres e os desafios para gestão de riscos e a adaptação. Rio de Janeiro: Fiocruz, 2025. Disponível em: <a href='https://saudeamanha.fiocruz.br/textos-discussao/td-90-brasil-2050-a-emergencia-climatica-os-desastres-e-os-desafios-para-gestao-de-riscos-e-a-adaptacao' target='_blank' rel='noopener noreferrer'>https://saudeamanha.fiocruz.br/textos-discussao/td-90-brasil-2050-a-emergencia-climatica-os-desastres-e-os-desafios-para-gestao-de-riscos-e-a-adaptacao</a>. Acesso em: 27 out. 2025.</li>
                                                 </ul>
                                             </div>
-                                            
+
                                             <span class='d-block'><em>Bibliografia complementar</em></span>
                                             <div class="list mb-5">
                                                 <ul class="list-group">
@@ -531,7 +531,7 @@ const modalInfos = {
                                                     <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">SWINBURN B. A. et al. The global syndemic of obesity, undernutrition, and Climate Change: The Lancet Commission report. <em>Lancet</em>. Feb 23; 393 (10173): 791-846, 2019. </li>
                                                 </ul>
                                             </div>
-                                            
+
                                             <span class='d-block'><em>Bibliografia complementar</em></span>
                                             <div class="list mb-5">
                                                 <ul class="list-group">
@@ -593,70 +593,6 @@ const modalInfos = {
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="accordion-item">
-                                    <h5 class="accordion-header" id="heading-m2-aula4">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m2-aula4" aria-expanded="false" aria-controls="collapse-m2-aula4">Aula 4</button>
-                                    </h5>
-                                    <div id="collapse-m2-aula4" class="accordion-collapse collapse" aria-labelledby="heading-m2-aula4" data-bs-parent="">
-                                        <div class="accordion-body">
-                                            <div class="list mb-5">
-                                                <ul class="list-group">
-                                                    <li class="list-group-item">ANVISA. Resolução RDC nº 296, de 29 de julho de 2019. Dispõe sobre as informações toxicológicas para rótulos e bulas de agrotóxicos, afins e preservativos de madeira. Diário Oficial da União, Brasília, DF, 29 jul. 2019. Disponível em: <a href='https://bvsms.saude.gov.br/bvs/saudelegis/anvisa/2019/rdc0296_29_07_2019.pdf' target='_blank' rel='noopener noreferrer'>https://bvsms.saude.gov.br/bvs/saudelegis/anvisa/2019/rdc0296_29_07_2019.pdf</a>. Acesso em: 6 fev. 2026.</li>
-
-                                                    <li class="list-group-item">BRASIL. Agência Nacional de Vigilância Sanitária (ANVISA). Resolução RDC nº 722, de 1º de julho de 2022. Disponível em: <a href='https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&link=S&tipo=RDC&numeroAto=00000722&seqAto=002&valorAno=2022&orgao=RDC/DC/ANVISA/MS&cod_modulo=134&cod_menu=1696' target='_blank' rel='noopener noreferrer'>https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&link=S&tipo=RDC&numeroAto=00000722&seqAto=002&valorAno=2022&orgao=RDC/DC/ANVISA/MS&cod_modulo=134&cod_menu=1696</a>. Acesso em: 30 ago. 2025.</li>
-
-                                                    <li class="list-group-item">BRASIL. Agência Nacional de Vigilância Sanitária (ANVISA). Instrução Normativa nº 160, de 1º de julho de 2022. Disponível em: <a href='https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&link=S&tipo=INM&numeroAto=00000160&seqAto=000&valorAno=2022&orgao=ANVISA/MS&cod_modulo=134&cod_menu=1696' target='_blank' rel='noopener noreferrer'>https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&link=S&tipo=INM&numeroAto=00000160&seqAto=000&valorAno=2022&orgao=ANVISA/MS&cod_modulo=134&cod_menu=1696</a>. Acesso em: 30 ago. 2025.</li>
-
-                                                    <li class="list-group-item">BRASIL. Agência Nacional de Vigilância Sanitária (ANVISA). Conheça os novos guias de avaliação toxicológica de agrotóxicos. 2023. Disponível em: <a href='https://www.gov.br/anvisa/pt-br/assuntos/noticias-anvisa/2023/conheca-os-novos-guias-de-avaliacao-toxicologica-de-agrotoxicos' target='_blank' rel='noopener noreferrer'>https://www.gov.br/anvisa/pt-br/assuntos/noticias-anvisa/2023/conheca-os-novos-guias-de-avaliacao-toxicologica-de-agrotoxicos</a>. Acesso em: 30 set. 2025.</li>
-
-                                                    <li class="list-group-item">BRASIL. Lei nº 14.785, de 27 de dezembro de 2023. Lei dos agrotóxicos. Diário Oficial da União, Brasília, 28 dez. 2023. Disponível em: <a href='https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14785.htm' target='_blank' rel='noopener noreferrer'>https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14785.htm</a>. Acesso em: 20 ago. 2025.</li>
-
-                                                    <li class="list-group-item">BRASIL. Ministério da Saúde. Secretaria de Vigilância em Saúde e Ambiente. Boletim Epidemiológico: intoxicações exógenas por agrotóxicos no Brasil – 2013 a 2022. Brasília: Ministério da Saúde, v. 54, n. 12, 2023. Disponível em: <a href='https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/boletins/epidemiologicos/edicoes/2023/boletim-epidemiologico-volume-54-no-12' target='_blank' rel='noopener noreferrer'>https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/boletins/epidemiologicos/edicoes/2023/boletim-epidemiologico-volume-54-no-12</a>. Acesso em: 25 ago. 2025.</li>
-
-                                                    <li class="list-group-item">IBAMA – Instituto Brasileiro de Recursos Naturais Renováveis. Relatórios de comercialização de agrotóxicos: boletins anuais de produção, importação, exportação e vendas de agrotóxicos no Brasil. Brasília: IBAMA, 2025. Disponível em: <a href='http://www.ibama.gov.br/agrotoxicos/relatorios-de-comercializacao-de-agrotoxicos' target='_blank' rel='noopener noreferrer'>http://www.ibama.gov.br/agrotoxicos/relatorios-de-comercializacao-de-agrotoxicos</a>. Acesso em: 18 set. 2025.</li>
-
-                                                    <li class="list-group-item">KLAASSEN, Curtis D.; WATKINS III, John B. Fundamentos em toxicologia de Casarett e Doull. 2. ed. Porto Alegre: AMGH, 2012.</li>
-
-                                                    <li class="list-group-item">OGA, Seizi; CAMARGO, Márcia Maria de Almeida; BATISTUZZO, José Antonio de Oliveira. Fundamentos de toxicologia. 4. ed. São Paulo: Atheneu, 2014.</li>
-
-                                                    <li class="list-group-item">SHIBAMOTO, Takayuki; BJELDANES, Leonard F. Introdução à toxicologia de alimentos. Rio de Janeiro: Elsevier, 2014.</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="accordion-item">
-                                    <h5 class="accordion-header" id="heading-m2-aula5">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m2-aula5" aria-expanded="false" aria-controls="collapse-m2-aula5">Aula 5</button>
-                                    </h5>
-                                    <div id="collapse-m2-aula5" class="accordion-collapse collapse" aria-labelledby="heading-m2-aula5" data-bs-parent="">
-                                        <div class="accordion-body">
-                                            <div class="list mb-5">
-                                                <ul class="list-group">
-                                                    <li class="list-group-item">AMORIM, L. C. A. Os biomarcadores e sua aplicação na avaliação da exposição aos agentes químicos ambientais. Revista Brasileira de Epidemiologia, v. 6, n. 2, p. 158–170, jun. 2003. Disponível em: <a href='https://doi.org/10.1590/S1415-790X2003000200009' target='_blank' rel='noopener noreferrer'>https://doi.org/10.1590/S1415-790X2003000200009</a>. Acesso em: 10 fev. 2026.</li>
-
-                                                    <li class="list-group-item">AZEVEDO, F. A.; CHASIN, A. A. M. (Coord.). As bases toxicológicas da ecotoxicologia. São Carlos: RiMa; São Paulo: Intertox, 2003.</li>
-
-                                                    <li class="list-group-item">FUNDACENTRO. Manual de orientação sobre controle médico ocupacional da exposição a substâncias químicas. São Paulo: Fundacentro, 2014. Disponível em: <a href='http://arquivosbiblioteca.fundacentro.gov.br/exlibris/aleph/a23_1/apache_media/QLH7B8HET1QGHYRIJH3ADNE4A47XVU.pdf' target='_blank' rel='noopener noreferrer'>http://arquivosbiblioteca.fundacentro.gov.br/exlibris/aleph/a23_1/apache_media/QLH7B8HET1QGHYRIJH3ADNE4A47XVU.pdf</a>. Acesso em: 10 fev. 2026.</li>
-
-                                                    <li class="list-group-item">FUNDACENTRO. Toxicologia ocupacional. São Paulo: Fundacentro, 2020. Disponível em: <a href='http://arquivosbiblioteca.fundacentro.gov.br/exlibris/aleph/u23_1/bd/Toxicologia_ocupacional_final.pdf' target='_blank' rel='noopener noreferrer'>http://arquivosbiblioteca.fundacentro.gov.br/exlibris/aleph/u23_1/bd/Toxicologia_ocupacional_final.pdf</a>. Acesso em: 10 fev. 2026.</li>
-
-                                                    <li class="list-group-item">ILO – INTERNATIONAL LABOR ORGANIZATION. Enciclopédia de saúde ocupacional e segurança: princípios gerais de toxicologia. Disponível em: <a href='https://www.iloencyclopaedia.org/pt/part-iv-66769/toxicology-57951/general-principles-of-toxicology' target='_blank' rel='noopener noreferrer'>https://www.iloencyclopaedia.org/pt/part-iv-66769/toxicology-57951/general-principles-of-toxicology</a>. Acesso em: 10 fev. 2026.</li>
-
-                                                    <li class="list-group-item">PEIXOTO, N. F.; FERREIRA, L. S. Higiene ocupacional III. Santa Maria: Universidade Federal de Santa Maria, Colégio Técnico Industrial de Santa Maria; Rede e-Tec Brasil, 2013. Disponível em: <a href='https://www.ufsm.br/unidades-universitarias/ctism/cte/seguranca-do-trabalho-ctism-apostilas' target='_blank' rel='noopener noreferrer'>https://www.ufsm.br/unidades-universitarias/ctism/cte/seguranca-do-trabalho-ctism-apostilas</a>. Acesso em: 10 fev. 2026.</li>
-
-                                                    <li class="list-group-item">PIVETTA, F.; MACHADO, J. M. H.; ARAÚJO, U. C.; MOREIRA, M. F. R.; APOSTOLI, P. Monitoramento biológico: conceitos e aplicações em saúde pública. Cadernos de Saúde Pública, v. 17, n. 3, p. 545–554, maio 2001. Disponível em: <a href='https://doi.org/10.1590/S0102-311X2001000300010' target='_blank' rel='noopener noreferrer'>https://doi.org/10.1590/S0102-311X2001000300010</a>. Acesso em: 10 fev. 2026.</li>
-
-                                                    <li class="list-group-item">ROSA, H. V. D.; MARTINS, I.; SIQUEIRA, M. E. P. B.; COLACIOPPO, S. Monitoramento ambiental e biológico. In: OGA, S.; CAMARGO, M. M. A.; BATISTUZZO, J. A. O. (Org.). Fundamentos de toxicologia. 5. ed. São Paulo: Atheneu, 2021.</li>
-
-                                                    <li class="list-group-item">THORNE, O. S. Toxicologia ocupacional. In: KLASSEN, C. D.; WATKINS III, J. B. (Org.). Fundamentos em toxicologia de Casarett e Doull. 2. ed. Porto Alegre: AMGH, 2012.</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -678,15 +614,15 @@ const modalInfos = {
                                         <div class="accordion-body">
                                             <div class="list mb-5">
                                                 <ul class="list-group">
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">INSTITUTO NACIONAL DE CÂNCER (INCA). <em>Metais pesados, câncer e os riscos ambientais</em>. Rio de Janeiro: INCA. Disponível em: <a href='https://ninho.inca.gov.br/jspui/bitstream/123456789/15363/1/Metais%20e%20Cancer.pdf' target='_blank' rel='noopener noreferrer'>https://ninho.inca.gov.br/jspui/bitstream/123456789/15363/1/Metais%20e%20Cancer.pdf</a>. Acesso em: 10 fev. 2026.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">OLSON, K. R. (Org.). <em>Manual de toxicologia clínica</em> [recurso eletrônico]. 6. ed. Porto Alegre: AMGH, 2014. Disponível em: <a href='https://saude.ufpr.br/medtrab/wp-content/uploads/sites/25/2016/08/Manual-de-Toxicologia-Clínica_pdf.pdf' target='_blank' rel='noopener noreferrer'>https://saude.ufpr.br/medtrab/wp-content/uploads/sites/25/2016/08/Manual-de-Toxicologia-Clínica_pdf.pdf</a>. Acesso em: 10 fev. 2026.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ORGANIZAÇÃO PAN-AMERICANA DA SAÚDE (OPAS).<em> O impacto de substâncias químicas sobre a saúde pública: fatores conhecidos e desconhecidos</em>. Brasília: OPAS, 2018. Disponível em: <a href='https://iris.paho.org/bitstream/handle/10665.2/49122/OPASBRA180022-por.pdf' target='_blank' rel='noopener noreferrer'>https://iris.paho.org/bitstream/handle/10665.2/49122/OPASBRA180022-por.pdf</a>. Acesso em: 10 fev. 2026.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">PERUZZO, L. C. <em>Toxicologia e segurança</em>. Indaial: UNIASSELVI, 2018. 215 p. Disponível em: <a href='https://www.ispsn.org/sites/default/files/documentos-virtuais/pdf/toxicologia_e_seguranca_-_lucile_cecilia_peruzzo_0.pdf' target='_blank' rel='noopener noreferrer'>https://www.ispsn.org/sites/default/files/documentos-virtuais/pdf/toxicologia_e_seguranca_-_lucile_cecilia_peruzzo_0.pdf</a>. Acesso em: 10 fev. 2026.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">TEIXEIRA, A. G. Toxicologia. Londrina: Editora e Distribuidora Educacional S.A., 2016. 184 p. ISBN 978-85-8482-694-0. Disponível em: <a href='http://cm-kls-content.s3.amazonaws.com/201602/INTERATIVAS_2_0/TOXICOLOGIA/U1/LIVRO_UNICO.pdf' target='_blank' rel='noopener noreferrer'>http://cm-kls-content.s3.amazonaws.com/201602/INTERATIVAS_2_0/TOXICOLOGIA/U1/LIVRO_UNICO.pdf</a>. Acesso em: 10 fev. 2026.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -701,25 +637,15 @@ const modalInfos = {
                                         <div class="accordion-body">
                                             <div class="list mb-5">
                                                 <ul class="list-group">
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ALVES, C. B. C. <em>et al</em>. Intoxicação crônica por chumbo após acidente por arma de fogo: relato de caso. Brazilian Journal of Health Review, v. 7, n. 1, p. 189–199, 2024.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">AP NEWS. Trabalhadores denunciam mortes e adoecimentos por exposição ao mercúrio. 2024. Disponível em: <a href='https://apnews.com/article/amazon-mercury-gold-mining-yanomami-brazil-indigenous-8809d4f22c84dd6e81bb7a1f5f3ba9f6' target='_blank' rel='noopener noreferrer'>https://apnews.com/article/amazon-mercury-gold-mining-yanomami-brazil-indigenous-8809d4f22c84dd6e81bb7a1f5f3ba9f6</a>. Acesso em: 10 fev. 2026.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">DUFFUS, J. H. “Heavy metals”: a meaningless term? Pure and Applied Chemistry, v. 74, n. 5, p. 793–807, 2002.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">FUNDAÇÃO CENTRO DE REFERÊNCIA EM SEGURANÇA, SAÚDE NO TRABALHO (FUNDACENTRO). Estudo do Banco Mundial aponta morte de 5,5 milhões de pessoas devido à intoxicação por chumbo. Brasília: Fundacentro, 2023. Disponível em: <a href='https://www.gov.br/fundacentro/pt-br/comunicacao/noticias/noticias/2023/setembro/estudo-do-banco-mundial-aponta-morte-de-5-5-milhoes-de-pessoas-devido-a-intoxicacao-por-chumbo' target='_blank' rel='noopener noreferrer'>https://www.gov.br/fundacentro/pt-br/comunicacao/noticias/noticias/2023/setembro/estudo-do-banco-mundial-aponta-morte-de-5-5-milhoes-de-pessoas-devido-a-intoxicacao-por-chumbo</a>. Acesso em: 10 fev. 2026.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">FUNDAÇÃO OSWALDO CRUZ (FIOCRUZ). Fiocruz apresenta novos dados de estudo que avalia a saúde da população de Brumadinho. Disponível em: <a href='https://fiocruz.br/noticia/2025/01/fiocruz-apresenta-novos-dados-de-estudo-que-avalia-saude-da-populacao-de-brumadinho' target='_blank' rel='noopener noreferrer'>https://fiocruz.br/noticia/2025/01/fiocruz-apresenta-novos-dados-de-estudo-que-avalia-saude-da-populacao-de-brumadinho</a>. Acesso em: 10 fev. 2026.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">INSTITUTO NACIONAL DE CÂNCER (Brasil). Metais pesados, câncer e os riscos ambientais. Rio de Janeiro: INCA, 2024. 22 p.: il. color.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">MANZINI, F. F.; SÁ, K. B. de; PLICAS, L. M. de A. Metais pesados: fonte e ação toxicológica. Fórum Ambiental da Alta Paulista, [S. l.], v. 6, n. 12, 2010. DOI: 10.17271/19800827612201026. Disponível em: <a href='https://publicacoes.amigosdanatureza.org.br/index.php/forum_ambiental/article/view/26' target='_blank' rel='noopener noreferrer'>https://publicacoes.amigosdanatureza.org.br/index.php/forum_ambiental/article/view/26</a>. Acesso em: 10 fev. 2026.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">OGA, S.; CAMARGO, M. M. A.; BATISTUZZO, J. A. O. Fundamentos de toxicologia. 4. ed. São Paulo: Atheneu, 2014.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">RUSYNIAK, D. E. et al. Heavy metal poisoning: management of intoxication and antidotes. In: Molecular, Clinical and Environmental Toxicology: Volume 2 – Clinical Toxicology. p. 365–396, 2010.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">SAMPAIO, A. Caso do bolo envenenado: saiba como funciona a atuação técnica do Instituto-Geral de Perícias. Instituto-Geral de Perícias do Rio Grande do Sul, 13 jan. 2025. Disponível em: <a href='https://igp.rs.gov.br/caso-do-bolo-envenenado-saiba-como-funciona-a-atuacao-tecnica-do-instituto-geral-de-pericias' target='_blank' rel='noopener noreferrer'>https://igp.rs.gov.br/caso-do-bolo-envenenado-saiba-como-funciona-a-atuacao-tecnica-do-instituto-geral-de-pericias</a>. Acesso em: 10 fev. 2026.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -734,33 +660,50 @@ const modalInfos = {
                                         <div class="accordion-body">
                                             <div class="list mb-5">
                                                 <ul class="list-group">
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ATSDR – AGENCY FOR TOXIC SUBSTANCES AND DISEASE REGISTRY. Toxicological profile for arsenic. Atlanta: ATSDR, 2020a.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ATSDR – AGENCY FOR TOXIC SUBSTANCES AND DISEASE REGISTRY. Toxicological profile for lead. Atlanta: ATSDR, 2020b.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Portaria nº 204, de 17 de fevereiro de 2016. Brasília: Ministério da Saúde, 2016.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério do Trabalho. Norma Regulamentadora nº 7 (NR-7): Programa de Controle Médico de Saúde Ocupacional (PCMSO). Brasília: Ministério do Trabalho, 2018.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">CDC – CENTERS FOR DISEASE CONTROL AND PREVENTION. Blood lead reference value. Atlanta: CDC, 2021.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">CLARKSON, T. W.; MAGOS, L.; MYERS, G. J. The toxicology of mercury: current exposures and clinical manifestations. New England Journal of Medicine, v. 349, n. 18, p. 1731–1737, 2003.</li>
+                <div class="accordion-item">
+                    <h5 class="accordion-header" id="heading1-modulo4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-modulo4" aria-expanded="false" aria-controls="collapse1-modulo4">Módulo 4</button>
+                    </h5>
+                    <div id="collapse1-modulo4" class="accordion-collapse collapse" aria-labelledby="heading1-modulo4" data-bs-parent="">
+                        <div class="accordion-body">
+                            <!-- Accordion Aulas -->
+                            <div class="accordion accordion-flush aos-init aos-animate" data-aos="fade-up" data-aos-easing="ease-out" data-aos-duration="800" id="accordionBibliografia-m3-aulas">
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="heading-m4-aula1">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m4-aula1" aria-expanded="true" aria-controls="collapse-m4-aula1">Aula 1</button>
+                                    </h5>
+                                    <div id="collapse-m4-aula1" class="accordion-collapse collapse" aria-labelledby="heading-m4-aula1" data-bs-parent="">
+                                        <div class="accordion-body">
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">GRANDJEAN, P.; LANDRIGAN, P. J. Neurobehavioural effects of developmental toxicity. The Lancet Neurology, v. 13, n. 3, p. 330–338, 2014.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">JARUP, L.; AKESSON, A. Current status of cadmium as an environmental health problem. Toxicology and Applied Pharmacology, v. 238, p. 201–208, 2009.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">KLAASSEN, C. D. (Ed.). Casarett and Doull’s toxicology: the basic science of poisons. 9. ed. New York: McGraw-Hill, 2019.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">LANPHEAR, B. P. et al. Low-level lead exposure and children’s intellectual function: an international pooled analysis. Environmental Health Perspectives, v. 126, n. 10, p. 1–9, 2018.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">NRC – NATIONAL RESEARCH COUNCIL. Potential health risks from recurrent lead exposure of DOD firing range personnel. Washington, DC: National Academies Press, 2012.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">SMITH, A. H. et al. Cancer risks from arsenic in drinking water. Environmental Health Perspectives, v. 126, n. 5, p. 057002, 2018.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">VALKO, M.; RHODES, C. J.; MONCOL, J. Free radicals, metals and antioxidants in oxidative stress-induced cancer. Chemico-Biological Interactions, v. 160, p. 1–40, 2006.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">WHO – WORLD HEALTH ORGANIZATION. Preventing disease through healthy environments: exposure to cadmium – a major public health concern. Geneva: WHO, 2019.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -768,38 +711,22 @@ const modalInfos = {
                                 </div>
 
                                 <div class="accordion-item">
-                                    <h5 class="accordion-header" id="heading-m3-aula4">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m3-aula4" aria-expanded="false" aria-controls="collapse-m3-aula4">Aula 4</button>
+                                    <h5 class="accordion-header" id="heading-m4-aula2">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m4-aula2" aria-expanded="false" aria-controls="collapse-m4-aula2">Aula 2</button>
                                     </h5>
-                                    <div id="collapse-m3-aula4" class="accordion-collapse collapse" aria-labelledby="heading-m3-aula4" data-bs-parent="">
+                                    <div id="collapse-m4-aula2" class="accordion-collapse collapse" aria-labelledby="heading-m4-aula2" data-bs-parent="">
                                         <div class="accordion-body">
                                             <div class="list mb-5">
                                                 <ul class="list-group">
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Módulo de Princípios de Epidemiologia para o Controle de Enfermidades (MOPECE). Módulo 3: Medição das condições de saúde e doença na população. Brasília, DF: Ministério da Saúde, [s.d.]. Disponível em: <a href='https://bvsms.saude.gov.br/bvs/publicacoes/modulo_principios_epidemiologia_3.pdf' target='_blank' rel='noopener noreferrer'>https://bvsms.saude.gov.br/bvs/publicacoes/modulo_principios_epidemiologia_3.pdf</a>. Acesso em: 7 set. 2025.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Experiências exitosas em vigilância em saúde de populações expostas a agrotóxicos no Brasil. Brasília, DF: Ministério da Saúde, 2019. (Agrotóxicos na ótica do Sistema Único de Saúde). Disponível em: <a href='https://bvsms.saude.gov.br/bvs/publicacoes/agrotoxicos_otica_sistema_unico_saude_v2.pdf' target='_blank' rel='noopener noreferrer'>https://bvsms.saude.gov.br/bvs/publicacoes/agrotoxicos_otica_sistema_unico_saude_v2.pdf</a>. Acesso em: 25 out. 2025.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Guia de Vigilância em Saúde. 5. ed. Brasília, DF: Ministério da Saúde, 2022. 1.126 p. Disponível em: <a href='https://bvsms.saude.gov.br/bvs/publicacoes/guia_vigilancia_saude_5ed_rev_atual.pdf' target='_blank' rel='noopener noreferrer'>https://bvsms.saude.gov.br/bvs/publicacoes/guia_vigilancia_saude_5ed_rev_atual.pdf</a>. Acesso em: 7 set. 2025.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Portaria nº 204, de 17 de fevereiro de 2016. Define a Lista Nacional de Notificação Compulsória de doenças, agravos e eventos de saúde pública. Diário Oficial da União: seção 1, Brasília, DF, 2016. Disponível em: <a href='https://bvsms.saude.gov.br/bvs/saudelegis/gm/2016/prt0204_17_02_2016.html' target='_blank' rel='noopener noreferrer'>https://bvsms.saude.gov.br/bvs/saudelegis/gm/2016/prt0204_17_02_2016.html</a>. Acesso em: 7 set. 2025.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Secretaria de Vigilância em Saúde. Agrotóxicos na ótica do Sistema Único de Saúde. Brasília, DF: Ministério da Saúde, 2019. 2 v. il. ISBN 978-85-334-2428-9. Disponível em: <a href='https://bvsms.saude.gov.br/bvs/publicacoes/agrotoxicos_otica_sistema_unico_saude_v2.pdf' target='_blank' rel='noopener noreferrer'>https://bvsms.saude.gov.br/bvs/publicacoes/agrotoxicos_otica_sistema_unico_saude_v2.pdf</a>. Acesso em: 25 out. 2025.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Secretaria-Executiva. Departamento de Monitoramento e Avaliação do SUS. Política Nacional de Informação e Informática em Saúde. Brasília, DF: Ministério da Saúde, 2016. 56 p. ISBN 978-85-334-2353-4. Disponível em: <a href='https://bvsms.saude.gov.br/bvs/publicacoes/politica_nacional_informacao_informatica_saude.pdf' target='_blank' rel='noopener noreferrer'>https://bvsms.saude.gov.br/bvs/publicacoes/politica_nacional_informacao_informatica_saude.pdf</a>. Acesso em: 25 out. 2025.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">DATASUS – DEPARTAMENTO DE INFORMÁTICA DO SISTEMA ÚNICO DE SAÚDE. Acesso a sistemas e informações em saúde. Disponível em: <a href='https://datasus.saude.gov.br/' target='_blank' rel='noopener noreferrer'>https://datasus.saude.gov.br/</a>. Acesso em: 7 set. 2025.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">FRANCO, G. <em>et al</em>. Vigilância em saúde brasileira: reflexões e contribuição ao debate da 1ª Conferência Nacional de Vigilância em Saúde. Ciência & Saúde Coletiva, v. 22, n. 10, p. 3137–3148, 2017. DOI: 10.1590/1413-812320172210.18092017.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ROUQUAYROL, M. Z.; GOLDBAUM, M. (Org.). Epidemiologia & saúde. 8. ed. Rio de Janeiro: MedBook, 2018. 719 p.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">SILVA, A. P. B. et al. Avaliação do sistema de Vigilância em Saúde das Populações Expostas a Substâncias Químicas, Brasil, 2011 a 2021. Revista Panamericana de Salud Pública, v. 49, e6, 2025. DOI: 10.26633/RPSP.2025.6.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">TEIXEIRA, M. G. et al. Vigilância epidemiológica e emergências em saúde pública produzidas por agentes infecciosos. Rio de Janeiro: Fundação Oswaldo Cruz, 2021. 34 p. (Textos para Discussão, n. 57). Disponível em: <a href='https://homologacao-saudeamanha.icict.fiocruz.br/wp-content/uploads/2021/05/TEIXEIRA-MG-et-al-2021-Vigilancia-Epidemiologica-Saude-Publica-agentes-infecciosos-Fiocruz-Saude-Amanha-TD057.pdf' target='_blank' rel='noopener noreferrer'>https://homologacao-saudeamanha.icict.fiocruz.br/wp-content/uploads/2021/05/TEIXEIRA-MG-et-al-2021-Vigilancia-Epidemiologica-Saude-Publica-agentes-infecciosos-Fiocruz-Saude-Amanha-TD057.pdf</a>. Acesso em: 7 set. 2025.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">WALDMAN, E. A.; ROSA, T. E. C. Vigilância em saúde pública. São Paulo: e-Coleções FSP/USP, [s.d.]. Disponível em: <a href='https://colecoes.abcd.usp.br/fsp/items/show/2385' target='_blank' rel='noopener noreferrer'>https://colecoes.abcd.usp.br/fsp/items/show/2385</a>. Acesso em: 7 set. 2025.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">WORLD HEALTH ORGANIZATION. Global strategy on digital health 2020–2025. Geneva: WHO, 2021. Disponível em: <a href='https://www.who.int/docs/default-source/documents/gs4dhdaa2a9f352b0445bafbc79ca799dce4d.pdf' target='_blank' rel='noopener noreferrer'>https://www.who.int/docs/default-source/documents/gs4dhdaa2a9f352b0445bafbc79ca799dce4d.pdf</a>. Acesso em: 7 set. 2025.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -807,46 +734,67 @@ const modalInfos = {
                                 </div>
 
                                 <div class="accordion-item">
-                                    <h5 class="accordion-header" id="heading-m3-aula5">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m3-aula5" aria-expanded="false" aria-controls="collapse-m3-aula5">Aula 5</button>
+                                    <h5 class="accordion-header" id="heading-m4-aula3">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m4-aula3" aria-expanded="false" aria-controls="collapse-m4-aula3">Aula 3</button>
                                     </h5>
-                                    <div id="collapse-m3-aula5" class="accordion-collapse collapse" aria-labelledby="heading-m3-aula5" data-bs-parent="">
+                                    <div id="collapse-m4-aula3" class="accordion-collapse collapse" aria-labelledby="heading-m4-aula3" data-bs-parent="">
                                         <div class="accordion-body">
                                             <div class="list mb-5">
                                                 <ul class="list-group">
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">AGÊNCIA GOV (Agência Brasil de Comunicação). Yanomamis de nove aldeias estão contaminados por mercúrio. 4 abr. 2024. Disponível em: <a href='https://agenciagov.ebc.com.br/noticias/202404/yanomamis-de-nove-aldeias-assediadas-pelo-garimpo-estao-contaminados-por-mercurio' target='_blank' rel='noopener noreferrer'>https://agenciagov.ebc.com.br/noticias/202404/yanomamis-de-nove-aldeias-assediadas-pelo-garimpo-estao-contaminados-por-mercurio</a>. Acesso em: 22 ago. 2025.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">AGÊNCIA NACIONAL DE MINERAÇÃO (ANM). Disponível em:<a href=' http://www.anm.gov.br/' target='_blank' rel='noopener noreferrer'> http://www.anm.gov.br/</a>. Acesso em: 26 ago. 2025.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BARTH, Christian (Canal Christian Barth). Metais Pesados (animação explicativa). [s.l.]: s.n., s.d. Disponível em: <a href='https://www.youtube.com/watch?v=GAh2CdV5CfI' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=GAh2CdV5CfI</a>. Acesso em: 08 set. 2025.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BUSS, P. M.; PELLEGRINI FILHO, A. A saúde e seus determinantes sociais. Physis: Revista de Saúde Coletiva, Rio de Janeiro, v. 17, n. 1, p. 77-93, 2007.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">COSTA, B. B. (org.). Saúde coletiva: conceitos, práticas e determinantes em saúde. Vol. 2. [Livro digital]. 1. ed. São Paulo: Aya Editora, 2025. 116 p. DOI: <a href='https://doi.org/10.47573/aya.5379.2.410' target='_blank' rel='noopener noreferrer'>https://doi.org/10.47573/aya.5379.2.410</a>. ISBN: 978-65-5379-684-3.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">CONSELHO REGIONAL DE QUÍMICA – IV REGIÃO (CRQ-SP). Tabela Periódica Interativa. Disponível em: <a href='https://crqsp.org.br/tabelaperiodica/' target='_blank' rel='noopener noreferrer'>https://crqsp.org.br/tabelaperiodica/</a>. Acesso em: 08 set. 2025.</li>
+                <div class="accordion-item">
+                    <h5 class="accordion-header" id="heading1-modulo5">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-modulo5" aria-expanded="false" aria-controls="collapse1-modulo5">Módulo 5</button>
+                    </h5>
+                    <div id="collapse1-modulo5" class="accordion-collapse collapse" aria-labelledby="heading1-modulo5" data-bs-parent="">
+                        <div class="accordion-body">
+                            <!-- Accordion Aulas -->
+                            <div class="accordion accordion-flush aos-init aos-animate" data-aos="fade-up" data-aos-easing="ease-out" data-aos-duration="800" id="accordionBibliografia-m3-aulas">
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="heading-m5-aula1">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m5-aula1" aria-expanded="true" aria-controls="collapse-m5-aula1">Aula 1</button>
+                                    </h5>
+                                    <div id="collapse-m5-aula1" class="accordion-collapse collapse" aria-labelledby="heading-m5-aula1" data-bs-parent="">
+                                        <div class="accordion-body">
+                                            <div class="<ul class="list-group">
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">CRICHTON, Robert R. <em>Metal Toxicity – An Introduction</em>. In: Metal Chelation in Medicine. RSC Metallobiology Series, edited volume, Chapter 1. Cambridge: Royal Society of Chemistry, 2016. Disponível em: <a href='https://books.rsc.org/books/edited-volume/538/chapter/186451/Metal-Toxicity-An-Introduction' target='_blank' rel='noopener noreferrer'>https://books.rsc.org/books/edited-volume/538/chapter/186451/Metal-Toxicity-An-Introduction</a>. Acesso em: 20 ago. 2025.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">CIÊNCIA ANIMADA (Canal Ciência Animada). De onde vem o ferro – BNCC (EF01CI01). [s.l.]: s.n., s.d. Disponível em: <a href='https://www.youtube.com/watch?v=6NuKda-T5Bo' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=6NuKda-T5Bo</a>. Acesso em: 08 set. 2025.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">HAIDAR, Z.; FATEMA, K.; SHOILY, S. S.; SAJIB, A. A. Disease-associated metabolic pathways affected by heavy metals and metalloid. Toxicology Reports, [S.l.], v. 10, p. 554–570, 2023. DOI: <a href='https://doi.org/10.1016/j.toxrep.2023.04.010' target='_blank' rel='noopener noreferrer'>https://doi.org/10.1016/j.toxrep.2023.04.010</a></li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">INSTITUTO BRASILEIRO DE MINERAÇÃO (IBRAM). [s.l.]: [s.n.], s.d. Disponível em: <a href='https://portaldamineracao.com.br/' target='_blank' rel='noopener noreferrer'>https://portaldamineracao.com.br/</a>. Acesso em: 08 set. 2025.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                </ul>list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">INSTITUTO NACIONAL DE CÂNCER JOSÉ ALENCAR GOMES DA SILVA (INCA). Metais e câncer. Rio de Janeiro: INCA, [2024]. Disponível em: <a href='https://ninho.inca.gov.br/jspui/bitstream/123456789/15363/1/Metais%20e%20Cancer.pdf' target='_blank' rel='noopener noreferrer'>https://ninho.inca.gov.br/jspui/bitstream/123456789/15363/1/Metais%20e%20Cancer.pdf</a>. Acesso em: 22 ago. 2025.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">JAZIDA. Mineração no Brasil. Blog Jazida, 20 out. 2023. Disponível em: <a href='https://blog.jazida.com/mineracao-no-brasil/' target='_blank' rel='noopener noreferrer'>https://blog.jazida.com/mineracao-no-brasil/</a>. Acesso em: 22 ago. 2025.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">KOYAMA, H.; KAMOGASHIRA, T.; YAMASOBA, T. <em>Heavy metal exposure: molecular pathways, clinical implications, and protective strategies</em>. Antioxidants, Basel, v. 13, n. 1, p. 76, 2024. DOI: <a href='https://doi.org/10.3390/antiox13010076' target='_blank' rel='noopener noreferrer'>https://doi.org/10.3390/antiox13010076</a>.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">MALTA, D. C. (org.); SILVA, A. G.; GOMES, C. S.; SOUZA, J. B. Determinantes sociais em saúde: doenças crônicas não transmissíveis e seus fatores de risco e de proteção na população adulta brasileira. 1. ed. São Paulo: Rema Editora, 2025. </li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">OBREGÓN, P. L.; ESPINOZA-QUIÑONES, F. R.; OLIVEIRA, L. G. O. DE. Intoxicações de mercúrio e chumbo com maior prevalência em crianças e trabalhadores no Paraná. Cadernos Saúde Coletiva, 9 abr. 2021.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">PAHO IRIS. Determinantes ambientais e sociais da saúde - PAHO IRIS. Disponível em: <a href='https://iris.paho.org/bitstream/handle/10665.2/51687/9789275731291_por.pdf' target='_blank' rel='noopener noreferrer'>https://iris.paho.org/bitstream/handle/10665.2/51687/9789275731291_por.pdf</a> . 2011.</li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">SUS TV. Determinantes sociais da saúde. [s.l.]: s.n., 2019. Disponível em: <a href='https://www.youtube.com/watch?v=2JJNDeUkVtI' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=2JJNDeUkVtI</a>. Acesso em: 08 set. 2025.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -854,19 +802,36 @@ const modalInfos = {
                                 </div>
 
                                 <div class="accordion-item">
-                                    <h5 class="accordion-header" id="heading-m3-aula6">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m3-aula6" aria-expanded="false" aria-controls="collapse-m3-aula6">Aula 6</button>
+                                    <h5 class="accordion-header" id="heading-m5-aula2">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m5-aula2" aria-expanded="false" aria-controls="collapse-m5-aula2">Aula 2</button>
                                     </h5>
-                                    <div id="collapse-m3-aula6" class="accordion-collapse collapse" aria-labelledby="heading-m3-aula6" data-bs-parent="">
+                                    <div id="collapse-m5-aula2" class="accordion-collapse collapse" aria-labelledby="heading-m5-aula2" data-bs-parent="">
                                         <div class="accordion-body">
                                             <div class="list mb-5">
                                                 <ul class="list-group">
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">COVELLO, V.; SANDMAN, P. Risk communication: evolution and revolution. In: WOLBARST, A. Solutions to an environment in peril. Baltimore: Johns Hopkins University Press, 2001. p. 164–178.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">KRIMSKY, S.; PLOUGH, A. Environmental hazards: communicating risks as a social process. Dover, MA: Auburn House Publishing Company, 1988.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">NATIONAL RESEARCH COUNCIL. Recommendations for improving risk communication. In: NATIONAL RESEARCH COUNCIL. Improving risk communication. Washington, DC: National Academies Press, 1989. p. 16–19.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
                                                 </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="heading-m5-aula3">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-m5-aula3" aria-expanded="false" aria-controls="collapse-m5-aula3">Aula 3</button>
+                                    </h5>
+                                    <div id="collapse-m5-aula3" class="accordion-collapse collapse" aria-labelledby="heading-m5-aula3" data-bs-parent="">
+                                        <div class="accordion-body">
+                                            <div class="list mb-5">
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -1276,10 +1241,10 @@ const modalInfos = {
                 </div>
 
                 <div class="accordion-item">
-                    <h5 class="accordion-header" id="heading1-material-modulo3">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-material-modulo3" aria-expanded="false" aria-controls="collapse1-material-modulo3">Módulo 3</button>
+                    <h5 class="accordion-header" id="heading1-material-modulo4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-material-modulo4" aria-expanded="false" aria-controls="collapse1-material-modulo4">Módulo 3</button>
                     </h5>
-                    <div id="collapse1-material-modulo3" class="accordion-collapse collapse" aria-labelledby="heading1-material-modulo3" data-bs-parent="">
+                    <div id="collapse1-material-modulo4" class="accordion-collapse collapse" aria-labelledby="heading1-material-modulo4" data-bs-parent="">
                         <div class="accordion-body">
                             <!-- Accordion Aulas -->
                             <div class="accordion accordion-flush aos-init aos-animate" data-aos="fade-up" data-aos-easing="ease-out" data-aos-duration="800" id="accordionMaterialComplementar-m3-aulas">
