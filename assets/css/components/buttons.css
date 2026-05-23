@@ -5,15 +5,15 @@ button,
 button:visited,
 .fio-button,
 .fio-button:visited {
-	--_background-color: var(--fio-sys-color-neutral-10);
-	--_border-color: var(--fio-sys-color-neutral-10);
+	--_background-color: var(--fio-sys-color-primary-40);
+	--_border-color: var(--fio-sys-color-primary-40);
 	--_border-width: var(--fio-sys-size-stroke-sm);
 	--_border-radius: var(--fio-sys-size-radius-lg);
 	--_text-color: var(--fio-sys-color-neutral-100);
 	--_text-size: var(--fio-sys-typography-size--1);
 	--_text-family: var(--fio-sys-typography-family-primary);
 
-	--_background-color--hover: var(--fio-sys-color-neutral-30);
+	--_background-color--hover: var(--fio-sys-color-primary-60);
 	--_border-color--hover: var(--fio-sys-color-neutral-30);
 	--_text-color--hover: var(--fio-sys-color-neutral-100);
 
@@ -42,15 +42,24 @@ button:visited,
 }
 
 button:hover,
-button:focus,
 button:active,
 .fio-button:hover,
-.fio-button:focus,
 .fio-button:active {
 	background-color: var(--_background-color--hover);
 	border-color: var(--_border-color--hover);
 	color: var(--_text-color--hover);
 }
+/* Button Focus */
+button:focus:not(:focus-visible) {
+    outline: blue solid 4px !important;
+}
+
+/* button:focus {
+outline-offset: 5px;
+outline-color: blue;
+outline-style: solid;
+outline-width: 	4px;
+} */
 
 button:disabled,
 button.disabled,
@@ -94,7 +103,8 @@ button.disabled,
 /* Home button */
 .fio-button-home {
 	color: var(--fio-sys-color-primary-30);
-	font-family: "Montserrat SemiBold";
+	font-family: var(--fio-sys-typography-family-primary);
+	font-weight: 600;
 	letter-spacing: var(--fio-sys-typography-spacing-small);
 	--_background-color: transparent;
 	--_border-color: transparent;
@@ -161,9 +171,6 @@ button.disabled,
 	border: var(--fio-sys-size-stroke-sm) solid var(--_button-color-secondary--active);
 }
 
-.fio-button-secondary:focus {
-	outline-color: var(--_button-color-border--focus);
-}
 .fio-button-secondary:active {
 	background-color: transparent;
 	color: var(--_button-color-secondary--active);

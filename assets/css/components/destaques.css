@@ -140,7 +140,7 @@
 	--_destaque-divisor-background: var(--fio-sys-color-accent-contrast);
 	--destaque-background-gradient: linear-gradient(0deg, rgba(208, 103, 25, 0.2), rgba(127, 137, 113, 0.4));
 	--_destaque-background-image:url('../../../sources/recursos-visuais/images/bg-destaque.jpg');
-	--_destaque-background-color: var(--fio-sys-color-primary-medium);
+	--_destaque-background-color: var(--fio-sys-color-primary-40);
 	--_destaque-background-size: cover;
 	--_destaque-background-position: center;
 	--_destaque-background-attachment: fixed;

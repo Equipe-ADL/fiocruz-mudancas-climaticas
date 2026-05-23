@@ -36,12 +36,10 @@ a:hover {
 	text-decoration: underline;
 }
 
-a:focus {
-	outline: var(--fio-sys-color-neutral-10);
-}
 a:active {
 	color: var(--fio-sys-color-primary-30);
 }
+
 a[target="_blank"]:not(.no-after):after {
 	font-family: "Material Symbols Rounded";
 	content: "open_in_new";

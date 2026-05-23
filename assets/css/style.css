@@ -42,6 +42,21 @@
 	box-sizing: border-box;
 }
 
+*:focus,
+button:focus,
+.btn-close:focus {
+	outline-offset: 5px;
+	outline-color: blue;
+	outline-style: solid;
+	outline-width: 	4px;
+	border-radius:var(--fio-sys-size-radius-md);
+	box-shadow:none;	
+}
+
+a:focus {
+padding: var(--fio-sys-size-padding-sm);
+}
+
 .caption-top {
 	caption-side: top;
 }
@@ -99,7 +114,7 @@ figcaption.figure-caption {
 /* --- LAYOUT INTERNAL PAGES --- */
 
 body {
-	background-color: var(--fio-sys-color-primary-background-light);
+	background-color: var(--fio-sys-color-primary-95);
 	font-family: var(--fio-sys-typography-family-primary);
 }
 

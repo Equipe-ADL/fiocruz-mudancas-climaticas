@@ -87,7 +87,7 @@ audio::-webkit-media-controls-panel {
 /* transcription */
 
 .media .media__transcription .transcription-button {
-	margin-right: auto;
+	margin-left: auto;
 	/* margin-left: auto; */
 	margin-bottom: var(--fio-sys-size-margin-md);
 	position: relative;
@@ -105,7 +105,7 @@ audio::-webkit-media-controls-panel {
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	color: var(--fio-sys-color-accent-normal);
+	color: var(--fio-sys-color-primary-30);
 }
 
 .media .media__transcription .transcription-button:hover .transcription-button-label {
@@ -143,6 +143,7 @@ audio::-webkit-media-controls-panel {
 .media .media__transcription .transcription-content {
 	/* background: linear-gradient(0deg, rgba(255, 127, 0, 0.3), rgba(255, 255, 255, 0.05)), url(../../../media/templates/bg-box-atencao.svg) no-repeat right; */
 	background-color: var(--fio-sys-color-primary-95);
+	border-radius: var(--fio-sys-size-radius-sm);
 	padding: var(--fio-sys-size-padding-md);
 }
 

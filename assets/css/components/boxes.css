@@ -128,11 +128,22 @@
 	content: "info";
 }
 
+.saiba-mais {
+    /* background-color: var(--fio-sys-color-secondary-80); */
+    padding: var(--fio-sys-size-padding-md);
+    background: linear-gradient(0deg, rgba(28, 130, 130, 0.2), rgba(210, 164, 64, 0.3)), url('../../../sources/recursos-visuais/images/bg-destaque.jpg') no-repeat 0 0 !important;
+    border-radius: var(--fio-sys-size-radius-sm);
+    text-align: center;
+}
+
 .saiba-mais .saiba-mais__content {
-	background: var(--fio-sys-color-tertiary-95);
+	/* background: var(--fio-sys-color-tertiary-95); */
+	background:transparent;
 	border-radius: 0 0 var(--fio-sys-size-radius-lg) var(--fio-sys-size-radius-lg);
-	padding: var(--fio-sys-size-padding-lg);
+	padding: var(--fio-sys-size-padding-sm);
+	padding-top: var(--fio-sys-size-padding-xl);
 	color: var(--fio-sys-color-text-dark);
+	text-align: left;
 }
 
 .box .card .card-body {
