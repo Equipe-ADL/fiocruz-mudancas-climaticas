@@ -34,7 +34,7 @@
 	border-color: var(--fio-sys-color-primary-50);
 }
 .exercise .exercise__answers .answer__option.exercise__answers--selected {
-   	border-color: var(--fio-sys-color-primary-50);
+	border-color: var(--fio-sys-color-primary-50);
     /* background-color: hsl(26deg 79% 46% / 10%); */
 	background: linear-gradient(-90deg, rgba(28, 130, 130, 0.2), rgba(210, 164, 64, 0.3));
 }
