@@ -18,7 +18,7 @@ a[data-bs-toggle="popover"]:not([href]):not([class]):hover {
 	color: var(--fio-sys-color-primary-30);
 	padding: 0.5rem 1rem;
 	margin-bottom: 0;
-	font-size: var(--fio-sys-typography-size-0);
+	font-size: var(--fio-sys-typography-size--1);
 	background-color: var(--fio-sys-color-primary-80);
 	border-bottom: none;
 	border-top-left-radius: var(--fio-sys-size-radius-sm);

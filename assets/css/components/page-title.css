@@ -140,6 +140,7 @@
 	#page-title .title {
 		padding: var(--fio-sys-size-padding-lg);
 		font-size: var(--fio-sys-typography-size-3);
+		padding-left: 0;
 	}
 
 	/* #page-title .title {

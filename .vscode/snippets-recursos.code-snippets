@@ -649,10 +649,17 @@
 		"prefix": "citacao",
 		"body": [
 			"<!-- Citação -->",
-			"<div class=\"quotation\">", "	<blockquote class=\"\">", "		<span class=\"quotation-background\"></span>", "		<div class=\"quotation-body\">", "			<p>\"O texto de 1988 parecia refletir um novo estágio de maturidade política", "				e de longevidade institucional, coroando e habilitando ao pleno", "				desenvolvimento a democracia recém-conquistada, desta feita, em bases", "				aparentemente mais sólidas do que em períodos anteriores.\"</p>", "			<span class=\"quotation-autor\">COUTO E ARANTES (2006, p.42)</span>", "		</div>", "	</blockquote>",
+			"<div class=\"quotation aos-init aos-animate\" data-aos=\"fade-up\" data-aos-easing=\"ease-out\" data-aos-duration=\"600\">",
+    "	<blockquote class=\"\">",
+    "		<span class=\"quotation-background\"></span>",
+    "		<div class=\"quotation-body\">",
+    "			<p>\"a intensificação do sofrimento em decorrência da perda de referenciais afetivos, territoriais e comunitários, além de mostrarem que a pobreza, a violência e as desigualdades ambientais prolongam os prejuízos causados e limitam significativamente as possibilidades de construção de estratégias de enfrentamento.\"</p>",
+    "			<span class=\"quotation-autor\">FREITAS e PAIVA, 2025</span>",
+    "		</div>",
+    "	</blockquote>",
 			"</div>"
 		],
-		"description": "Citação",
+		"description": "Citação"
 	},
 	"Flipcard": {
 		"prefix": "flipcard",
