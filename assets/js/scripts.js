@@ -180,33 +180,33 @@ const modalInfos = {
 					<div class="mb-5">
 
 						<p class="mb-1">Ana Cristina da Matta Furniel</p>
-						<p class="small text-muted"><em>Coordenadora geral</em></p>
+						<p class="small text-muted"><em>Coordenadora Geral</em></p>
 
 						<p class="mb-1">Rosane Mendes</p>
-						<p class="small text-muted"><em>Coordenadora adjunta</em></p>
+						<p class="small text-muted"><em>Coordenadora Adjunta</em></p>
 
 						<p class="mb-1">Renata Bernardes David</p>
-						<p class="small text-muted"><em>Coordenadora de produção</em></p>
+						<p class="small text-muted"><em>Coordenadora de Produção</em></p>
 
 						<p class="mb-1">Juliana Dutra</p>
-						<p class="small text-muted"><em>Gerente de produção</em></p>
+						<p class="small text-muted"><em>Gerente de Produção</em></p>
 
 						<p class="mb-1">Isabela Schincariol</p>
-						<p class="small text-muted"><em>Assessora de comunicação</em></p>
+						<p class="small text-muted"><em>Assessora de Comunicação</em></p>
 					
-						<p class="mb-1">Alessandra Guedes</p>
+						<p class="mb-1">Alessandra Siqueira</p>
 						<p class="small text-muted"><em>Designer Educacional</em></p>
 					
 						<span class="h6 mb-3 d-block">Design de Interface</span>
 						
 						<p class="mb-1">Aline Polycarpo</p>
-						<p class="small text-muted"><em>Designer de Interface e Interação</em></p>
+						<p class="small text-muted"><em>UX/UI Designer</em></p>
 
 						<p class="mb-1">Danilo Blum</p>
-						<p class="small text-muted"><em>Designer de Interface e Front-end</em></p>
+						<p class="small text-muted"><em>UX/UI Designer e Front-end</em></p>
 
 						<p class="mb-1">Luciana Nunes</p>
-						<p class="small text-muted"><em>Designer de Interface e Interação</em></p>
+						<p class="small text-muted"><em>UX/UI Designer</em></p>
 					
 						
 						<span class="h6 mb-3 d-block">Recursos Audiovisuais</span>
@@ -219,14 +219,8 @@ const modalInfos = {
 
 						<span class="h6 mb-3 d-block">Recursos Educacionais</span>
 
-						<p class="mb-1">Carmélia Brito</p>
-						<p class="small text-muted"><em>Bibliotecária</em></p>
-
 						<p class="mb-1">Natália Rasina</p>
 						<p class="small text-muted"><em>Audiodescrição</em></p>
-
-						<p class="mb-1">Maria Angélica Marcondes Drska</p>
-						<p class="small text-muted"><em>Revisão de Português</em></p>
 						
 						<span class="h6 mb-3 d-block">Suporte Técnico de Tecnologia da Informação</span>
 					
@@ -249,109 +243,46 @@ const modalInfos = {
 					<span class="h5 mb-3 d-block">Coordenação Acadêmica</span>
 					
 					<div class="mb-5">
-						<p class="mb-1">Enrico Mendes Saggioro</p>
-						<p class="small text-muted"><em>Instituto Oswaldo Cruz (IOC) - Fiocruz</em></p>
-
-						<p class="mb-1">Tatiana Mingote Ferreira de Ázara</p>
-						<p class="small text-muted"><em>Instituto René Rachou (IRR) – Fiocruz Minas</em></p>
-					</div>
-
-					<span class="h5 mb-3 d-block">Apoio institucional SES/MG</span>
-
-					<div class="mb-5">
-						<p class="mb-1">Romeu Zema</p>
-						<p class="small text-muted"><em>Governador do estado de Minas Gerais</em></p>
-
-						<p class="mb-1">Matheus Simões</p>
-						<p class="small text-muted"><em>Vice-Governador do estado de Minas Gerais</em></p>
-
-						<p class="mb-1">Fábio Baccheretti Vitor</p>
-						<p class="small text-muted"><em>Secretário de Estado de Saúde</em></p>
-					</div>
-
-					<span class="h5 mb-3 d-block">Subsecretaria de Vigilância em Saúde (SUBVS)</span>
-
-					<div class="mb-5">
-						<p class="mb-1">Eduardo Campos Prosdocimi</p>
-						<p class="small text-muted"><em>Sub-Secretário</em></p>
-
-						<p class="mb-1">Debora Moreira Costa</p>
-						<p class="small text-muted"><em>Coordenação</em></p>
-					</div>
-
-					<span class="h5 mb-3 d-block">Núcleo de Cooperação com Organismos Nacionais e Internacionais (CONI/SUBVS)</span>
-
-					<div class="mb-5">
-						<p class="mb-1">Karina Maia Lage</p>
-						<p class="small text-muted"><em>Coordenação</em></p>
-
-						<p class="mb-1">Lais da Silva Melo</p>
-						<p class="mb-1">Samira Diniz Resende</p>
-						<p class="mb-1">Viviane Lucia Carneiro</p>
-						<p class="small text-muted"><em>Especialistas em Políticas de Gestão e Saúde</em></p>
-					</div>
-
-					<span class="h5 mb-3 d-block">Superintendência de Vigilância Epidemiológica</span>
-
-					<div class="mb-5">
-						<p class="mb-1">Aline Lara Cavalcante Oliva</p>
+						<p class="mb-1">Vânia Rocha</p>
+						<p class="small text-muted"><em>Pesquisadora do Centro de Estudos e Pesquisas em Emergências e Desastres em Saúde da Fiocruz (Cepedes/Fiocruz) </em></p>
 					</div>
 
 					<span class="h5 mb-3 d-block">Conteudistas</span>
 					
 					<div class="mb-5">
-						<p class="mb-1">André Peres Barbosa de Castro</p>
-						<p class="small text-muted"><em>Vigilância em Saúde: trajetórias globais e o percurso brasileiro</em></p>
+						<p class="mb-1">Carlos Machado de Freitas</p>
+						<p class="small text-muted"><em>Coordenador do Centro de Estudos e Pesquisas em Emergências e Desastres em Saúde da Fiocruz (Cepedes/Fiocruz) e Pesquisador da Escola Nacional de Saúde Pública, Fiocruz </em></p>
 
-						<p class="mb-1">Barbara Bresani Salvi</p>
-						<p class="mb-1">Ricardo Gadelha de Abreu</p>
-						<p class="small text-muted"><em>Política Nacional de Vigilância em Saúde e Planejamento</em></p>
+						<p class="mb-1">Eliane Lima e Silva</p>
+						<p class="small text-muted"><em>Pesquisadora do Centro de Estudos e Pesquisas em Emergências e Desastres em Saúde da Fiocruz (Cepedes/Fiocruz) e do Laboratório de Geografia, Ambiente e Saúde da UnB (LAGAS/UnB)</em></p>
 
-						<p class="mb-1">Jaqueline Martins</p>
-						<p class="mb-1">Kauara Brito Campos</p>
-						<p class="small text-muted"><em>Sistema Nacional de Vigilância em Saúde</em></p>
+						<p class="mb-1">Jacqueline Santos da Silva</p>
+						<p class="small text-muted"><em>Enfermeira, Agente Comunitária de Saúde da Estratégia de Saúde da Família na Secretaria Municipal de Saúde do Rio de Janeiro.</em></p>
 
-						<p class="mb-1">Marcio Henrique de Oliveira Garcia</p>
-						<p class="mb-1">Raquel Proença de Oliveira</p>
-						<p class="small text-muted"><em>Emergências em Saúde Pública</em></p>
+						<p class="mb-1">Luciana Alves Pereira</p>
+						<p class="small text-muted"><em>Pesquisadora da Escola Nacional de Saúde Pública Sérgio Arouca</em></p>
 
-						<p class="mb-1">Sidney Fernandes Sales Júnior </p>
-						<p class="small text-muted mb-0"><em>Toxicologia básica de contaminantes inorgânicos e orgânicos</em></p>
-						<p class="small text-muted"><em>Toxicocinética e toxicodinâmica dos agentes tóxicos</em></p>
+						<p class="mb-1">Maria Mitsuko Peres</p>
+						<p class="small text-muted mb-0"><em>Pesquisadora do Centro de Estudos e Pesquisas em Emergências e Desastres em Saúde (Cepedes/Fiocruz)</em></p>
 
-						<p class="mb-1">Lorena Oliveira Souza Soares</p>
-						<p class="small text-muted"><em>Toxicocinética e toxicodinâmica dos agentes tóxicos</em></p>
+						<p class="mb-1">Michele da Conceição Galdino</p>
+						<p class="small text-muted"><em>Enfermeira residente da Estratégia de Saúde da Família da Secretaria Municipal de Saúde do Rio de Janeiro</em></p>
 
-						<p class="mb-1">Julia Pinheiro de Souza Cruz Serra Lima</p>
-						<p class="mb-1">Laura de Jesus dos Santos</p>
-						<p class="small text-muted"><em>Toxicologia dos medicamentos e tabagismo</em></p>
+						<p class="mb-1">Pedro Ruiz Barbosa Nassar</p>
+						<p class="small text-muted"><em>Professor Adjunto da Universidade Federal Fluminense (UFF) e especialista em Gestão em Emergências e Desastres na Atenção Primária</em></p>
 
-						<p class="mb-1">Barbara Costa Pereira</p>
-						<p class="mb-1">Ludmila da Silva Figueira Barone</p>
-						<p class="small text-muted"><em>Toxicologia dos alimentos e dos agrotóxicos</em></p>
+						<p class="mb-1">Tatiane Moraes</p>
+						<p class="small text-muted"><em>Pesquisadora do Observatório do Clima e Saúde (ICICT/Fiocruz) e do Departamento de Epidemiologia do Instituto de Medicina Social da UERJ (IMS/UERJ)</em></p>
 
-						<p class="mb-1">Leandro Vargas Barreto de Carvalho</p>
-						<p class="small text-muted"><em>Toxicologia Ocupacional</em></p>
+						<p class="mb-1">Vânia Rocha</p>
+						<p class="small text-muted"><em>Pesquisadora do Centro de Estudos e Pesquisas em Emergências e Desastres em Saúde da Fiocruz (Cepedes/Fiocruz)</em></p>
+					</div>
 
-						<p class="mb-1">Rachel Ann Hauser Davis</p>
-						<p class="small text-muted mb-0"><em>Toxicologia aplicados aos metais</em></p>
-						<p class="small text-muted"><em>Exposição por metais e os determinantes sociais de saúde</em></p>
-
-						<p class="mb-1">Thais Braga Gomes Araujo</p>
-						<p class="small text-muted"><em>Abordagem inicial ao paciente potencialmente intoxicado e exames físicos para identificação de sinais e sintomas clínicos</em></p>
-
-						<p class="mb-1">Viviane Parreira</p>
-						<p class="mb-1">Raphael Mendonça Guimarães</p>
-						<p class="small text-muted"><em>Interpretação de testes laboratoriais e de imagem para avaliação de intoxicação</em></p>
-
-						<p class="mb-1">Andréa Sobral de Almeida </p>
-						<p class="small text-muted"><em>Vigilância epidemiológica e gestão da informação</em></p>
-
-						<p class="mb-1">Guilherme de Souza Meireles</p>
-						<p class="small text-muted"><em>Exposição por metais e os determinantes sociais de saúde</em></p>
-
-						<p class="mb-1">Frederico Peres da Costa</p>
-						<p class="small text-muted"><em>Comunicação de risco à saúde</em></p>
+                    <span class="h5 mb-3 d-block">Revisão</span>
+					
+					<div class="mb-5">
+						<p class="mb-1">Luciana Alves Pereira</p>
+						<p class="small text-muted"><em>Pesquisadora da Escola Nacional de Saúde Pública Sérgio Arouca</em></p>
 					</div>
 				</div>
 			</div>
@@ -614,15 +545,30 @@ const modalInfos = {
                                         <div class="accordion-body">
                                             <div class="list mb-5">
                                                 <ul class="list-group">
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ANAZAWA, T. M.; CARMO, R. L. do; MONTEIRO, A. M. V. <em>A grave escassez hídrica da Região Metropolitana de Campinas entre 2013 e 2015 enquanto um desastre socialmente construído:</em> abordagem metodológica multiescalar. Campinas, SP: Núcleo de Estudos de População “Elza Berquó”/Unicamp, 2017.</li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ALPINO, T. de M. A. <em>Seca, condições de vida e saúde no Nordeste brasileiro:</em> o caso do município de Itapetim, Pernambuco. 2015. 218 f. Dissertação (Mestrado em Saúde Pública). Escola Nacional de Saúde Pública Sergio Arouca, Fundação Oswaldo Cruz, Rio de Janeiro, 2015.</li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">FREITAS, C. M. de; MAZOTO, M. L.; ROCHA, V. da (Orgs.). G<em>uia de preparação e respostas do setor saúde aos desastres.</em> Rio de Janeiro: Fiocruz; Secretaria de Vigilância em Saúde, 2018. 161 p. Disponível em: <a href='https://docs.bvsalud.org/biblioref/2024/09/1571685/guiadepreparacaoerespostasdosetorsaudeaosdesastres.pdf' target='_blank' rel='noopener noreferrer'>https://docs.bvsalud.org/biblioref/2024/09/1571685/guiadepreparacaoerespostasdosetorsaudeaosdesastres.pdf</a>. Acesso em: 01 abr. 2026.</li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">FREITAS, C. M. de; SILVA, E. L. e; ROCHA, V. <em>Brasil 2050:</em> a emergência climática, os desastres e os desafios para gestão de riscos e a adaptação. Rio de Janeiro: ENSP/Fiocruz, 2025. (Saúde Amanhã/ Textos para Discussão, 90).</li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">INTERGOVERNMENTAL PANEL ON CLIMATE CHANGE (IPCC). <em>Climate Change 2023: Synthesis Report, Summary for Policymakers.</em> Geneva: IPCC, 2023.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">SENA, A. R. M.; ALPINO, T. M. A. <em>Seca silenciosa, saúde invisível:</em> um desastre naturalizado no Semiárido do Brasil. Rio de Janeiro: Editora Fiocruz, 2021.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">SILVA, E. L. <em>Transversalidade das políticas públicas na gestão de risco de inundações.</em> Brasília: Universidade de Brasília, 2019</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">UNITED NATIONS OFFICE FOR DISASTER RISK REDUCTION (UNDRR). Terminology on Disaster Risk Reduction. Genebra: UNDRR, 2022.</li>
+                                                </ul>
+                                            </div>
+
+                                            <span class='d-block'><em>Bibliografia complementar</em></span>
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">SOUZA, R. F. de; NASCIMENTO, S. L. do. Doenças e agravos no contexto das grandes inundações graduais no estado do Amazonas, BR. <em>Hygeia:</em> Revista Brasileira de Geografia Médica e da Saúde, v. 13, n. 26, 2017.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">SENA, A. et al. Medindo o invisível: análise dos Objetivos de Desenvolvimento Sustentável em populações expostas à seca. <em>Ciência & Saúde Coletiva</em>, v. 21, p. 671-684, 2016.</li>
                                                 </ul>
                                             </div>
                                         </div>
