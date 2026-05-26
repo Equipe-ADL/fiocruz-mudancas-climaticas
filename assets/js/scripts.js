@@ -594,6 +594,15 @@ const modalInfos = {
                                                     <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
                                                 </ul>
                                             </div>
+
+                                            <span class='d-block'><em>Bibliografia complementar</em></span>
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -606,15 +615,28 @@ const modalInfos = {
                                         <div class="accordion-body">
                                             <div class="list mb-5">
                                                 <ul class="list-group">
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ALPINO, T. de M. A. <em>Seca, condições de vida e saúde no Nordeste brasileiro:</em> o caso do município de Itapetim, Pernambuco. 2015. 218 f. Dissertação (Mestrado em Saúde Pública). Escola Nacional de Saúde Pública Sergio Arouca, Fundação Oswaldo Cruz, Rio de Janeiro, 2015.</li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ALPINO, T. de A.; SENA, A. R. M. de; FREITAS, C. M. de. Desastres relacionados à seca e saúde coletiva – uma revisão da literatura científica. <em>Ciência & Saúde Coletiva</em>, v. 21, n. 3, p. 809-820, mar. 2016.</li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Secretaria de Vigilância em Saúde e Ambiente. Departamento de Emergências em Saúde Pública. <em>Plano de Contingência para Emergências em Saúde Pública por chuvas intensas e desastres associados</em> [recurso eletrônico]. Brasília: Ministério da Saúde, 2025.</li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Secretaria de Atenção Primária à Saúde. Departamento de Estratégias e Políticas de Saúde Comunitária. <em>Inundações: diretrizes para profissionais de saúde: unidades básicas de saúde</em> [recurso eletrônico]. 1. ed. rev. Brasília: Ministério da Saúde, 2024.</li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Secretaria de Atenção à Saúde. Departamento de Atenção Básica. <em>O trabalho do agente comunitário de saúde</em>. Brasília: Ministério da Saúde, 2009. Disponível em: <a href='http://189.28.128.100/dab/docs/publicacoes/geral/manual_acs.pdf' target='_blank' rel='noopener noreferrer'>http://189.28.128.100/dab/docs/publicacoes/geral/manual_acs.pdf</a>. Acesso em: 07 abr. 2026.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">FREITAS, C. M. et al. <em>Orientações para gestão de risco de desastres e emergências em saúde pública:</em> abordagem integrada, atenção primária e vigilância em saúde. Rio de Janeiro: Fiocruz/ENSP/CEPEDES, 2023. 116 p. Relatório de pesquisa. Disponível em:<a href=' https://arca.fiocruz.br/handle/icict/61692' target='_blank' rel='noopener noreferrer'> https://arca.fiocruz.br/handle/icict/61692</a>. Acesso em: 07 abr. 2026.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">FREITAS, C. M. de. <em>Guia</em> – Preparação para resposta à emergência em saúde pública por seca e estiagem. Rio de Janeiro: ENSP, Fiocruz, 2021. 235 p. Disponível em: <a href='https://informe.ensp.fiocruz.br/assets/anexos/c9e480d9c1f855dc86484519b372fbaa.PDF' target='_blank' rel='noopener noreferrer'>https://informe.ensp.fiocruz.br/assets/anexos/c9e480d9c1f855dc86484519b372fbaa.PDF</a>. Acesso em: 07 abr. 2026.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">FREITAS, C. M. de. <em>Guia</em> – Preparação para resposta à emergência em saúde pública por inundações graduais. Rio de Janeiro: ENSP, Fiocruz, 2021. 227 p. Disponível em: <a href='https://informe.ensp.fiocruz.br/assets/anexos/77f24366813d7fd4b757a3aaea7790a7.PDF' target='_blank' rel='noopener noreferrer'>https://informe.ensp.fiocruz.br/assets/anexos/77f24366813d7fd4b757a3aaea7790a7.PDF</a>. Acesso em: 07 abr. 2026.</li>
+                                                </ul>
+                                            </div>
+
+                                            <span class='d-block'><em>Bibliografia complementar</em></span>
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">FAUSTO, M. C. R. et al. Sustentabilidade da Atenção Primária à Saúde em territórios rurais remotos na Amazônia fluvial: organização, estratégias e desafios. <em>Ciência & Saúde Coletiva</em>, Rio de Janeiro, v. 27, p. 1605-1618, 2022. Disponível em: <a href='https://www.scielo.br/j/csc/a/zZdBtL6QPw35vSPYz75XRPv/?format=pdf&lang=pt' target='_blank' rel='noopener noreferrer'>https://www.scielo.br/j/csc/a/zZdBtL6QPw35vSPYz75XRPv/?format=pdf&lang=pt</a>. Acesso em: 07 abr. 2026.</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -652,6 +674,15 @@ const modalInfos = {
                                                     <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
                                                 </ul>
                                             </div>
+
+                                            <span class='d-block'><em>Bibliografia complementar</em></span>
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -670,6 +701,15 @@ const modalInfos = {
 
                                                     <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                </ul>
+                                            </div>
+
+                                            <span class='d-block'><em>Bibliografia complementar</em></span>
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
                                                     <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
                                                     <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
@@ -698,6 +738,15 @@ const modalInfos = {
                                                     <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
                                                 </ul>
                                             </div>
+
+                                            <span class='d-block'><em>Bibliografia complementar</em></span>
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -720,17 +769,7 @@ const modalInfos = {
                                     </h5>
                                     <div id="collapse-m5-aula1" class="accordion-collapse collapse" aria-labelledby="heading-m5-aula1" data-bs-parent="">
                                         <div class="accordion-body">
-                                            <div class="<ul class="list-group">
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
-                                                </ul>list mb-5">
+                                            <div class="list mb-5">
                                                 <ul class="list-group">
                                                     <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
@@ -738,6 +777,15 @@ const modalInfos = {
 
                                                     <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                </ul>
+                                            </div>
+
+                                            <span class='d-block'><em>Bibliografia complementar</em></span>
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
                                                     <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
 
                                                     <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
@@ -766,6 +814,15 @@ const modalInfos = {
                                                     <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
                                                 </ul>
                                             </div>
+
+                                            <span class='d-block'><em>Bibliografia complementar</em></span>
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -777,7 +834,26 @@ const modalInfos = {
                                     <div id="collapse-m5-aula3" class="accordion-collapse collapse" aria-labelledby="heading-m5-aula3" data-bs-parent="">
                                         <div class="accordion-body">
                                             <div class="list mb-5">
-                                                
+                                                <ul class="list-group">
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                </ul>
+                                            </div>
+
+                                            <span class='d-block'><em>Bibliografia complementar</em></span>
+                                            <div class="list mb-5">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
