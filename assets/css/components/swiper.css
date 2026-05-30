@@ -30,7 +30,7 @@
 }
 
 .swiper {
-	--_swiper-button-hover: var(--fio-component-button-color-primary--hover);
+	--_swiper-button-hover: var(--fio-sys-color-primary-60);
 }
 
 .swiper.card {
@@ -56,9 +56,9 @@
 
 .swiper .swiper-button-next,
 .swiper .swiper-button-prev {
-	background-color: var(--fio-sys-color-accent-medium);
+	background-color: var(--fio-sys-color-primary-40);
 	border-radius: var(--fio-sys-size-radius-full);
-	color: var(--fio-sys-color-accent-medium-contrast);
+	color: var(--fio-sys-color-primary-100);
 	padding: var(--fio-sys-size-padding-md);
 }
 

@@ -727,24 +727,20 @@ const modalInfos = {
                                         <div class="accordion-body">
                                             <div class="list mb-5">
                                                 <ul class="list-group">
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Secretaria de Vigilância em Saúde e Ambiente. Departamento de Emergências em Saúde Pública. Coordenação-Geral de Preparação para as Emergências em Saúde Pública. <em>Nota Técnic</em>a nº 5/2025-CGPRESP/DEMSP/SVSA/MS. Fornece diretrizes abrangentes para a preparação e resposta às ondas de frio. Brasília: Ministério da Saúde, 2025.</li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">RIO DE JANEIRO. Secretaria Municipal de Saúde. <em>Protocolo de enfrentamento ao calor extremo</em> [livro eletrônico]. 1. ed. Rio de Janeiro: Ed. dos Autores, 2024. Disponível em: <a href='https://saude.prefeitura.rio/wp-content/uploads/sites/47/2024/10/Livro_PlanoContingenciaEnfrentamentoCalorExtremo_PDFDigital_20241024.pdf' target='_blank' rel='noopener noreferrer'>https://saude.prefeitura.rio/wp-content/uploads/sites/47/2024/10/Livro_PlanoContingenciaEnfrentamentoCalorExtremo_PDFDigital_20241024.pdf</a>. Acesso em: 16 dez. 2025.</li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">RIO DE JANEIRO. Superintendência de Atenção Primária. <em>Nota Técnica</em>: dispõe sobre a atuação das equipes de atenção primária diante das ondas de calor. Rio de Janeiro, 15 dez. 2023.</li>
                                                 </ul>
                                             </div>
 
                                             <span class='d-block'><em>Bibliografia complementar</em></span>
                                             <div class="list mb-5">
                                                 <ul class="list-group">
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">NOGUEIRA, P. T. A. et al. A necessidade de construção de assistência e vigilância em saúde no contexto das mudanças climáticas - ‘um passo à frente e você não estará mais no mesmo lugar’. <em>Saúde em Debate</em>, v. 48, n. spe1, p. e8696, ago. 2024.</li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">FLOSS, M.; BARROS, E. F. Estresse por calor na Atenção Primária à Saúde: uma revisão clínica. <em>Revista Brasileira de Medicina de Família e Comunidade</em>, v. 15, n. 42, p. 1948-1948, 2020.</li>
                                                 </ul>
                                             </div>
                                         </div>
