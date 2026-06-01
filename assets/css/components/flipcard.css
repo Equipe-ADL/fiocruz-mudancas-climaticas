@@ -17,18 +17,20 @@
 	-webkit-transition: -webkit-transform 0.8s;
 	transition: -webkit-transform 0.8s;
 	transition: transform 0.8s;
-	transition: transform 0.8s, -webkit-transform 0.8s;
+	transition:
+		transform 0.8s,
+		-webkit-transform 0.8s;
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
 
 .flipcard .flip-card .card > div {
 	position: relative;
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 	justify-content: space-around;
-    min-width: 0;
-    word-wrap: break-word
+	min-width: 0;
+	word-wrap: break-word;
 }
 
 /* Desabilito o Hover (assim só vira se clicar no botão)
@@ -52,14 +54,14 @@
 }
 
 /*Acerta a área de texto*/
-.flipcard  .flip-card .card-text {
+.flipcard .flip-card .card-text {
 	line-height: 1.5 !important;
 	text-align: left;
 	margin-bottom: 10px;
 	/* height: 190px; */
 }
 
-.flipcard  .flip-card .card-text ul li ul {
+.flipcard .flip-card .card-text ul li ul {
 	list-style: circle;
 }
 
@@ -86,7 +88,7 @@
 /*Aqui colocamos um efeito fundo degradê para o card da frente*/
 .flipcard .flip-card-front::before {
 	border-radius: 10px;
-	content: '';
+	content: "";
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -99,18 +101,17 @@
 
 .flipcard .flip-card-front .card-body {
 	padding: 1rem;
-	color:var(--fio-sys-color-neutral-100);
+	color: var(--fio-sys-color-neutral-100);
 }
 
-
 .flipcard .flip-card-front .card-body p {
-	color:var(--fio-sys-color-neutral-100);
+	color: var(--fio-sys-color-neutral-100);
 }
 
 .flipcard .flip-card-front .card-title {
 	/* text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.65) !important; */
 	text-align: center;
-	color:var(--fio-sys-color-primary-30);
+	color: var(--fio-sys-color-primary-30);
 	line-height: var(--fio-sys-typography-head-md-line-height);
 }
 
@@ -168,7 +169,7 @@
 
 .flipcard .flip-card-back .card-body {
 	padding-top: 0;
-	height: calc(100% - var(--fio-sys-size-padding-xl) *2 );
+	height: calc(100% - var(--fio-sys-size-padding-xl) * 2);
 }
 
 .flipcard .flip-card-back .card-footer {
@@ -177,7 +178,7 @@
 }
 
 .flipcard .flip-card-back .card-footer .fio-button {
-	border-color:  var(--fio-sys-color-primary-40);
+	border-color: var(--fio-sys-color-primary-40);
 	border-width: 2px;
 	border-style: solid;
 	color: var(--fio-sys-color-primary-40);
@@ -185,24 +186,22 @@
 	background: transparent;
 }
 
-.flipcard .flip-card-back .card-footer .fio-button:hover,
-.flipcard .flip-card-back .card-footer .fio-button:focus {
+/* .flipcard .flip-card-back .card-footer .fio-button:focus, */
+.flipcard .flip-card-back .card-footer .fio-button:hover {
 	background-color: transparent;
 	color: var(--fio-sys-color-primary-10);
-	border-color:  var(--fio-sys-color-primary-10);
+	border-color: var(--fio-sys-color-primary-10);
 }
 
-.flipcard .flip-card-back .card-footer .fio-button:focus {
+/* .flipcard .flip-card-back .card-footer .fio-button:focus {
 	background-color: var(--fio-sys-color-accent-light);
-}
+} */
 
 /*Habilita o Scroll*/
 .flipcard .flip-card .flip-card-front .scrollable {
 	overflow-y: hidden;
-	color:  var(--fio-sys-typography-paragraph-family);
+	color: var(--fio-sys-typography-paragraph-family);
 }
-
-
 
 .flipcard .flip-card .flip-card-back .scrollable {
 	text-align: left;
@@ -234,7 +233,7 @@
 	background: var(--fio-sys-color-accent-light);
 }
 
-@media (max-width:1300) {
+@media (max-width: 1300) {
 	.flipcard .flip-card-front .card-title {
 		letter-spacing: -0.033em;
 	}

@@ -106,10 +106,10 @@
 
 /* Close button */
 
-#sidebar .mobile-toggle-close:focus {
-	/* background-color: var(--primary-color-dark);  */
+/* #sidebar .mobile-toggle-close:focus {
+	background-color: var(--primary-color-dark);
 	border-radius: 12px;
-}
+} */
 #sidebar .mobile-toggle-close .mobile-toggle__button {
 	display: flex;
 	justify-content: center;
@@ -142,7 +142,7 @@
 	color: var(--_sidebar-module-btn-color);
 	display: flex;
 	font-size: 16px;
-	font-weight:600;
+	font-weight: 600;
 	gap: 16px;
 	line-height: var(--_sidebar-line-height);
 	outline: 0;
@@ -317,10 +317,10 @@
 	font-size: 14px;
 	padding: 16px;
 }
-#sidebar .header-nav .nav-item .nav-link:focus {
+/* #sidebar .header-nav .nav-item .nav-link:focus {
 	background-color: var(--primary-color-dark);
 	border-radius: 16px;
-}
+} */
 #sidebar .header-nav .nav-link .icon {
 	display: block;
 	margin-bottom: 16px;

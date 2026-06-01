@@ -42,20 +42,28 @@
 	box-sizing: border-box;
 }
 
-*:focus,
+*:focus-visible {
+	outline-offset: 5px;
+	outline-color: blue !important;
+	outline-style: solid !important;
+	outline-width: 4px !important       ;
+	border-radius: inherit, var(--fio-sys-size-radius-md);
+	box-shadow: none;
+}
+/* *:focus,
 button:focus,
 .btn-close:focus {
 	outline-offset: 5px;
 	outline-color: blue;
 	outline-style: solid;
-	outline-width: 	4px;
-	border-radius:var(--fio-sys-size-radius-md);
-	box-shadow:none;	
-}
+	outline-width: 4px;
+	border-radius: var(--fio-sys-size-radius-md);
+	box-shadow: none;
+} */
 
-a:focus {
+/* a:focus {
 padding: var(--fio-sys-size-padding-sm);
-}
+} */
 
 .caption-top {
 	caption-side: top;
@@ -151,7 +159,7 @@ section {
 	padding: 40px 0;
 }
 
-.row>div>*:last-child {
+.row > div > *:last-child {
 	margin-bottom: 0;
 }
 
@@ -206,20 +214,18 @@ section {
 	}
 }
 
-
 #page-content.mod1 .container:first-child > .row:first-child > div:first-child::after,
 #page-content.mod2 .container:first-child > .row:first-child > div:first-child::after,
 #page-content.mod3 .container:first-child > .row:first-child > div:first-child::after,
 #page-content.mod4 .container:first-child > .row:first-child > div:first-child::after,
 #page-content.mod5 .container:first-child > .row:first-child > div:first-child::after {
-    content: url(../../../media/templates/destaque-graphism.svg);
-    display: block;
-    width: 250px;
-    height: auto;
-    position: relative;
-    transform: translate(-18%, -15%);
+	content: url(../../../media/templates/destaque-graphism.svg);
+	display: block;
+	width: 250px;
+	height: auto;
+	position: relative;
+	transform: translate(-18%, -15%);
 }
-
 
 /* TÍTULOS */
 .heading__block {

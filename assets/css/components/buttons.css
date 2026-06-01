@@ -50,9 +50,9 @@ button:active,
 	color: var(--_text-color--hover);
 }
 /* Button Focus */
-button:focus:not(:focus-visible) {
+/* button:focus:not(:focus-visible) {
     outline: blue solid 4px !important;
-}
+} */
 
 /* button:focus {
 outline-offset: 5px;
