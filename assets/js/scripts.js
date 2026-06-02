@@ -257,13 +257,13 @@ const modalInfos = {
 						<p class="small text-muted"><em>Pesquisadora do Centro de Estudos e Pesquisas em Emergências e Desastres em Saúde da Fiocruz (Cepedes/Fiocruz) e do Laboratório de Geografia, Ambiente e Saúde da UnB (LAGAS/UnB)</em></p>
 
 						<p class="mb-1">Jacqueline Santos da Silva</p>
-						<p class="small text-muted"><em>Enfermeira, Agente Comunitária de Saúde da Estratégia de Saúde da Família na Secretaria Municipal de Saúde do Rio de Janeiro.</em></p>
+						<p class="small text-muted"><em>Enfermeira, Agente Comunitária de Saúde da Estratégia de Saúde da Família na Secretaria Municipal de Saúde do Rio de Janeiro</em></p>
 
 						<p class="mb-1">Luciana Alves Pereira</p>
 						<p class="small text-muted"><em>Pesquisadora da Escola Nacional de Saúde Pública Sérgio Arouca</em></p>
 
 						<p class="mb-1">Maria Mitsuko Peres</p>
-						<p class="small text-muted mb-0"><em>Pesquisadora do Centro de Estudos e Pesquisas em Emergências e Desastres em Saúde (Cepedes/Fiocruz)</em></p>
+						<p class="small text-muted"><em>Pesquisadora do Centro de Estudos e Pesquisas em Emergências e Desastres em Saúde (Cepedes/Fiocruz)</em></p>
 
 						<p class="mb-1">Michele da Conceição Galdino</p>
 						<p class="small text-muted"><em>Enfermeira residente da Estratégia de Saúde da Família da Secretaria Municipal de Saúde do Rio de Janeiro</em></p>
