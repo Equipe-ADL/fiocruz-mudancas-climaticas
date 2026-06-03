@@ -1997,3 +1997,9 @@ function createModal(id) {
 
     document.body.appendChild(newModal);
 }
+
+//Before and after
+const container = document.querySelector('.antes-e-depois--container');
+document.querySelector('.antes-e-depois--slider').addEventListener('input', e => {
+	container.style.setProperty('--position', `${e.target.value}%`);
+});
