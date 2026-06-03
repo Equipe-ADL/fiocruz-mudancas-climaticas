@@ -767,24 +767,16 @@ const modalInfos = {
                                         <div class="accordion-body">
                                             <div class="list mb-5">
                                                 <ul class="list-group">
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">FEARNSIDE, P. M. Uso da terra na Amazônia e as mudanças climáticas globais. In: FEARNSIDE, P. M. <em>Destruição e Conservação da Floresta Amazônica</em>, vol. 1. Brasil: Editora do INPA, 2022. p. 21-38.</li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">INSTITUTO de Pesquisa Ambiental da Amazônia (IPAM). Tudo o que você queria saber sobre fogo na Amazônia e no Cerrado. <em>Site IPAM Amazônia</em>, setembro 2024. Disponível em: <a href='https://ipam.org.br/cartilhas-ipam/foconofogo/' target='_blank' rel='noopener noreferrer'>https://ipam.org.br/cartilhas-ipam/foconofogo/</a>. Acesso em: 01 dez. 2025.</li>
                                                 </ul>
                                             </div>
 
                                             <span class='d-block'><em>Bibliografia complementar</em></span>
                                             <div class="list mb-5">
                                                 <ul class="list-group">
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">INSTITUTO Nacional de Pesquisas Espaciais (INPE). Programa Queimadas. <em>Portal INPE</em>. Disponível em: <a href='https://terrabrasilis.dpi.inpe.br/queimadas/portal/' target='_blank' rel='noopener noreferrer'>https://terrabrasilis.dpi.inpe.br/queimadas/portal/</a>. Acesso em: 01 dez. 2025.</li>
                                                 </ul>
                                             </div>
                                         </div>
