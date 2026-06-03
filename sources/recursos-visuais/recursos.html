@@ -148,6 +148,7 @@
 
                         <div class="row justify-content-center">
                             <div class="col-12 col-md-10 col-lg-8">
+                                <!-- Abas -->
                                 <div class="aba">
                                     <ul class="nav nav-pills nav-fill mb-5" id="pills-tabs" role="tablist">
                                         <li class="nav-item" role="presentation">
@@ -488,6 +489,89 @@
 
                                         <!-- Aba 3 -->
                                         <div class="tab-pane fade" id="pills-accordion-img-boas-praticas" role="tabpanel" aria-labelledby="pills-accordion-img-boas-praticas-tab">
+                                            <p>Conteúdo Sobre boas práticas de uso deste componente</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Bloco - Antes e Depois -->
+                <section id="antes-e-depois">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-md-10 col-lg-8 mb-5">
+                                <!-- Heading Block (Título h2 ou h3 + Lead (se houver)) -->
+                                <div class="heading__block">
+                                    <span class="heading__before">Recurso 4</span>
+                                    <h4>Antes e depois</h4>
+                                    <p class="heading__lead">Utilizado para comparar 2 imagens</p>
+                                </div>
+                                <!-- Fim do Heading Block (Título h2 ou h3 + Lead (se houver)) -->
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-md-10 col-lg-8">
+                                <div class="aba">
+                                    <ul class="nav nav-pills nav-fill mb-5" id="pills-tabs" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link active" id="pills-antes-e-depois-exemplos-tab" data-bs-toggle="pill" data-bs-target="#pills-antes-e-depois-exemplos" type="button" role="tab" aria-controls="pills-antes-e-depois-exemplos" aria-selected="true">Exemplos</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="pills-antes-e-depois-construcao-tab" data-bs-toggle="pill" data-bs-target="#pills-antes-e-depois-construcao" type="button" role="tab" aria-controls="pills-antes-e-depois-construcao" aria-selected="false">Construção</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="pills-antes-e-depois-boas-praticas-tab" data-bs-toggle="pill" data-bs-target="#pills-antes-e-depois-boas-praticas" type="button" role="tab" aria-controls="pills-antes-e-depois-boas-praticas" aria-selected="false">Boas práticas</button>
+                                        </li>
+
+                                    </ul>
+                                    <div class="tab-content p-0 border-0 bg-transparent" id="pills-tabContent">
+                                        <!-- Aba 1 -->
+                                        <div class="tab-pane fade show active" id="pills-antes-e-depois-exemplos" role="tabpanel" aria-labelledby="pills-antes-e-depois-exemplos-tab">
+                                            <!-- Antes e depois -->
+                                            <div class="col-12 col-md-10 col-lg-12">
+                                                <p class="text-muted text-center mb-5"><span class="material-symbols-rounded" style="transform: rotateX(180deg)">pan_tool_alt</span> <span class="d-none d-lg-inline-block">Clique</span> <span class="d-inline-block d-lg-none">Toque</span> no botão entre as imagens e entenda o processo:</p>
+                                            </div>
+
+                                            <div class="antes-e-depois aos-init aos-animate" data-aos="fade-up" data-aos-easing="ease-out" data-aos-duration="600">
+                                                <div class="antes-e-depois--container">
+                                                    <div class="image-container">
+                                                        <img class="image-before slider-image img-fluid" src="https://placehold.co/1280x720" alt="">
+                                                        <img class="image-after slider-image img-fluid" src="https://placehold.co/1280x720" alt="">
+                                                    </div>
+
+
+                                                    <input type="range" min="0" max="100" value="50" aria-label="Percentage of before photo shown" class="antes-e-depois--slider">
+                                                    <div class="slider-line" aria-hidden="true"></div>
+                                                    <div class="slider-button" aria-hidden="true">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 256 256">
+                                                            <rect width="256" height="256" fill="none"></rect>
+                                                            <line x1="128" y1="40" x2="128" y2="216" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+                                                            <line x1="96" y1="128" x2="16" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+                                                            <polyline points="48 160 16 128 48 96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline>
+                                                            <line x1="160" y1="128" x2="240" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+                                                            <polyline points="208 96 240 128 208 160" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+
+                                                <span class="figure-caption text-center d-block">Fonte: Campus Virtual Fiocruz</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Aba 2-->
+                                        <div class="tab-pane fade" id="pills-antes-e-depois-construcao" role="tabpanel" aria-labelledby="pills-antes-e-depois-construcao-tab">
+                                            <p><strong>Obs: Atente-se para o <strong>nome dado ao id</strong> do
+                                                    antes-e-depois!</strong>
+                                            </p>
+                                        </div>
+
+                                        <!-- Aba 3 -->
+                                        <div class="tab-pane fade" id="pills-antes-e-depois-boas-praticas" role="tabpanel" aria-labelledby="pills-antes-e-depois-boas-praticas-tab">
                                             <p>Conteúdo Sobre boas práticas de uso deste componente</p>
                                         </div>
 
@@ -2668,8 +2752,7 @@
                 </section>
 
                 <!-- Bloco - Timeline Horizontal -->
-                <section>
-
+                <section id="timeline-horizontal">
                     <div class="container-fluid timeline-horizontal mb-5 aos-animate aos-init my-5" data-aos="fade-up" data-aos-easing="ease-out" data-aos-duration="600">
                         <div class="row justify-content-center pt-0">
                             <div class="col">
@@ -2873,8 +2956,6 @@
                             <img src="../../media/templates/bg-timeline-horizontal-bottom.svg" />
                         </div>
                     </div>
-
-
                 </section>
 
                 <!-- Bloco - Timeline Vertical -->
@@ -3468,7 +3549,6 @@
                     </div>
                 </section>
             </div>
-
 
             <footer>
                 <div class="container-fluid">

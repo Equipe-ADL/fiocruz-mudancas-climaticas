@@ -163,5 +163,5 @@
 }
 
 .list .list-group.list-group-numbered > .list-group-item::before {
-	font-family: var(--fio-sys-typography-family);
+	font-family: var(--fio-sys-typography-family-primary);
 }
