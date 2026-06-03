@@ -791,24 +791,18 @@ const modalInfos = {
                                         <div class="accordion-body">
                                             <div class="list mb-5">
                                                 <ul class="list-group">
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Queimadas. <em>Saúde de A a Z</em>. Disponível em: <a href='https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/q/queimadas' target='_blank' rel='noopener noreferrer'>https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/q/queimadas</a>. Acesso em: 10 dez. 2025. </li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">FIOCRUZ. ICICT. Observatório de Clima e Saúde. <em>Vídeo</em>. Queimadas na Amazônia (2012). Disponível em: <a href='https://climaesaude.icict.fiocruz.br/video/queimadas-na-amazonia-2012' target='_blank' rel='noopener noreferrer'>https://climaesaude.icict.fiocruz.br/video/queimadas-na-amazonia-2012</a>. Acesso em: 01 dez. 2025.</li>
                                                 </ul>
                                             </div>
 
                                             <span class='d-block'><em>Bibliografia complementar</em></span>
                                             <div class="list mb-5">
                                                 <ul class="list-group">
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">SOUSA, T. C. M.; HACON, S. S.; BARCELLOS, C. Covid-19 e queimadas na Amazônia Legal e no Pantanal: aspectos cumulativos e vulnerabilidades. In: FREITAS, C. M.; </li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BARCELLOS, C.; VILLELA, D. A. M. (orgs.). <em>Covid-19 no Brasil</em>: cenários epidemiológicos e vigilância em saúde [online]. Rio de Janeiro: Observatório Covid-19 Fiocruz; Editora Fiocruz, 2021, p. 159-169. <a href='https://doi.org/10.7476/9786557081211.0010' target='_blank' rel='noopener noreferrer'>https://doi.org/10.7476/9786557081211.0010</a>.</li>
                                                 </ul>
                                             </div>
                                         </div>
