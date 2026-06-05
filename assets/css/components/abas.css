@@ -5,12 +5,12 @@
 	--_tab-color: var(--fio-sys-color-primary-10);
 	--_tab-border-color: var(--fio-sys-color-primary-80);
 	--_tab-border-width: var(--fio-sys-size-stroke-sm);
-	--_tab-border-radius: var(--fio-sys-size-radius-full);
+	--_tab-border-radius: var(--fio-sys-size-radius-md);
 	--_tab-border-color-hover: var(--fio-sys-color-primary-20);
 
 	--_tab-background-color-active: var(--fio-sys-color-primary-30);
 	--_tab-color-active: var(--fio-sys-color-primary-100);
-	--_tab-border-color-active: var(--fio-sys-color-primary-100);
+	--_tab-border-color-active: var(--fio-sys-color-primary-90);
 
 	--_content-background-color: var(--fio-sys-color-primary-90);
 	--_content-border-color: var(--fio-sys-color-primary-90);
@@ -61,6 +61,17 @@
 	border-radius: var(--_content-border-radius);
 	padding: var(--fio-sys-size-padding-lg);
 }
+
+.aba .tab-pane-content {
+	padding: 20px!important;
+}
+
+.aba .tab-pane-content p{
+	font-size: var(--fio-sys-typography-size--1);
+}
+
+
+
 
 @media (min-width: 768px) {
 	.aba .nav {
