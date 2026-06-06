@@ -238,6 +238,9 @@ const modalInfos = {
 
 						<p class="mb-1">Fábio Carneiro</p>
 						<p class="small text-muted"><em>Designer gráfico e web designer</em></p>
+
+                        <p class="mb-1">Catarina Santiago</p>
+                        <p class="small text-muted"><em>Ilustração e designer gráfico</em></p>
 					</div>
 
 					<span class="h5 mb-3 d-block">Coordenação Acadêmica</span>
