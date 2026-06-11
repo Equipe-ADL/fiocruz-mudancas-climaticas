@@ -164,6 +164,10 @@
 	line-height: var(--fio-sys-typography-height-150);
 }
 
+.exercise .exercise__submit .exercise__submit--feedback .feedback__content strong {
+    font-size: var(--fio-sys-typography-size--1);
+}
+
 .exercise .exercise__submit .exercise__submit--feedback.exercise__submit__feedback--correct {
 	display: block !important;
 	color: var(--fio-sys-color-success-20);
