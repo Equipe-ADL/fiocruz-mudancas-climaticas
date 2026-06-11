@@ -586,24 +586,26 @@ const modalInfos = {
                                         <div class="accordion-body">
                                             <div class="list mb-5">
                                                 <ul class="list-group">
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ANAZAWA, T. M.; CARMO, R. L. do; MONTEIRO, A. M. V. <em>A grave escassez hídrica da Região Metropolitana de Campinas entre 2013 e 2015 enquanto um desastre socialmente construído:</em> abordagem metodológica multiescalar. Campinas, SP: Núcleo de Estudos de População “Elza Berquó”/Unicamp, 2017.</li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">SENA, A. R. M.; ALPINO, T. M. A. <em>Seca silenciosa, saúde invisível:</em> um desastre naturalizado no Semiárido do Brasil. Rio de Janeiro: Editora Fiocruz, 2021.</li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">SILVA, E. L. <em>Transversalidade das políticas públicas na gestão de risco de inundações</em>. Brasília: Universidade de Brasília, 2019.</li>
                                                 </ul>
                                             </div>
 
                                             <span class='d-block'><em>Bibliografia complementar</em></span>
                                             <div class="list mb-5">
                                                 <ul class="list-group">
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BARREIROS, R, et al. Entenda o que é justiça climática. <em>WRI Brasil</em>. São Paulo, 11 fev. 2025. Disponível em: <a href=' https://www.wribrasil.org.br/noticias/entenda-o-que-e-justica-climatica' target='_blank' rel='noopener noreferrer'>https://www.wribrasil.org.br/noticias/entenda-o-que-e-justica-climatica</a>. Acesso em: 07 abr. 2026.</li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">COSTA, P. V. M. Secas, desigualdades e saúde no Semiárido Brasileiro. <em>Radar Cidacs</em>. Centro de Integração de Dados e Conhecimentos para Saúde/Fiocruz Bahia. Salvador, 25 jul. 2025. Disponível em: <a href='https://cidacs.bahia.fiocruz.br/2025/07/secas-desigualdades-e-saude-no-semiarido-brasileiro/' target='_blank' rel='noopener noreferrer'>https://cidacs.bahia.fiocruz.br/2025/07/secas-desigualdades-e-saude-no-semiarido-brasileiro/</a>. Acesso em: 07 abr. 2026.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">INTERGOVERNMENTAL PANEL ON CLIMATE CHANGE (IPCC). <em>Climate Change 2023: Synthesis Report, Summary for Policymakers</em>. Geneva: IPCC, 2023.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">SALDIVA, P. Crise hídrica pode afetar saúde da população, alerta Paulo Saldiva. <em>Jornal da USP</em>. São Paulo, 05 set. 2021. Disponível em: <a href='https://jornal.usp.br/?p=432668' target='_blank' rel='noopener noreferrer'>https://jornal.usp.br/?p=432668</a>. Acesso em: 07 abr. 2026.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">UNITED NATIONS OFFICE FOR DISASTER RISK REDUCTION (UNDRR). <em>Terminology on Disaster Risk Reduction</em>. Genebra: UNDRR, 2022.</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -666,24 +668,16 @@ const modalInfos = {
                                         <div class="accordion-body">
                                             <div class="list mb-5">
                                                 <ul class="list-group">
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Ciência, Tecnologia e Inovação (MCTI). <em>Clima em síntese:</em> estudos sobre saúde e ondas de calor no Brasil (2015-2025). Brasília: MCTI, 2025. Disponível em: <a href='https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/cgcl/paginas/clima-em-sintese/clima-em-sintese_estudos-sobre-saude-e-ondas-de-calor-no-brasil-2015-2025.pdf' target='_blank' rel='noopener noreferrer'>https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/cgcl/paginas/clima-em-sintese/clima-em-sintese_estudos-sobre-saude-e-ondas-de-calor-no-brasil-2015-2025.pdf</a>. Acesso em: 20 nov. 2025.</li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">GARTLAND, Lisa. <em>Ilhas de calor:</em> como mitigar zonas de calor em áreas urbanas. Trad. Silvia Helena Gonçalves. São Paulo: Oficina de Textos, 2010. Disponível em: <a href='http://ofitexto.arquivos.s3.amazonaws.com/Degustacao-Ilhas-de-Calor.pdf' target='_blank' rel='noopener noreferrer'>http://ofitexto.arquivos.s3.amazonaws.com/Degustacao-Ilhas-de-Calor.pdf</a>. Acesso em: 20 nov. 2025.</li>
                                                 </ul>
                                             </div>
 
                                             <span class='d-block'><em>Bibliografia complementar</em></span>
                                             <div class="list mb-5">
                                                 <ul class="list-group">
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BECKER, L. <em>Entenda por que o aquecimento global também causa ondas de frio e deve piorá-las</em>. Um Só Planeta, Globo.com, 23 ago. 2024. Disponível em: <a href='https://umsoplaneta.globo.com/clima/noticia/2024/08/23/entenda-por-que-o-aquecimento-global-tambem-causa-ondas-de-frio-e-deve-piora-las.ghtml' target='_blank' rel='noopener noreferrer'>https://umsoplaneta.globo.com/clima/noticia/2024/08/23/entenda-por-que-o-aquecimento-global-tambem-causa-ondas-de-frio-e-deve-piora-las.ghtml</a>. Acesso em: 20 nov. 2025.</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -698,24 +692,18 @@ const modalInfos = {
                                         <div class="accordion-body">
                                             <div class="list mb-5">
                                                 <ul class="list-group">
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">EBI, K. L. et al. O. Hot weather and heat extremes: health risks. <em>The Lancet</em>, v. 398, n. 10301, p. 698-708, 21 Aug. 2021. DOI: 10.1016/S0140-6736(21)01208-3.</li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
-
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">TORTORA, G. J.; DERRICKSON, B. <em>Princípios de anatomia e fisiologia</em>. 14. ed. Rio de Janeiro: Guanabara Koogan, 2014.</li>
                                                 </ul>
                                             </div>
 
                                             <span class='d-block'><em>Bibliografia complementar</em></span>
                                             <div class="list mb-5">
                                                 <ul class="list-group">
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">PESQUISA FAPESP. <em>Ondas de calor e frio ameaçam a saúde</em>. YouTube. 2 mar. 2025. Vídeo (5min. 27s.). Disponível em: <a href='https://www.youtube.com/watch?v=KAOrz94tELg' target='_blank' rel='noopener noreferrer'>https://www.youtube.com/watch?v=KAOrz94tELg</a>. Acesso em: 22 nov. 2025.</li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200"></li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">ORGANIZAÇÃO Internacional do Trabalho. Garantir a segurança e saúde no trabalho num clima em mudança. <em>Síntese do relatório</em>. Genebra: OIT, 2024. Disponível em: <a href='https://www.ilo.org/sites/default/files/2024-04/OIT_SafeDay24_S%C3%ADntese-do-Relat%C3%B3rio.pdf' target='_blank' rel='noopener noreferrer'>https://www.ilo.org/sites/default/files/2024-04/OIT_SafeDay24_S%C3%ADntese-do-Relat%C3%B3rio.pdf</a>. Acesso em: 10 dez. 2025.</li>
                                                 </ul>
                                             </div>
                                         </div>
