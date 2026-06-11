@@ -1,14 +1,14 @@
 // Stick Header
 
 window.addEventListener("scroll", function () {
-    const header = document.querySelector(".header");
-    const titleHeight = document.querySelector(".header").scrollHeight;
+	const header = document.querySelector(".header");
+	const titleHeight = document.querySelector(".header").scrollHeight;
 
-    if (window.scrollY > 150) {
-        header.classList.add("header--sticky");
-    } else {
-        header.classList.remove("header--sticky");
-    }
+	if (window.scrollY > 150) {
+		header.classList.add("header--sticky");
+	} else {
+		header.classList.remove("header--sticky");
+	}
 });
 
 // (function () {
@@ -26,7 +26,7 @@ window.addEventListener("scroll", function () {
 // Popover
 var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
 var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-    return new bootstrap.Popover(popoverTriggerEl);
+	return new bootstrap.Popover(popoverTriggerEl);
 });
 
 // Botão de copiar podcast
@@ -34,33 +34,33 @@ var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
 const copyButton = document.querySelectorAll(".copy-to-clip");
 
 copyButton.forEach((btn) => {
-    btn.addEventListener("click", () => {
-        copyToClipboard(btn);
-        // tooltipShow(btn);
+	btn.addEventListener("click", () => {
+		copyToClipboard(btn);
+		// tooltipShow(btn);
 
-        tooltipFeedback(btn);
-    });
+		tooltipFeedback(btn);
+	});
 });
 
 function copyToClipboard(e) {
-    const textToCopy = e.getAttribute("data-link");
-    const textarea = document.createElement("textarea");
-    textarea.setAttribute("readonly", "");
-    textarea.style.position = "absolute";
-    textarea.value = textToCopy;
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand("copy");
-    document.body.removeChild(textarea);
+	const textToCopy = e.getAttribute("data-link");
+	const textarea = document.createElement("textarea");
+	textarea.setAttribute("readonly", "");
+	textarea.style.position = "absolute";
+	textarea.value = textToCopy;
+	document.body.appendChild(textarea);
+	textarea.select();
+	document.execCommand("copy");
+	document.body.removeChild(textarea);
 }
 function tooltipFeedback(b) {
-    let feedback = $('[data-toggle="tooltip"]');
+	let feedback = $('[data-toggle="tooltip"]');
 
-    // feedback.tooltip('show');
+	// feedback.tooltip('show');
 
-    b.addEventListener("mouseout", () => {
-        feedback.tooltip("hide");
-    });
+	b.addEventListener("mouseout", () => {
+		feedback.tooltip("hide");
+	});
 }
 
 // Lightbox (insert the class "lightbox" into <figure>)
@@ -68,36 +68,36 @@ function tooltipFeedback(b) {
 const imageToLightbox = document.querySelectorAll(".lightbox");
 
 imageToLightbox.forEach((image) => {
-    image.addEventListener("click", () => {
-        if (!image.classList.contains("lightbox--show")) {
-            const getImage = image.querySelector("img");
-            const getImageSrc = getImage.getAttribute("src");
-            const imageLightbox = document.createElement("div");
+	image.addEventListener("click", () => {
+		if (!image.classList.contains("lightbox--show")) {
+			const getImage = image.querySelector("img");
+			const getImageSrc = getImage.getAttribute("src");
+			const imageLightbox = document.createElement("div");
 
-            imageLightbox.classList.add("lightbox__image");
+			imageLightbox.classList.add("lightbox__image");
 
-            document.body.appendChild(imageLightbox);
-            imageLightbox.innerHTML = `<img src="${getImageSrc}"/>`;
-            console.log(getImageSrc);
+			document.body.appendChild(imageLightbox);
+			imageLightbox.innerHTML = `<img src="${getImageSrc}"/>`;
+			console.log(getImageSrc);
 
-            image.classList.add("lightbox--show");
+			image.classList.add("lightbox--show");
 
-            document.body.style.overflow = "hidden";
-            document.body.style.userSelect = "none";
+			document.body.style.overflow = "hidden";
+			document.body.style.userSelect = "none";
 
-            closeLightbox(imageLightbox);
-        }
+			closeLightbox(imageLightbox);
+		}
 
-        function closeLightbox(e) {
-            const lightboxOpen = document.querySelector(".lightbox__image");
-            e.addEventListener("click", () => {
-                document.body.removeChild(e);
-                image.classList.remove("lightbox--show");
-                document.body.style.overflow = "auto";
-                document.body.style.userSelect = "auto";
-            });
-        }
-    });
+		function closeLightbox(e) {
+			const lightboxOpen = document.querySelector(".lightbox__image");
+			e.addEventListener("click", () => {
+				document.body.removeChild(e);
+				image.classList.remove("lightbox--show");
+				document.body.style.overflow = "auto";
+				document.body.style.userSelect = "auto";
+			});
+		}
+	});
 });
 
 // Lightbox Scroll (insert the class "lightbox-scroll" into <figure>)
@@ -105,36 +105,36 @@ imageToLightbox.forEach((image) => {
 const imageToLightboxWithScroll = document.querySelectorAll(".lightbox-scroll");
 
 imageToLightboxWithScroll.forEach((imageScroll) => {
-    imageScroll.addEventListener("click", () => {
-        if (!imageScroll.classList.contains("lightbox-scroll--show")) {
-            const getImageScroll = imageScroll.querySelector("img");
-            const getImageScrollSrc = getImageScroll.getAttribute("src");
-            const imageLightboxScroll = document.createElement("div");
+	imageScroll.addEventListener("click", () => {
+		if (!imageScroll.classList.contains("lightbox-scroll--show")) {
+			const getImageScroll = imageScroll.querySelector("img");
+			const getImageScrollSrc = getImageScroll.getAttribute("src");
+			const imageLightboxScroll = document.createElement("div");
 
-            imageLightboxScroll.classList.add("lightbox-scroll__image");
+			imageLightboxScroll.classList.add("lightbox-scroll__image");
 
-            document.body.appendChild(imageLightboxScroll);
-            imageLightboxScroll.innerHTML = `<img src="${getImageScrollSrc}"/>`;
-            console.log(getImageScrollSrc);
+			document.body.appendChild(imageLightboxScroll);
+			imageLightboxScroll.innerHTML = `<img src="${getImageScrollSrc}"/>`;
+			console.log(getImageScrollSrc);
 
-            imageScroll.classList.add("lightbox-scroll--show");
+			imageScroll.classList.add("lightbox-scroll--show");
 
-            document.body.style.overflow = "hidden";
-            document.body.style.userSelect = "none";
+			document.body.style.overflow = "hidden";
+			document.body.style.userSelect = "none";
 
-            closeLightboxScroll(imageLightboxScroll);
-        }
+			closeLightboxScroll(imageLightboxScroll);
+		}
 
-        function closeLightboxScroll(s) {
-            const lightboxScrollOpen = document.querySelector(".lightbox-scroll__image");
-            s.addEventListener("click", () => {
-                document.body.removeChild(s);
-                imageScroll.classList.remove("lightbox-scroll--show");
-                document.body.style.overflow = "auto";
-                document.body.style.userSelect = "auto";
-            });
-        }
-    });
+		function closeLightboxScroll(s) {
+			const lightboxScrollOpen = document.querySelector(".lightbox-scroll__image");
+			s.addEventListener("click", () => {
+				document.body.removeChild(s);
+				imageScroll.classList.remove("lightbox-scroll--show");
+				document.body.style.overflow = "auto";
+				document.body.style.userSelect = "auto";
+			});
+		}
+	});
 });
 
 // Boxes - inserir o título de acordo com o atributo
@@ -142,20 +142,20 @@ imageToLightboxWithScroll.forEach((imageScroll) => {
 const boxes = document.querySelectorAll(".box");
 
 boxes.forEach((box) => {
-    const boxAttribute = box.getAttribute("data-box");
+	const boxAttribute = box.getAttribute("data-box");
 
-    const boxLabel = box.querySelector(".label");
+	const boxLabel = box.querySelector(".label");
 
-    boxLabel.innerHTML = boxAttribute;
+	boxLabel.innerHTML = boxAttribute;
 });
 
 // Modal - Criação dos modais principais
 const modalInfos = {
-    creditos: {
-        ariaLabel: "creditos",
-        modalSize: "modal-lg",
-        modalTitle: "Créditos",
-        modalBody: `
+	creditos: {
+		ariaLabel: "creditos",
+		modalSize: "modal-lg",
+		modalTitle: "Créditos",
+		modalBody: `
 			<div class="row justify-content-center pt-5">
 				<div class="col-12 col-md-10 col-lg-10">
 					<span class="h5 mb-3 d-block">Ministério da Saúde</span>
@@ -290,12 +290,12 @@ const modalInfos = {
 				</div>
 			</div>
 		`,
-    },
-    bibliografia: {
-        ariaLabel: "bibliografia",
-        modalSize: "modal-xl",
-        modalTitle: "Bibliografia",
-        modalBody: `
+	},
+	bibliografia: {
+		ariaLabel: "bibliografia",
+		modalSize: "modal-xl",
+		modalTitle: "Bibliografia",
+		modalBody: `
 		<div class="row justify-content-center pt-5">
     <div class="col-12 col-md-11">
         <div class="mb-5">
@@ -859,12 +859,12 @@ const modalInfos = {
     </div>
 </div>
 		`,
-    },
-    materialcomplementar: {
-        ariaLabel: "materialcomplementar",
-        modalSize: "modal-xl",
-        modalTitle: "Material Complementar",
-        modalBody: `
+	},
+	materialcomplementar: {
+		ariaLabel: "materialcomplementar",
+		modalSize: "modal-xl",
+		modalTitle: "Material Complementar",
+		modalBody: `
 			<div class="row justify-content-center pt-5">
     <div class="col-12 col-md-11">
         <div class="mb-5">
@@ -1476,12 +1476,12 @@ const modalInfos = {
     </div>
 </div>
 		`,
-    },
-    glossario: {
-        ariaLabel: "glossario",
-        modalSize: "modal-lg",
-        modalTitle: "Glossário",
-        modalBody: `
+	},
+	glossario: {
+		ariaLabel: "glossario",
+		modalSize: "modal-lg",
+		modalTitle: "Glossário",
+		modalBody: `
 			<div class="aba">
 				<ul class="nav nav-pills nav-fill mb-3" id="pills-tab" role="tablist">
 					<li class="nav-item" role="presentation">
@@ -1940,39 +1940,39 @@ const modalInfos = {
 				</div>
 			</div>
 		`,
-    },
+	},
 };
 
 // Get all buttons and links that have "modal" in the data-bs-toggle
 const modalButtons = document.querySelectorAll('[data-bs-toggle="modal"]');
 
 document.addEventListener("DOMContentLoaded", function (event) {
-    //do work
+	//do work
 
-    modalButtons.forEach((btn) => {
-        // Check if the modal exist
-        const modalId = btn.getAttribute("data-bs-target").slice(1);
+	modalButtons.forEach((btn) => {
+		// Check if the modal exist
+		const modalId = btn.getAttribute("data-bs-target").slice(1);
 
-        const createdModalId = document.getElementById(modalId);
+		const createdModalId = document.getElementById(modalId);
 
-        if (!createdModalId) {
-            // If don't exist create one
-            createModal(modalId);
-        }
-    });
+		if (!createdModalId) {
+			// If don't exist create one
+			createModal(modalId);
+		}
+	});
 });
 
 function createModal(id) {
-    const newModal = document.createElement("div");
-    const modalLabel = id.slice(6);
+	const newModal = document.createElement("div");
+	const modalLabel = id.slice(6);
 
-    newModal.classList.add("modal", "fade");
-    newModal.setAttribute("id", id);
-    newModal.setAttribute("tabindex", "-1");
-    newModal.setAttribute("aria-labelledby", modalLabel);
-    newModal.setAttribute("aria-hidden", "true");
+	newModal.classList.add("modal", "fade");
+	newModal.setAttribute("id", id);
+	newModal.setAttribute("tabindex", "-1");
+	newModal.setAttribute("aria-labelledby", modalLabel);
+	newModal.setAttribute("aria-hidden", "true");
 
-    newModal.innerHTML = `
+	newModal.innerHTML = `
 		<div class="modal-dialog ${modalInfos[modalLabel].modalSize}">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -1989,11 +1989,64 @@ function createModal(id) {
 		</div>
 	`;
 
-    document.body.appendChild(newModal);
+	document.body.appendChild(newModal);
 }
 
 //Before and after
-const container = document.querySelector('.antes-e-depois--container');
-document.querySelector('.antes-e-depois--slider').addEventListener('input', e => {
-	container.style.setProperty('--position', `${e.target.value}%`);
-});
+// const container = document.querySelector(".antes-e-depois--container");
+// document.querySelector(".antes-e-depois--slider").addEventListener("input", (e) => {
+// 	container.style.setProperty("--position", `${e.target.value}%`);
+// });
+
+// Botão Back to top
+
+function initBackToTop() {
+	// evita criar duas vezes
+	if (document.querySelector(".back-to-top")) return;
+
+	// não cria se a página for muito pequena
+	if (document.body.scrollHeight < window.innerHeight + 200) return;
+
+	const backToTop = document.querySelector(".back-to-top");
+
+	if (document.querySelector(".sidebar-show")) {
+		// document.querySelector(".back-to-top.show").classList.toggle("show");
+		backToTop?.classList.remove("hidden");
+	} else {
+		backToTop?.classList.add("hidden");
+	}
+
+	const button = document.createElement("button");
+
+	button.className = "back-to-top btn btn-primary";
+
+	button.setAttribute("aria-label", "Voltar ao topo");
+
+	button.innerHTML = `
+		<span class="material-symbols-rounded">
+			keyboard_arrow_up
+		</span>
+	`;
+
+	document.body.appendChild(button);
+
+	window.addEventListener("scroll", () => {
+		button.classList.toggle("show", window.scrollY > 400);
+	});
+
+	button.addEventListener("click", () => {
+		window.scrollTo({
+			top: 0,
+			behavior: "smooth",
+		});
+	});
+}
+
+initBackToTop();
+
+if (document.querySelector(".sidebar-show")) {
+	// document.querySelector(".back-to-top.show").classList.toggle("show");
+	backToTop?.classList.remove("hidden");
+} else {
+	backToTop?.classList.add("hidden");
+}

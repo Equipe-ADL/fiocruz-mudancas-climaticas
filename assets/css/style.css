@@ -6,6 +6,7 @@
 @import "../../sources/animate/aos/dist/aos.css";
 @import "colors.css";
 @import "sidebar.css";
+@import "components/backtotop.css";
 @import "header.css";
 @import "components/page-title.css";
 @import "footer.css";
@@ -414,4 +415,10 @@ section .page-nav .fio-button {
 	.mobile-only {
 		display: none;
 	}
+}
+
+.back-to-top.hidden {
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
 }
