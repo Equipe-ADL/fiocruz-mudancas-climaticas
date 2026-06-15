@@ -2002,23 +2002,16 @@ function createModal(id) {
 
 function initBackToTop() {
 	// evita criar duas vezes
-	if (document.querySelector(".back-to-top")) return;
+	if (document.querySelector("#back-to-top")) return;
 
 	// não cria se a página for muito pequena
 	if (document.body.scrollHeight < window.innerHeight + 200) return;
 
-	const backToTop = document.querySelector(".back-to-top");
-
-	if (document.querySelector(".sidebar-show")) {
-		// document.querySelector(".back-to-top.show").classList.toggle("show");
-		backToTop?.classList.remove("hidden");
-	} else {
-		backToTop?.classList.add("hidden");
-	}
-
 	const button = document.createElement("button");
 
-	button.className = "back-to-top btn btn-primary";
+	button.id = "back-to-top";
+
+	button.className = "fio-button fio-button-primary";
 
 	button.setAttribute("aria-label", "Voltar ao topo");
 
@@ -2043,10 +2036,3 @@ function initBackToTop() {
 }
 
 initBackToTop();
-
-if (document.querySelector(".sidebar-show")) {
-	// document.querySelector(".back-to-top.show").classList.toggle("show");
-	backToTop?.classList.remove("hidden");
-} else {
-	backToTop?.classList.add("hidden");
-}

@@ -417,7 +417,7 @@ section .page-nav .fio-button {
 	}
 }
 
-.back-to-top.hidden {
+#back-to-top.hidden {
 	opacity: 0;
 	visibility: hidden;
 	pointer-events: none;
