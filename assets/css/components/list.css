@@ -45,35 +45,39 @@
 	vertical-align: middle;
 }
 
-.list .list-group .list-group-item[list-style="video"]::before {
+.list .list-group .list-group-item[list-style="video"]::before,
+.list .list-group .list-group-item[data-list-style="video"]::before {
 	color: #D06719;
 	content: "movie";
 	font-family: "Material Symbols Rounded";
 	vertical-align: middle;
 }
 
-.list .list-group .list-group-item[list-style="audio"]::before {
+.list .list-group .list-group-item[list-style="audio"]::before,
+.list .list-group .list-group-item[data-list-style="audio"]::before {
 	color: #D06719;
 	content: "headphones";
 	font-family: "Material Symbols Rounded";
 	vertical-align: middle;
 }
 
-.list .list-group .list-group-item[list-style="file"]::before {
+.list .list-group .list-group-item[list-style="file"]::before,
+.list .list-group .list-group-item[data-list-style="file"]::before {
 	color: #D06719;
 	content: "article";
 	font-family: "Material Symbols Rounded";
 	vertical-align: middle;
 }
 
-.list .list-group .list-group-item[list-style="page"]::before {
+.list .list-group .list-group-item[list-style="page"]::before,
+.list .list-group .list-group-item[data-list-style="page"]::before {
 	color: #D06719;
-	content: "tab";
-	font-family: "Material Symbols Rounded";
+s	font-family: "Material Symbols Rounded";
 	vertical-align: middle;
 }
 
-.list .list-group .list-group-item[list-style="none"]::before {
+.list .list-group .list-group-item[list-style="none"]::before,
+.list .list-group .list-group-item[data-list-style="none"]::before {
 	content: "";
 	display: none;
 	/* list-style: none; */
