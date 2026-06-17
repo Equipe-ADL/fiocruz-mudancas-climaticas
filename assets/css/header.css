@@ -96,7 +96,8 @@
 	flex-wrap: nowrap;
 
 	.nav-item {
-		> a {
+		> a,
+		> button {
 			padding-right: 20px;
 			font-size: var(--fio-sys-typography-size--1);
 			text-transform: uppercase;
@@ -105,7 +106,12 @@
 			font-family: var(--fio-sys-typography-family-primary);
 			font-weight: 500;
 			color: var(--_nav-link-color);
+
+			&.dropdown-toggle::after {
+				display:none;
+			}
 		}
+
 		.material-symbols-rounded {
 			font-variation-settings:
 				"FILL" 0,

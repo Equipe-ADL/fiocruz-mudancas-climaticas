@@ -281,11 +281,13 @@ section {
 .media .media__transcription .transcription-button {
 	color: var(--fio-sys-color-primary-20);
 	border-color: var(--fio-sys-color-primary-20);
+	background:transparent;
 }
 
 .media .media__transcription .transcription-button:hover {
 	color: var(--fio-sys-color-primary-40);
 	border-color: var(--fio-sys-color-primary-40);
+	background: var(--fio-sys-color-primary-30)!important;
 }
 
 /* .media .media__transcription .transcription-button:focus {
