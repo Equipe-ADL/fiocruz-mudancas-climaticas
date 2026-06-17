@@ -2036,3 +2036,81 @@ function initBackToTop() {
 }
 
 initBackToTop();
+
+/* Breadcrumb */
+
+function getCurrentPageData() {
+	const currentPath = window.location.pathname;
+
+	for (let moduleIndex = 0; moduleIndex < course.modules.length; moduleIndex++) {
+		const module = course.modules[moduleIndex];
+
+		for (let itemIndex = 0; itemIndex < module.items.length; itemIndex++) {
+			const item = module.items[itemIndex];
+
+			if (currentPath.endsWith(item.path)) {
+				return {
+					moduleIndex,
+					itemIndex,
+					module,
+					item,
+				};
+			}
+		}
+	}
+
+	return null;
+}
+
+function initBreadcrumb() {
+	const breadcrumb = document.getElementById("breadcrumb");
+
+	if (!breadcrumb) return;
+
+	const pageData = getCurrentPageData();
+
+	if (!pageData) return;
+
+	const moduleNumber = pageData.moduleIndex + 1;
+
+	let itemLabel = "";
+
+	switch (pageData.item.icon) {
+		case "activity":
+			itemLabel = "Atividades";
+			break;
+
+		case "welcome":
+			itemLabel = "Introdução";
+			break;
+
+		case "closing":
+			itemLabel = "Encerramento";
+			break;
+
+		default:
+			itemLabel = `Aula ${pageData.itemIndex + 1}`;
+	}
+
+	breadcrumb.innerHTML = `
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb">
+
+				<li class="breadcrumb-item">
+					Início
+				</li>
+
+				<li class="breadcrumb-item">
+					Módulo ${moduleNumber}
+				</li>
+
+				<li class="breadcrumb-item active" aria-current="page">
+					${itemLabel}
+				</li>
+
+			</ol>
+		</nav>
+	`;
+}
+
+initBreadcrumb();
