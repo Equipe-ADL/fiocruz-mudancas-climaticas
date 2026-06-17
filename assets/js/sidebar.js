@@ -467,9 +467,12 @@ function initSidebar() {
 
 		const html = document.querySelector("html");
 
+		const backToTop = document.querySelector("#back-to-top");
+
 		if (open) {
 			open.addEventListener("click", () => {
 				sidebarRoot.classList.add("sidebar-show");
+				backToTop.classList.toggle("hidden");
 
 				html.classList.add("html-overflow");
 			});
@@ -478,6 +481,7 @@ function initSidebar() {
 		if (close) {
 			close.addEventListener("click", () => {
 				sidebarRoot.classList.remove("sidebar-show");
+				backToTop.classList.toggle("hidden");
 
 				html.classList.remove("html-overflow");
 			});

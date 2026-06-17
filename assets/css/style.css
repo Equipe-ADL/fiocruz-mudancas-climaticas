@@ -6,6 +6,8 @@
 @import "../../sources/animate/aos/dist/aos.css";
 @import "colors.css";
 @import "sidebar.css";
+@import "components/backtotop.css";
+@import "components/breadcrumb.css";
 @import "header.css";
 @import "components/page-title.css";
 @import "footer.css";
