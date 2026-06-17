@@ -2025,7 +2025,7 @@ function initBackToTop() {
 
 initBackToTop();
 
-/* Breadcrumb */
+//Breadcrumb
 
 function getCurrentPageData() {
 	const currentPath = window.location.pathname;
@@ -2102,3 +2102,22 @@ function initBreadcrumb() {
 }
 
 initBreadcrumb();
+
+//Impedir de baixar os vídeos direto da página
+
+// Seleciona todos os vídeos com a classe .video-protegido
+const videosProtegidos = document.querySelectorAll('.video-protegido');
+
+videosProtegidos.forEach(function(video) {
+    // 1. Remove o botão de download de forma nativa via API de controles do navegador
+    if (video.controlsOptions) {
+        video.controlsOptions.disableRemotePlayback = true; // Opcional: desativa espelhamento se desejar
+    }
+    // Esta propriedade desativa recursos específicos do painel (como o download)
+    video.setAttribute('controlslist', 'nodownload'); 
+
+    // 2. Mantém o bloqueio do clique com botão direito que já tínhamos feito
+    video.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+});

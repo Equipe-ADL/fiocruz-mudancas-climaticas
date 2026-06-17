@@ -150,3 +150,13 @@ audio::-webkit-media-controls-panel {
 .box .card .media .media__transcription .transcription-content {
 	text-align: start;
 }
+
+/* Esconde o botão de download nativo nos navegadores Chrome, Edge e Safari */
+video::-webkit-media-controls-download-button {
+    display: none !important;
+}
+
+/* Garante que o painel de controle não crie espaçamentos extras ou tente exibir o botão oculto */
+video::-webkit-media-controls-enclosure {
+    overflow: hidden !important;
+}
