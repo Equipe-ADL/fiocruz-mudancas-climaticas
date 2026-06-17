@@ -28,6 +28,14 @@
 			margin-bottom: 0;
 
 			.breadcrumb-item {
+				a {
+					color: var(--_breadcrumb-color);
+
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+
 				&.active {
 					color: var(--_breadcrumb-color);
 				}

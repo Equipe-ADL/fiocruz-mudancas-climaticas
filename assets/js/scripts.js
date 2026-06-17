@@ -2097,7 +2097,7 @@ function initBreadcrumb() {
 			<ol class="breadcrumb">
 
 				<li class="breadcrumb-item">
-					Início
+					<a href="../index.html">Início</a>
 				</li>
 
 				<li class="breadcrumb-item">
