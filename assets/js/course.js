@@ -57,7 +57,7 @@ const course = {
 				//{ type: "link", icon: "welcome", title: "Introdução", path: "/modulo5/introducao.html" },
 				{ type: "link", icon: "lesson", title: "Incêndios florestais e queimadas", path: "/modulo5/aula1.html" },
 				{ type: "link", icon: "lesson", title: "Os efeitos das queimadas e dos incêndios florestais na saúde", path: "/modulo5/aula2.html" },
-				{ type: "link", icon: "lesson", title: "Atuação da APS diante destes eventos em todas as etapas GRDE em Saúde", path: "/modulo5/aula3.html" },
+				{ type: "link", icon: "lesson", title: "Atuação da APS diante de queimadas e incêndios florestais nas etapas da GRDE em Saúde", path: "/modulo5/aula3.html" },
 				{ type: "link", icon: "activity", title: "Atividades", path: "/modulo5/atividades.html"},
 				//{ type: "link", icon: "closing", title: "Encerramento", path: "/modulo5/encerramento.html" },
 			],

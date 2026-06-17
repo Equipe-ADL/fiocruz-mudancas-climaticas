@@ -67,11 +67,8 @@
 }
 
 .aba .tab-pane-content p{
-	font-size: var(--fio-sys-typography-size--1);
+	font-size: var(--fio-sys-typography-size-0);
 }
-
-
-
 
 @media (min-width: 768px) {
 	.aba .nav {
