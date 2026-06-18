@@ -61,7 +61,15 @@
 </head>
 
 <body>
-	<header class="header">
+	<div id="links-acessibilidade">
+		<a href="#links-acessibilidade" accesskey="1" class="skip-link">Aperte TAB e escolha uma área da página</a>
+		<a href="#menu-global" accesskey="2" class="skip-link">Ir para o menu global de navegação</a>
+		<a href="#sidebar" accesskey="3" class="skip-link">Ir para o menu de navegação dos módulos</a>
+		<a href="#conteudo-principal" accesskey="4" class="skip-link">Ir para o conteúdo da página</a>
+		<a href="#nav-topics" accesskey="5" class="skip-link">Ir para o final da página</a>
+	</div>
+
+	<header id="menu-global" class="header">
 		<div class="mobile-toggle-open">
 			<a class="mobile-toggle__button" tabindex="0" role="button">
 				<span class="icon material-symbols-rounded">read_more</span>
@@ -95,10 +103,10 @@
 
 	<div class="main">
 		<a id="hidebar-button" role="button" tabindex="0"></a>
-        <div id="breadcrumb"></div>
 		<div id="sidebar" role="navigation"></div>
 		<div id="page" class="content">
 			<div id="page-title" class="mod3">
+				<div id="breadcrumb"></div>
 				<div class="container">
 					<div class="row align-items-center justify-content-start">
 						<div class="col-12 col-md-10 col-lg-9 col-xxl-8 offset-md-1 offset-lg-2 ps-0">
@@ -691,18 +699,18 @@
 	<script src="../assets/js/scripts.js"></script>
 	<script src="../assets/js/custom-anime.js"></script>
 	<script src="../sources/animate/aos/dist/aos.js"></script>
-	    <script>
-        AOS.init();
-    </script>
-    <noscript>
-        <p class="visually-hidden">Este site utiliza recursos de animação que dependem de JavaScript para execução visual.</p>
-    </noscript>
+	<script>
+		AOS.init();
+	</script>
+	<noscript>
+		<p class="visually-hidden">Este site utiliza recursos de animação que dependem de JavaScript para execução visual.</p>
+	</noscript>
 
 	<!-- Swiper -->
 	<script src="../assets/js/swiper-bundle.min.js"></script>
 	<script src="../assets/js/swiper-init.js"></script>
 
-<div class="modal fade" id="modal-megamenu" tabindex="-1" role="dialog" aria-labelledby="modulos-megamenu" aria-hidden="true" aria-modal="true">
+	<div class="modal fade" id="modal-megamenu" tabindex="-1" role="dialog" aria-labelledby="modulos-megamenu" aria-hidden="true" aria-modal="true">
 		<div class="modal-dialog modal-fullscreen" style="top: 80px; max-height: calc(-80px + 100dvh); height: auto;">
 			<div class="modal-content" style="border-top-left-radius: 0;border-top-right-radius: 0;">
 				<!-- <div class="modal-header">

@@ -61,7 +61,15 @@
 </head>
 
 <body>
-	<header class="header">
+	<div id="links-acessibilidade">
+		<a href="#links-acessibilidade" accesskey="1" class="skip-link">Aperte TAB e escolha uma área da página</a>
+		<a href="#menu-global" accesskey="2" class="skip-link">Ir para o menu global de navegação</a>
+		<a href="#sidebar" accesskey="3" class="skip-link">Ir para o menu de navegação dos módulos</a>
+		<a href="#conteudo-principal" accesskey="4" class="skip-link">Ir para o conteúdo da página</a>
+		<a href="#nav-topics" accesskey="5" class="skip-link">Ir para o final da página</a>
+	</div>
+
+	<header id="menu-global" class="header">
 		<div class="mobile-toggle-open">
 			<a class="mobile-toggle__button" tabindex="0" role="button">
 				<span class="icon material-symbols-rounded">read_more</span>
@@ -95,10 +103,10 @@
 
 	<div class="main">
 		<a id="hidebar-button" role="button" tabindex="0"></a>
-        <div id="breadcrumb"></div>
 		<div id="sidebar" role="navigation"></div>
 		<div id="page" class="content">
 			<div id="page-title" class="mod4">
+				<div id="breadcrumb"></div>
 				<div class="container">
 					<div class="row align-items-center justify-content-start">
 						<div class="col-12 col-md-10 col-lg-9 col-xxl-8 offset-md-1 offset-lg-2 ps-0">
@@ -491,18 +499,18 @@
 											<span class="icone material-symbols-rounded" aria-hidden="true"></span>
 											<span class="label">atenção</span>
 										</div>
-								
+
 										<div class="custom-shape-divider-top-1751890676">
-								
+
 										</div>
 										<div class="card-body">
 											<div>
 												<p>Independentemente da definição utilizada, precisamos nos lembrar de que mesmo as menores ondas de calor já podem impactar negativamente a saúde humana. Além disso, quanto maior e mais intensa a onda de calor, pior será o resultado para a saúde das pessoas e para o sistema de saúde.</p>
 											</div>
 										</div>
-								
+
 										<div class="custom-shape-divider-bottom-1751890016">
-								
+
 										</div>
 									</div>
 								</div>
@@ -525,11 +533,11 @@
 											<figcaption class="figure-caption fonte">Fonte: Fernando Frazão/ Agência Brasil</figcaption>
 										</figure>
 									</div>
-								
+
 									<!-- Texto -->
 									<div class="order-2 order-lg-1">
 										<p>Para entendermos a ocorrência e os potenciais efeitos de ondas de calor e de frio, também precisamos conhecer alguns fatores que podem estar associados à maior intensidade de uma onda de calor. Fatores como a presença de área verde podem reduzir a temperatura local, enquanto uma maior densidade populacional ou a poluição do ar podem intensificar a temperatura e tornar a onda de calor, por exemplo, ainda pior. </p>
-										
+
 										<p>Os ambientes urbanos são especialmente favoráveis para intensificar as ondas de calor. Nas cidades, há muito mais áreas construídas e grandes superfícies asfaltadas cobrindo o solo. Isso impede que o solo absorva e disperse a radiação solar de forma natural, fazendo com que o calor fique retido e aumentando ainda mais a temperatura local.</p>
 
 										<p>As áreas urbanas também têm muitos edifícios altos, que bloqueiam a circulação dos ventos e dificultam a movimentação do ar, reduzindo a dissipação do calor. Além disso, a poluição produzida por fábricas e veículos piora a qualidade do ar e pode agravar os riscos à saúde durante uma onda de calor. Esses ambientes com características que favorecem a intensificação do calor são chamados de “ilhas de calor”. Por outro lado, áreas com presença de vegetação, solo exposto ou corpos d’água tendem a aumentar o conforto térmico, reduzindo a temperatura local.</p>
@@ -564,18 +572,18 @@
 											<span class="icone material-symbols-rounded" aria-hidden="true"></span>
 											<span class="label">atenção</span>
 										</div>
-								
+
 										<div class="custom-shape-divider-top-1751890676">
-								
+
 										</div>
 										<div class="card-body">
 											<div>
 												<p>Alguns fatores ambientais podem ajudar a amenizar os efeitos das ondas de calor, como a presença de rios, lagos, represas e até áreas úmidas, que contribuem para reduzir a temperatura do ambiente ao redor. O relevo também influencia, já que regiões mais altas tendem a apresentar temperaturas naturalmente mais amenas do que áreas localizadas em baixadas ou vales, onde o ar quente costuma ficar mais concentrado.</p>
 											</div>
 										</div>
-								
+
 										<div class="custom-shape-divider-bottom-1751890016">
-								
+
 										</div>
 									</div>
 								</div>
@@ -649,18 +657,18 @@
 	<script src="../assets/js/scripts.js"></script>
 	<script src="../assets/js/custom-anime.js"></script>
 	<script src="../sources/animate/aos/dist/aos.js"></script>
-	    <script>
-        AOS.init();
-    </script>
-    <noscript>
-        <p class="visually-hidden">Este site utiliza recursos de animação que dependem de JavaScript para execução visual.</p>
-    </noscript>
+	<script>
+		AOS.init();
+	</script>
+	<noscript>
+		<p class="visually-hidden">Este site utiliza recursos de animação que dependem de JavaScript para execução visual.</p>
+	</noscript>
 
 	<!-- Swiper -->
 	<script src="../assets/js/swiper-bundle.min.js"></script>
 	<script src="../assets/js/swiper-init.js"></script>
 
-<div class="modal fade" id="modal-megamenu" tabindex="-1" role="dialog" aria-labelledby="modulos-megamenu" aria-hidden="true" aria-modal="true">
+	<div class="modal fade" id="modal-megamenu" tabindex="-1" role="dialog" aria-labelledby="modulos-megamenu" aria-hidden="true" aria-modal="true">
 		<div class="modal-dialog modal-fullscreen" style="top: 80px; max-height: calc(-80px + 100dvh); height: auto;">
 			<div class="modal-content" style="border-top-left-radius: 0;border-top-right-radius: 0;">
 				<!-- <div class="modal-header">

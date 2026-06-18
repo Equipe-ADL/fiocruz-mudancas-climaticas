@@ -60,7 +60,15 @@
 </head>
 
 <body>
-	<header class="header">
+	<div id="links-acessibilidade">
+		<a href="#links-acessibilidade" accesskey="1" class="skip-link">Aperte TAB e escolha uma área da página</a>
+		<a href="#menu-global" accesskey="2" class="skip-link">Ir para o menu global de navegação</a>
+		<a href="#sidebar" accesskey="3" class="skip-link">Ir para o menu de navegação dos módulos</a>
+		<a href="#conteudo-principal" accesskey="4" class="skip-link">Ir para o conteúdo da página</a>
+		<a href="#nav-topics" accesskey="5" class="skip-link">Ir para o final da página</a>
+	</div>
+
+	<header id="menu-global" class="header">
 		<div class="mobile-toggle-open">
 			<a class="mobile-toggle__button" tabindex="0" role="button">
 				<span class="icon material-symbols-rounded">read_more</span>
@@ -94,10 +102,10 @@
 
 	<div class="main">
 		<a id="hidebar-button" role="button" tabindex="0"></a>
-        <div id="breadcrumb"></div>
 		<div id="sidebar" role="navigation"></div>
 		<div id="page" class="content">
 			<div id="page-title" class="mod2">
+				<div id="breadcrumb"></div>
 				<div class="container">
 					<div class="row align-items-center justify-content-start">
 						<div class="col-12 col-md-10 col-lg-9 col-xxl-8 offset-md-1 offset-lg-2 ps-0">
@@ -341,12 +349,12 @@
 	<script src="../assets/js/custom-anime.js"></script>
 	<script src="../assets/js/exercise.js"></script>
 	<script src="../sources/animate/aos/dist/aos.js"></script>
-	    <script>
-        AOS.init();
-    </script>
-    <noscript>
-        <p class="visually-hidden">Este site utiliza recursos de animação que dependem de JavaScript para execução visual.</p>
-    </noscript>
+	<script>
+		AOS.init();
+	</script>
+	<noscript>
+		<p class="visually-hidden">Este site utiliza recursos de animação que dependem de JavaScript para execução visual.</p>
+	</noscript>
 
 
 	<!-- Swiper -->
@@ -354,147 +362,147 @@
 	<script src="../assets/js/swiper-init.js"></script>
 
 	<div class="modal fade" id="modal-megamenu" tabindex="-1" role="dialog" aria-labelledby="modulos-megamenu" aria-hidden="true" aria-modal="true">
-	<div class="modal-dialog modal-fullscreen" style="top: 80px; max-height: calc(-80px + 100dvh); height: auto;">
-		<div class="modal-content" style="border-top-left-radius: 0;border-top-right-radius: 0;">
-			<!-- <div class="modal-header">
+		<div class="modal-dialog modal-fullscreen" style="top: 80px; max-height: calc(-80px + 100dvh); height: auto;">
+			<div class="modal-content" style="border-top-left-radius: 0;border-top-right-radius: 0;">
+				<!-- <div class="modal-header">
 					<h5 id="modulos-megamenu" class="modal-title">Modal title</h5>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div> -->
-			<div class="modal-body">
-				<div class="row">
-					<div class="col-12 col-md-6 col-lg-4 mb-5">
-						<div class="modulo border rounded h-100 p-3">
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-12 col-md-6 col-lg-4 mb-5">
+							<div class="modulo border rounded h-100 p-3">
 
-							<span class="label">Módulo 1</span>
-							<span class="mt-3 h6 d-block">Mudanças climáticas em saúde</span>
-							<div class="list">
-								<ul class="list-group">
-									<li class="list-group-item" data-list-style="none">
-										<a href="../modulo1/aula1.html"><strong>Aula 1</strong> |
-											Impactos ambientais das Mudanças Climáticas e efeitos na saúde</a>
-									</li>
-									<li class="list-group-item" data-list-style="none">
-										<a href="../modulo1/aula2.html"><strong>Aula 2</strong>
-											| Conceitos principais: Emergências em Saúde Pública e eventos climáticos extremos</a>
-									</li>
-									<li class="list-group-item" data-list-style="none">
-										<a href="../modulo1/aula3.html"><strong>Aula 3</strong>
-											| Gestão de Riscos de Desastres e Emergências em Saúde (GRDE em Saúde)</a>
-									</li>
-									<li class="list-group-item" data-list-style="none">
-										<a href="../modulo1/aula4.html"><strong>Aula 4</strong>
-											| A APS como área estruturante do cuidado integral à saúde e sua atuação na GRDE em Saúde</a>
-									</li>
-								</ul>
+								<span class="label">Módulo 1</span>
+								<span class="mt-3 h6 d-block">Mudanças climáticas em saúde</span>
+								<div class="list">
+									<ul class="list-group">
+										<li class="list-group-item" data-list-style="none">
+											<a href="../modulo1/aula1.html"><strong>Aula 1</strong> |
+												Impactos ambientais das Mudanças Climáticas e efeitos na saúde</a>
+										</li>
+										<li class="list-group-item" data-list-style="none">
+											<a href="../modulo1/aula2.html"><strong>Aula 2</strong>
+												| Conceitos principais: Emergências em Saúde Pública e eventos climáticos extremos</a>
+										</li>
+										<li class="list-group-item" data-list-style="none">
+											<a href="../modulo1/aula3.html"><strong>Aula 3</strong>
+												| Gestão de Riscos de Desastres e Emergências em Saúde (GRDE em Saúde)</a>
+										</li>
+										<li class="list-group-item" data-list-style="none">
+											<a href="../modulo1/aula4.html"><strong>Aula 4</strong>
+												| A APS como área estruturante do cuidado integral à saúde e sua atuação na GRDE em Saúde</a>
+										</li>
+									</ul>
+								</div>
 							</div>
 						</div>
-					</div>
 
-					<div class="col-12 col-md-6 col-lg-4 mb-5">
-						<div class="modulo border rounded h-100 p-3">
+						<div class="col-12 col-md-6 col-lg-4 mb-5">
+							<div class="modulo border rounded h-100 p-3">
 
-							<span class="label">Módulo 2</span>
-							<span class="mt-3 h6 d-block">Desastres Intensivos</span>
-							<div class="list">
-								<ul class="list-group">
-									<li class="list-group-item" data-list-style="none">
-										<a href="../modulo2/aula1.html"><strong>Aula 1</strong> | Eventos climáticos extremos, emergência climática e emergências em saúde pública</a>
-									</li>
-									<li class="list-group-item" data-list-style="none">
-										<a href="../modulo2/aula2.html"><strong>Aula 2</strong>
-											| Os desastres intensivos e seus efeitos na saúde</a>
-									</li>
-									<li class="list-group-item" data-list-style="none">
-										<a href="../modulo2/aula3.html"><strong>Aula 3</strong>
-											| Atuação da APS diante desses eventos nas etapas da gestão de risco de desastres em saúde</a>
-									</li>
-								</ul>
+								<span class="label">Módulo 2</span>
+								<span class="mt-3 h6 d-block">Desastres Intensivos</span>
+								<div class="list">
+									<ul class="list-group">
+										<li class="list-group-item" data-list-style="none">
+											<a href="../modulo2/aula1.html"><strong>Aula 1</strong> | Eventos climáticos extremos, emergência climática e emergências em saúde pública</a>
+										</li>
+										<li class="list-group-item" data-list-style="none">
+											<a href="../modulo2/aula2.html"><strong>Aula 2</strong>
+												| Os desastres intensivos e seus efeitos na saúde</a>
+										</li>
+										<li class="list-group-item" data-list-style="none">
+											<a href="../modulo2/aula3.html"><strong>Aula 3</strong>
+												| Atuação da APS diante desses eventos nas etapas da gestão de risco de desastres em saúde</a>
+										</li>
+									</ul>
+								</div>
 							</div>
 						</div>
-					</div>
 
-					<div class="col-12 col-md-6 col-lg-4 mb-5">
-						<div class="modulo border rounded h-100 p-3">
+						<div class="col-12 col-md-6 col-lg-4 mb-5">
+							<div class="modulo border rounded h-100 p-3">
 
-							<span class="label">Módulo 3</span>
-							<span class="mt-3 h6 d-block">Desastres Extensivos</span>
-							<div class="list">
-								<ul class="list-group">
-									<li class="list-group-item" data-list-style="none">
-										<a href="../modulo3/aula1.html"><strong>Aula 1</strong> |
-											Inundações graduais, seca e estiagens</a>
-									</li>
-									<li class="list-group-item" data-list-style="none">
-										<a href="../modulo3/aula2.html"><strong>Aula 2</strong>
-											| Efeitos na saúde</a>
-									</li>
-									<li class="list-group-item" data-list-style="none">
-										<a href="../modulo3/aula3.html"><strong>Aula 3</strong>
-											| Atuação da APS em inundações graduais, secas e estiagens</a>
-									</li>
-								</ul>
+								<span class="label">Módulo 3</span>
+								<span class="mt-3 h6 d-block">Desastres Extensivos</span>
+								<div class="list">
+									<ul class="list-group">
+										<li class="list-group-item" data-list-style="none">
+											<a href="../modulo3/aula1.html"><strong>Aula 1</strong> |
+												Inundações graduais, seca e estiagens</a>
+										</li>
+										<li class="list-group-item" data-list-style="none">
+											<a href="../modulo3/aula2.html"><strong>Aula 2</strong>
+												| Efeitos na saúde</a>
+										</li>
+										<li class="list-group-item" data-list-style="none">
+											<a href="../modulo3/aula3.html"><strong>Aula 3</strong>
+												| Atuação da APS em inundações graduais, secas e estiagens</a>
+										</li>
+									</ul>
+								</div>
 							</div>
 						</div>
-					</div>
 
-					<div class="col-12 col-md-6 col-lg-4">
-						<div class="modulo border rounded h-100 p-3">
+						<div class="col-12 col-md-6 col-lg-4">
+							<div class="modulo border rounded h-100 p-3">
 
-							<span class="label">Módulo 4</span>
-							<span class="mt-3 h6 d-block">Extremos de Temperatura</span>
-							<div class="list">
-								<ul class="list-group">
-									<li class="list-group-item" data-list-style="none">
-										<a href="../modulo4/aula1.html"><strong>Aula 1</strong> |
-											Ondas de calor e de frio</a>
-									</li>
-									<li class="list-group-item" data-list-style="none">
-										<a href="../modulo4/aula2.html"><strong>Aula 2</strong>
-											| Efeitos das ondas de calor e de frio na saúde</a>
-									</li>
-									<li class="list-group-item" data-list-style="none">
-										<a href="../modulo4/aula3.html"><strong>Aula 3</strong>
-											| Atuação da APS diante de temperaturas extremas nas etapas da GRDE em Saúde</a>
-									</li>
-								</ul>
+								<span class="label">Módulo 4</span>
+								<span class="mt-3 h6 d-block">Extremos de Temperatura</span>
+								<div class="list">
+									<ul class="list-group">
+										<li class="list-group-item" data-list-style="none">
+											<a href="../modulo4/aula1.html"><strong>Aula 1</strong> |
+												Ondas de calor e de frio</a>
+										</li>
+										<li class="list-group-item" data-list-style="none">
+											<a href="../modulo4/aula2.html"><strong>Aula 2</strong>
+												| Efeitos das ondas de calor e de frio na saúde</a>
+										</li>
+										<li class="list-group-item" data-list-style="none">
+											<a href="../modulo4/aula3.html"><strong>Aula 3</strong>
+												| Atuação da APS diante de temperaturas extremas nas etapas da GRDE em Saúde</a>
+										</li>
+									</ul>
+								</div>
 							</div>
 						</div>
-					</div>
 
-					<div class="col-12 col-md-6 col-lg-4">
-						<div class="modulo border rounded h-100 p-3">
+						<div class="col-12 col-md-6 col-lg-4">
+							<div class="modulo border rounded h-100 p-3">
 
-							<span class="label">Módulo 5</span>
-							<span class="mt-3 h6 d-block">Eventos Intensificados pelas Mudanças Climáticas</span>
-							<div class="list">
-								<ul class="list-group">
-									<li class="list-group-item" data-list-style="none">
-										<a href="../modulo5/aula1.html"><strong>Aula 1</strong> |
-											Incêndios florestais e queimadas</a>
-									</li>
-									<li class="list-group-item" data-list-style="none">
-										<a href="../modulo5/aula2.html"><strong>Aula 2</strong>
-											| Os efeitos das queimadas e dos incêndios florestais na saúde</a>
-									</li>
-									<li class="list-group-item" data-list-style="none">
-										<a href="../modulo5/aula3.html"><strong>Aula 3</strong>
-											| Atuação da APS diante de queimadas e incêndios florestais nas etapas da GRDE em Saúde</a>
-									</li>
-								</ul>
+								<span class="label">Módulo 5</span>
+								<span class="mt-3 h6 d-block">Eventos Intensificados pelas Mudanças Climáticas</span>
+								<div class="list">
+									<ul class="list-group">
+										<li class="list-group-item" data-list-style="none">
+											<a href="../modulo5/aula1.html"><strong>Aula 1</strong> |
+												Incêndios florestais e queimadas</a>
+										</li>
+										<li class="list-group-item" data-list-style="none">
+											<a href="../modulo5/aula2.html"><strong>Aula 2</strong>
+												| Os efeitos das queimadas e dos incêndios florestais na saúde</a>
+										</li>
+										<li class="list-group-item" data-list-style="none">
+											<a href="../modulo5/aula3.html"><strong>Aula 3</strong>
+												| Atuação da APS diante de queimadas e incêndios florestais nas etapas da GRDE em Saúde</a>
+										</li>
+									</ul>
+								</div>
 							</div>
 						</div>
+
 					</div>
 
 				</div>
-
-			</div>
-			<!-- <div class="modal-footer">
+				<!-- <div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 					<button type="button" class="btn btn-primary">Save changes</button>
 				</div> -->
+			</div>
 		</div>
 	</div>
-</div>
 </body>
 
 </html>

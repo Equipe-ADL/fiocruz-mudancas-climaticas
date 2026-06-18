@@ -60,7 +60,15 @@
 </head>
 
 <body>
-	<header class="header">
+	<div id="links-acessibilidade">
+		<a href="#links-acessibilidade" accesskey="1" class="skip-link">Aperte TAB e escolha uma área da página</a>
+		<a href="#menu-global" accesskey="2" class="skip-link">Ir para o menu global de navegação</a>
+		<a href="#sidebar" accesskey="3" class="skip-link">Ir para o menu de navegação dos módulos</a>
+		<a href="#conteudo-principal" accesskey="4" class="skip-link">Ir para o conteúdo da página</a>
+		<a href="#nav-topics" accesskey="5" class="skip-link">Ir para o final da página</a>
+	</div>
+
+	<header id="menu-global" class="header">
 		<div class="mobile-toggle-open">
 			<a class="mobile-toggle__button" tabindex="0" role="button">
 				<span class="icon material-symbols-rounded">read_more</span>
@@ -94,10 +102,10 @@
 
 	<div class="main">
 		<a id="hidebar-button" role="button" tabindex="0"></a>
-        <div id="breadcrumb"></div>
 		<div id="sidebar" role="navigation"></div>
 		<div id="page" class="content">
 			<div id="page-title" class="mod5">
+				<div id="breadcrumb"></div>
 				<div class="container">
 					<div class="row align-items-center justify-content-start">
 						<div class="col-12 col-md-10 col-lg-9 col-xxl-8 offset-md-1 offset-lg-2 ps-0">
@@ -160,84 +168,84 @@
 						<div class="row justify-content-center">
 							<div class="col-12 col-md-10 col-lg-8 mb-5">
 								<!-- Quiz Dropdown -->
-                                <div class="exercise" data-exercise="dropdown" data-exercise-feedback="general">
-                                    <div class="card">
-                                        <div class="card-header">Exercício 2</div>
-                                        <div class="card-body">
-                                            <div class="exercise__question">
-                                                <p>A fumaça das queimadas pode se deslocar por grandes distâncias e os incêndios florestais também contribuem para a crise climática.</p>
+								<div class="exercise" data-exercise="dropdown" data-exercise-feedback="general">
+									<div class="card">
+										<div class="card-header">Exercício 2</div>
+										<div class="card-body">
+											<div class="exercise__question">
+												<p>A fumaça das queimadas pode se deslocar por grandes distâncias e os incêndios florestais também contribuem para a crise climática.</p>
 
 												<p>Neste contexto, leia as afirmativas a seguir e assinale Verdadeiro ou Falso.</p>
 
-                                            </div>
-                                            <div class="exercise__answers">
-                                                <ul>
-                                                    <li class="answer__option" data-feedback="a) <strong>Ops, atenção! Essa afirmação é FALSA.</strong> Incêndios florestais contribuem para as mudanças climáticas ao emitir gases de efeito estufa, como o dióxido de carbono. A fumaça pode se deslocar por longas distâncias, mas isso não torna falsa a contribuição dos incêndios para o clima." tabindex="0">
-                                                        <p>a) A fumaça gerada por queimadas e incêndios florestais permanece sempre em áreas próximas aos locais onde o fogo ocorre.</p>
-                                                        <select class="form-select" aria-label="Seletor de resposta do item">
-                                                            <option selected disabled>Selecione uma opção</option>
-                                                            <option value="1" >Verdadeiro</option>
-                                                            <option value="2" correct>Falso</option>
-                                                        </select>
-                                                    </li>
+											</div>
+											<div class="exercise__answers">
+												<ul>
+													<li class="answer__option" data-feedback="a) <strong>Ops, atenção! Essa afirmação é FALSA.</strong> Incêndios florestais contribuem para as mudanças climáticas ao emitir gases de efeito estufa, como o dióxido de carbono. A fumaça pode se deslocar por longas distâncias, mas isso não torna falsa a contribuição dos incêndios para o clima." tabindex="0">
+														<p>a) A fumaça gerada por queimadas e incêndios florestais permanece sempre em áreas próximas aos locais onde o fogo ocorre.</p>
+														<select class="form-select" aria-label="Seletor de resposta do item">
+															<option selected disabled>Selecione uma opção</option>
+															<option value="1">Verdadeiro</option>
+															<option value="2" correct>Falso</option>
+														</select>
+													</li>
 
-                                                    <li class="answer__option" data-feedback="b) <strong>Fique atento aos detalhes. Essa afirmação é VERDADEIRA.</strong> Durante os incêndios florestais, a emissão de gases de efeito estufa, como o dióxido de carbono, contribui para as mudanças climáticas." tabindex="0">
+													<li class="answer__option" data-feedback="b) <strong>Fique atento aos detalhes. Essa afirmação é VERDADEIRA.</strong> Durante os incêndios florestais, a emissão de gases de efeito estufa, como o dióxido de carbono, contribui para as mudanças climáticas." tabindex="0">
 
-                                                        <p>b) Incêndios florestais contribuem para as mudanças climáticas por meio da emissão de gases de efeito estufa, como o dióxido de carbono.</p>
-                                                        <select class="form-select" aria-label="Seletor de resposta do item">
-                                                            <option selected disabled>Selecione uma opção</option>
-                                                            <option value="1" correct>Verdadeiro</option>
-                                                            <option value="2">Falso</option>
-                                                        </select>
-                                                    </li>
+														<p>b) Incêndios florestais contribuem para as mudanças climáticas por meio da emissão de gases de efeito estufa, como o dióxido de carbono.</p>
+														<select class="form-select" aria-label="Seletor de resposta do item">
+															<option selected disabled>Selecione uma opção</option>
+															<option value="1" correct>Verdadeiro</option>
+															<option value="2">Falso</option>
+														</select>
+													</li>
 
-                                                    <li class="answer__option" data-feedback="c) <strong>Confira sua resposta. Essa afirmação é VERDADEIRA.</strong> Ventos intensos em ambientes secos e quentes podem acelerar a propagação do fogo e dificultar o controle dos incêndios florestais." tabindex="0">
-                                                        <p>c) Ventos intensos, associados a ambientes secos e quentes, podem facilitar a rápida propagação do fogo e dificultar o controle dos incêndios florestais.</p>
-                                                        <select class="form-select" aria-label="Seletor de resposta do item">
-                                                            <option selected disabled>Selecione uma opção</option>
-                                                            <option value="1" correct>Verdadeiro</option>
-                                                            <option value="2">Falso</option>
-                                                        </select>
-                                                    </li>
+													<li class="answer__option" data-feedback="c) <strong>Confira sua resposta. Essa afirmação é VERDADEIRA.</strong> Ventos intensos em ambientes secos e quentes podem acelerar a propagação do fogo e dificultar o controle dos incêndios florestais." tabindex="0">
+														<p>c) Ventos intensos, associados a ambientes secos e quentes, podem facilitar a rápida propagação do fogo e dificultar o controle dos incêndios florestais.</p>
+														<select class="form-select" aria-label="Seletor de resposta do item">
+															<option selected disabled>Selecione uma opção</option>
+															<option value="1" correct>Verdadeiro</option>
+															<option value="2">Falso</option>
+														</select>
+													</li>
 
 													<li class="answer__option" data-feedback="d) <strong>Releia com atenção. Essa afirmação é VERDADEIRA.</strong> As queimadas e os incêndios florestais causam significativa poluição do ar, pois liberam gases e partículas de diferentes tamanhos." tabindex="0">
-                                                        <p>d) As queimadas e os incêndios florestais são fontes importantes de poluição do ar, devido à liberação de gases e partículas de diferentes tamanhos.</p>
-                                                        <select class="form-select" aria-label="Seletor de resposta do item">
-                                                            <option selected disabled>Selecione uma opção</option>
-                                                            <option value="1" correct>Verdadeiro</option>
-                                                            <option value="2">Falso</option>
-                                                        </select>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
+														<p>d) As queimadas e os incêndios florestais são fontes importantes de poluição do ar, devido à liberação de gases e partículas de diferentes tamanhos.</p>
+														<select class="form-select" aria-label="Seletor de resposta do item">
+															<option selected disabled>Selecione uma opção</option>
+															<option value="1" correct>Verdadeiro</option>
+															<option value="2">Falso</option>
+														</select>
+													</li>
+												</ul>
+											</div>
+										</div>
 
-                                        <div class="card-footer">
-                                            <div class="exercise__submit">
-                                                <!-- Insert feedbacks for data-exercise-feedback="general" -->
-                                                <span class="feedback--correct d-none">Recapitule: <p><strong>Sistema de Gestão da Qualidade:</strong> Conjunto de políticas, procedimentos e práticas documentadas que são implementadas para garantir a qualidade e a conformidade dos processos relacionados à pesquisa clínica. </p>
-                                                    <p><strong>Controle da Qualidade:</strong> Atividades destinadas a monitorar e a garantir a precisão e confiabilidade dos dados coletados durante o estudo.</p>
-                                                    <p><strong>Garantia da Qualidade:</strong> Garante que todos os aspectos do estudo estejam em conformidade com os padrões regulatórios, éticos e científicos aplicáveis.</p>
-                                                </span>
+										<div class="card-footer">
+											<div class="exercise__submit">
+												<!-- Insert feedbacks for data-exercise-feedback="general" -->
+												<span class="feedback--correct d-none">Recapitule: <p><strong>Sistema de Gestão da Qualidade:</strong> Conjunto de políticas, procedimentos e práticas documentadas que são implementadas para garantir a qualidade e a conformidade dos processos relacionados à pesquisa clínica. </p>
+													<p><strong>Controle da Qualidade:</strong> Atividades destinadas a monitorar e a garantir a precisão e confiabilidade dos dados coletados durante o estudo.</p>
+													<p><strong>Garantia da Qualidade:</strong> Garante que todos os aspectos do estudo estejam em conformidade com os padrões regulatórios, éticos e científicos aplicáveis.</p>
+												</span>
 
-                                                <div class="feedback--incorrect d-none">
-                                                    <p>Na verdade, a associação correta é:</p>
-                                                    <p>Afirmativa A: Garantia da Qualidade</p>
-                                                    <p>Afirmativa B: Sistema de Gestão da Qualidade</p>
-                                                    <p>Afirmativa C: Controle da Qualidade</p>
-                                                    <p>Relembre:</p>
-                                                    <p><strong>Sistema de Gestão da Qualidade:</strong> Conjunto de políticas, procedimentos e práticas documentadas que são implementadas para garantir a qualidade e a conformidade dos processos relacionados à pesquisa clínica. </p>
-                                                    <p><strong>Controle da Qualidade:</strong> Atividades destinadas a monitorar e a garantir a precisão e confiabilidade dos dados coletados durante o estudo.</p>
-                                                    <p><strong>Garantia da Qualidade:</strong> Garante que todos os aspectos do estudo estejam em conformidade com os padrões regulatórios, éticos e científicos aplicáveis.</p>
-                                                </div>
+												<div class="feedback--incorrect d-none">
+													<p>Na verdade, a associação correta é:</p>
+													<p>Afirmativa A: Garantia da Qualidade</p>
+													<p>Afirmativa B: Sistema de Gestão da Qualidade</p>
+													<p>Afirmativa C: Controle da Qualidade</p>
+													<p>Relembre:</p>
+													<p><strong>Sistema de Gestão da Qualidade:</strong> Conjunto de políticas, procedimentos e práticas documentadas que são implementadas para garantir a qualidade e a conformidade dos processos relacionados à pesquisa clínica. </p>
+													<p><strong>Controle da Qualidade:</strong> Atividades destinadas a monitorar e a garantir a precisão e confiabilidade dos dados coletados durante o estudo.</p>
+													<p><strong>Garantia da Qualidade:</strong> Garante que todos os aspectos do estudo estejam em conformidade com os padrões regulatórios, éticos e científicos aplicáveis.</p>
+												</div>
 
-                                                <!-- Javascript will create the feedback here! -->
-                                                <span class="exercise__submit--feedback d-none"></span>
-                                                <button class="fio-button fio-button-primary" type="submit">Conferir</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+												<!-- Javascript will create the feedback here! -->
+												<span class="exercise__submit--feedback d-none"></span>
+												<button class="fio-button fio-button-primary" type="submit">Conferir</button>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -360,19 +368,19 @@
 	<script src="../assets/js/custom-anime.js"></script>
 	<script src="../assets/js/exercise.js"></script>
 	<script src="../sources/animate/aos/dist/aos.js"></script>
-	    <script>
-        AOS.init();
-    </script>
-    <noscript>
-        <p class="visually-hidden">Este site utiliza recursos de animação que dependem de JavaScript para execução visual.</p>
-    </noscript>
+	<script>
+		AOS.init();
+	</script>
+	<noscript>
+		<p class="visually-hidden">Este site utiliza recursos de animação que dependem de JavaScript para execução visual.</p>
+	</noscript>
 
 
 	<!-- Swiper -->
 	<script src="../assets/js/swiper-bundle.min.js"></script>
 	<script src="../assets/js/swiper-init.js"></script>
 
-<div class="modal fade" id="modal-megamenu" tabindex="-1" role="dialog" aria-labelledby="modulos-megamenu" aria-hidden="true" aria-modal="true">
+	<div class="modal fade" id="modal-megamenu" tabindex="-1" role="dialog" aria-labelledby="modulos-megamenu" aria-hidden="true" aria-modal="true">
 		<div class="modal-dialog modal-fullscreen" style="top: 80px; max-height: calc(-80px + 100dvh); height: auto;">
 			<div class="modal-content" style="border-top-left-radius: 0;border-top-right-radius: 0;">
 				<!-- <div class="modal-header">
