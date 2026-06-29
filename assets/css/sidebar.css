@@ -382,6 +382,7 @@
 		left: 380px;
 		top: 100px;
 		background-color: var(--_hidebar-background);
+        border-radius: 0;
 		border-top-right-radius: 12px;
 		border-bottom-right-radius: 12px;
 		border: none;
@@ -399,6 +400,7 @@
 		justify-content: center;
 		align-items: center;
 		text-decoration: none;
+        font-weight: 400;
 	}
 	#hidebar-button:hover {
 		--_hidebar-button-border: var(--_sidebar-module-btn--hover);
