@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <!-- Botão de esconder sidebar -->
         <!-- <section class="sidebar__section">
           <div class="sidebar__section-hidebar">
-            <a id="hidebar-button" role="button" tabindex="0"></a>
+            <button id="hidebar-button" type="button" tabindex="0" aria-label="Abrir e fechar menu lateral."></button>
           </div>
         </section> -->
 
