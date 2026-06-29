@@ -1,3 +1,6 @@
+// Iniciar o AOS
+window.addEventListener('DOMContentLoaded', () => AOS.init());
+
 // Stick Header
 
 window.addEventListener("scroll", function () {
