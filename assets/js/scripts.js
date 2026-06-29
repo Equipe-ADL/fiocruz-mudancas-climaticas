@@ -287,6 +287,28 @@ const modalInfos = {
 						<p class="mb-1">Luciana Alves Pereira</p>
 						<p class="small text-muted"><em>Pesquisadora da Escola Nacional de Saúde Pública Sérgio Arouca</em></p>
 					</div>
+
+                    <span class="h5 mb-3 d-block">Secretaria de Atenção Primária à Saúde - SAPS</span>
+					
+					<div class="mb-5">
+						<p class="mb-1">Ana Luiza Ferreira Rodrigues Caldas</p>
+						<p class="small text-muted"><em>Secretária de Atenção Primária à Saúde (SAPS)</em></p>
+
+                        <p class="mb-1">José Eudes Barroso Vieira</p>
+						<p class="small text-muted"><em>Diretor do Departamento de Saúde da Família (DESF)</em></p>
+
+                        <p class="mb-1">Ana Cláudia Cardozo Chaves</p>
+						<p class="small text-muted"><em>Coordenadora-Geral de Saúde da Família e Comunidade (CGESCO)</em></p>
+
+                        <p class="mb-1">Juliana Azevedo Fernandes</p>
+						<p class="small text-muted"><em>Coordenadora de Atributos e Ações Estratégicas da Atenção Primária à Saúde (COAE)</em></p>
+
+                        <p class="mb-1">Samara Carolina Rodrigues</p>
+						<p class="small text-muted"><em>Técnica da Coordenação de Atributos e Ações Estratégicas da Atenção Primária à Saúde (COAE)</em></p>
+
+                        <p class="mb-1">Sueli Zeferino Ferreira Almeida</p>
+						<p class="small text-muted"><em>Técnica da Coordenação de Atributos e Ações Estratégicas da Atenção Primária à Saúde (COAE)</em></p>
+					</div>
 				</div>
 			</div>
 		`,
@@ -694,7 +716,9 @@ const modalInfos = {
                                         <div class="accordion-body">
                                             <div class="list mb-5">
                                                 <ul class="list-group">
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">EBI, K. L. et al. O. Hot weather and heat extremes: health risks. <em>The Lancet</em>, v. 398, n. 10301, p. 698-708, 21 Aug. 2021. DOI: 10.1016/S0140-6736(21)01208-3.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">EBI, K. L. et al. Hot weather and heat extremes: health risks. <em>The Lancet</em>, v. 398, i. 10301, p. 698-708, ago 2021. Disponível em: <a href='https://www.thelancet.com/journals/lancet/article/PIIS0140-6736%2821%2901208-3/fulltext' target='_blank' rel='noopener noreferrer'>https://www.thelancet.com/journals/lancet/article/PIIS0140-6736%2821%2901208-3/fulltext</a>. Acesso em: 18 jun. 2026.</li>
+
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">SANTOS NOURI, A. et al. Detection and quantification of seasonal human heat and cold stress frequencies in representative existing and future urban canyons: the case of Ankara. <em>Theoretical Applied Climatololy</em>, v. 153, p. 593–620, maio 2023. Disponível em: <a href='https://link.springer.com/article/10.1007/s00704-023-04482-5?utm_source=researchgate.net&utm_medium=article#citeas' target='_blank' rel='noopener noreferrer'>https://link.springer.com/article/10.1007/s00704-023-04482-5?utm_source=researchgate.net&utm_medium=article#citeas</a>. Acesso em: 18 jun. 2026.</li>
 
                                                     <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">TORTORA, G. J.; DERRICKSON, B. <em>Princípios de anatomia e fisiologia</em>. 14. ed. Rio de Janeiro: Guanabara Koogan, 2014.</li>
                                                 </ul>

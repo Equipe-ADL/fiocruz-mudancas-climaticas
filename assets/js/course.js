@@ -21,7 +21,7 @@ const course = {
 				//{ type: "link", icon: "welcome", title: "Introdução", path: "/modulo2/introducao.html" },
 				{ type: "link", icon: "lesson", title: "Eventos climáticos extremos, emergência climática e emergências em saúde pública", path: "/modulo2/aula1.html" },
 				{ type: "link", icon: "lesson", title: "Os desastres intensivos e seus efeitos na saúde", path: "/modulo2/aula2.html" },
-				{ type: "link", icon: "lesson", title: "Atuação da APS diante desses eventos nas etapas da gestão de risco de desastres em saúde", path: "/modulo2/aula3.html" },
+				{ type: "link", icon: "lesson", title: "Atuação da APS diante de desastres intensivos nas etapas da GRDE em saúde", path: "/modulo2/aula3.html" },
 				{ type: "link", icon: "activity", title: "Atividades", path: "/modulo2/atividades.html"},
 				//{ type: "link", icon: "closing", title: "Encerramento", path: "/modulo2/encerramento.html" },
 			],
@@ -32,7 +32,7 @@ const course = {
 			items: [
 				//{ type: "link", icon: "welcome", title: "Introdução", path: "/modulo3/introducao.html" },
 				{ type: "link", icon: "lesson", title: "Inundações graduais, seca e estiagens", path: "/modulo3/aula1.html" },
-				{ type: "link", icon: "lesson", title: "Efeitos na saúde", path: "/modulo3/aula2.html" },
+				{ type: "link", icon: "lesson", title: "Os desastres extensivos e seus efeitos na saúde", path: "/modulo3/aula2.html" },
 				{ type: "link", icon: "lesson", title: "Atuação da APS em inundações graduais, secas e estiagens", path: "/modulo3/aula3.html" },
 				{ type: "link", icon: "activity", title: "Atividades", path: "/modulo3/atividades.html"},
 				//{ type: "link", icon: "closing", title: "Encerramento", path: "/modulo3/encerramento.html" },
