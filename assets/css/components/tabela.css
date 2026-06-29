@@ -37,7 +37,7 @@
 .table-responsive tr {
 	border: 1px solid var(--fio-sys-color-primary-60);
 	vertical-align: middle;
-	font-size: var(--fio-sys-typography-size--1);
+	font-size: var(--fio-sys-typography-size-0);
 }
 
 .table-responsive tr:nth-of-type(odd) {
@@ -46,12 +46,12 @@
 
 .table ul li {
 	margin-bottom: 10px;
-	font-size: var(--fio-sys-typography-size--1);
+	font-size: var(--fio-sys-typography-size-0);
 	color: var(--fio-sys-color-primary-dark);
 }
 
 .table p {
-	font-size: var(--fio-sys-typography-size--1);
+	font-size: var(--fio-sys-typography-size-0);
 }
 
 
