@@ -176,6 +176,9 @@ const modalInfos = {
 
 						<p class="mb-1">Marly Cruz</p>
 						<p class="small text-muted"><em>Vice-Presidência de Educação, Informação e Comunicação (VPEIC)</em></p>
+
+                        <p class="mb-1">Marco Menezes</p>
+						<p class="small text-muted"><em>Diretor da Escola Nacional de Saúde Pública Sergio Arouca (ENSP)</em></p>
 					</div>
 
 					<span class="h5 mb-3 d-block">Campus Virtual Fiocruz</span>
@@ -246,52 +249,14 @@ const modalInfos = {
                         <p class="small text-muted"><em>Ilustração e designer gráfico</em></p>
 					</div>
 
-					<span class="h5 mb-3 d-block">Coordenação Acadêmica</span>
+                    <span class="h5 mb-3 d-block">Realização</span>
 					
 					<div class="mb-5">
-						<p class="mb-1">Vânia Rocha</p>
-						<p class="small text-muted"><em>Pesquisadora do Centro de Estudos e Pesquisas em Emergências e Desastres em Saúde da Fiocruz (Cepedes/Fiocruz) </em></p>
+						<p class="mb-1">Vice-Direção da Escola de Governo em Saúde da ENSP/Fiocruz</p>
+						<p class="small text-muted"><em>Campus Virtual Fiocruz</em></p>
 					</div>
 
-					<span class="h5 mb-3 d-block">Conteudistas</span>
-					
-					<div class="mb-5">
-						<p class="mb-1">Carlos Machado de Freitas</p>
-						<p class="small text-muted"><em>Coordenador do Centro de Estudos e Pesquisas em Emergências e Desastres em Saúde da Fiocruz (Cepedes/Fiocruz) e Pesquisador da Escola Nacional de Saúde Pública, Fiocruz </em></p>
-
-						<p class="mb-1">Eliane Lima e Silva</p>
-						<p class="small text-muted"><em>Pesquisadora do Centro de Estudos e Pesquisas em Emergências e Desastres em Saúde da Fiocruz (Cepedes/Fiocruz) e do Laboratório de Geografia, Ambiente e Saúde da UnB (LAGAS/UnB)</em></p>
-
-						<p class="mb-1">Jacqueline Santos da Silva</p>
-						<p class="small text-muted"><em>Enfermeira, Agente Comunitária de Saúde da Estratégia de Saúde da Família na Secretaria Municipal de Saúde do Rio de Janeiro</em></p>
-
-						<p class="mb-1">Luciana Alves Pereira</p>
-						<p class="small text-muted"><em>Pesquisadora da Escola Nacional de Saúde Pública Sérgio Arouca</em></p>
-
-						<p class="mb-1">Maria Mitsuko Peres</p>
-						<p class="small text-muted"><em>Pesquisadora do Centro de Estudos e Pesquisas em Emergências e Desastres em Saúde (Cepedes/Fiocruz)</em></p>
-
-						<p class="mb-1">Michele da Conceição Galdino</p>
-						<p class="small text-muted"><em>Enfermeira residente da Estratégia de Saúde da Família da Secretaria Municipal de Saúde do Rio de Janeiro</em></p>
-
-						<p class="mb-1">Pedro Ruiz Barbosa Nassar</p>
-						<p class="small text-muted"><em>Professor Adjunto da Universidade Federal Fluminense (UFF) e especialista em Gestão em Emergências e Desastres na Atenção Primária</em></p>
-
-						<p class="mb-1">Tatiane Moraes</p>
-						<p class="small text-muted"><em>Pesquisadora do Observatório do Clima e Saúde (ICICT/Fiocruz) e do Departamento de Epidemiologia do Instituto de Medicina Social da UERJ (IMS/UERJ)</em></p>
-
-						<p class="mb-1">Vânia Rocha</p>
-						<p class="small text-muted"><em>Pesquisadora do Centro de Estudos e Pesquisas em Emergências e Desastres em Saúde da Fiocruz (Cepedes/Fiocruz)</em></p>
-					</div>
-
-                    <span class="h5 mb-3 d-block">Revisão</span>
-					
-					<div class="mb-5">
-						<p class="mb-1">Luciana Alves Pereira</p>
-						<p class="small text-muted"><em>Pesquisadora da Escola Nacional de Saúde Pública Sérgio Arouca</em></p>
-					</div>
-
-                    <span class="h5 mb-3 d-block">Secretaria de Atenção Primária à Saúde - SAPS</span>
+                    <span class="h5 mb-3 d-block">Apoio institucional</span>
 					
 					<div class="mb-5">
 						<p class="mb-1">Ana Luiza Ferreira Rodrigues Caldas</p>
@@ -311,6 +276,66 @@ const modalInfos = {
 
                         <p class="mb-1">Sueli Zeferino Ferreira Almeida</p>
 						<p class="small text-muted"><em>Técnica da Coordenação de Atributos e Ações Estratégicas da Atenção Primária à Saúde (COAE)</em></p>
+					</div>
+
+					<span class="h5 mb-3 d-block">Mudanças climáticas e a atuação da Atenção Primária à Saúde – 1ª oferta (2026-2027)</span>
+					
+					<div class="mb-5">
+						<p class="mb-1">Carlos Machado de Freitas</p>
+						<p class="small text-muted"><em>Coordenação Institucional</em></p>
+
+                        <p class="mb-1">Vânia Rocha</p>
+						<p class="small text-muted"><em>Coordenação Acadêmica</em></p>
+
+                        <p class="mb-1">Luciana Alves Pereira</p>
+						<p class="small text-muted"><em>Coordenação de Produção</em></p>
+					</div>
+
+					<span class="h5 mb-3 d-block">Autoria</span>
+					
+					<div class="mb-5">
+						<p class="mb-1">Eliane Lima e Silva</p>
+						<p class="small text-muted"><em>Pesquisadora do Centro de Estudos e Pesquisas em Emergências e Desastres em Saúde da Fiocruz (Cepedes/Fiocruz) e do Laboratório de Geografia, Ambiente e Saúde da UnB (LAGAS/UnB)</em></p>
+
+						<p class="mb-1">Maria Mitsuko Peres </p>
+						<p class="small text-muted"><em>Enfermeira da Estratégia de Saúde da Família da Secretaria Municipal de Saúde do Rio de Janeiro, pesquisadora do Centro de Estudos e Pesquisas em Emergências e Desastres em Saúde (Cepedes/Fiocruz)</em></p>
+
+						<p class="mb-1">Tatiane Moraes</p>
+						<p class="small text-muted"><em>Pesquisadora do Observatório do Clima e Saúde (ICICT/Fiocruz) e do Departamento de Epidemiologia do Instituto de Medicina Social da UERJ (IMS/UERJ)</em></p>
+
+						<p class="mb-1">Vânia Rocha</p>
+						<p class="small text-muted"><em>Pesquisadora do Centro de Estudos e Pesquisas em Emergências e Desastres em Saúde da Fiocruz (Cepedes/Fiocruz)</em></p>
+					</div>
+
+                    <span class="h5 mb-3 d-block">Colaboração</span>
+					
+					<div class="mb-5">
+						<p class="mb-1">Carlos Machado de Freitas</p>
+						<p class="small text-muted"><em>Coordenador do Centro de Estudos e Pesquisas em Emergências e Desastres em Saúde da Fiocruz (Cepedes/Fiocruz) e Pesquisador da Escola Nacional de Saúde Pública Sergio Arouca/Fiocruz </em></p>
+
+						<p class="mb-1">Jacqueline Santos da Silva</p>
+						<p class="small text-muted"><em>Enfermeira, Agente Comunitária de Saúde da Estratégia de Saúde da Família da Secretaria Municipal de Saúde do Rio de Janeiro</em></p>
+
+						<p class="mb-1">Michele da Conceição Galdino</p>
+						<p class="small text-muted"><em>Enfermeira residente da Estratégia de Saúde da Família da Secretaria Municipal de Saúde do Rio de Janeiro</em></p>
+
+						<p class="mb-1">Pedro Ruiz Barbosa Nassar</p>
+						<p class="small text-muted"><em>Professor Adjunto da Universidade Federal Fluminense (UFF) e especialista em Gestão em Emergências e Desastres na Atenção Primária à Saúde</em></p>
+					</div>
+
+                    <span class="h5 mb-3 d-block">Revisão Ortográfica</span>
+					
+					<div class="mb-5">
+						<p class="mb-1">Luciana Alves Pereira</p>
+						<p class="small text-muted"><em>Pesquisadora da Escola Nacional de Saúde Pública Sérgio Arouca</em></p>
+					</div>
+
+                    <span class="h5 mb-3 d-block">Agradecimento Especial</span>
+					
+					<div class="mb-5">
+						<p class="mb-3">Este curso foi construído de forma colaborativa e ganha ainda mais significado com a generosa contribuição dos profissionais de saúde de diferentes regiões do Brasil que compartilharam seus relatos de experiência diante de secas, inundações, deslizamentos, queimadas e os demais eventos climáticos extremos.</p>
+
+                        <p>Nosso sincero agradecimento a cada profissional que disponibilizou seu tempo, sua escuta sensível e sua vivência nos territórios para a gravação dos áudios que ilustram as aulas. Seus depoimentos dão voz às realidades locais, aproximam o conhecimento teórico do cotidiano do trabalho em saúde e evidenciam o compromisso do Sistema Único de Saúde com o cuidado, a solidariedade e a defesa da vida.</p>
 					</div>
 				</div>
 			</div>
