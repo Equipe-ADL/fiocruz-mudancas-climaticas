@@ -23,257 +23,172 @@
 }
 
 #aula3-info1 .st16 {
-	font-size: 11.9px;
-}
-
-#aula3-info1 .st16,
-#aula3-info1 .st17,
-#aula3-info1 .st18,
-#aula3-info1 .st19,
-#aula3-info1 .st20,
-#aula3-info1 .st21,
-#aula3-info1 .st22,
-#aula3-info1 .st23,
-#aula3-info1 .st24 {
-	fill: #fff;
-}
-
-#aula3-info1 .st16,
-#aula3-info1 .st20,
-#aula3-info1 .st25,
-#aula3-info1 .st26 {
-	font-family: Montserrat-SemiBold, Montserrat;
-	font-weight: 600;
-}
-
-#aula3-info1 .st17,
-#aula3-info1 .st18,
-#aula3-info1 .st19,
-#aula3-info1 .st27,
-#aula3-info1 .st28,
-#aula3-info1 .st23 {
-	font-family: Montserrat-Bold, Montserrat;
-}
-
-#aula3-info1 .st17,
-#aula3-info1 .st18,
-#aula3-info1 .st19,
-#aula3-info1 .st27,
-#aula3-info1 .st28,
-#aula3-info1 .st23,
-#aula3-info1 .st24 {
-	font-weight: 700;
-}
-
-#aula3-info1 .st17,
-#aula3-info1 .st18,
-#aula3-info1 .st23 {
-	font-size: 12.9px;
-}
-
-#aula3-info1 .st17,
-#aula3-info1 .st29 {
-	letter-spacing: 0em;
-}
-
-#aula3-info1 .st18,
-#aula3-info1 .st30 {
-	letter-spacing: 0em;
-}
-
-#aula3-info1 .st31 {
 	fill: #dfdfdf;
 }
 
 #aula3-info1 .st1,
-#aula3-info1 .st32,
+#aula3-info1 .st17,
 #aula3-info1 .st3,
 #aula3-info1 .st4,
 #aula3-info1 .st5,
 #aula3-info1 .st6,
 #aula3-info1 .st7,
 #aula3-info1 .st8,
-#aula3-info1 .st21,
+#aula3-info1 .st18,
 #aula3-info1 .st9,
-#aula3-info1 .st33,
-#aula3-info1 .st34,
-#aula3-info1 .st35,
-#aula3-info1 .st13,
+#aula3-info1 .st19,
+#aula3-info1 .st11,
+#aula3-info1 .st20,
+#aula3-info1 .st21,
 #aula3-info1 .st14 {
 	stroke-miterlimit: 10;
 }
 
 #aula3-info1 .st1,
-#aula3-info1 .st32,
-#aula3-info1 .st4,
-#aula3-info1 .st8,
-#aula3-info1 .st21,
-#aula3-info1 .st33,
-#aula3-info1 .st35,
-#aula3-info1 .st14 {
+#aula3-info1 .st17,
+#aula3-info1 .st3,
+#aula3-info1 .st5,
+#aula3-info1 .st18,
+#aula3-info1 .st19,
+#aula3-info1 .st11,
+#aula3-info1 .st21 {
 	stroke-width: 2px;
 }
 
 #aula3-info1 .st1,
-#aula3-info1 .st8,
-#aula3-info1 .st14 {
+#aula3-info1 .st3,
+#aula3-info1 .st11 {
 	stroke: #212120;
 }
 
 #aula3-info1 .st2,
 #aula3-info1 .st10,
-#aula3-info1 .st11,
-#aula3-info1 .st12 {
+#aula3-info1 .st12,
+#aula3-info1 .st13 {
 	stroke-linecap: round;
 	stroke-linejoin: round;
 }
 
 #aula3-info1 .st2,
-#aula3-info1 .st11 {
+#aula3-info1 .st12 {
 	stroke: #6496bc;
 	stroke-width: 5px;
 }
 
-#aula3-info1 .st32,
-#aula3-info1 .st7,
+#aula3-info1 .st17,
+#aula3-info1 .st8,
 #aula3-info1 .st9,
-#aula3-info1 .st13 {
+#aula3-info1 .st14 {
 	stroke: #000;
 }
 
-#aula3-info1 .st36 {
+#aula3-info1 .st3 {
+	stroke-dasharray: 8.1 5.1;
+}
+
+#aula3-info1 .st22 {
 	fill: #ce6619;
 }
 
-#aula3-info1 .st3,
-#aula3-info1 .st6,
-#aula3-info1 .st21,
-#aula3-info1 .st33,
-#aula3-info1 .st35 {
+#aula3-info1 .st4,
+#aula3-info1 .st7,
+#aula3-info1 .st18,
+#aula3-info1 .st19,
+#aula3-info1 .st21 {
 	stroke: #fff;
 }
 
-#aula3-info1 .st4 {
+#aula3-info1 .st5 {
 	stroke: #b7b6b6;
 	stroke-dasharray: 8 5;
 }
 
-#aula3-info1 .st5,
+#aula3-info1 .st6,
 #aula3-info1 .st10 {
 	stroke: #d66124;
 	stroke-width: 4px;
 }
 
-#aula3-info1 .st6,
-#aula3-info1 .st13 {
+#aula3-info1 .st7,
+#aula3-info1 .st14 {
 	stroke-width: 3px;
 }
 
-#aula3-info1 .st37 {
+#aula3-info1 .st23 {
 	fill: #6496bc;
 }
 
-#aula3-info1 .st19,
-#aula3-info1 .st28 {
-	font-size: 21.6px;
-}
-
-#aula3-info1 .st20 {
-	font-size: 13.9px;
-}
-
-#aula3-info1 .st25 {
-	font-size: 13.9px;
-}
-
-#aula3-info1 .st25,
-#aula3-info1 .st28 {
-	fill: #1d1d1b;
-}
-
-#aula3-info1 .st38 {
+#aula3-info1 .st24 {
 	fill: #d76223;
 }
 
-#aula3-info1 .st7,
-#aula3-info1 .st39 {
+#aula3-info1 .st25 {
+	fill: #1d1d1b;
+}
+
+#aula3-info1 .st8,
+#aula3-info1 .st26 {
 	opacity: .5;
 }
 
-#aula3-info1 .st8 {
-	stroke-dasharray: 8.1 5;
-}
-
+#aula3-info1 .st18,
 #aula3-info1 .st27 {
-	font-size: 21.6px;
+	fill: #fff;
 }
 
 #aula3-info1 .st26 {
-	font-size: 11.2px;
-}
-
-#aula3-info1 .st39 {
 	fill: #9d9d9d;
 }
 
-#aula3-info1 .st40,
-#aula3-info1 .st35 {
+#aula3-info1 .st28,
+#aula3-info1 .st21 {
 	fill: #558bb4;
 }
 
-#aula3-info1 .st41,
-#aula3-info1 .st34 {
+#aula3-info1 .st29,
+#aula3-info1 .st20 {
 	fill: #e8511d;
 }
 
-#aula3-info1 .st33,
-#aula3-info1 .st42 {
+#aula3-info1 .st19,
+#aula3-info1 .st30 {
 	fill: #98955c;
 }
 
-#aula3-info1 .st34 {
+#aula3-info1 .st11 {
+	stroke-dasharray: 8 5;
+}
+
+#aula3-info1 .st20 {
 	stroke: #723318;
 }
 
-#aula3-info1 .st43 {
+#aula3-info1 .st31 {
 	fill: #59aadd;
 }
 
-#aula3-info1 .st44 {
+#aula3-info1 .st32 {
 	fill: #ddd786;
 }
 
-#aula3-info1 .st24 {
-	font-family: Montserrat-ExtraBold, Montserrat;
-	font-size: 72px;
-}
-
-#aula3-info1 .st45 {
-	letter-spacing: 0em;
-}
-
-#aula3-info1 .st46 {
+#aula3-info1 .st33 {
 	fill: #4eb6ea;
 }
 
-#aula3-info1 .st47 {
+#aula3-info1 .st34 {
 	fill: #f0843b;
 }
 
-#aula3-info1 .st48 {
+#aula3-info1 .st35 {
 	clip-path: url(#clippath);
 }
 
-#aula3-info1 .st11 {
+#aula3-info1 .st12 {
 	stroke-dasharray: 8;
 }
 
-#aula3-info1 .st12 {
+#aula3-info1 .st13 {
 	stroke: #f6a31b;
-}
-
-#aula3-info1 .st14 {
-	stroke-dasharray: 8.2 5.1;
 }
 
 #aula3-info1 .bts {
@@ -314,10 +229,11 @@
 }
 
 #aula3-info1 .info-btn:focus {
-    outline: 3px solid #0056b3;
-    outline-offset: 2px;
+	outline: 3px solid #0056b3;
+	outline-offset: 2px;
 }
+
 /* Altera o cursor para pointer para indicar elemento clicável */
 #aula3-info1 .info-btn {
-    cursor: pointer;
+	cursor: pointer;
 }
