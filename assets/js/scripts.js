@@ -73,8 +73,9 @@ const imageToLightbox = document.querySelectorAll(".lightbox");
 imageToLightbox.forEach((image) => {
 	image.addEventListener("click", () => {
 		if (!image.classList.contains("lightbox--show")) {
-			const getImage = image.querySelector("img");
-			const getImageSrc = getImage.getAttribute("src");
+			// const getImage = image.querySelector("img");
+			// const getImageSrc = getImage.getAttribute("src")
+            const getImageSrc = image.getAttribute("src");
 			const imageLightbox = document.createElement("div");
 
 			imageLightbox.classList.add("lightbox__image");
@@ -2035,10 +2036,10 @@ function createModal(id) {
 }
 
 //Before and after
-// const container = document.querySelector(".antes-e-depois--container");
-// document.querySelector(".antes-e-depois--slider").addEventListener("input", (e) => {
-// 	container.style.setProperty("--position", `${e.target.value}%`);
-// });
+const container = document.querySelector(".antes-e-depois--container");
+document.querySelector(".antes-e-depois--slider").addEventListener("input", (e) => {
+	container.style.setProperty("--position", `${e.target.value}%`);
+});
 
 // Botão Back to top
 
