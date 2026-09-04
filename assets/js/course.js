@@ -7,7 +7,7 @@ const course = {
 			items: [
 				//{ type: "link", icon: "welcome", title: "Introdução", path: "/modulo1/introducao.html" },
 				{ type: "link", icon: "lesson", title: "Impactos ambientais das Mudanças Climáticas e efeitos na saúde", path: "/modulo1/aula1.html" },
-				{ type: "link", icon: "lesson", title: "Conceitos principais: Emergências em Saúde Pública e eventos climáticos extremos", path: "/modulo1/aula2.html" },
+				{ type: "link", icon: "lesson", title: "Conceitos principais: eventos climáticos extremos, emergência climática e emergências em saúde pública", path: "/modulo1/aula2.html" },
 				{ type: "link", icon: "lesson", title: "Gestão de Riscos de Desastres e Emergências em Saúde (GRDE em Saúde)", path: "/modulo1/aula3.html" },
 				{ type: "link", icon: "lesson", title: "A APS como área estruturante do cuidado integral à saúde e sua atuação na GRDE em Saúde", path: "/modulo1/aula4.html" },
 				{ type: "link", icon: "activity", title: "Atividades", path: "/modulo1/atividades.html"},
