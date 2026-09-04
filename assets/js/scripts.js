@@ -4,14 +4,14 @@ window.addEventListener('DOMContentLoaded', () => AOS.init());
 // Stick Header
 
 window.addEventListener("scroll", function () {
-	const header = document.querySelector(".header");
-	const titleHeight = document.querySelector(".header").scrollHeight;
+    const header = document.querySelector(".header");
+    const titleHeight = document.querySelector(".header").scrollHeight;
 
-	if (window.scrollY > 150) {
-		header.classList.add("header--sticky");
-	} else {
-		header.classList.remove("header--sticky");
-	}
+    if (window.scrollY > 150) {
+        header.classList.add("header--sticky");
+    } else {
+        header.classList.remove("header--sticky");
+    }
 });
 
 // (function () {
@@ -29,7 +29,7 @@ window.addEventListener("scroll", function () {
 // Popover
 var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
 var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-	return new bootstrap.Popover(popoverTriggerEl);
+    return new bootstrap.Popover(popoverTriggerEl);
 });
 
 // Botão de copiar podcast
@@ -37,33 +37,33 @@ var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
 const copyButton = document.querySelectorAll(".copy-to-clip");
 
 copyButton.forEach((btn) => {
-	btn.addEventListener("click", () => {
-		copyToClipboard(btn);
-		// tooltipShow(btn);
+    btn.addEventListener("click", () => {
+        copyToClipboard(btn);
+        // tooltipShow(btn);
 
-		tooltipFeedback(btn);
-	});
+        tooltipFeedback(btn);
+    });
 });
 
 function copyToClipboard(e) {
-	const textToCopy = e.getAttribute("data-link");
-	const textarea = document.createElement("textarea");
-	textarea.setAttribute("readonly", "");
-	textarea.style.position = "absolute";
-	textarea.value = textToCopy;
-	document.body.appendChild(textarea);
-	textarea.select();
-	document.execCommand("copy");
-	document.body.removeChild(textarea);
+    const textToCopy = e.getAttribute("data-link");
+    const textarea = document.createElement("textarea");
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "absolute";
+    textarea.value = textToCopy;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
 }
 function tooltipFeedback(b) {
-	let feedback = $('[data-toggle="tooltip"]');
+    let feedback = $('[data-toggle="tooltip"]');
 
-	// feedback.tooltip('show');
+    // feedback.tooltip('show');
 
-	b.addEventListener("mouseout", () => {
-		feedback.tooltip("hide");
-	});
+    b.addEventListener("mouseout", () => {
+        feedback.tooltip("hide");
+    });
 }
 
 // Lightbox (insert the class "lightbox" into <figure>)
@@ -71,37 +71,37 @@ function tooltipFeedback(b) {
 const imageToLightbox = document.querySelectorAll(".lightbox");
 
 imageToLightbox.forEach((image) => {
-	image.addEventListener("click", () => {
-		if (!image.classList.contains("lightbox--show")) {
-			// const getImage = image.querySelector("img");
-			// const getImageSrc = getImage.getAttribute("src")
+    image.addEventListener("click", () => {
+        if (!image.classList.contains("lightbox--show")) {
+            // const getImage = image.querySelector("img");
+            // const getImageSrc = getImage.getAttribute("src")
             const getImageSrc = image.getAttribute("src");
-			const imageLightbox = document.createElement("div");
+            const imageLightbox = document.createElement("div");
 
-			imageLightbox.classList.add("lightbox__image");
+            imageLightbox.classList.add("lightbox__image");
 
-			document.body.appendChild(imageLightbox);
-			imageLightbox.innerHTML = `<img src="${getImageSrc}"/>`;
-			console.log(getImageSrc);
+            document.body.appendChild(imageLightbox);
+            imageLightbox.innerHTML = `<img src="${getImageSrc}"/>`;
+            console.log(getImageSrc);
 
-			image.classList.add("lightbox--show");
+            image.classList.add("lightbox--show");
 
-			document.body.style.overflow = "hidden";
-			document.body.style.userSelect = "none";
+            document.body.style.overflow = "hidden";
+            document.body.style.userSelect = "none";
 
-			closeLightbox(imageLightbox);
-		}
+            closeLightbox(imageLightbox);
+        }
 
-		function closeLightbox(e) {
-			const lightboxOpen = document.querySelector(".lightbox__image");
-			e.addEventListener("click", () => {
-				document.body.removeChild(e);
-				image.classList.remove("lightbox--show");
-				document.body.style.overflow = "auto";
-				document.body.style.userSelect = "auto";
-			});
-		}
-	});
+        function closeLightbox(e) {
+            const lightboxOpen = document.querySelector(".lightbox__image");
+            e.addEventListener("click", () => {
+                document.body.removeChild(e);
+                image.classList.remove("lightbox--show");
+                document.body.style.overflow = "auto";
+                document.body.style.userSelect = "auto";
+            });
+        }
+    });
 });
 
 // Lightbox Scroll (insert the class "lightbox-scroll" into <figure>)
@@ -109,36 +109,36 @@ imageToLightbox.forEach((image) => {
 const imageToLightboxWithScroll = document.querySelectorAll(".lightbox-scroll");
 
 imageToLightboxWithScroll.forEach((imageScroll) => {
-	imageScroll.addEventListener("click", () => {
-		if (!imageScroll.classList.contains("lightbox-scroll--show")) {
-			const getImageScroll = imageScroll.querySelector("img");
-			const getImageScrollSrc = getImageScroll.getAttribute("src");
-			const imageLightboxScroll = document.createElement("div");
+    imageScroll.addEventListener("click", () => {
+        if (!imageScroll.classList.contains("lightbox-scroll--show")) {
+            const getImageScroll = imageScroll.querySelector("img");
+            const getImageScrollSrc = getImageScroll.getAttribute("src");
+            const imageLightboxScroll = document.createElement("div");
 
-			imageLightboxScroll.classList.add("lightbox-scroll__image");
+            imageLightboxScroll.classList.add("lightbox-scroll__image");
 
-			document.body.appendChild(imageLightboxScroll);
-			imageLightboxScroll.innerHTML = `<img src="${getImageScrollSrc}"/>`;
-			console.log(getImageScrollSrc);
+            document.body.appendChild(imageLightboxScroll);
+            imageLightboxScroll.innerHTML = `<img src="${getImageScrollSrc}"/>`;
+            console.log(getImageScrollSrc);
 
-			imageScroll.classList.add("lightbox-scroll--show");
+            imageScroll.classList.add("lightbox-scroll--show");
 
-			document.body.style.overflow = "hidden";
-			document.body.style.userSelect = "none";
+            document.body.style.overflow = "hidden";
+            document.body.style.userSelect = "none";
 
-			closeLightboxScroll(imageLightboxScroll);
-		}
+            closeLightboxScroll(imageLightboxScroll);
+        }
 
-		function closeLightboxScroll(s) {
-			const lightboxScrollOpen = document.querySelector(".lightbox-scroll__image");
-			s.addEventListener("click", () => {
-				document.body.removeChild(s);
-				imageScroll.classList.remove("lightbox-scroll--show");
-				document.body.style.overflow = "auto";
-				document.body.style.userSelect = "auto";
-			});
-		}
-	});
+        function closeLightboxScroll(s) {
+            const lightboxScrollOpen = document.querySelector(".lightbox-scroll__image");
+            s.addEventListener("click", () => {
+                document.body.removeChild(s);
+                imageScroll.classList.remove("lightbox-scroll--show");
+                document.body.style.overflow = "auto";
+                document.body.style.userSelect = "auto";
+            });
+        }
+    });
 });
 
 // Boxes - inserir o título de acordo com o atributo
@@ -146,20 +146,20 @@ imageToLightboxWithScroll.forEach((imageScroll) => {
 const boxes = document.querySelectorAll(".box");
 
 boxes.forEach((box) => {
-	const boxAttribute = box.getAttribute("data-box");
+    const boxAttribute = box.getAttribute("data-box");
 
-	const boxLabel = box.querySelector(".label");
+    const boxLabel = box.querySelector(".label");
 
-	boxLabel.innerHTML = boxAttribute;
+    boxLabel.innerHTML = boxAttribute;
 });
 
 // Modal - Criação dos modais principais
 const modalInfos = {
-	creditos: {
-		ariaLabel: "creditos",
-		modalSize: "modal-lg",
-		modalTitle: "Créditos",
-		modalBody: `
+    creditos: {
+        ariaLabel: "creditos",
+        modalSize: "modal-lg",
+        modalTitle: "Créditos",
+        modalBody: `
 			<div class="row justify-content-center pt-5">
 				<div class="col-12 col-md-10 col-lg-10">
 					<span class="h5 mb-3 d-block">Ministério da Saúde</span>
@@ -341,12 +341,12 @@ const modalInfos = {
 				</div>
 			</div>
 		`,
-	},
-	bibliografia: {
-		ariaLabel: "bibliografia",
-		modalSize: "modal-xl",
-		modalTitle: "Bibliografia",
-		modalBody: `
+    },
+    bibliografia: {
+        ariaLabel: "bibliografia",
+        modalSize: "modal-xl",
+        modalTitle: "Bibliografia",
+        modalBody: `
 		<div class="row justify-content-center pt-5">
     <div class="col-12 col-md-11">
         <div class="mb-5">
@@ -902,12 +902,12 @@ const modalInfos = {
     </div>
 </div>
 		`,
-	},
-	materialcomplementar: {
-		ariaLabel: "materialcomplementar",
-		modalSize: "modal-xl",
-		modalTitle: "Material Complementar",
-		modalBody: `
+    },
+    materialcomplementar: {
+        ariaLabel: "materialcomplementar",
+        modalSize: "modal-xl",
+        modalTitle: "Material Complementar",
+        modalBody: `
 			<div class="row justify-content-center pt-5">
     <div class="col-12 col-md-11">
         <div class="mb-5">
@@ -1519,12 +1519,12 @@ const modalInfos = {
     </div>
 </div>
 		`,
-	},
-	glossario: {
-		ariaLabel: "glossario",
-		modalSize: "modal-lg",
-		modalTitle: "Glossário",
-		modalBody: `
+    },
+    glossario: {
+        ariaLabel: "glossario",
+        modalSize: "modal-lg",
+        modalTitle: "Glossário",
+        modalBody: `
 			<div class="aba">
 				<ul class="nav nav-pills nav-fill mb-3" id="pills-tab" role="tablist">
 					<li class="nav-item" role="presentation">
@@ -1983,39 +1983,39 @@ const modalInfos = {
 				</div>
 			</div>
 		`,
-	},
+    },
 };
 
 // Get all buttons and links that have "modal" in the data-bs-toggle
 const modalButtons = document.querySelectorAll('[data-bs-toggle="modal"]');
 
 document.addEventListener("DOMContentLoaded", function (event) {
-	//do work
+    //do work
 
-	modalButtons.forEach((btn) => {
-		// Check if the modal exist
-		const modalId = btn.getAttribute("data-bs-target").slice(1);
+    modalButtons.forEach((btn) => {
+        // Check if the modal exist
+        const modalId = btn.getAttribute("data-bs-target").slice(1);
 
-		const createdModalId = document.getElementById(modalId);
+        const createdModalId = document.getElementById(modalId);
 
-		if (!createdModalId) {
-			// If don't exist create one
-			createModal(modalId);
-		}
-	});
+        if (!createdModalId) {
+            // If don't exist create one
+            createModal(modalId);
+        }
+    });
 });
 
 function createModal(id) {
-	const newModal = document.createElement("div");
-	const modalLabel = id.slice(6);
+    const newModal = document.createElement("div");
+    const modalLabel = id.slice(6);
 
-	newModal.classList.add("modal", "fade");
-	newModal.setAttribute("id", id);
-	newModal.setAttribute("tabindex", "-1");
-	newModal.setAttribute("aria-labelledby", modalLabel);
-	newModal.setAttribute("aria-hidden", "true");
+    newModal.classList.add("modal", "fade");
+    newModal.setAttribute("id", id);
+    newModal.setAttribute("tabindex", "-1");
+    newModal.setAttribute("aria-labelledby", modalLabel);
+    newModal.setAttribute("aria-hidden", "true");
 
-	newModal.innerHTML = `
+    newModal.innerHTML = `
 		<div class="modal-dialog ${modalInfos[modalLabel].modalSize}">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -2032,50 +2032,54 @@ function createModal(id) {
 		</div>
 	`;
 
-	document.body.appendChild(newModal);
+    document.body.appendChild(newModal);
 }
 
 //Before and after
 const container = document.querySelector(".antes-e-depois--container");
-document.querySelector(".antes-e-depois--slider").addEventListener("input", (e) => {
-	container.style.setProperty("--position", `${e.target.value}%`);
-});
+
+if (container) {
+
+    document.querySelector(".antes-e-depois--slider").addEventListener("input", (e) => {
+        container.style.setProperty("--position", `${e.target.value}%`);
+    });
+}
 
 // Botão Back to top
 
 function initBackToTop() {
-	// evita criar duas vezes
-	if (document.querySelector("#back-to-top")) return;
+    // evita criar duas vezes
+    if (document.querySelector("#back-to-top")) return;
 
-	// não cria se a página for muito pequena
-	if (document.body.scrollHeight < window.innerHeight + 200) return;
+    // não cria se a página for muito pequena
+    if (document.body.scrollHeight < window.innerHeight + 200) return;
 
-	const button = document.createElement("button");
+    const button = document.createElement("button");
 
-	button.id = "back-to-top";
+    button.id = "back-to-top";
 
-	button.className = "fio-button fio-button-primary";
+    button.className = "fio-button fio-button-primary";
 
-	button.setAttribute("aria-label", "Voltar ao topo");
+    button.setAttribute("aria-label", "Voltar ao topo");
 
-	button.innerHTML = `
+    button.innerHTML = `
 		<span class="material-symbols-rounded">
 			keyboard_arrow_up
 		</span>
 	`;
 
-	document.body.appendChild(button);
+    document.body.appendChild(button);
 
-	window.addEventListener("scroll", () => {
-		button.classList.toggle("show", window.scrollY > 400);
-	});
+    window.addEventListener("scroll", () => {
+        button.classList.toggle("show", window.scrollY > 400);
+    });
 
-	button.addEventListener("click", () => {
-		window.scrollTo({
-			top: 0,
-			behavior: "smooth",
-		});
-	});
+    button.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    });
 }
 
 initBackToTop();
@@ -2083,59 +2087,59 @@ initBackToTop();
 //Breadcrumb
 
 function getCurrentPageData() {
-	const currentPath = window.location.pathname;
+    const currentPath = window.location.pathname;
 
-	for (let moduleIndex = 0; moduleIndex < course.modules.length; moduleIndex++) {
-		const module = course.modules[moduleIndex];
+    for (let moduleIndex = 0; moduleIndex < course.modules.length; moduleIndex++) {
+        const module = course.modules[moduleIndex];
 
-		for (let itemIndex = 0; itemIndex < module.items.length; itemIndex++) {
-			const item = module.items[itemIndex];
+        for (let itemIndex = 0; itemIndex < module.items.length; itemIndex++) {
+            const item = module.items[itemIndex];
 
-			if (currentPath.endsWith(item.path)) {
-				return {
-					moduleIndex,
-					itemIndex,
-					module,
-					item,
-				};
-			}
-		}
-	}
+            if (currentPath.endsWith(item.path)) {
+                return {
+                    moduleIndex,
+                    itemIndex,
+                    module,
+                    item,
+                };
+            }
+        }
+    }
 
-	return null;
+    return null;
 }
 
 function initBreadcrumb() {
-	const breadcrumb = document.getElementById("breadcrumb");
+    const breadcrumb = document.getElementById("breadcrumb");
 
-	if (!breadcrumb) return;
+    if (!breadcrumb) return;
 
-	const pageData = getCurrentPageData();
+    const pageData = getCurrentPageData();
 
-	if (!pageData) return;
+    if (!pageData) return;
 
-	const moduleNumber = pageData.moduleIndex + 1;
+    const moduleNumber = pageData.moduleIndex + 1;
 
-	let itemLabel = "";
+    let itemLabel = "";
 
-	switch (pageData.item.icon) {
-		case "activity":
-			itemLabel = "Atividades";
-			break;
+    switch (pageData.item.icon) {
+        case "activity":
+            itemLabel = "Atividades";
+            break;
 
-		case "welcome":
-			itemLabel = "Introdução";
-			break;
+        case "welcome":
+            itemLabel = "Introdução";
+            break;
 
-		case "closing":
-			itemLabel = "Encerramento";
-			break;
+        case "closing":
+            itemLabel = "Encerramento";
+            break;
 
-		default:
-			itemLabel = `Aula ${pageData.itemIndex + 1}`;
-	}
+        default:
+            itemLabel = `Aula ${pageData.itemIndex + 1}`;
+    }
 
-	breadcrumb.innerHTML = `
+    breadcrumb.innerHTML = `
 		<nav aria-label="breadcrumb">
 			<ol class="breadcrumb">
 
@@ -2163,16 +2167,16 @@ initBreadcrumb();
 // Seleciona todos os vídeos com a classe .video-protegido
 const videosProtegidos = document.querySelectorAll('.video-protegido');
 
-videosProtegidos.forEach(function(video) {
+videosProtegidos.forEach(function (video) {
     // 1. Remove o botão de download de forma nativa via API de controles do navegador
     if (video.controlsOptions) {
         video.controlsOptions.disableRemotePlayback = true; // Opcional: desativa espelhamento se desejar
     }
     // Esta propriedade desativa recursos específicos do painel (como o download)
-    video.setAttribute('controlslist', 'nodownload'); 
+    video.setAttribute('controlslist', 'nodownload');
 
     // 2. Mantém o bloqueio do clique com botão direito que já tínhamos feito
-    video.addEventListener('contextmenu', function(e) {
+    video.addEventListener('contextmenu', function (e) {
         e.preventDefault();
     });
 });
