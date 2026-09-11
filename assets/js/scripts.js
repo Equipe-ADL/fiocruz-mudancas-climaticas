@@ -269,6 +269,9 @@ const modalInfos = {
                         <p class="mb-1">Ana Cláudia Cardozo Chaves</p>
 						<p class="small text-muted"><em>Coordenadora-Geral de Saúde da Família e Comunidade (CGESCO)</em></p>
 
+                        <p class="mb-1">Lilian Silva Gonçalves</p>
+						<p class="small text-muted"><em>Coordenadora-Geral de Acesso e Equidade na Atenção Primária à Saúde (CGAEQ)</em></p>
+
                         <p class="mb-1">Juliana Azevedo Fernandes</p>
 						<p class="small text-muted"><em>Coordenadora de Atributos e Ações Estratégicas da Atenção Primária à Saúde (COAE)</em></p>
 
@@ -277,6 +280,21 @@ const modalInfos = {
 
                         <p class="mb-1">Sueli Zeferino Ferreira Almeida</p>
 						<p class="small text-muted"><em>Técnica da Coordenação de Atributos e Ações Estratégicas da Atenção Primária à Saúde (COAE)</em></p>
+
+                        <p class="mb-1">Hannah Shiva Ludgero Farias</p>
+						<p class="small text-muted"><em>Tecnologista na Coordenação de Atributos e Ações Estratégicas da Atenção Primária à Saúde (COAE)</em></p>
+
+                        <p class="mb-1">Cláudio Luiz de França Neto</p>
+						<p class="small text-muted"><em>Tecnologista na Coordenação-Geral de Acesso e Equidade na Atenção Primária à Saúde (CGAEQ)</em></p>
+
+                        <p class="mb-1">Daniela de Macêdo Pimentel</p>
+						<p class="small text-muted"><em>Assessora Técnica na Coordenação-Geral de Acesso e Equidade na Atenção Primária à Saúde (CGAEQ)</em></p>
+
+                        <p class="mb-1">Flávia Santana Lima</p>
+						<p class="small text-muted"><em>Tecnologista na Coordenação-Geral de Acesso e Equidade na Atenção Primária à Saúde (CGAEQ)</em></p>
+
+                        <p class="mb-1">Vanessa de Souza Hacon</p>
+						<p class="small text-muted"><em>Assessora Técnica na Coordenação-Geral de Mudanças Climáticas e Equidade em Saúde (CGCLIMA)</em></p>
 					</div>
 
 					<span class="h5 mb-3 d-block">Mudanças climáticas e a atuação da Atenção Primária à Saúde – 1ª oferta (2026-2027)</span>
@@ -328,7 +346,7 @@ const modalInfos = {
 					
 					<div class="mb-5">
 						<p class="mb-1">Luciana Alves Pereira</p>
-						<p class="small text-muted"><em>Pesquisadora da Escola Nacional de Saúde Pública Sérgio Arouca</em></p>
+						<p class="small text-muted"><em>Assessora didático-pedagógica da VDEGS/ENSP</em></p>
 					</div>
 
                     <span class="h5 mb-3 d-block">Agradecimento Especial</span>
@@ -382,7 +400,7 @@ const modalInfos = {
                                                 <ul class="list-group">
                                                     <li class="list-group-item">BBC News Brasil. <em>Como podemos esfriar o planeta e frear o aquecimento global?</em> São Paulo: Canal BBC News Brasil, 2021, (8min45s.). Disponível em: <a href='https://youtu.be/uOrXw8lTmVo?si=uFMGjLgC3jtDKkuE' target='_blank' rel='noopener noreferrer'>https://youtu.be/uOrXw8lTmVo?si=uFMGjLgC3jtDKkuE</a>.</li>
 
-                                                    <li class="list-group-item">BRASIL. Ministério da Saúde. Secretaria de Vigilância em Saúde e Ambiente. Departamento de Vigilância em Saúde Ambiental e Saúde do Trabalhador. Mudanças climáticas para profissionais de saúde: guia de bolso [recurso eletrônico]. 2. ed. rev. Brasília: Ministério da Saúde, 2026. Disponível em: <a href='https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/guias-e-manuais/2026/mudancas-climaticas-para-profissionais-de-saude-guia-de-bolso.pdf' target='_blank' rel='noopener noreferrer'>https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/guias-e-manuais/2026/mudancas-climaticas-para-profissionais-de-saude-guia-de-bolso.pdf</a>. Acesso em: 12 jul. 2026.</li>
+                                                    <li class="list-group-item">BRASIL. Ministério da Saúde. Secretaria de Vigilância em Saúde e Ambiente. Departamento de Vigilância em Saúde Ambiental e Saúde do Trabalhador. <em>Mudanças climáticas para profissionais de saúde:</em> guia de bolso [recurso eletrônico]. 2. ed. rev. Brasília: Ministério da Saúde, 2026. Disponível em: <a href='https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/guias-e-manuais/2026/mudancas-climaticas-para-profissionais-de-saude-guia-de-bolso.pdf' target='_blank' rel='noopener noreferrer'>https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/guias-e-manuais/2026/mudancas-climaticas-para-profissionais-de-saude-guia-de-bolso.pdf</a>. Acesso em: 12 jul. 2026.</li>
 
                                                     <li class="list-group-item">MOROSINI, L. Crise climática aumenta doenças. Desastres favorecem o aparecimento de novas doenças e produzem efeito cascata negativo na atenção à saúde. <em>Revista Radis</em>. Rio de Janeiro, 10 de maio de 2024. Disponível em: <a href='https://radis.ensp.fiocruz.br/reportagem/mudancas-climaticas/crise-climatica-aumenta-doencas/' target='_blank' rel='noopener noreferrer'>https://radis.ensp.fiocruz.br/reportagem/mudancas-climaticas/crise-climatica-aumenta-doencas/</a>. Acesso em: 30 set. 2025.</li>
                                                 </ul>
@@ -478,7 +496,7 @@ const modalInfos = {
 
                                                     <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Secretaria de Vigilância em Saúde e Ambiente. Departamento de Vigilância em Saúde Ambiental e Saúde do Trabalhador. <em>Mudanças climáticas para profissionais de saúde:</em> guia de bolso [recurso eletrônico]. 2. ed. Brasília: Ministério da Saúde, 2025.</li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">CARNEIRO, Fernando F. et at. (Orgs.) Guia de Vigilância Popular em Saúde e Emergências Climáticas. Eusébio-CE: Fiocruz Ceará, 2026. 171 p. Disponível em: <a href='https://ceara.fiocruz.br/serpovos/download/guia-de-vigilancia-popular-em-saude-e-emergencias-climaticas/' target='_blank' rel='noopener noreferrer'>https://ceara.fiocruz.br/serpovos/download/guia-de-vigilancia-popular-em-saude-e-emergencias-climaticas/</a>. Acesso em: 12 jul. 2026.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">CARNEIRO, Fernando F. et at. (Orgs.) <em>Guia de Vigilância Popular em Saúde e Emergências Climáticas</em>. Eusébio-CE: Fiocruz Ceará, 2026. 171 p. Disponível em: <a href='https://ceara.fiocruz.br/serpovos/download/guia-de-vigilancia-popular-em-saude-e-emergencias-climaticas/' target='_blank' rel='noopener noreferrer'>https://ceara.fiocruz.br/serpovos/download/guia-de-vigilancia-popular-em-saude-e-emergencias-climaticas/</a>. Acesso em: 12 jul. 2026.</li>
 
                                                     <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">NOGUEIRA, P. T. A. <em>et al</em>. A necessidade de construção de assistência e Vigilância em Saúde no contexto das mudanças climáticas – ‘um passo à frente e você não estará mais no mesmo lugar’. <em>Saúde em Debate</em>, v. 48, p. e8696, 2024.</li>
                                                 </ul>
@@ -702,7 +720,7 @@ const modalInfos = {
                                             <span class='d-block'><em>Bibliografia complementar</em></span>
                                             <div class="list mb-5">
                                                 <ul class="list-group">
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Diretriz Nacional para Atuação Integrada dos Agentes de Combate às Endemias e Agentes Comunitários de Saúde no Território [recurso eletrônico]. Brasília: Ministério da Saúde, 2025. Disponível em: <a href='https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/vigilancia-ambiental/diretriz-nacional-para-atuacao-dos-ace-e-acs-no-territorio.pdf' target='_blank' rel='noopener noreferrer'>https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/vigilancia-ambiental/diretriz-nacional-para-atuacao-dos-ace-e-acs-no-territorio.pdf</a>. Acesso em: 12 jul. 2026.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. <em>Diretriz Nacional para Atuação Integrada dos Agentes de Combate às Endemias e Agentes Comunitários de Saúde no Território</em> [recurso eletrônico]. Brasília: Ministério da Saúde, 2025. Disponível em: <a href='https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/vigilancia-ambiental/diretriz-nacional-para-atuacao-dos-ace-e-acs-no-territorio.pdf' target='_blank' rel='noopener noreferrer'>https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/vigilancia-ambiental/diretriz-nacional-para-atuacao-dos-ace-e-acs-no-territorio.pdf</a>. Acesso em: 12 jul. 2026.</li>
 
                                                     <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. <em>Nota Técnica Conjunta</em> n. 217/2024-CGESCO/DESCO/SAPS/MS-DAHU/SAES/MS-DAPSI/SESAI/MS. Brasília: Ministério da Saúde, 2024. Disponível em: <a href='https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/notas-tecnicas/2024/nota-tecnica-conjunta-no-217-2024-cgesco-desco-saps-ms-e-dahu-saes-ms-e-dapsi-sesai-ms' target='_blank' rel='noopener noreferrer'>https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/notas-tecnicas/2024/nota-tecnica-conjunta-no-217-2024-cgesco-desco-saps-ms-e-dahu-saes-ms-e-dapsi-sesai-ms</a>. Acesso em: 13 jul. 2026.</li>
 
