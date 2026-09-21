@@ -35,7 +35,7 @@
 }
 .exercise .exercise__answers .answer__option.exercise__answers--selected {
 	border-color: var(--fio-sys-color-primary-50);
-    /* background-color: hsl(26deg 79% 46% / 10%); */
+	/* background-color: hsl(26deg 79% 46% / 10%); */
 	background: linear-gradient(-90deg, rgba(28, 130, 130, 0.2), rgba(210, 164, 64, 0.3));
 }
 .exercise .exercise__answers .answer__option.exercise__answers--selected p {
@@ -96,7 +96,7 @@
 .exercise .exercise__answers .answer__option:not(.exercise__answers--blocked, .exercise__answers--correct, .exercise__answers--incorrect):hover .form-select {
 	border-color: var(--fio-sys-color-primary-40);
 	cursor: pointer;
-	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23c70596' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23D06719' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
 }
 .exercise .exercise__answers .answer__option.exercise__answers--selected .form-select {
 	border-color: var(--fio-sys-color-primary-40);
@@ -165,7 +165,7 @@
 }
 
 .exercise .exercise__submit .exercise__submit--feedback .feedback__content strong {
-    font-size: var(--fio-sys-typography-size--1);
+	font-size: var(--fio-sys-typography-size--1);
 }
 
 .exercise .exercise__submit .exercise__submit--feedback.exercise__submit__feedback--correct {
@@ -184,7 +184,7 @@
 	color: var(--fio-sys-color-error-40);
 }
 
-.exercise .exercise__submit .exercise__submit--feedback.exercise__submit__feedback--incorrect a{
+.exercise .exercise__submit .exercise__submit--feedback.exercise__submit__feedback--incorrect a {
 	background-color: var(--fio-sys-color-error-30);
 	color: var(--fio-sys-color-error-99);
 	padding: 0 8px;
