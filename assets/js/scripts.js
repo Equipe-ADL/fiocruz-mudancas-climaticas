@@ -2033,6 +2033,35 @@ document.addEventListener("DOMContentLoaded", function (event) {
     });
 });
 
+const scriptsJs = [...document.scripts].find((script) =>
+    script.src.includes("/assets/js/scripts.js")
+);
+
+const projectBaseUrl = scriptsJs
+    ? new URL("../../", scriptsJs.src)
+    : new URL("./", document.baseURI);
+
+function resolveModalRelativePaths(modalElement) {
+    modalElement.querySelectorAll("[href], [src]").forEach((element) => {
+        ["href", "src"].forEach((attribute) => {
+            const value = element.getAttribute(attribute);
+
+            if (
+                !value ||
+                value.startsWith("#") ||
+                /^(https?:|mailto:|tel:|data:|\/\/)/i.test(value)
+            ) {
+                return;
+            }
+
+            element.setAttribute(
+                attribute,
+                new URL(value, projectBaseUrl).href
+            );
+        });
+    });
+}
+
 function createModal(id) {
     const newModal = document.createElement("div");
     const modalLabel = id.slice(6);
@@ -2061,6 +2090,8 @@ function createModal(id) {
 	`;
 
     document.body.appendChild(newModal);
+
+    resolveModalRelativePaths(newModal);
 }
 
 //Before and after
