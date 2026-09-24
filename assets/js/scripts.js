@@ -254,7 +254,7 @@ const modalInfos = {
 					
 					<div class="mb-5">
 						<p class="mb-1">Vice-Direção da Escola de Governo em Saúde da ENSP/Fiocruz</p>
-						<p class="small text-muted"><em>Campus Virtual Fiocruz</em></p>
+						<p class="mb-1">Campus Virtual Fiocruz</p>
 					</div>
 
                     <span class="h5 mb-3 d-block">Apoio institucional</span>
@@ -559,9 +559,9 @@ const modalInfos = {
                                         <div class="accordion-body">
                                             <div class="list mb-5">
                                                 <ul class="list-group">
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério do Meio Ambiente e Mudança do Clima. Ministério da Ciência, Tecnologia e Inovação. Ministério da Saúde. <em>Plano Clima Adaptação</em> – Plano Setorial de Saúde: Versão preliminar. Brasília: MMA/MCTI/MS, 2025.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério do Meio Ambiente e Mudança do Clima. Ministério da Ciência, Tecnologia e Inovação. Ministério da Saúde. <em>Plano Setorial de Saúde</em> – AdaptaSUS [recurso eletrônico]. Brasília, DF: MMA; MCTI; MS, 2025.</li>
 
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Fundação Oswaldo Cruz. <em>Guia de preparação e respostas do setor saúde aos desastres</em>. Rio de Janeiro: Fiocruz, 2018.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">FREITAS, C. M. de; MAZOTO, M. L.; ROCHA, V. da. <em>Guia de preparação e respostas do setor saúde aos desastres</em>. Rio de Janeiro-RJ: Fiocruz/Secretaria de Vigilância em Saúde, 2018.</li>
 
                                                     <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">FREITAS, Carlos Machado de; SILVA, Eliane L. e; ROCHA, Vânia. <em>Brasil 2050</em>: a emergência climática, os desastres e os desafios para gestão de riscos e a adaptação. Rio de Janeiro: ENSP/Fiocruz, 2025. (Saúde Amanhã/Textos para Discussão, 90). Disponível em: <a href='https://arca.fiocruz.br/items/d5342e72-5925-49dc-97de-17138ec27819' target='_blank' rel='noopener noreferrer'>https://arca.fiocruz.br/items/d5342e72-5925-49dc-97de-17138ec27819</a>. Acesso em: 03 nov. 2025.</li>
                                                 </ul>
@@ -801,7 +801,7 @@ const modalInfos = {
                                         <div class="accordion-body">
                                             <div class="list mb-5">
                                                 <ul class="list-group">
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Secretaria de Vigilância em Saúde e Ambiente. Departamento de Emergências em Saúde Pública. Coordenação-Geral de Preparação para as Emergências em Saúde Pública. <em>Nota Técnic</em>a nº 5/2025-CGPRESP/DEMSP/SVSA/MS. Fornece diretrizes abrangentes para a preparação e resposta às ondas de frio. Brasília: Ministério da Saúde, 2025.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério da Saúde. Secretaria de Vigilância em Saúde e Ambiente. Secretaria de Atenção Primária à Saúde. Secretaria de Atenção Especializada à Saúde. Secretaria de Saúde Indígena. <em>Nota Técnica Conjunta</em> n. 270/2026/SVSA/SAPS/SAES/SESAI/MS. Brasília: Ministério da Saúde, 2026.</li>
 
                                                     <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">RIO DE JANEIRO. Secretaria Municipal de Saúde. <em>Protocolo de enfrentamento ao calor extremo</em> [livro eletrônico]. 1. ed. Rio de Janeiro: Ed. dos Autores, 2024. Disponível em: <a href='https://saude.prefeitura.rio/wp-content/uploads/sites/47/2024/10/Livro_PlanoContingenciaEnfrentamentoCalorExtremo_PDFDigital_20241024.pdf' target='_blank' rel='noopener noreferrer'>https://saude.prefeitura.rio/wp-content/uploads/sites/47/2024/10/Livro_PlanoContingenciaEnfrentamentoCalorExtremo_PDFDigital_20241024.pdf</a>. Acesso em: 16 dez. 2025.</li>
 

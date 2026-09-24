@@ -7,7 +7,7 @@ const course = {
 			items: [
 				//{ type: "link", icon: "welcome", title: "Introdução", path: "/modulo1/introducao.html" },
 				{ type: "link", icon: "lesson", title: "Impactos ambientais das Mudanças Climáticas e efeitos na saúde", path: "/modulo1/aula1.html" },
-				{ type: "link", icon: "lesson", title: "Conceitos principais: eventos climáticos extremos, emergência climática e emergências em saúde pública", path: "/modulo1/aula2.html" },
+				{ type: "link", icon: "lesson", title: "Conceitos principais: Inundações bruscas, enxurradas e deslizamentos", path: "/modulo1/aula2.html" },
 				{ type: "link", icon: "lesson", title: "Gestão de Riscos de Desastres e Emergências em Saúde (GRDE em Saúde)", path: "/modulo1/aula3.html" },
 				{ type: "link", icon: "lesson", title: "A APS como área estruturante do cuidado integral à saúde e sua atuação na GRDE em Saúde", path: "/modulo1/aula4.html" },
 				{ type: "link", icon: "activity", title: "Atividades", path: "/modulo1/atividades.html"},
@@ -19,7 +19,7 @@ const course = {
 			title: "Módulo 2: Desastres Intensivos",
 			items: [
 				//{ type: "link", icon: "welcome", title: "Introdução", path: "/modulo2/introducao.html" },
-				{ type: "link", icon: "lesson", title: "Eventos climáticos extremos, emergência climática e emergências em saúde pública", path: "/modulo2/aula1.html" },
+				{ type: "link", icon: "lesson", title: "Inundações bruscas, enxurradas e deslizamentos", path: "/modulo2/aula1.html" },
 				{ type: "link", icon: "lesson", title: "Os desastres intensivos e seus efeitos na saúde", path: "/modulo2/aula2.html" },
 				{ type: "link", icon: "lesson", title: "Atuação da APS diante de desastres intensivos nas etapas da GRDE em saúde", path: "/modulo2/aula3.html" },
 				{ type: "link", icon: "activity", title: "Atividades", path: "/modulo2/atividades.html"},
