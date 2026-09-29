@@ -37,7 +37,7 @@ html {
 	left: 0;
 	position: absolute;
 	right: 0;
-	top: 75vh;
+	top: 85vh;
 	z-index: 2;
 }
 
@@ -55,7 +55,7 @@ html {
 	text-align: center;
 }
 
-@media(min-width: 992px) {
+@media (min-width: 992px) {
 	.hero-title {
 		text-align: left;
 	}
@@ -110,7 +110,7 @@ html {
 	border-color: #fff;;
 } */
 
-@media(min-width: 1200px) {
+@media (min-width: 1200px) {
 	.hero-title h2 .name {
 		font-size: calc(var(--fio-sys-typography-size-6) * 1.3);
 	}
@@ -281,13 +281,13 @@ section {
 .media .media__transcription .transcription-button {
 	color: var(--fio-sys-color-primary-20);
 	border-color: var(--fio-sys-color-primary-20);
-	background:transparent;
+	background: transparent;
 }
 
 .media .media__transcription .transcription-button:hover {
 	color: var(--fio-sys-color-primary-40);
 	border-color: var(--fio-sys-color-primary-40);
-	background: var(--fio-sys-color-primary-30)!important;
+	background: var(--fio-sys-color-primary-30) !important;
 }
 
 /* .media .media__transcription .transcription-button:focus {
@@ -403,11 +403,11 @@ section {
 }
 
 #course-program .modulo-grupo .modulo-item a.fio-button-home:hover {
-	text-decoration:none !important;
+	text-decoration: none !important;
 }
 
 #course-program .modulo-grupo .modulo-item a.fio-button-home:hover span {
-	text-decoration:none !important;
+	text-decoration: none !important;
 	text-decoration: underline !important;
 }
 
@@ -424,8 +424,8 @@ section {
 
 #course-program .modulo-grupo .modulo-item a span {
 	letter-spacing: var(--fio-sys-typography-spacing-small);
-    font-weight: 600;
-    font-size: 16px;
+	font-weight: 600;
+	font-size: 16px;
 }
 
 /* #course-program .modulo-grupo .modulo-item span.material-symbols-rounded {
@@ -450,18 +450,18 @@ section {
 }
 
 #course-program .modulo-grupo .modulo-item a.fio-button-home:hover .circulo-botao {
-	background-color:var(--fio-sys-color-primary-60);
+	background-color: var(--fio-sys-color-primary-60);
 }
 
 #course-program .modulo-grupo .modulo-item .circulo-botao .material-symbols-rounded {
 	color: #ffffff;
-	font-size:16px;
+	font-size: 16px;
 	font-family: "Material Symbols Rounded";
 	margin-left: 4px;
 }
 
 #course-program .modulo-grupo .modulo-item a.fio-button-home:hover span.material-symbols-rounded {
-	text-decoration:none !important;
+	text-decoration: none !important;
 }
 
 #course-program .modulo-grupo .modulo-item button,
