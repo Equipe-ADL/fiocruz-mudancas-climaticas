@@ -559,7 +559,7 @@ const modalInfos = {
                                         <div class="accordion-body">
                                             <div class="list mb-5">
                                                 <ul class="list-group">
-                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério do Meio Ambiente e Mudança do Clima. Ministério da Ciência, Tecnologia e Inovação. Ministério da Saúde. <em>Plano Setorial de Saúde</em> – AdaptaSUS [recurso eletrônico]. Brasília, DF: MMA; MCTI; MS, 2025.</a> Acesso em: 24 set. 2026.</li>
+                                                    <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">BRASIL. Ministério do Meio Ambiente e Mudança do Clima. Ministério da Ciência, Tecnologia e Inovação. Ministério da Saúde. <em>Plano Setorial de Saúde</em> – AdaptaSUS [recurso eletrônico]. Brasília, DF: MMA; MCTI; MS, 2025.</a></li>
 
                                                     <li class="list-group-item aos-init aos-animate" list-style="default" data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1200">FREITAS, C. M. de; MAZOTO, M. L.; ROCHA, V. da. <em>Guia de preparação e respostas do setor saúde aos desastres</em>. Rio de Janeiro-RJ: Fiocruz/Secretaria de Vigilância em Saúde, 2018.</li>
 
